@@ -1,0 +1,214 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\begin{document}
+	
+	\title{Mögliche Fragen - mündliches Abiturprüfung}
+	\author{Informatik - Jarek Mycan}
+	\date{\today}
+	\maketitle
+	
+	\section{Allgemeine Fragen zu Sprachen und Grammatiken}
+	
+	\subsection*{Definitionen und Grundlagen}
+	\begin{enumerate}
+		\item Was versteht man unter einer formalen Sprache?
+		\item Können Sie ein Beispiel für eine formale Sprache nennen?
+		\item Wie unterscheidet sich eine formale Sprache von einer natürlichen Sprache?
+		\item Was ist eine Grammatik, und aus welchen Komponenten besteht sie?
+		\item Erklären Sie den Unterschied zwischen Terminal- und Nichtterminalsymbolen.
+		\item Was ist der Unterschied zwischen einer regulären und einer kontextfreien Grammatik?
+		\item Was bedeutet eine \glqq kontextfreie Grammatik\grqq{} (CFG)? Geben Sie ein Beispiel.
+		\item Stellen Sie einen Vergleich zwischen Regulären  und Kontextfreien Grammatik.
+		\item Sind Programmiersprachen wie beispielsweise Java oder C++ kontextfrei oder regulär.
+	\end{enumerate}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
+	
+	
+	
+	\section*{Antworten zu Sprachen und Grammatiken}
+	\begin{enumerate}
+	\item Eine \textbf{formale Sprache} ist eine Menge von Wörtern über einem bestimmten Alphabet, die nach festen Regeln definiert sind.
+	\item \textbf{Beispiel für eine formale Sprache:}
+
+	Eine bekannte formale Sprache ist die Sprache der ausgeglichenen Klammerausdrücke:
+	\[
+	L = \left\{ w \mid 
+	\begin{aligned}
+		& w \text{ ist korrekt geschachtelt} \\
+		& \text{und enthält gleich viele öffnende und schließende Klammern}
+	\end{aligned}
+	\right\}
+	\]
+	%Ein Beispiel für ein Wort in dieser Sprache ist \texttt{(()())}, während \texttt{())(} nicht in der Sprache liegt.
+	
+	\textbf{Grammatik für die Sprache der ausgeglichenen Klammerausdrücke:}
+	
+	Die Sprache der ausgeglichenen Klammerausdrücke kann durch eine kontextfreie Grammatik (CFG) definiert werden:
+	
+	\[
+	G = (V, \Sigma, P, S)
+	\]
+	
+	wobei:
+	
+	- \( V = \{S\} \) die Menge der Nichtterminalzeichen ist,
+	- \( \Sigma = \{ (, ) \} \) das Alphabet (die Menge der Terminalzeichen) ist,
+	- \( P \) die Produktionsregeln enthält,
+	- \( S \) das Startsymbol ist.
+	
+	\textbf{Produktionen:}
+	
+	\[
+	S \to \epsilon \quad \text{(leere Zeichenkette)}
+	\]
+	\[
+	S \to (S)S
+	\]
+	
+	Diese Regeln besagen:
+	
+	1. Die leere Zeichenkette \(\epsilon\) ist ein gültiges Wort.
+	2. Jede korrekt geschachtelte Klammerfolge besteht aus einer geöffneten Klammer, gefolgt von einer gültigen Sequenz (die wieder aus geschachtelten Klammern bestehen kann), dann einer schließenden Klammer, gefolgt von einer weiteren gültigen Sequenz.
+	
+	\textbf{Beispiele für gültige Klammerausdrücke:}
+	
+	\[
+	\epsilon, (), (()), ()(), (()()), ((()))
+	\]
+	
+	\textbf{Beispiele für ungültige Klammerausdrücke:}
+	
+	\[
+	(, ), ((), )(, ())(
+	\]
+	
+	Diese Grammatik beschreibt exakt die Sprache aller korrekt geschachtelten Klammerausdrücke.
+	
+	
+		\item \textbf{Unterschied zwischen einer formalen Sprache und einer natürlichen Sprache:}
+	
+	Eine \emph{formale Sprache} ist eine Menge von Zeichenketten, die nach genau definierten Regeln gebildet werden. Sie wird häufig in der theoretischen Informatik und Mathematik verwendet. Beispiele sind Programmiersprachen oder reguläre Ausdrücke.
+	
+	Eine \emph{natürliche Sprache} hingegen ist eine von Menschen gesprochene Sprache, die historisch gewachsen ist und oft Mehrdeutigkeiten, Unregelmäßigkeiten und Kontextabhängigkeiten aufweist. Beispiele sind Deutsch, Englisch oder Chinesisch.
+	
+	Mathematisch betrachtet ist eine formale Sprache eine Teilmenge der Menge aller möglichen Zeichenketten über einem Alphabet:
+	
+	\[
+	L \subseteq \Sigma^*
+	\]
+	
+	wobei \(\Sigma\) ein Alphabet und \(\Sigma^*\) die Menge aller endlichen Zeichenketten über diesem Alphabet ist. \\
+	
+	
+	\textbf{Formale vs. Nicht-Formale Sprachen}
+	
+	1. \textbf{Formale Sprachen} sind präzise definiert und basieren auf strikten Regeln, oft in der Mathematik, Logik und Informatik. Sie bestehen aus einem \textbf{endlichen Alphabet} und einer \textbf{exakten Grammatik} (z. B. reguläre Sprachen, kontextfreie Sprachen).
+	
+	\textbf{Beispiele:}
+	\begin{itemize}
+		\item Programmiersprachen (Python, Java, C++)
+		\item Mathematische Logik (Prädikatenlogik, Aussagenlogik)
+		\item Reguläre Ausdrücke
+\end{itemize}
+
+2. \textbf{Nicht-Formale Sprachen} sind Sprachen, die nicht streng durch formale Regeln definiert sind. Sie enthalten oft Mehrdeutigkeiten, Kontextabhängigkeiten und historische Entwicklungen.
+
+\textbf{Beispiele:}
+\begin{itemize}
+	\item \textbf{Natürliche Sprachen} wie Deutsch, Englisch, Chinesisch
+	\item \textbf{Gesprochene Dialekte} ohne einheitliche Grammatik
+	\item \textbf{Alltagssprache} mit umgangssprachlichen oder metaphorischen Bedeutungen
+	\item \textbf{Poesie und literarische Ausdrucksformen}, die oft absichtlich von grammatischen Normen abweichen
+\end{itemize}
+
+\textbf{Warum gibt es keine nicht-formale Sprache im strengen Sinn?}
+
+Jede Sprache, die auf Regeln basiert, kann theoretisch in eine formale Struktur überführt werden. Natürliche Sprachen können zum Beispiel mit formalen Grammatiken wie der \textbf{Chomsky-Hierarchie} beschrieben werden – allerdings nur näherungsweise, da natürliche Sprachen viele Ausnahmen und Mehrdeutigkeiten enthalten.
+
+Ein Beispiel für Mehrdeutigkeit in natürlichen Sprachen:
+
+\begin{quote}
+	\textit{"Fliegen Fische?"}
+\end{quote}
+
+\begin{itemize}
+	\item Bedeutet es, dass Fische tatsächlich fliegen?
+	\item Oder ist es eine Frage über das Verhalten von Fischen?
+\end{itemize}
+
+Diese Mehrdeutigkeiten sind typisch für nicht-formale Sprachen, während formale Sprachen durch syntaktische Regeln strikt festgelegt sind.
+
+\textbf{Zusammenfassung}
+
+\begin{itemize}
+	\item \textbf{Formale Sprachen}: Strikt definierte Regeln, keine Mehrdeutigkeit.
+	\item \textbf{Nicht-Formale Sprachen (informelle oder natürliche Sprachen)}: Mehrdeutig, flexibel, oft historisch gewachsen.
+\end{itemize}
+
+Der Begriff "nicht-formale Sprache" wird selten benutzt, da man stattdessen einfach von \textbf{natürlichen Sprachen oder informellen Ausdrucksformen} spricht.
+
+			\item Eine \textbf{Grammatik} ist eine formale Beschreibung einer Sprache und besteht aus:
+	\begin{itemize}
+		\item einer Menge von \textbf{Nichtterminalen} (Variablen),
+		\item einer Menge von \textbf{Terminalen} (Symbolen des Alphabets),
+		\item einer Menge von \textbf{Produktionsregeln}, die beschreiben, wie Nichtterminale ersetzt werden können,
+		\item einem \textbf{Startsymbol}, von dem die Ableitung beginnt.
+	\end{itemize}
+	
+	\item \textbf{Terminale} sind die Symbole der Sprache, während \textbf{Nichtterminale} als Platzhalter für andere Zeichen oder Sequenzen dienen.
+			\item Eine \textbf{reguläre Grammatik} definiert reguläre Sprachen und kann durch endliche Automaten erkannt werden. Eine \textbf{kontextfreie Grammatik} erlaubt rekursive Definitionen und wird durch Kellerautomaten verarbeitet.
+	
+	\item Eine \textbf{kontextfreie Grammatik (CFG)} ist eine Grammatik, bei der alle Produktionsregeln die Form $A \rightarrow \alpha$ haben, wobei $A$ ein Nichtterminal und $\alpha$ eine beliebige Zeichenfolge aus Terminalen und/oder Nichtterminalen ist.
+	
+	\item \subsection*{Reguläre Grammatik}
+	\textbf{Vorteile:}
+	\begin{itemize}
+		\item \textbf{Einfach zu verstehen und zu verarbeiten} – Reguläre Grammatiken können mit \textbf{endlichen Automaten} erkannt werden.
+		\item \textbf{Effiziente Verarbeitung} – Sie benötigen wenig Speicher, da kein Stack nötig ist.
+		\item \textbf{Einfache Umsetzung} – Häufig genutzt in Suchalgorithmen und Compilern für Mustererkennung.
+	\end{itemize}
+	
+	\textbf{Nachteile:}
+	\begin{itemize}
+		\item \textbf{Begrenzte Ausdruckskraft} – Keine verschachtelten Strukturen möglich, z. B. keine Klammerausdrücke $((()))$.
+		\item \textbf{Nicht für alle Sprachen geeignet} – Beispielsweise kann die Sprache $\{ a^n b^n \mid n \geq 1 \}$ nicht mit einer regulären Grammatik beschrieben werden.
+	\end{itemize}
+	
+	\subsection*{Kontextfreie Grammatik (CFG)}
+	\textbf{Vorteile:}
+	\begin{itemize}
+		\item \textbf{Mehr Ausdruckskraft} – Kann auch \textbf{verschachtelte Strukturen} darstellen, z. B. mathematische Ausdrücke $((a + b) * c)$.
+		\item \textbf{Geeignet für Programmiersprachen} – Sprachen wie Python oder C werden mit CFGs definiert.
+		\item \textbf{Erkennt rekursive Strukturen} – Sprachen wie $\{ a^n b^n \mid n \geq 1 \}$ lassen sich damit einfach beschreiben.
+	\end{itemize}
+	
+	\textbf{Nachteile:}
+	\begin{itemize}
+		\item \textbf{Aufwendiger zu verarbeiten} – Erfordert \textbf{Kellerautomaten} mit Speicher, was aufwendiger ist als ein endlicher Automat.
+		\item \textbf{Parsing ist schwieriger} – Das Erkennen von CFGs, z. B. in Compilern, ist komplizierter als bei regulären Grammatiken.
+		\item \textbf{Nicht immer effizient} – Einige Parsing-Verfahren für CFGs haben eine hohe Rechenzeit.
+	\end{itemize}
+	
+	\subsection*{Zusammenfassung}
+	\begin{itemize}
+		\item \textbf{Reguläre Grammatiken} – Einfach, schnell, aber begrenzt.
+		\item \textbf{Kontextfreie Grammatiken} – Mächtiger, aber komplexer zu verarbeiten.
+	\end{itemize}
+	
+	Für einfache Muster wie Telefonnummern oder Suchmuster reichen \textbf{reguläre Grammatiken}. Für komplexere Strukturen wie Programmiersprachen oder mathematische Ausdrücke braucht man \textbf{kontextfreie Grammatiken}.
+	\item \section*{Sind alle Programmiersprachen kontextfrei?}
+	
+	Nein, \textbf{nicht alle Programmiersprachen sind kontextfrei}. Während viele Aspekte einer Programmiersprache mit einer \textbf{kontextfreien Grammatik (CFG)} beschrieben werden können, gibt es einige wichtige Eigenschaften, die \textbf{über kontextfreie Sprachen hinausgehen}.
+	
+	
+	
+	
+	\end{enumerate}	
+\end{document}

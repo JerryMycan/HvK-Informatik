@@ -1,0 +1,215 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\pagestyle{fancy}
+\fancyhf{}
+%\rhead{Mündliche Abiturprüfung Informatik}
+\lhead{Thema: OOP, Algorithmen, Daten Banken, Formale Sprachen}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\title{\textbf{Mündlichen Abiturprüfung -- Informatik}}
+	\author{\textbf{Thema: OOP, Algorithmen, Daten Banken, Formale Sprachen}}
+	\date{\today}
+	\maketitle
+	
+	\section*{Aufgabe 1: Analyse eines Algorithmus}
+	
+	Ein unbekannter Algorithmus zur Berechnung einer speziellen mathematischen Funktion von Zahlen wird bereitgestellt. Der Name der Klasse lautet \texttt{Algorithmus}.
+	
+	\subsection*{Gegebener Java-Code}
+	
+\begin{verbatim}
+public class Algorithmus {
+	
+	public static int berechne(int b, int e) {
+		if (e == 0) {
+			return 1;
+		}
+		return b * berechne(b, e - 1);
+	}
+	
+	public static void main(String[] args) {
+		int b = 3;
+		int e = 3;
+		System.out.println("Ergebnis: " + berechne(b, e));
+	}
+}
+\end{verbatim}
+	
+	\subsection*{Teilaufgaben}
+	
+	\begin{enumerate}
+		\item Beschreiben Sie die Funktionsweise des Algorithmus. Welche mathematische Berechnung führt die Methode \texttt{berechne} der Klasse \texttt{Algorithmus} durch?
+		
+		\item Welche Art der Implementierung wurde gewählt und welche Vor- oder Nachteile ergeben sich daraus?
+		
+		\item Bestimmen Sie die Zeitkomplexität des Algorithmus.
+		
+		\item Vergleichen Sie die rekursive Lösung mit einer iterativen Variante hinsichtlich Aufwand, Verständlichkeit und praktischer Anwendung.
+	\end{enumerate}
+	
+	
+\section*{Aufgabe 2: Datenmodellierung und Normalisierung – Kontext: Arztpraxis}
+
+Eine Arztpraxis verwaltet Informationen über Patienten, behandelnde Ärzte und durchgeführte Behandlungen in einer relationalen Datenbank. Die ursprüngliche Tabellenstruktur ist wie folgt aufgebaut:
+
+\begin{table}[h]
+	\centering
+	\caption{Ursprüngliche nicht normalisierte Tabelle}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			PatientID & Name & Adresse (Str., Stadt, PLZ) & Geburtsdatum & ArztID & Arztname & Fachgebiet & Diagnose \\
+			\hline
+			P01 & Anna Müller & Blumenweg 12, Köln, 50667 & 12.03.1985 & A01 & Dr. Schmitt & Kardiologie & Bluthochdruck \\
+			P02 & Bernd Meyer & Marktstr. 5, Bonn, 53111 & 04.09.1978 & A02 & Dr. Klein & Orthopädie & Bandscheibenvorfall \\
+			P01 & Anna Müller & Blumenweg 12, Köln, 50667 & 12.03.1985 & A02 & Dr. Klein & Orthopädie & Rückenschmerzen \\
+			P03 & Carla Schulz & Parkallee 7, Köln, 50668 & 22.06.1992 & A01 & Dr. Schmitt & Kardiologie & Herzrhythmusstörung \\
+			\hline
+	\end{tabular}}
+\end{table}
+
+\subsection*{Teilaufgaben}
+
+\begin{enumerate}
+	\item \textbf{Identifizieren Sie Redundanzen und Anomalien in der Tabelle.}  
+	\hfill (10 BE)
+	
+	\item \textbf{Zerlegen Sie die nicht normalisierte Tabelle schrittweise und normalisieren Sie sie bis zur 3. Normalform.}  
+	Geben Sie die neu entstandenen Tabellen an (ohne Daten).  
+	\hfill (20 BE)
+	
+	\item \textbf{Erläutern Sie, welche konkreten Vorteile die Normalisierung für die Verwaltung einer Praxisdatenbank bringt.}  
+	\hfill (10 BE)
+\end{enumerate}
+
+\section*{Aufgabe 3: Analyse einer formalen Grammatik zur Passworterstellung}
+
+Gegeben sei folgende formale Grammatik \( G \) bestehend aus Nichtterminalen, Terminalen,
+Produktionsregeln und einem Startsymbol:
+
+	\[
+	\begin{aligned}
+		\texttt{<passwort>} &\rightarrow \texttt{<zeichen><zeichen><zeichen><zeichen><zeichen>} \\
+		\texttt{<zeichen>} &\rightarrow \texttt{<klein>} \mid \texttt{<gross>} \mid \texttt{<ziffer>} \mid \texttt{<sonder>} \\
+		\texttt{<klein>} &\rightarrow \texttt{a, b, c, ...} \\
+		\texttt{<gross>} &\rightarrow \texttt{A, B, C, ...} \\
+		\texttt{<ziffer>} &\rightarrow \texttt{0, 1, 2, 3, 4, 5, 6, 7, 8, 9} \\
+		\texttt{<sonder>} &\rightarrow \texttt{!, ?, §, *}
+	\end{aligned}
+	\]
+
+\subsection*{Teilaufgaben:}
+
+\begin{enumerate}
+	\item Leiten Sie das Passwort \texttt{aA1!} mit der Grammatik ab.
+	
+	\item Gehört das Passwort \texttt{Pass!} zur Sprache \( L(G) \)? Begründen Sie Ihre Antwort.
+	
+	\item Die Erweiterung der Grammatik, um sichere Passwörter zu erzeugen (z.\,B. mit variabler Länge, echten Buchstabenklassen oder strukturellen Sicherheitsregeln), ist formal komplex.  
+
+Diskutieren Sie, in welchen Situationen es dennoch sinnvoll sein kann, solche Grammatiken oder regelbasierten Modelle in sicherheitskritischer Software einzusetzen – etwa bei der automatisierten Prüfung oder Generierung von Passwörtern.
+
+Gehen Sie auch auf moderne Authentifizierungsverfahren ein, bei denen anstelle klassischer Passwörter biometrische Merkmale wie Gesichtserkennung oder Fingerabdruck verwendet werden.
+\end{enumerate}
+
+	
+	%\vspace{1cm}
+	
+	\newpage
+	\section*{Lösungen}
+	
+
+	
+	\vspace{2em}
+	
+\section*{Lösung zu Aufgabe 2: Datenmodellierung und Normalisierung – Praxisdatenbank}
+
+\begin{enumerate}
+	\item \textbf{Redundanzen und Anomalien:}
+	
+	\begin{itemize}
+		\item \textbf{Redundanz:}
+		\begin{itemize}
+			\item Patientendaten (z.\,B. Name, Adresse, Geburtsdatum) erscheinen mehrfach (z.\,B. PatientID P01).
+			\item Arztinformationen (z.\,B. Name, Fachgebiet) sind für dieselbe ArztID mehrfach vorhanden.
+		\end{itemize}
+		
+		\item \textbf{Anomalien:}
+		\begin{itemize}
+			\item \textbf{Änderungsanomalie:} Ändert sich die Telefonnummer oder Adresse eines Arztes oder Patienten, müssen mehrere Zeilen angepasst werden.
+			\item \textbf{Einfügeanomalie:} Ein neuer Arzt oder Patient kann nicht ohne vollständigen Behandlungseintrag erfasst werden.
+			\item \textbf{Löschanomalie:} Löscht man eine Behandlung, könnten wichtige Informationen über Patienten oder Ärzte verloren gehen.
+		\end{itemize}
+	\end{itemize}
+	
+	\vspace{1em}
+	
+	\item \textbf{Schrittweise Normalisierung bis zur 3. Normalform:}
+	
+	\subsubsection*{1NF – Atomare Werte sicherstellen:}
+	Die Spalte „Adresse“ enthält zusammengesetzte Werte. \textrightarrow{} Aufspaltung in Straße, Stadt, PLZ.
+	
+	\vspace{0.5em}
+	\textbf{Ergebnis:}
+	Alle Attributwerte sind atomar.
+	
+	\subsubsection*{2NF – Beseitigung partieller Abhängigkeiten:}
+	Die Kombination PatientID + ArztID ist zusammengesetzter Primärschlüssel der Ausgangstabelle.  
+	Einige Attribute hängen nur von einem Teil des Schlüssels ab (z.\,B. Name des Patienten nur von PatientID).
+	
+	\vspace{0.5em}
+	\textbf{Zerlegung:}
+	\begin{itemize}
+		\item \texttt{Patient(\underline{PatientID}, Name, AdresseID, Geburtsdatum)}
+		\item \texttt{Arzt(\underline{ArztID}, Name, Fachgebiet)}
+		\item \texttt{Adresse(\underline{AdresseID}, Straße, Stadt, PLZ)}
+	\end{itemize}
+	
+	\subsubsection*{3NF – Beseitigung transitiver Abhängigkeiten:}
+	Alle Nichtschlüsselattribute hängen direkt und ausschließlich vom Primärschlüssel ihrer Tabelle ab.  
+	\textrightarrow{} Keine weitere Zerlegung notwendig.
+	
+	\vspace{0.5em}
+	\textbf{Zusätzlich:}
+	\begin{itemize}
+		\item \texttt{Behandlung(\underline{PatientID}, \underline{ArztID}, Diagnose)}
+	\end{itemize}
+	
+	\subsubsection*{Endgültige Tabellenstruktur mit Schlüsseln:}
+	
+	\begin{itemize}
+		\item \texttt{Patient(\underline{PatientID}, Name, \textbf{AdresseID (FK)}, Geburtsdatum)}
+		\item \texttt{Arzt(\underline{ArztID}, Name, Fachgebiet)}
+		\item \texttt{Adresse(\underline{AdresseID}, Straße, Stadt, PLZ)}
+		\item \texttt{Behandlung(\underline{PatientID (FK)}, \underline{ArztID (FK)}, Diagnose)}
+	\end{itemize}
+	
+	\vspace{1em}
+	
+	\begin{itemize}
+		\item \textbf{Vermeidung von Redundanzen:} Informationen zu Patienten und Ärzten werden nur einmal gespeichert.
+		\item \textbf{Einfache Pflege:} Änderungen (z.\,B. Adresswechsel) müssen nur an einer Stelle vorgenommen werden.
+		\item \textbf{Datenkonsistenz:} Keine widersprüchlichen Angaben möglich.
+		\item \textbf{Erweiterbarkeit:} Neue Patienten, Ärzte oder Diagnosen können unabhängig voneinander hinzugefügt werden.
+		\item \textbf{Datenintegrität:} Fremdschlüsselbeziehungen sichern die logische Verknüpfung der Daten.
+	\end{itemize}
+\end{enumerate}
+
+	
+	
+	
+	\vspace{2em}
+	
+	
+	
+\end{document}
+

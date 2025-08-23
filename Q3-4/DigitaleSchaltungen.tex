@@ -1,0 +1,64 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+	
+	\title{Grundlegende Arten digitaler Schaltungen}
+	\author{}
+	\date{\today}
+	
+	\maketitle
+	
+	\section{Logische Grundgatter (Logikgatter)}
+	\begin{itemize}
+		\item \textbf{AND-Gatter (UND)}: Ausgang ist 1, wenn alle Eingänge 1 sind.
+		\item \textbf{OR-Gatter (ODER)}: Ausgang ist 1, wenn mindestens ein Eingang 1 ist.
+		\item \textbf{NOT-Gatter (NICHT/Inverter)}: Invertiert den Eingang (1 $\rightarrow$ 0, 0 $\rightarrow$ 1).
+		\item \textbf{NAND-Gatter (NICHT-UND)}: Invertiertes AND-Gatter; Ausgang ist 0, nur wenn alle Eingänge 1 sind.
+		\item \textbf{NOR-Gatter (NICHT-ODER)}: Invertiertes OR-Gatter; Ausgang ist 1, nur wenn alle Eingänge 0 sind.
+		\item \textbf{XOR-Gatter (Exklusiv-ODER)}: Ausgang ist 1, wenn genau ein Eingang 1 ist.
+		\item \textbf{XNOR-Gatter (Äquivalenz)}: Ausgang ist 1, wenn beide Eingänge gleich sind.
+	\end{itemize}
+	
+	\section{Flipflops (Speicherbausteine)}
+	\begin{itemize}
+		\item \textbf{RS-Flipflop}: Einfacher Speicher mit Set- und Reset-Eingängen.
+		\item \textbf{JK-Flipflop}: Erweiterte Form des RS-Flipflops mit definiertem Verhalten.
+		\item \textbf{D-Flipflop}: Speichert ein Bit (Datenbit), das am Eingang anliegt.
+		\item \textbf{T-Flipflop}: Kippt (toggles) zwischen Zuständen bei jedem Taktsignal.
+	\end{itemize}
+	
+	\section{Multiplexer und Demultiplexer}
+	\begin{itemize}
+		\item \textbf{Multiplexer (MUX)}: Schaltet einen von mehreren Eingängen auf einen Ausgang.
+		\item \textbf{Demultiplexer (DEMUX)}: Verteilt einen Eingang auf mehrere Ausgänge.
+	\end{itemize}
+	
+	\section{Encoder und Decoder}
+	\begin{itemize}
+		\item \textbf{Encoder}: Wandelt mehrere Eingänge in ein binäres Ausgangssignal um.
+		\item \textbf{Decoder}: Wandelt ein binäres Eingangssignal in mehrere Ausgänge um.
+	\end{itemize}
+	
+	\section{Addierer und Subtrahierer}
+	\begin{itemize}
+		\item \textbf{Halbaddierer (Half Adder)}: Addiert zwei Bits ohne Übertragseingang.
+		\item \textbf{Volladdierer (Full Adder)}: Addiert zwei Bits plus Übertragseingang.
+		\item \textbf{Subtrahierer}: Führt binäre Subtraktionen durch.
+	\end{itemize}
+	
+	\section{Schieberegister}
+	Schalten Bits seriell (Bit für Bit) oder parallel (mehrere Bits gleichzeitig) ein und aus.
+	
+	\section{Zähler}
+	Zählen auf- oder abwärts; beispielsweise binäre Zähler oder Dezimalzähler.
+	
+\end{document}

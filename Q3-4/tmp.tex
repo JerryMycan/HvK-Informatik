@@ -1,0 +1,147 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Das Pumping-Lemma und seine Anwendung zur Nicht-Regularität von Sprachen}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Einführung}
+	Das Pumping-Lemma ist ein wichtiges Werkzeug in der formalen Sprachanalyse. Es dient dazu zu zeigen, dass eine Sprache \textbf{nicht regulär} ist. Reguläre Sprachen sind die einfachsten formalen Sprachen und können mit endlichen Automaten beschrieben werden.
+	
+	\section{Das Pumping-Lemma für reguläre Sprachen}
+	Das Pumping-Lemma besagt, dass für jede reguläre Sprache $L$ eine Zahl $p$ existiert, sodass jedes Wort $w \in L$ mit $|w| \geq p$ in drei Teile $w = xyz$ zerlegt werden kann, sodass folgende Bedingungen erfüllt sind:
+	
+	\begin{itemize}
+		\item $|xy| \leq p$ (die Länge der ersten beiden Teile ist höchstens $p$),
+		\item $|y| > 0$ (der Teil $y$ ist nicht leer),
+		\item Für alle $i \geq 0$ gilt: $xy^i z \in L$.
+	\end{itemize}
+	
+	Diese Bedingungen bedeuten, dass ein Teil des Wortes (das Stück $y$) beliebig oft wiederholt werden kann, und das resultierende Wort bleibt weiterhin in der Sprache.
+	
+	\section{Anwendung des Pumping-Lemmas zur Beweisführung}
+	Das Pumping-Lemma wird genutzt, um zu zeigen, dass eine Sprache nicht regulär ist. Der Beweis erfolgt durch Widerspruch:
+	
+	\begin{enumerate}
+		\item Angenommen, die Sprache ist regulär.
+		\item Dann existiert eine Pumping-Konstante $p$ entsprechend dem Pumping-Lemma.
+		\item Man wählt ein Wort $w \in L$ mit $|w| \geq p$.
+		\item Man zeigt, dass es keine Zerlegung $w = xyz$ gibt, die das Pumping-Lemma erfüllt.
+		\item Dies führt zu einem Widerspruch, also kann die Sprache nicht regulär sein.
+	\end{enumerate}
+	
+	\section{Beweis: $L = \{a^n b^n \mid n \geq 1\}$ ist nicht regulär}
+	Betrachten wir die Sprache $L = \{a^n b^n \mid n \geq 1\}$. Wir zeigen mit dem Pumping-Lemma, dass $L$ nicht regulär ist.
+	
+	\textbf{Annahme:} $L$ ist regulär. Dann existiert eine Pumping-Konstante $p$.
+	
+	Wähle das Wort $w = a^p b^p$ mit $|w| = 2p \geq p$.
+	
+	Laut Pumping-Lemma existiert eine Zerlegung $w = xyz$, sodass:
+	
+	\begin{itemize}
+		\item $|xy| \leq p$ (also besteht $xy$ nur aus $a$-Zeichen),
+		\item $|y| > 0$ (also enthält $y$ mindestens ein $a$),
+		\item $xy^i z \in L$ für alle $i \geq 0$.
+	\end{itemize}
+	
+	Wählen wir $i = 2$, so erhalten wir ein neues Wort $xy^2z$. Das bedeutet, dass zusätzliche $a$-Zeichen eingefügt wurden, sodass das Verhältnis von $a$ zu $b$ nicht mehr $n:n$ ist. Das resultierende Wort ist nicht mehr in $L$, was dem Pumping-Lemma widerspricht.
+	
+	\textbf{Folgerung:} Da unsere Annahme zur Regularität von $L$ zu einem Widerspruch führt, muss $L$ nicht regulär sein.
+	
+	\section{Weitere Beispiele zur Nicht-Regularität}
+	\subsection{Beispiel 1: $L = \{a^n b^m \mid n \neq m\}$}
+	Wähle $w = a^p b^{p+1}$. Eine Zerlegung $w = xyz$ mit $|xy| \leq p$ bedeutet, dass $y$ nur aus $a$-Zeichen besteht. Wenn wir $y$ mehrfach wiederholen ($i=2$), dann haben wir mehr $a$-Zeichen als $b$-Zeichen, was die Sprache verlässt. Also ist $L$ nicht regulär.
+	
+	\subsection{Beispiel 2: $L = \{ww \mid w \in \{a,b\}^* \}$}
+	Diese Sprache enthält Wörter, die aus zwei gleichen Hälften bestehen, wie "abbaabba". Angenommen, sie wäre regulär, dann müsste man eine beliebige Mitte wiederholen können. Aber dann würde die Struktur zerstört, sodass das resultierende Wort nicht mehr aus zwei gleichen Hälften besteht. Damit ist die Sprache nicht regulär.
+	
+	\section{Fazit}
+	Das Pumping-Lemma ist ein mächtiges Werkzeug, um die Nicht-Regularität einer Sprache zu beweisen. Es zeigt auf elegante Weise, dass eine Sprache keine endlichen Automaten akzeptieren kann, indem es das Fehlen der Pumping-Eigenschaft demonstriert.
+	
+	%%%%%%%%%%%%%
+	\section{Einleitung}
+	Die Theorie der formalen Sprachen ist ein zentrales Thema der theoretischen Informatik und bildet die Grundlage für die Konstruktion von Programmiersprachen, Compilerbau und die Analyse von Algorithmen. Um die verschiedenen Begriffe und Konzepte einzuordnen, betrachten wir die Hierarchie von Sprachen und die damit verbundenen Automaten und Grammatiken.
+	
+	\section{Was ist eine formale Sprache?}
+	Eine formale Sprache ist eine Menge von Zeichenketten (Wörtern), die aus einem Alphabet $\Sigma$ gebildet werden. Ein Alphabet ist eine endliche Menge von Symbolen, beispielsweise:
+	\[ \Sigma = \{a, b\} \]
+	Die Menge aller möglichen Zeichenketten über $\Sigma$ ist die Kleenesche Hülle:
+	\[ \Sigma^* = \{\epsilon, a, b, aa, ab, ba, bb, aaa, \dots\} \]
+	Eine Sprache $L$ ist eine Teilmenge von $\Sigma^*$, also $L \subseteq \Sigma^*$.
+	
+	\section{Natürliche vs. formale Sprachen}
+	\begin{itemize}
+		\item \textbf{Natürliche Sprachen:} Diese sind von Menschen gesprochene und geschriebene Sprachen wie Deutsch oder Englisch. Sie besitzen keine strenge mathematische Definition.
+		\item \textbf{Formale Sprachen:} Sie sind präzise definiert und folgen strikten Regeln, die mathematisch beschrieben werden können.
+	\end{itemize}
+	
+	\section{Die Chomsky-Hierarchie}
+	Die Chomsky-Hierarchie unterteilt formale Sprachen in verschiedene Klassen, die durch unterschiedliche Grammatiken erzeugt und von verschiedenen Automaten erkannt werden:
+	
+	\begin{itemize}
+		\item \textbf{Reguläre Sprachen:} Werden durch reguläre Grammatiken beschrieben und können von endlichen Automaten (DFA/NFA) erkannt werden.
+		\item \textbf{Kontextfreie Sprachen:} Werden durch kontextfreie Grammatiken beschrieben und können von Kellerautomaten (PDA) erkannt werden.
+		\item \textbf{Kontextsensitive Sprachen:} Werden durch kontextsensitive Grammatiken beschrieben und benötigen einen linear beschränkten Automaten (LBA).
+		\item \textbf{Rekursiv aufzählbare Sprachen:} Diese benötigen eine Turingmaschine zur Erkennung.
+	\end{itemize}
+	
+	\section{Grammatiken und ihre Typen}
+	Eine Grammatik ist ein formales System zur Beschreibung einer Sprache. Eine Grammatik $G$ besteht aus vier Komponenten:
+	\[ G = (N, \Sigma, P, S) \]
+	\begin{itemize}
+		\item $N$: Menge der Nichtterminalzeichen
+		\item $\Sigma$: Menge der Terminalzeichen (das Alphabet der Sprache)
+		\item $P$: Produktionsregeln
+		\item $S$: Startsymbol
+	\end{itemize}
+	
+	\section{Automaten}
+	Automaten sind abstrakte Maschinen, die zur Erkennung von Sprachen verwendet werden.
+	
+	\subsection{Endliche Automaten (DFA/NFA)}
+	Ein endlicher Automat besteht aus:
+	\[ M = (Q, \Sigma, \delta, q_0, F) \]
+	\begin{itemize}
+		\item $Q$: Endliche Menge von Zuständen
+		\item $\Sigma$: Eingabealphabet
+		\item $\delta$: Übergangsfunktion
+		\item $q_0$: Startzustand
+		\item $F$: Menge der akzeptierenden Zustände
+	\end{itemize}
+	
+	\subsection{Kellerautomaten (PDA)}
+	Ein Kellerautomat ist ein endlicher Automat mit einem Stack (Kellerspeicher). Er wird zur Erkennung kontextfreier Sprachen verwendet.
+	
+	\subsection{Turingmaschinen}
+	Eine Turingmaschine ist ein Modell für Berechenbarkeit und kann jede berechenbare Funktion realisieren. Sie hat einen unendlichen Speicher (Band) und kann darauf lesen und schreiben.
+	
+	\section{Zusätzliche Beispiele und Anwendungen}
+	
+	\subsection{Beispiel: Reguläre Sprache}
+	Die Sprache $L = \{a^n b^* \mid n \geq 0\}$ ist regulär, da sie durch den regulären Ausdruck $a^*b^*$ beschrieben werden kann und von einem endlichen Automaten erkannt wird.
+	
+	\subsection{Beispiel: Kontextfreie Sprache}
+	Die Sprache $L = \{a^n b^n \mid n \geq 0\}$ ist kontextfrei, aber nicht regulär. Sie kann durch die kontextfreie Grammatik:
+	\[ S \to aSb \mid \epsilon \]
+	definiert werden und wird von einem Kellerautomaten erkannt.
+	
+	\subsection{Beispiel: Kontextsensitive Sprache}
+	Die Sprache $L = \{a^n b^n c^n \mid n \geq 1\}$ ist kontextsensitiv, da sie nicht von einer kontextfreien Grammatik beschrieben werden kann, aber von einer kontextsensitiven Grammatik erkannt wird.
+	
+	\section{Zusammenfassung}
+	\begin{itemize}
+		\item Formale Sprachen sind mathematisch definierte Mengen von Zeichenketten.
+		\item Die Chomsky-Hierarchie klassifiziert Sprachen und zeigt, welche Automaten sie akzeptieren können.
+		\item Reguläre Sprachen werden von endlichen Automaten erkannt, kontextfreie Sprachen von Kellerautomaten.
+		\item Grammatiken dienen zur Definition von Sprachen und bestimmen deren Komplexität.
+		\item Turingmaschinen sind das mächtigste Modell und definieren Berechenbarkeit.
+		\item Verschiedene Beispiele zeigen die Grenzen und Möglichkeiten der verschiedenen Sprachklassen.
+	\end{itemize}
+	
+\end{document}

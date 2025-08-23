@@ -1,0 +1,170 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+	
+	\title{Übungsaufgaben zu Formale Sprachen}
+	\author{Informatik - Jarek Mycan}
+	\date{\today}
+	\maketitle
+	
+	\section*{Aufgaben zur Ableitung von Wörtern}
+	
+	Gegeben sind die folgenden kontextfreien Grammatiken. Leiten Sie jeweils das angegebene Wort aus dem Startsymbol her, falls möglich.
+	
+	\subsection*{Aufgabe 1}
+	Gegeben sei die Grammatik $G_1$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, A, B\}$
+		\item Terminale: $\{a, b\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow A B \\
+			A &\rightarrow a A \mid a \\
+			B &\rightarrow b B \mid b
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"aaabb"} her.
+	
+	\subsection*{Aufgabe 2}
+	Gegeben sei die Grammatik $G_2$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S\}$
+		\item Terminale: $\{0, 1\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow 0 S 1 \mid 01
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"000111"} her.
+	
+	\subsection*{Aufgabe 3}
+	Gegeben sei die Grammatik $G_3$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, X\}$
+		\item Terminale: $\{a, b\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow a X b \mid ab \\
+			X &\rightarrow a X \mid a
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"aaabbb"} her.
+	
+	\subsection*{Aufgabe 4}
+	Gegeben sei die Grammatik $G_4$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, A\}$
+		\item Terminale: $\{x, y\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow x A y \mid xy \\
+			A &\rightarrow x A \mid x
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"xxxyyy"} her.
+	
+	\subsection*{Aufgabe 5}
+	Gegeben sei die Grammatik $G_5$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S\}$
+		\item Terminale: $\{p, q\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow p S q \mid pq
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"ppqq"} her.
+	
+	\newpage
+	\section*{Aufgaben zur Grammatik-Erstellung}
+	Erstellen Sie jeweils eine Grammatik, die die folgenden Sprachmuster erzeugt.
+	
+	\subsection*{Aufgabe 6}
+	Erstellen Sie eine Grammatik, die Wörter der Form $a^n b^n$ erzeugt, d.h. gleich viele $a$ und $b$.
+	
+	\subsection*{Aufgabe 7}
+	Erstellen Sie eine Grammatik, die Wörter der Form $0^n 1^n 2^n$ erzeugt, d.h. gleiche Anzahl von 0, 1 und 2.
+	
+	\subsection*{Aufgabe 8}
+	Erstellen Sie eine Grammatik, die alle Wörter erzeugt, die eine gerade Anzahl von $a$ und $b$ enthalten.
+	
+	\subsection*{Aufgabe 9}
+	Erstellen Sie eine Grammatik, die Wörter erzeugt, die als Palindrome aus den Symbolen $a, b$ bestehen.
+	
+	\subsection*{Aufgabe 10}
+	Erstellen Sie eine Grammatik, die Wörter der Form $(ab)^n$ erzeugt.
+	
+	\newpage
+	\section*{Lösungen zu den Ableitungsaufgaben}
+	
+	\subsection*{Lösung zu Aufgabe 1}
+	\begin{align*}
+		S &\Rightarrow A B \\
+		&\Rightarrow a A B \\
+		&\Rightarrow a a A B \\
+		&\Rightarrow a a a B \\
+		&\Rightarrow a a a b B \\
+		&\Rightarrow a a a b b
+	\end{align*}
+	
+	\subsection*{Lösung zu Aufgabe 2}
+	\begin{align*}
+		S &\Rightarrow 0 S 1 \\
+		&\Rightarrow 0 0 S 1 1 \\
+		&\Rightarrow 0 0 0 1 1 1
+	\end{align*}
+	
+	\subsection*{Lösung zu Aufgabe 3}
+	\begin{align*}
+		S &\Rightarrow a X b \\
+		&\Rightarrow a a X b b \\
+		&\Rightarrow a a a b b b
+	\end{align*}
+	
+	\subsection*{Lösung zu Aufgabe 4}
+	\begin{align*}
+		S &\Rightarrow x A y \\
+		&\Rightarrow x x A y y \\
+		&\Rightarrow x x x y y y
+	\end{align*}
+	
+	\subsection*{Lösung zu Aufgabe 5}
+	\begin{align*}
+		S &\Rightarrow p S q \\
+		&\Rightarrow p p q q
+	\end{align*}
+	
+	\newpage
+	\section*{Lösungen zu den Grammatik-Erstellungsaufgaben}
+	
+	\subsection*{Lösung zu Aufgabe 6}
+	\begin{align*}
+		S &\rightarrow a S b \mid ab
+	\end{align*}
+	
+	\subsection*{Lösung zu Aufgabe 7}
+	\begin{align*}
+		S &\rightarrow 0 S 1 2 \mid 012
+	\end{align*}
+	
+	\subsection*{Lösung zu Aufgabe 8}
+	(Ergibt eine kontextfreie Grammatik mit zusätzlichem Zählermechanismus.)
+	
+	\subsection*{Lösung zu Aufgabe 9}
+	\begin{align*}
+		S &\rightarrow a S a \mid b S b \mid a \mid b \mid \epsilon
+	\end{align*}
+	
+	\subsection*{Lösung zu Aufgabe 10}
+	\begin{align*}
+		S &\rightarrow ab S \mid ab
+	\end{align*}
+	
+\end{document}

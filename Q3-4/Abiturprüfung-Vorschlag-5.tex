@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Thema: OOP, Algorithmen, Datenbanken, Formale Sprachen}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\title{\textbf{Simulation einer mündlichen Abiturprüfung -- Informatik}}
+	\author{\textbf{Thema: OOP, Algorithmen, Datenbanken, Formale Sprachen}}
+	\date{\today}
+	\maketitle
+	
+	\section*{Aufgabe 1: Analyse eines Algorithmus}
+	
+	Ein unbekannter Algorithmus zur Berechnung einer speziellen mathematischen Eigenschaft von Zahlen wird bereitgestellt. Der Name der Klasse lautet \texttt{Algorithmus}.
+	
+	\subsection*{Gegebener Java-Code}
+	
+	\begin{verbatim}
+		public class Algorithmus {
+			public static int berechne(int n) {
+				int ergebnis = 1;
+				for (int i = 1; i <= n; i++) {
+					ergebnis *= i;
+				}
+				return ergebnis;
+			}
+			
+			public static void main(String[] args) {
+				int n = 5;
+				System.out.println("Ergebnis: " + berechne(n));
+			}
+		}
+	\end{verbatim}
+	
+	\subsection*{Teilfragen zur Analyse des Codes}
+	
+	\begin{enumerate}
+		\item Beschreiben Sie die Funktionsweise des Algorithmus. Welche mathematische Funktion wird berechnet?
+		\item Wie oft wird die Schleife für \texttt{n=5} durchlaufen?
+		\item Wie unterscheidet sich diese Implementierung von einer rekursiven Lösung?
+		\item Bestimmen Sie die Zeitkomplexität des Algorithmus.
+	\end{enumerate}
+	
+	\section*{Aufgabe 2: Normalisierung einer Adressdatenbank}
+	
+	Ein Unternehmen speichert die Namen, Adressen und Telefonnummern seiner Kunden in einer relationalen Datenbank. Die ursprüngliche Tabellenstruktur ist wie folgt:
+	
+	\begin{table}[h]
+		\centering
+		\caption{Ursprüngliche nicht normalisierte Tabelle}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			KundenID & Name & Adresse & Telefonnummer \\
+			\hline
+			1 & Max Meier & Hauptstraße 12, Berlin & 030-1234567 \\
+			2 & Lisa Becker & Marktstraße 5, Hamburg & 040-7654321 \\
+			3 & Max Meier & Hauptstraße 12, Berlin & 030-1234567 \\
+			4 & Julia Schmitt & Lindenallee 9, München & 089-9876543 \\
+			5 & Thomas Müller & Königsweg 21, Köln & 0221-5678901 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\subsection*{Teilaufgaben zur Normalisierung}
+	\begin{enumerate}
+		\item Identifizieren Sie Redundanzen in der Tabelle.
+		\item Zerlegen Sie die Tabelle in mehrere normalisierte Tabellen bis zur 3. Normalform.
+		\item Welche Vorteile bringt die Normalisierung in diesem Fall?
+	\end{enumerate}
+	
+	\section*{Aufgabe 3: Analyse einer formalen Grammatik}
+	
+	Eine kontextfreie Grammatik \( G \) erzeugt gültige E-Mail-Adressen:
+	\begin{itemize}
+		\item Terminale: \( \{a-z, A-Z, 0-9, ., @\} \)
+		\item Nichtterminale: \( \{S, L, D\} \)
+		\item Startsymbol: \( S \)
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\to L @ D \\
+			L &\to aL \mid bL \mid cL \mid \dots \mid zL \mid a \mid b \mid \dots \mid z \\
+			D &\to aD \mid bD \mid cD \mid \dots \mid zD \mid .com \mid .de \mid .org
+		\end{align*}
+	\end{itemize}
+	
+	\subsection*{Teilfragen zur Grammatik}
+	\begin{enumerate}
+		\item Leiten Sie die E-Mail-Adresse \texttt{max.meier@example.com} mit der Grammatik ab.
+		\item Welche Einschränkungen hat diese Grammatik? Sind alle gültigen E-Mail-Adressen darstellbar?
+		\item Wie könnte die Grammatik erweitert werden, um auch Zahlen in der Domain zu erlauben?
+	\end{enumerate}
+	
+\end{document}
