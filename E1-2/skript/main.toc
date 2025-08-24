@@ -50,8 +50,16 @@
 \contentsline {section}{\numberline {4.5}Warum ist das so erfolgreich?}{19}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Grenzen: der Von-Neumann-Flaschenhals}{19}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Harvard vs.\ von Neumann (und die Praxis heute)}{20}{section.4.7}%
-\contentsline {chapter}{Anhang}{21}{appendix*.2}%
-\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 0: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{22}{section.Alph0.1}%
-\contentsline {section}{\numberline {.2}\ignorespaces Arbeitsblatt 1: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{24}{section.Alph0.2}%
-\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 1.2: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{26}{section.Alph0.3}%
-\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 3: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{27}{section.Alph0.4}%
+\contentsline {chapter}{\numberline {5}Grundlagen der Computernetze}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Warum vernetzen wir Computer?}{21}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Client und Server}{21}{section.5.2}%
+\contentsline {paragraph}{Merksatz.}{22}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Datenpakete (allgemein)}{22}{section.5.3}%
+\contentsline {paragraph}{Warum Pakete?}{22}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Adressierung von Computern (allgemein)}{22}{section.5.4}%
+\contentsline {paragraph}{Alltagsbild.}{23}{section.5.4}%
+\contentsline {chapter}{Anhang}{25}{appendix*.2}%
+\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 0: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{26}{section.Alph0.1}%
+\contentsline {section}{\numberline {.2}\ignorespaces Arbeitsblatt 1: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{28}{section.Alph0.2}%
+\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 1.2: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{30}{section.Alph0.3}%
+\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 3: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{31}{section.Alph0.4}%

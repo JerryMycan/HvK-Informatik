@@ -1,0 +1,115 @@
+% !TeX program = lualatex
+\documentclass[../skript/main.tex]{subfiles}
+
+\begin{document}
+	
+	\chapter{Grundlagen der Computernetze}\label{chap:computernetze}
+	
+	\section{Warum vernetzen wir Computer?}
+	Ein einzelner Computer ist nützlich — richtig spannend wird es erst, wenn Geräte
+	\emph{miteinander} Daten austauschen: Wir verschicken Nachrichten, teilen Dateien,
+	streamen Videos, rufen Webseiten ab. Ein \textbf{Computernetz} verbindet Geräte (Hosts),
+	damit sie Informationen austauschen können: im \textbf{LAN} (z.\,B.\ Schule, Zuhause),
+	im \textbf{WAN} (Verbindung über große Distanzen) und letztlich im \textbf{Internet}
+	— dem Netz der Netze.
+	
+	% ---------------------------------------------------------
+	\section{Client und Server}\label{sec:client-server}
+	Viele Anwendungen folgen dem \textbf{Client–Server}-Modell:
+	\begin{itemize}
+		\item Der \textbf{Client} stellt eine Anfrage (Request) — z.\,B.\ dein Browser.
+		\item Der \textbf{Server} antwortet (Response) — z.\,B.\ der Webserver mit der HTML-Seite.
+	\end{itemize}
+	Es gibt häufig \emph{viele} Clients, aber \emph{wenige} zentrale Server. Beispiele:
+	\begin{itemize}
+		\item \textbf{Web:} Browser (Client) \(\leftrightarrow\) Webserver (HTTP/HTTPS).
+		\item \textbf{E-Mail:} Mail-App (Client) \(\leftrightarrow\) Mailserver (SMTP/IMAP/POP3).
+		\item \textbf{Dateien in der Schule:} PCs (Clients) \(\leftrightarrow\) Schul-Fileserver.
+	\end{itemize}
+	
+	\begin{center}
+		\begin{tikzpicture}[>=Stealth, node distance=18mm]
+			\tikzstyle{host}=[draw, rounded corners, minimum width=32mm, minimum height=9mm, align=center, fill=black!5]
+			\node[host] (c1) {Client\\(Browser)};
+			\node[host, right=48mm of c1] (s1) {Server\\(Webserver)};
+			\draw[->] (c1) -- node[above]{\small Request (z.\,B.\ GET /)} (s1);
+			\draw[<-] (c1) -- node[below]{\small Response (HTML, Bilder \dots)} (s1);
+			\node[below=4mm of c1] {\small dein Rechner};
+			\node[below=4mm of s1] {\small Rechenzentrum};
+		\end{tikzpicture}
+	\end{center}
+	
+	\paragraph{Merksatz.} \emph{Client fragt, Server antwortet.} Das kann sehr schnell gehen — oft in
+	Millisekunden —, weil viele Anfragen parallel bearbeitet werden.
+	
+	% ---------------------------------------------------------
+	\section{Datenpakete (allgemein)}\label{sec:datenpakete}
+	Große Dateien oder Webseiten werden im Netz \textbf{in viele kleine Stücke} zerlegt — die
+	\textbf{Pakete}. Jedes Paket enthält:
+	\begin{itemize}
+		\item einen \textbf{Kopf} (\emph{Header}) mit Steuerinformationen (z.\,B.\ Absender-Adresse,
+		Empfänger-Adresse, Paket-Nummer) und
+		\item die \textbf{Nutzdaten} (\emph{Payload}), also ein Stück der eigentlichen Information.
+	\end{itemize}
+	Pakete gehen nicht immer denselben Weg; Router entscheiden unterwegs \emph{Paket für Paket},
+	welcher Pfad gerade passt. Am Ziel setzt die Anwendung die Teile wieder korrekt zusammen.
+	
+	\begin{center}
+		\begin{tikzpicture}[node distance=0mm]
+			\tikzstyle{f}=[draw, minimum height=9mm, align=center]
+			\node[f, minimum width=18mm, fill=black!10] (h) {Header};
+			\node[f, minimum width=40mm, right=0mm of h] (p) {Payload (Nutzdaten)};
+			\draw (h.south west) rectangle (p.north east);
+			\node[below=3mm of p] {\small \emph{Ein Datenpaket:} Steuerinfos + Nutzdaten};
+		\end{tikzpicture}
+	\end{center}
+	
+	\paragraph{Warum Pakete?} Kleine Einheiten lassen sich
+	\begin{itemize}
+		\item effizient weiterleiten (Router können schnell entscheiden),
+		\item bei Fehlern \emph{gezielt} neu senden (nicht die ganze Datei),
+		\item auf mehreren Wegen gleichzeitig schicken (Last verteilen).
+	\end{itemize}
+	
+	% ---------------------------------------------------------
+	\section{Adressierung von Computern (allgemein)}\label{sec:adressierung}
+	Damit Pakete ihr Ziel finden, brauchen sie Adressen — ähnlich wie Briefe.
+	
+	\subsection*{Drei „Adressen“ auf einen Blick}
+	\begin{itemize}
+		\item \textbf{MAC-Adresse} (Hardware-Adresse): Kennzeichnet \emph{die Netzwerkkarte}. Wird im lokalen Netz
+		(z.\,B.\ im LAN/WLAN) benutzt, um Frames an das richtige Gerät zu schicken.
+		\item \textbf{IP-Adresse} (Internet-Adresse): Kennzeichnet \emph{das Gerät im Netz}. Beispiele:
+		IPv4 wie \texttt{192.168.1.20}, IPv6 wie \texttt{2001:db8::1}. Router benutzen IP-Adressen,
+		um Pakete \emph{durch viele Netze} zum Ziel zu leiten.
+		\item \textbf{Portnummer} (Anwendungs-Adresse): Kennzeichnet \emph{den Dienst} auf dem Gerät.
+		Beispiel: Webserver hört oft auf \texttt{80} (HTTP) oder \texttt{443} (HTTPS); ein Spiel oder
+		Chat kann andere Ports nutzen.
+	\end{itemize}
+	
+	\paragraph{Alltagsbild.}
+	\begin{itemize}
+		\item \emph{IP-Adresse} \(\approx\) Straßenadresse eines Hauses (wohin der Brief soll).
+		\item \emph{Port} \(\approx\) Briefkasten/Abteilung im Haus (wer den Brief entgegennimmt).
+		\item \emph{MAC} \(\approx\) Namensschild an der Netzwerkkarte (auf der letzten Zustellstrecke im LAN).
+	\end{itemize}
+	
+	\subsection*{Namen statt Zahlen: DNS}
+	Menschen merken sich lieber Namen als Zahlen. Das \textbf{Domain Name System (DNS)} übersetzt
+	z.\,B.\ \texttt{www.schule.de} in die zugehörige IP-Adresse. Dein Rechner fragt dazu einen
+	DNS-Server an — ähnlich wie ein Telefonbuch für das Internet.
+	
+	\subsection*{Privat und öffentlich (nur die Idee)}
+	Zu Hause oder in der Schule nutzt man oft \emph{private} IPv4-Netze (z.\,B.\ \texttt{192.168.\*.\*}).
+	Der Router „versteckt“ die internen Geräte nach außen (\emph{NAT}) und sorgt dafür, dass Antworten
+	zum richtigen Gerät zurückfinden. Öffentliche Adressen sind im Internet weltweit sichtbar.
+	
+	% ---------------------------------------------------------
+	\section*{Zusammenfassung}
+	\begin{itemize}
+		\item \textbf{Client–Server:} Client fragt, Server antwortet (Web, E-Mail, Fileserver).
+		\item \textbf{Pakete:} Daten reisen in kleinen Stücken (Header + Payload) über verschiedene Wege.
+		\item \textbf{Adressierung:} MAC (Lokal), IP (Netz-zu-Netz), Port (Dienst) — DNS hilft bei Namen.
+	\end{itemize}
+	
+\end{document}
