@@ -1,0 +1,191 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Engine ---
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+% --- Layout & Hilfspakete ---
+\usepackage{geometry}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Kopf-/Fußzeile ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Heinrich-von-Kleist-Schule, Eschborn}
+\fancyfoot[C]{\footnotesize \textbf{Lösungsvorschlag — Arbeitsblatt 3}}
+\fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
+
+% --- Titel ---
+\newcommand{\sheettitle}[2]{%
+	{\Large\bfseries #1}\\[-0.2em]
+	{\normalsize #2}\par\hrule\vspace{1.0em}
+}
+
+\begin{document}
+	
+	\sheettitle{Lösungsvorschlag}{Thema: Hardwarearchitektur — Von-Neumann-Architektur (Kapitel 3)}
+	
+	\section*{Präsenzaufgaben (Musterlösungen / Erwartungshorizont)}
+	
+	\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.9em]
+		
+		% ---------- A1 ----------
+		\item \textbf{Hintergrund.}\quad
+		\textbf{John von Neumann} (1903–1957), Mathematiker/Physiker. 1945 verfasste er den \emph{First Draft of a Report on the EDVAC} (Entwurf für einen elektronischen Digitalrechner), der das heute klassische Rechnermodell beschreibt.
+		\begin{itemize}
+			\item \textbf{Kontext:} Zeit der ersten elektronischen Rechenanlagen (ENIAC, EDVAC). Übergang von fest verdrahteten Programmen zu \emph{speicherprogrammierten} Maschinen.
+			\item \textbf{Beitrag:} Klare Trennung von Rechenwerk (ALU), Steuerwerk, Speicher, I/O und Bus. Einführung eines Programmzählers (PC) und eines Befehlsholzyklus.
+			\item \textbf{Beispiele/Projekte:} ENIAC (Ballistik), EDVAC, später IAS-Rechner (Princeton), Einfluss auf EDSAC/Manchester Mark I.
+		\end{itemize}
+		
+		% ---------- A2 ----------
+		\item \textbf{Grundidee der Von-Neumann-Architektur (Speicherprogrammiertechnik).}\quad
+		\begin{itemize}
+			\item \textbf{Kernidee:} \emph{Programme und Daten liegen im selben (adressierbaren) Speicher.} Der Prozessor liest nacheinander Befehle, die im Speicher als \emph{Zahlen} (Bitmuster) abgelegt sind.
+			\item \textbf{Bedeutung:} Programme können wie Daten behandelt werden (laden, speichern, verändern). Das macht Universalrechner flexibel (beliebige Algorithmen ohne Hardware-Umbau).
+			\item \textbf{Schema (in Worten):} CPU (ALU + Steuerwerk + Register) ist über \emph{Adress-}, \emph{Daten-} und \emph{Steuerbus} mit dem Speicher und den Ein-/Ausgabegeräten verbunden. Ein gemeinsamer Adressraum.
+		\end{itemize}
+		
+		% ---------- A3 ----------
+		\item \textbf{Hauptkomponenten (präzise).}\quad
+		\begin{enumerate}[label*=\alph*)]
+			\item \textbf{ALU (Rechenwerk):} Führt Operationen auf Registern/Daten aus (z.\,B. Addieren, Subtrahieren, logische Verknüpfungen AND/OR/XOR, Vergleiche). Liefert \textbf{Flags} (z.\,B. Zero, Carry, Overflow, Negative), die das Steuerwerk für Verzweigungen nutzt.
+			\item \textbf{Steuerwerk (Control Unit):} Steuert den \emph{Fetch–Decode–Execute}-Zyklus. Enthält typ. \textbf{PC} (Program Counter), \textbf{IR} (Instruction Register), ggf. \textbf{Decoder} und \textbf{Mikrosteuerwerk}. Erzeugt Steuersignale (z.\,B. \emph{Read/Write}, Register laden).
+			\item \textbf{Speicher:} Beinhaltet \emph{Programm} \emph{und} \emph{Daten}; adressierbar in Worten/Bytes. Stack/Heap/Code-Bereich sind \emph{logische} Aufteilungen im selben physischen/virtuellen Speicher.
+			\item \textbf{Ein-/Ausgabe (I/O):} Schnittstellen zu Tastatur, Bildschirm, Netz, Sensoren … angebunden als \emph{Memory-mapped I/O} (I/O-Register im Adressraum) oder über separaten I/O-Bus.
+			\item \textbf{Bus-System:} \emph{Adressbus} wählt Speicher-/I/O-Adresse, \emph{Datenbus} transportiert Daten, \emph{Steuerbus} koordiniert (z.\,B. \emph{RD}/\emph{WR}, Takt, Interrupts).
+		\end{enumerate}
+		
+		% ---------- A4 ----------
+		\item \textbf{Arbeitsweise: Fetch–Decode–Execute.}\quad
+		\section*{Aufgabe 2: Beispielablauf — \emph{Fetch–Decode–Execute} (ausführlich)}
+		
+		\textbf{Annahme (einfaches Akkumulator-Modell):}
+		Register: \(\mathrm{PC}\) (Program Counter), \(\mathrm{IR}\) (Instruction Register),
+		\(\mathrm{ACC}\) (Akkumulator), \(\mathrm{MAR}\) (Memory Address Register),
+		\(\mathrm{MDR}\) (Memory Data Register).
+		Busse: Adressbus (\(\mathrm{ABUS}\)), Datenbus (\(\mathrm{DBUS}\)), Steuerbus (Signale \(\mathrm{RD}/\mathrm{WR}\)).
+		Speicherzellen: \(\mathrm{Mem}[A]=5\), \(\mathrm{Mem}[B]=7\).
+		Programm (ab \(\mathrm{PC}=100\)): \texttt{LOAD A}; \texttt{ADD B}; \texttt{STORE A}.
+		
+		\medskip
+		\noindent\textbf{Ziel:} Nach Ablauf soll im \(\mathrm{ACC}\) und in \(\mathrm{Mem}[A]\) der Wert \(5+7=12\) stehen.
+		
+		\medskip
+		\small
+		\begin{tabular}{@{}l l p{0.63\linewidth}@{}}
+			\multicolumn{3}{@{}l}{\textbf{Instruktion 1:} \texttt{LOAD A}}\\
+			\textbf{T1} & \textit{Fetch}  & \(\mathrm{MAR}\leftarrow \mathrm{PC}\);\quad \(\mathrm{ABUS}\leftarrow \mathrm{PC}\);\quad \(\mathrm{RD}=1\) (Befehl lesen) \\
+			\textbf{T2} & \textit{Fetch}  & \(\mathrm{MDR}\leftarrow \mathrm{Mem}[\mathrm{MAR}]\);\quad \(\mathrm{IR}\leftarrow \mathrm{MDR}\);\quad \(\mathrm{PC}\leftarrow \mathrm{PC}+1\) \\
+			\textbf{T3} & \textit{Decode} & Decoder erkennt \texttt{LOAD}, Operand = Adresse \(A\) \\
+			\textbf{T4} & \textit{Exec}   & \(\mathrm{MAR}\leftarrow A\);\quad \(\mathrm{ABUS}\leftarrow A\);\quad \(\mathrm{RD}=1\) (Operandenwort lesen) \\
+			\textbf{T5} & \textit{Exec}   & \(\mathrm{MDR}\leftarrow \mathrm{Mem}[A]\) (=\(5\));\quad \(\mathrm{ACC}\leftarrow \mathrm{MDR}\) (ACC \(=5\)) \\[4pt]
+			
+			\multicolumn{3}{@{}l}{\textbf{Instruktion 2:} \texttt{ADD B}}\\
+			\textbf{T6} & \textit{Fetch}  & \(\mathrm{MAR}\leftarrow \mathrm{PC}\);\quad \(\mathrm{ABUS}\leftarrow \mathrm{PC}\);\quad \(\mathrm{RD}=1\) \\
+			\textbf{T7} & \textit{Fetch}  & \(\mathrm{MDR}\leftarrow \mathrm{Mem}[\mathrm{MAR}]\);\quad \(\mathrm{IR}\leftarrow \mathrm{MDR}\);\quad \(\mathrm{PC}\leftarrow \mathrm{PC}+1\) \\
+			\textbf{T8} & \textit{Decode} & Decoder erkennt \texttt{ADD}, Operand = Adresse \(B\) \\
+			\textbf{T9} & \textit{Exec}   & \(\mathrm{MAR}\leftarrow B\);\quad \(\mathrm{ABUS}\leftarrow B\);\quad \(\mathrm{RD}=1\) (Operandenwort lesen) \\
+			\textbf{T10}& \textit{Exec}   & \(\mathrm{MDR}\leftarrow \mathrm{Mem}[B]\) (=\(7\));\quad \(\mathrm{ACC}\leftarrow \mathrm{ACC}+\mathrm{MDR}\) (ACC \(=5+7=12\)); Flags (Z/C/V/N) setzen \\[4pt]
+			
+			\multicolumn{3}{@{}l}{\textbf{Instruktion 3:} \texttt{STORE A}}\\
+			\textbf{T11}& \textit{Fetch}  & \(\mathrm{MAR}\leftarrow \mathrm{PC}\);\quad \(\mathrm{ABUS}\leftarrow \mathrm{PC}\);\quad \(\mathrm{RD}=1\) \\
+			\textbf{T12}& \textit{Fetch}  & \(\mathrm{MDR}\leftarrow \mathrm{Mem}[\mathrm{MAR}]\);\quad \(\mathrm{IR}\leftarrow \mathrm{MDR}\);\quad \(\mathrm{PC}\leftarrow \mathrm{PC}+1\) \\
+			\textbf{T13}& \textit{Decode} & Decoder erkennt \texttt{STORE}, Operand = Adresse \(A\) \\
+			\textbf{T14}& \textit{Exec}   & \(\mathrm{MAR}\leftarrow A\);\quad \(\mathrm{MDR}\leftarrow \mathrm{ACC}\) (=\(12\));\quad \(\mathrm{ABUS}\leftarrow A\) \\
+			\textbf{T15}& \textit{Exec}   & \(\mathrm{WR}=1\);\quad \(\mathrm{Mem}[A]\leftarrow \mathrm{MDR}\) (Speicherzelle \(A\) erhält \(12\)) \\
+		\end{tabular}
+		
+		\normalsize
+
+		\emph{Hinweis auf Niveau 11:} Wichtig ist das Prinzip (Holen–Decodieren–Ausführen) und die Rolle von PC/IR/ALU, nicht die Mikroschritte einzelner Takte.
+		
+		% ---------- A5 ----------
+		\item \textbf{Vor- und Nachteile.}\quad
+		\textbf{Stärken:} Einfache, universelle Struktur; Programme sind leicht lad-/änderbar; kostengünstiger als fest verdrahtete Logik.\\
+		\textbf{Grenzen (\emph{Von-Neumann-Flaschenhals}):} CPU und Speicher teilen sich \emph{einen} Datenweg; nur \emph{ein} Transfer pro Takt (Instruktion \emph{oder} Daten) \(\Rightarrow\) Bandbreite limitiert; Latenzen steigen. Gegenmittel: Caches, Prefetch, Pipeline, breitere Busse, Out-of-Order, \dots
+		
+		% ---------- A6 ----------
+		\item \textbf{Vergleich Harvard vs. Von Neumann (optional).}\quad
+		\textbf{Harvard:} Getrennter Speicher/Bus für \emph{Instruktionen} und \emph{Daten} \(\Rightarrow\) paralleles Holen von Befehlen und Daten, oft in Mikrocontrollern/DSPs (z.\,B. AVR, PIC).\\
+		\textbf{Von Neumann:} Ein gemeinsamer Speicher/Bus (klassische PCs/Server). \textbf{Modern:} „Modified Harvard“ auf Cache-Ebene (getrennter L1 I-/D-Cache), aber gemeinsamer Hauptspeicher.
+	\end{enumerate}
+	
+	\hrule
+	\vspace{0.6em}
+	
+	\section*{Hausaufgaben / Vertiefung (Musterlösungen)}
+	
+	\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.9em, start=1]
+		
+		% ---------- H1 ----------
+		\item \textbf{Skizze mit Legende (Beispielantwort).}\quad
+		Minimalstruktur (in Worten, zeichnerisch ähnlich):
+		\begin{itemize}
+			\item \textbf{CPU} mit \textbf{ALU}, \textbf{Steuerwerk}, \textbf{Registern} (PC, IR, Akkumulator/Allzweckregister).
+			\item \textbf{Speicher} (Programm + Daten), \textbf{I/O} (Tastatur, Display, Netz).
+			\item \textbf{Busse:} Adressbus (CPU\(\rightarrow\)Speicher/I/O), Datenbus (beide Richtungen), Steuerbus (RD/WR, Takt).
+		\end{itemize}
+		\emph{Legende (Beispiel):} PC: Adresse des nächsten Befehls; IR: aktueller Befehl; MAR/MDR (optional): Speicheradresse/Datenwort; ALU: rechnet auf Registern; I/O: per Memory-mapped I/O eingebunden.
+		
+		% ---------- H2 ----------
+		\item \textbf{Beispielablauf (Fetch–Decode–Execute).}\quad
+		\emph{Programm:} \texttt{LOAD A}; \texttt{ADD B}; \texttt{STORE A}.
+		\begin{enumerate}[label*=\alph*)]
+			\item \textbf{LOAD A:} PC\(\rightarrow\)MAR; Speicher liest Instruktion \(\rightarrow\)IR; \emph{Decode}; Adresse A \(\rightarrow\)MAR; Speicher \(\rightarrow\)MDR; MDR \(\rightarrow\)Akkumulator.
+			\item \textbf{ADD B:} PC\(\rightarrow\)MAR; Instruktion \(\rightarrow\)IR; \emph{Decode}; Speicher[B] \(\rightarrow\)MDR; ALU: Acc \(:=\) Acc \(+\) MDR; Flags aktualisieren (Zero/Carry/Overflow).
+			\item \textbf{STORE A:} PC\(\rightarrow\)MAR; Instruktion \(\rightarrow\)IR; \emph{Decode}; Acc \(\rightarrow\)MDR; MAR\(:=\)A; Speicher schreibt MDR an A.
+		\end{enumerate}
+		\emph{Wesentlich:} PC zählt nach jedem \emph{Fetch} weiter; \emph{Decode} wählt Datenquellen/Ziele; \emph{Execute} verändert Register/Speicher.
+		
+		% ---------- H3 ----------
+		\item \textbf{Kurzvergleich I-/D-Caches.}\quad
+		\textbf{Was bringen getrennte L1-Caches?} Instruktionen (I-Cache) und Daten (D-Cache) können gleichzeitig geholt/geschrieben werden \(\Rightarrow\) weniger Konflikte auf engstem Level, höhere effektive Bandbreite, bessere Ausnutzung von Lokalitäten (zeitlich/räumlich).\\
+		\textbf{Aber:} Dahinter bleibt der \emph{gemeinsame} Hauptspeicher und Front-Side-/Memory-Bus; bei Cache-Misses zeigt sich der Von-Neumann-Flaschenhals weiterhin (Latenz/Bandbreite).
+	\end{enumerate}
+	
+	\section*{Anhang: ASCII-Skizze (Von-Neumann-Architektur)}
+	\begin{verbatim}
+		+--------------------+
+		|        CPU         |
+		| +-----+  +-------+ |
+		Adressbus  ----> | | PC  |  |  IR   | |
+		Datenbus   <---->| +-----+  +-------+ |
+		Steuerbus  <---->|                ^   |
+		| +----------------+ |
+		| |   Steuerwerk   | |
+		| +----------------+ |
+		|        | Steuersignale
+		| +----------------+ |
+		| |      ALU       | |
+		| +----------------+ |
+		|    ^       ^       |
+		|  Reg./Akkumulator  |
+		+----|-------|-------+
+		|       |
+		+-----------------+       +-----------------+
+		|                                      I/O  |
+		+--------------------+                 +-----------+------+
+		|      Speicher      |<--------------->| Tast., Display.. |
+		| (Programm + Daten) |  (Memory-mapped I/O möglich)       |
+		+--------------------+                 +------------------+
+		^        ^        ^
+		|        |        |
+		Adress   Daten    Steuer   (gemeinsame Busse)
+	\end{verbatim}
+	
+	
+	\vfill
+	\hrule
+	\small\emph{Didaktischer Hinweis (Klasse 11):} Es reicht, die \emph{Rollen} der Bauteile (ALU, Steuerwerk, Speicher, I/O, Busse) und den \emph{Ablauf} (Fetch–Decode–Execute) sicher zu erklären. Details wie Mikrocode, Pipeline-Stufen, Out-of-Order u.\,Ä. sind Nice-to-Know und werden später vertieft.
+	
+\end{document}

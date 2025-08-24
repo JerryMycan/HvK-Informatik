@@ -1,0 +1,116 @@
+% !TeX program = lualatex
+\documentclass[../skript/main.tex]{subfiles}
+
+\begin{document}\label{chap:menschcomputer}
+	
+	\chapter{Mensch und Computer}
+	\section{Worum geht es?}
+	Seit Jahrtausenden nutzt der Mensch Technik, um Arbeit zu erleichtern. Computer sind die
+	logische Fortsetzung: Sie verarbeiten Daten in einer Geschwindigkeit und Zuverlässigkeit, die
+	für Menschen unerreichbar ist. Aber: Computer „verstehen“ nichts – sie führen \emph{Programme}
+	aus. Dieses Kapitel vergleicht verständlich, wie \emph{Menschen} und \emph{Computer} mit Daten
+	umgehen.
+	
+	\section{Was ist Datenverarbeitung?}
+	\emph{Daten} sind Zeichen bzw.\ Messwerte; \emph{Information} entsteht erst durch \emph{Deutung}
+	im Kontext (vgl.\ Repräsentation/Abstraktion, siehe \autoref{fig:info-daten} in Kap.\ \autoref{chap:einfuehrung}).
+	\begin{itemize}
+		\item \textbf{Eingabe:} Daten aufnehmen (Sinnesorgane, Sensoren, Tastatur \dots)
+		\item \textbf{Verarbeitung:} Ordnen, Vergleichen, Rechnen, Entscheiden
+		\item \textbf{Speicherung:} Merken (Gedächtnis) bzw.\ Speichermedien
+		\item \textbf{Ausgabe:} Handeln, Sprechen, Anzeigen, Drucken
+	\end{itemize}
+	
+	\section{Wie verarbeitet der Mensch Daten?}
+	Menschen nehmen Daten z.\,B.\ über \emph{Augen} und \emph{Ohren} auf. Im Gehirn laufen typische
+	Denkoperationen:
+	\begin{itemize}
+		\item \textbf{Ordnen \& Prüfen:} Passt das zu Bekanntem? Ist eine Schreibweise „richtig“?
+		\item \textbf{Vergleichen \& Kontrollieren:} Stimmen Werte überein? Ist ein Ergebnis plausibel?
+		\item \textbf{Kombinieren \& Schlussfolgern:} Aus Bekanntem Neues ableiten.
+	\end{itemize}
+	Menschen speichern intern (\emph{Gedächtnis}) und extern (\emph{Notizen, Bücher}). Externe
+	Speicherung entlastet, ist teilbar und dauerhaft.
+	
+	\section{Wie verarbeitet der Computer Daten?}
+	Computer sind \emph{datenverarbeitende Maschinen}. Ihre Grundteile:
+	\begin{itemize}
+		\item \textbf{Eingabe} (z.\,B.\ Tastatur, Maus, Sensoren, Scanner)
+		\item \textbf{Zentraleinheit (CPU)} mit \emph{Steuerwerk} und \emph{Rechenwerk (ALU)}; arbeitet
+		streng nach dem \emph{Fetch–Decode–Execute}-Zyklus
+		\item \textbf{Speicher} (intern: Register, RAM; extern: Massenspeicher)
+		\item \textbf{Ausgabe} (z.\,B.\ Bildschirm, Lautsprecher, Drucker)
+	\end{itemize}
+	Historisch sprach man von \emph{EDV} (Elektronische Datenverarbeitung). Heute sind die
+	Prinzipien gleich geblieben – nur viel schneller und mit größerem Speicher.
+	
+	\section{Mensch vs.\ Computer – ein Vergleich}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{|p{0.39\linewidth}|p{0.25\linewidth}|p{0.25\linewidth}|}
+			\hline
+			\textbf{Aspekt} & \textbf{Mensch} & \textbf{Computer} \\\hline
+			Aufnahme & Sinne (sehen, hören) & Geräte/Sensoren, Schnittstellen \\\hline
+			Tempo/Genauigkeit & langsam, fehleranfällig, aber flexibel & extrem schnell, exakt, wiederholgenau \\\hline
+			Deutung & versteht Bedeutung, kann Kontext herstellen & versteht nicht; verarbeitet Bitmuster \\\hline
+			Kreativität/Lernen & kreativ, lernt aus Erfahrungen & braucht Programm/Trainingsdaten \\\hline
+			Speicherung & Gedächtnis (vergesslich) + Notizen & Speicherhierarchie (Cache–RAM–SSD) \\\hline
+			Energie & effizient, benötigt Pausen & dauerhaft, braucht Strom \\\hline
+		\end{tabular}
+	\end{center}
+	
+	\section{Warum braucht ein Computer ein Programm?}
+	Ein Computer „weiß“ nicht, was mit Daten zu tun ist. Erst ein \emph{Programm} (Rezept aus
+	Befehlen) sagt: \emph{Welche Daten? In welcher Reihenfolge? Mit welchen Operationen?}
+	Beispiel Lohnabrechnung:
+	\begin{enumerate}
+		\item \textbf{Daten} bereitstellen (Namen, Stunden, Sätze, Abzüge).
+		\item \textbf{Programm} laden (Vorschrift, wie zu rechnen ist).
+		\item \textbf{Ablauf} (vereinfacht): \texttt{LOAD} Daten $\rightarrow$ \texttt{RECHNE} $\rightarrow$ \texttt{STORE} Ergebnis.
+	\end{enumerate}
+	Ohne Programm passiert nichts – oder das Falsche.
+	
+	\section{Wichtige Einsicht: „Garbage in, garbage out“}
+	Fehlen Daten oder sind sie falsch, ist auch das Ergebnis falsch – egal wie schnell der Rechner
+	ist. Beispiel aus dem Alltagstext: Eine Mausefalle „arbeitet nach Programm“, aber wenn
+	\emph{wichtige Information fehlt} (z.\,B.\ Ort), bleibt der Erfolg aus.
+	
+	\section{Ein einfaches Gesamtbild}
+	\begin{center}
+		\begin{tikzpicture}[>=Stealth, node distance=10mm]
+			\tikzstyle{blk}=[draw, rounded corners, minimum width=33mm, minimum height=9mm, align=center]
+			\node[blk, fill=black!5] (min) {Der Mensch\\(datenverarbeitendes Wesen)};
+			\node[blk, fill=black!5, right=36mm of min] (cmp) {Der Computer\\(datenverarbeitende Maschine)};
+			
+			\node[blk, below=10mm of min] (min_in) {Datenaufnahme\\(Augen, Ohren)};
+			\node[blk, below=10mm of cmp] (cmp_in) {Eingabe\\(Tastatur, Sensoren)};
+			
+			\node[blk, below=8mm of min_in] (min_proc) {Verarbeitung\\(Ordnen, Vergleichen, Denken)};
+			\node[blk, below=8mm of cmp_in] (cmp_proc) {CPU\\(Steuerwerk + ALU)};
+			
+			\node[blk, below=8mm of min_proc] (min_mem) {Speicherung\\(Gedächtnis, Notizen)};
+			\node[blk, below=8mm of cmp_proc] (cmp_mem) {Speicher\\(RAM, SSD/HDD)};
+			
+			\node[blk, below=8mm of min_mem] (min_out) {Ausgabe\\(Sprechen, Handeln)};
+			\node[blk, below=8mm of cmp_mem] (cmp_out) {Ausgabe\\(Bildschirm, Drucker)};
+			
+			\draw[->] (min) -- (min_in);
+			\draw[->] (min_in) -- (min_proc);
+			\draw[->] (min_proc) -- (min_mem);
+			\draw[->] (min_mem) -- (min_out);
+			
+			\draw[->] (cmp) -- (cmp_in);
+			\draw[->] (cmp_in) -- (cmp_proc);
+			\draw[->] (cmp_proc) -- (cmp_mem);
+			\draw[->] (cmp_mem) -- (cmp_out);
+		\end{tikzpicture}
+	\end{center}
+	
+	\section{Merksätze}
+	\begin{itemize}
+		\item Menschen \emph{deuten} Daten zu Information; Computer \emph{verarbeiten} Daten nach Programm.
+		\item Ohne Programm keine Verarbeitung; ohne passende Daten kein sinnvolles Ergebnis.
+		\item Externe Speicherung (Notizen/Dateien) erweitert, was intern gemerkt werden kann.
+	\end{itemize}
+	
+\end{document}

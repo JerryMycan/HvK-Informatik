@@ -1,0 +1,132 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Engine ---
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+% --- Layout & Hilfspakete ---
+\usepackage{geometry}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Kopf-/Fußzeile ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Heinrich-von-Kleist-Schule, Eschborn}
+\fancyfoot[C]{\footnotesize \textbf{Lösungsvorschlag — Arbeitsblatt 1.2}}
+\fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
+
+% --- Titel ---
+\newcommand{\sheettitle}[2]{%
+	{\Large\bfseries #1}\\[-0.2em]
+	{\normalsize #2}\par\hrule\vspace{1.0em}
+}
+
+\begin{document}
+	
+	\sheettitle{Lösungsvorschlag}{Thema: Zahlensysteme – Umwandeln \& schriftlich Rechnen (Binär/Hex)}
+	
+	\section*{Präsenzaufgaben}
+	
+	\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.9em]
+		
+		% ---------- A1 ----------
+		\item \textbf{Dual \(\to\) Dezimal.}
+		\begin{enumerate}[label*=\alph*)]
+			\item \(1101111010_2 = 512+256+64+32+16+8+2 = \boxed{890_{10}}\).
+			\item \(1010110_2 = 64+16+4+2 = \boxed{86_{10}}\).
+			\item \(1111111001_2 = 512+256+128+64+32+16+8+1 = \boxed{1017_{10}}\).
+			\item \(1100110011_2 = 512+256+32+16+2+1 = \boxed{819_{10}}\).
+		\end{enumerate}
+		
+		% ---------- A2 ----------
+		\item \textbf{Hex \(\to\) Dezimal.}
+		\begin{enumerate}[label*=\alph*)]
+			\item \(\mathrm{14F5B}_{16} = 1\cdot16^4 + 4\cdot16^3 + 15\cdot16^2 + 5\cdot16 + 11
+			= \boxed{85851_{10}}\).
+			\item \(\mathrm{AB3D}_{16} = 10\cdot16^3 + 11\cdot16^2 + 3\cdot16 + 13
+			= \boxed{43837_{10}}\).
+			\item \(\mathrm{5EA3}_{16} = 5\cdot16^3 + 14\cdot16^2 + 10\cdot16 + 3
+			= \boxed{24227_{10}}\).
+			\item \(\mathrm{9C23}_{16} = 9\cdot16^3 + 12\cdot16^2 + 2\cdot16 + 3
+			= \boxed{39971_{10}}\).
+		\end{enumerate}
+		
+		% ---------- A3 ----------
+		\item \textbf{Dezimal \(\to\) Dual und Hex.}
+		\begin{enumerate}[label*=\alph*)]
+			\item \(3786_{10} = \boxed{111011001010_2} = \boxed{\mathrm{ECA}_{16}}\).
+			\item \(14876_{10} = \boxed{11101000011100_2} = \boxed{\mathrm{3A1C}_{16}}\).
+			\item \(2243_{10} = \boxed{100011000011_2} = \boxed{\mathrm{8C3}_{16}}\).
+			\item \(1024_{10} = \boxed{10000000000_2} = \boxed{\mathrm{400}_{16}}\).
+		\end{enumerate}
+		
+		% ---------- A4 ----------
+		\item \textbf{Dual \(\leftrightarrow\) Hex.}
+		\begin{enumerate}[label*=\alph*)]
+			\item \(1101111010_2 = 0011\,0111\,1010_2 = \boxed{\mathrm{37A}_{16}}\).
+			\item \(1010110_2 = 0101\,0110_2 = \boxed{\mathrm{56}_{16}}\).
+			\item \(1111111001_2 = 0011\,1111\,1001_2 = \boxed{\mathrm{3F9}_{16}}\).
+			\item \(1100110011_2 = 0011\,0011\,0011_2 = \boxed{\mathrm{333}_{16}}\).
+			\item \(\mathrm{14F5B}_{16} = \boxed{0001\ 0100\ 1111\ 0101\ 1011_2}\).
+			\item \(\mathrm{AB3D}_{16} = \boxed{1010\ 1011\ 0011\ 1101_2}\).
+			\item \(\mathrm{5EA3}_{16} = \boxed{0101\ 1110\ 1010\ 0011_2}\).
+			\item \(\mathrm{9C23}_{16} = \boxed{1001\ 1100\ 0010\ 0011_2}\).
+		\end{enumerate}
+		
+	\end{enumerate}
+	
+	\hrule
+	\vspace{0.6em}
+	
+	\section*{Hausaufgaben}
+	
+	\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.9em, start=1]
+		
+		% ---------- H1 ----------
+		\item \textbf{Addition (schriftlich, Binär).} \emph{(mit Dezimal-Check)}
+		\begin{enumerate}[label*=\alph*)]
+			\item \(1110_2 + 1001_2 = \boxed{10111_2}\) \(\;(14+9=23)\).
+			\item \(110111_2 + 101110_2 = \boxed{1100101_2}\) \(\;(55+46=101)\).
+			\item \(1010110_2 + 1100111_2 = \boxed{10111101_2}\) \(\;(86+103=189)\).
+		\end{enumerate}
+		
+		% ---------- H2 ----------
+		\item \textbf{Subtraktion (schriftlich, Binär).} \emph{(mit Dezimal-Check)}
+		\begin{enumerate}[label*=\alph*)]
+			\item \(110111_2 - 11010_2 = \boxed{11101_2}\) \(\;(55-26=29)\).
+			\item \(1100110_2 - 111001_2 = \boxed{101101_2}\) \(\;(102-57=45)\).
+			\item \(10101010_2 - 1111101_2 = \boxed{101101_2}\) \(\;(170-125=45)\).
+		\end{enumerate}
+		
+		% ---------- H3 ----------
+		\item \textbf{Multiplikation (schriftlich, Binär).} \emph{(mit Dezimal-Check)}
+		\begin{enumerate}[label*=\alph*)]
+			\item \(111_2 \cdot 1011_2 = \boxed{1001101_2}\) \(\;(7\cdot 11=77)\).
+			\item \(1010_2 \cdot 110011_2 = \boxed{111111110_2}\) \(\;(10\cdot 51=510)\).
+			\item \(111_2 \cdot 1101_2 = \boxed{1011011_2}\) \(\;(7\cdot 13=91)\).
+		\end{enumerate}
+		
+		% ---------- H4 ----------
+		\item \textbf{Division (schriftlich, Binär).} \emph{(Quotient, Rest, Dezimal)}
+		\begin{enumerate}[label*=\alph*)]
+			\item \(10010001_2 : 101_2 = \boxed{11101_2}\ \text{Rest } \boxed{0}\) \(\;(145:5=29)\).
+			\item \(1101100110_2 : 1010_2 = \boxed{1010111_2}\ \text{Rest } \boxed{0}\) \(\;(870:10=87)\).
+			\item \(1111111001_2 : 1110001_2 = \boxed{1001_2}\ \text{Rest } \boxed{0}\) \(\;(1017:113=9)\).
+		\end{enumerate}
+		
+	\end{enumerate}
+	
+	\vfill
+	\hrule
+	\small\emph{Hinweis: Ergebnisse sind mit Stichproben schriftlich geprüft; Alternativwege (z.\,B. Gruppenbildung/Teilerkenntnisse) sind möglich.}
+	
+\end{document}

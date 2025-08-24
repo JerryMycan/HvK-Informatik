@@ -1,0 +1,115 @@
+% !TeX program = lualatex
+\documentclass[12pt,a4paper]{book}
+
+% --- Grundpakete ---
+\usepackage{fontspec}              % Unicode & Systemfonts (LuaLaTeX)
+\usepackage[ngerman]{babel}        % Deutsche Sprache
+\usepackage{amsmath,amssymb}       % Mathematische Symbole
+\usepackage{graphicx}              % Bilder einfügen
+\usepackage{listings}              % Quellcode-Umgebung
+\usepackage{xcolor}                % Farben
+\usepackage{hyperref}              % klickbare Links
+\usepackage{nameref} % für \nameref
+% Makro: zeigt "Kapitel N — Titel"
+\newcommand{\ABBezug}[1]{\autoref{#1} — \nameref{#1}}
+
+\usepackage{nameref} % direkt nach \usepackage{hyperref} laden
+\usepackage{amsmath}
+\usepackage{nameref} % für \nameref{...}
+\usepackage[nameinlink,noabbrev]{cleveref} % für \Cref{...}
+\crefname{chapter}{Kapitel}{Kapitel}
+\Crefname{chapter}{Kapitel}{Kapitel}
+\usepackage{enumitem}
+
+
+\usepackage{geometry}              % Seitenränder
+\geometry{a4paper, margin=2.5cm}
+\usepackage{float}                 % für [H]
+\usepackage{subfiles}              % <-- Kapitel als eigene Dateien
+\usepackage{pdfpages}
+\usepackage{embedfile} 				% oder: \usepackage{attachfile2}
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+
+\usepackage{titlesec}
+\titleformat{\paragraph}[block]{\normalfont\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\paragraph}{0pt}{1ex}{0.5ex}
+
+% --- Schriften & Fallbacks (robust, mit IfFontExists) ---
+% Hauptschrift: Noto Serif -> DejaVu Serif -> Latin Modern
+\IfFontExistsTF{Noto Serif}{\setmainfont{Noto Serif}}{%
+	\IfFontExistsTF{DejaVu Serif}{\setmainfont{DejaVu Serif}}{\setmainfont{Latin Modern Roman}}}
+
+% Symbol-Fallback (z.B. U+25CC)
+\IfFontExistsTF{Noto Sans Symbols 2}
+{\newfontfamily\SymbolsFallback{Noto Sans Symbols 2}[Scale=MatchLowercase]}
+{\newfontfamily\SymbolsFallback{DejaVu Sans}[Scale=MatchLowercase]}
+
+% Arabisch
+\IfFontExistsTF{Noto Naskh Arabic}
+{\newfontfamily\arabicfont[Script=Arabic]{Noto Naskh Arabic}}
+{\IfFontExistsTF{Amiri}{\newfontfamily\arabicfont[Script=Arabic]{Amiri}}{\newfontfamily\arabicfont[Script=Arabic]{Scheherazade}}}
+
+% CJK (Chinesisch/Japanisch/Koreanisch) – wähle verfügbare Variante
+\IfFontExistsTF{Noto Sans CJK SC}
+{\newfontfamily\cjkfont{Noto Sans CJK SC}}
+{\IfFontExistsTF{Noto Sans CJK JP}{\newfontfamily\cjkfont{Noto Sans CJK JP}}{\newfontfamily\cjkfont{DejaVu Sans}}}
+
+% Emoji (farbig, falls vorhanden) -> sonst monochrom
+\IfFontExistsTF{Noto Color Emoji}
+{\newfontfamily\emojifont{Noto Color Emoji}[Renderer=Harfbuzz]}
+{\IfFontExistsTF{Noto Emoji}{\newfontfamily\emojifont{Noto Emoji}}{\newfontfamily\emojifont{DejaVu Sans}}}
+
+% Hilfsbefehle (z. B. dotted circle / kombinierender Akut)
+\newcommand{\dottedcircle}{{\SymbolsFallback ◌}} % U+25CC
+\newcommand{\combacute}{\char"0301}              % U+0301
+
+% --- Listings-Einstellungen ---
+\lstset{
+	basicstyle=\ttfamily\small,
+	keywordstyle=\color{blue}\bfseries,
+	commentstyle=\color{gray},
+	stringstyle=\color{red},
+	numbers=left,
+	numberstyle=\tiny,
+	stepnumber=1,
+	numbersep=5pt,
+	frame=single,
+	breaklines=true,
+	captionpos=b
+}
+
+% Bilderordner (für Hauptdokument)
+\graphicspath{{figures/}}
+
+% Optional: Nur bestimmte Kapitel kompilieren
+% \includeonly{chapters/einfuehrung,chapters/zweierkomplement}
+
+\begin{document}
+
+\frontmatter
+\title{Informatik\textemdash Skript für die E-Phase}
+\author{[Jarek Mycan]}
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+\mainmatter
+
+% ===== Kapitel (Subfiles) =====
+\subfile{chapters/einfuehrung}
+\subfile{chapters/menschcomputer}
+\subfile{chapters/zahlensysteme}
+\subfile{chapters/hardwarearchitektur}
+
+\appendix
+\subfile{appendix/anhang}
+
+\backmatter
+% ggf. Literaturverzeichnis/Index hier
+
+\end{document}

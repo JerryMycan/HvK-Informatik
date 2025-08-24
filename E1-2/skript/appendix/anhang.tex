@@ -1,0 +1,142 @@
+% !TeX program = lualatex
+\documentclass[../skript/main.tex]{subfiles}
+
+\begin{document}
+	
+	% ============================================================
+	%  ANHANG – Deckblatt + Übersicht + Einbindung der Arbeitsblätter
+	%  HINWEIS:
+	%  - Die PDFs müssen neben dieser Datei liegen:
+	%      skript/appendix/aufgabenblatt-0.pdf
+	%      skript/appendix/aufgabenblatt-1.pdf
+	%  - \subfix{...} sorgt dafür, dass Pfade sowohl beim Standalone-
+	%    Build als auch beim Build über main.tex korrekt sind.
+	%  - Für dynamische Kapitelbezüge nutze \ABBezug{<kapitel-label>}.
+	%    (Labels in den Kapiteln setzen, z.B. \label{chap:einfuehrung})
+	% ============================================================
+	
+	% ---------- Deckblatt "Anhang" mit ToC-Eintrag ----------
+	\clearpage
+	\chapter*{Anhang}
+	\addcontentsline{toc}{chapter}{Anhang}
+	\thispagestyle{plain}
+	
+	% ---------- Übersicht der Anhänge ----------
+	% Hier listest du ALLE Arbeitsblätter auf:
+	%  - mit Titel
+	%  - mit dynamischem Bezug aufs Kapitel (\ABBezug{...})
+	%  - mit klickbarem Link auf die erste PDF-Seite (\hyperlink{ab<nr>}{...})
+	\section*{Übersicht der Anhänge}
+	\begin{enumerate}
+		\item \textbf{Arbeitsblatt 0: Einführung}\\
+		Bezug: \ABBezug{chap:einfuehrung}\\
+		\small Datei: \hyperlink{ab0}{\texttt{aufgabenblatt-0.pdf}}
+		
+		\item \textbf{Arbeitsblatt 1: Zahlendarstellungen \& Zweierkomplement}\\
+		Bezug: \ABBezug{chap:zahlensysteme}\\
+		\small Datei: \hyperlink{ab1}{\texttt{aufgabenblatt-1.pdf}}
+		
+		\item \textbf{Arbeitsblatt 1.2: Zahlendarstellungen \& Zweierkomplement}\\
+		Bezug: \ABBezug{chap:zahlensysteme}\\
+		\small Datei: \hyperlink{ab1}{\texttt{aufgabenblatt-1.2.pdf}}
+		
+		\item \textbf{Arbeitsblatt 3: Hardwarearchitektur}\\
+		Bezug: \ABBezug{chap:hardwarearchitektur}\\
+		\small Datei: \hyperlink{ab1}{\texttt{aufgabenblatt-3.pdf}}
+	\end{enumerate}
+	
+	% ============================================================
+	%  Hilfsmakro: Ein einzelnes Arbeitsblatt vollseitig einbinden
+	%  und dabei
+	%   - einen Sprunganker (hypertarget) an der ersten Seite anlegen,
+	%   - einen Section-Eintrag im Inhaltsverzeichnis erzeugen,
+	%   - alle Seiten ohne Kopf/Fuß einfügen.
+	%
+	%  Parameter:
+	%   #1 = Anchor-ID      (z.B. ab0, ab1, ab2 ... — MUSS eindeutig sein)
+	%   #2 = PDF-Dateiname  (z.B. aufgabenblatt-0.pdf — OHNE Pfad, \subfix setzt ihn)
+	%   #3 = Titel für ToC  (z.B. "Arbeitsblatt 0: Einführung")
+	%   #4 = Kapitellabel   (für "Bezug: Kapitel X — Titel", z.B. chap:einfuehrung)
+	%
+	%  Anwendung (Beispiele s.u.):
+	%   \AttachWorksheet{ab0}{aufgabenblatt-0.pdf}{Arbeitsblatt 0: Einführung}{chap:einfuehrung}
+	% ============================================================
+	% Mehrseiter (wie bisher):
+	\newcommand{\AttachWorksheet}[4]{%
+		\includepdf[
+		pages=1,
+		fitpaper=true,
+		pagecommand={\thispagestyle{empty}\hypertarget{#1}{}},
+		addtotoc={1,section,1,{#3\ (Bezug: \ABBezug{#4})},#1}
+		]{\subfix{#2}}%
+		\includepdf[
+		pages=2-,
+		fitpaper=true,
+		pagecommand={\thispagestyle{empty}}
+		]{\subfix{#2}}%
+	}
+	
+	% Einseiter:
+	\newcommand{\AttachWorksheetSingle}[4]{%
+		\includepdf[
+		pages=1,
+		fitpaper=true,
+		pagecommand={\thispagestyle{empty}\hypertarget{#1}{}},
+		addtotoc={1,section,1,{#3\ (Bezug: \ABBezug{#4})},#1}
+		]{\subfix{#2}}%
+	}
+
+	
+	% ============================================================
+	%  HIER ARBEITSBLÄTTER EINFÜGEN
+	%  (Reihenfolge = Anzeige-Reihenfolge im Anhang)
+	% ============================================================
+	
+	% --- Arbeitsblatt 0: Einführung ---
+	%  - Anchor-ID: ab0  (muss zur Übersicht oben passen: \hyperlink{ab0}{...})
+	%  - Datei:     aufgabenblatt-0.pdf (liegt neben dieser .tex-Datei)
+	%  - ToC-Titel: erscheint unter "Anhang" im Inhaltsverzeichnis
+	%  - Bezug:     Label des Kapitels (hier: \label{chap:einfuehrung} in Kapitel 1)
+	\AttachWorksheet{ab0}{aufgabenblatt-0.pdf}{Arbeitsblatt 0: Einführung}{chap:einfuehrung}
+	
+	% --- Arbeitsblatt 1: Zahlensysteme & Zweierkomplement ---
+	%  - Anchor-ID: ab1
+	%  - Datei:     aufgabenblatt-1.pdf
+	%  - Bezug:     \label{chap:zahlensysteme} im Kapitel "Zahlensysteme"
+	\AttachWorksheet{ab1}{aufgabenblatt-1.pdf}{Arbeitsblatt 1: Zahlendarstellungen \& Zweierkomplement}{chap:zahlensysteme}
+	
+		% --- Arbeitsblatt 1.2: Zahlensysteme & Zweierkomplement ---
+	%  - Anchor-ID: ab1
+	%  - Datei:     aufgabenblatt-1.2.pdf
+	%  - Bezug:     \label{chap:zahlensysteme} im Kapitel "Zahlensysteme"
+	% Übersichtseintrag (oben):
+	% \item \textbf{Arbeitsblatt 1.2: Zahlensysteme – Umwandeln \& schriftlich Rechnen}\\
+	%       Bezug: \ABBezug{chap:zahlensysteme}\\
+	%       \small Datei: \hyperlink{ab12}{\texttt{aufgabenblatt-1.2.pdf}}
+	
+	% Einbindung (unten):
+	\AttachWorksheetSingle{ab12}{aufgabenblatt-1.2.pdf}{Arbeitsblatt 1.2: Zahlensysteme – Umwandeln \& schriftlich Rechnen}{chap:zahlensysteme}
+
+		% --- Arbeitsblatt 3: Zahlensysteme & Zweierkomplement ---
+	%  - Anchor-ID: ab1
+	%  - Datei:     aufgabenblatt-3.pdf
+	%  - Bezug:     \label{chap:zahlensysteme} im Kapitel "Hardwarearchitektur"
+	\AttachWorksheet{ab3}{aufgabenblatt-3.pdf}{Arbeitsblatt 3: Hardwarearchitektur}{chap:hardwarearchitektur}
+	% ============================================================
+	%  WEITERE BLÄTTER HINZUFÜGEN (MUSTER):
+	%
+	%  1) Übersicht oben erweitern:
+	%     \item \textbf{Arbeitsblatt 2: <Titel>}
+	%           Bezug: \ABBezug{<kapitel-label>}
+	%           \small Datei: \hyperlink{ab2}{\texttt{aufgabenblatt-2.pdf}}
+	%
+	%  2) Einbindung unten ergänzen:
+	%     \AttachWorksheet{ab2}{aufgabenblatt-2.pdf}{Arbeitsblatt 2: <Titel>}{<kapitel-label>}
+	%
+	%  3) PDF-Datei ins Verzeichnis legen:
+	%     skript/appendix/aufgabenblatt-2.pdf
+	%
+	%  4) Kompilieren: zweimal, damit Verweise/ToC aktualisiert werden.
+	% ============================================================
+	
+\end{document}

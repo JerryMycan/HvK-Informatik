@@ -1,0 +1,23 @@
+% !TeX program = lualatex
+\documentclass[../skript/main.tex]{subfiles}
+
+\begin{document}
+	
+\chapter{Anhang}
+\section{Arbeitsblatt 1 (angehängt)}
+
+% Vollseitig und OHNE Kopf/Fuß:
+\begingroup
+\includepdfset{fitpaper=true}
+\pagestyle{empty}% sicherheitshalber
+\includepdf[pages=-,pagecommand={\thispagestyle{empty}}]{\subfix{aufgabenblatt-1.pdf}}
+\endgroup
+
+% (optional) zusätzlich als Attachment einbetten:
+\embedfile[
+desc={Arbeitsblatt 1 – Zahlendarstellungen \& Zweierkomplement},
+mimetype=application/pdf
+]{\subfix{aufgabenblatt-1.pdf}}
+
+	
+\end{document}
