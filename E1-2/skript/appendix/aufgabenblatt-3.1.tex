@@ -1,0 +1,146 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Engine ---
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+% --- Layout & Hilfspakete ---
+\usepackage{geometry}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+
+% --- Kopf-/Fußzeilen ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Heinrich-von-Kleist-Schule, Eschborn}
+\fancyfoot[C]{\footnotesize \blatttyp}
+\fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
+
+% --- Variablen ---
+\newcommand{\blatttyp}{Arbeitsblatt 3.1}
+\newcommand{\thema}{Zahlensysteme – Umwandeln \& schriftlich Rechnen (Binär/Hex)}
+\newcommand{\logofile}{hvk-logo.png}
+
+% --- Titelzeile (Logo + Meta) ---
+\newcommand{\sheettitle}[2]{%
+	\begin{minipage}[t]{0.62\linewidth}
+		\IfFileExists{\logofile}{\includegraphics[height=1.6cm]{\logofile}}{\fbox{\parbox[c][1.6cm][c]{5.5cm}{\centering \small Logo-Datei nicht gefunden}}}\\[0.6em]
+		{\Large\bfseries #1}\\[-0.2em]
+		{\normalsize #2}
+	\end{minipage}\hfill
+	\begin{minipage}[t]{0.35\linewidth}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{>{\bfseries}p{0.36\linewidth}p{0.58\linewidth}}
+			Fach: & Informatik \\
+			Kurs: & E1 \\
+			Datum: & \rule{3.8cm}{0.4pt} \\
+			Name: & \rule{3.8cm}{0.4pt} \\
+		\end{tabular}
+	\end{minipage}
+	\vspace{0.8em}\par\hrule\vspace{1.0em}
+}
+
+% --- Aufgaben-Umgebung ---
+\newenvironment{aufgaben}{%
+	\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.6em]
+	}{\end{enumerate}}
+\newcommand{\punkte}[1]{\hfill{\small[\textit{#1\,BE}]}}
+
+\newenvironment{hinweise}{%
+	\vspace{0.2em}\textbf{Bearbeitungshinweise}\par
+	\begin{itemize}[leftmargin=*,topsep=0.3em,itemsep=0.2em]
+	}{\end{itemize}\vspace{0.5em}}
+
+\begin{document}
+	
+	\sheettitle{\blatttyp}{Thema: \thema}
+	
+	\begin{hinweise}
+		\item Ergebnisse klar kennzeichnen; Rechenschritte (schriftlich) nachvollziehbar darstellen.
+		\item Verwende bei Binärzahlen den Index \(_2\), bei Hexzahlen \(_{16}\), bei Dezimalzahlen \(_{10}\).
+		\item Bei schriftlicher Division/Multiplikation bitte wie im Tafelanschrieb zeigen (Zwischenzeilen).
+	\end{hinweise}
+	
+	% ------------------ Präsenzteil ------------------
+	\section*{Präsenzaufgaben}
+	
+	\begin{aufgaben}
+		
+		\item \textbf{Dual \(\to\) Dezimal.} Berechne die Dezimalwerte. \punkte{8}\\[0.2em]
+		a) \(1101111010_2\) \quad
+		b) \(1010110_2\) \quad
+		c) \(1111111001_2\) \quad
+		d) \(1100110011_2\).
+		
+		\item \textbf{Hex \(\to\) Dezimal.} Berechne die Dezimalwerte. \punkte{8}\\[0.2em]
+		a) \(\mathrm{14F5B}_{16}\) \quad
+		b) \(\mathrm{AB3D}_{16}\) \quad
+		c) \(\mathrm{5EA3}_{16}\) \quad
+		d) \(\mathrm{9C23}_{16}\).
+		
+		\item \textbf{Dezimal \(\to\) Dual und Hex.} Wandle jeweils in beide Systeme um (ohne Taschenrechner). \punkte{8}\\[0.2em]
+		a) \(3786_{10}\) \quad
+		b) \(14876_{10}\) \quad
+		c) \(2243_{10}\) \quad
+		d) \(1024_{10}\).
+		
+		\item \textbf{Dual \(\leftrightarrow\) Hex.} \punkte{8}\\[0.2em]
+		a) \(1101111010_2 \to {}_{16}\) \quad
+		b) \(1010110_2 \to {}_{16}\) \quad
+		c) \(1111111001_2 \to {}_{16}\) \quad
+		d) \(1100110011_2 \to {}_{16}\) \\
+		e) \(\mathrm{14F5B}_{16} \to {}_2\) \quad
+		f) \(\mathrm{AB3D}_{16} \to {}_2\) \quad
+		g) \(\mathrm{5EA3}_{16} \to {}_2\) \quad
+		h) \(\mathrm{9C23}_{16} \to {}_2\).
+		
+	\end{aufgaben}
+	
+	\vspace{0.3em}
+	\hrule
+	\vspace{0.6em}
+	
+	% ------------------ Hausaufgaben ------------------
+	\section*{Hausaufgaben}
+	
+	\begin{aufgaben}
+		
+		\item \textbf{Addition (schriftlich, Binär).} Ergebnis zusätzlich in Dezimal angeben. \punkte{9}\\
+		a) \(1110_2 + 1001_2\)\quad
+		b) \(110111_2 + 101110_2\)\quad
+		c) \(1010110_2 + 1100111_2\).
+		
+		\item \textbf{Subtraktion (schriftlich, Binär).} Ergebnis zusätzlich in Dezimal angeben. \punkte{9}\\
+		a) \(110111_2 - 11010_2\)\quad
+		b) \(1100110_2 - 111001_2\)\quad
+		c) \(10101010_2 - 1111101_2\).
+		
+		\item \textbf{Multiplikation (schriftlich, Binär).} Ergebnis zusätzlich in Dezimal angeben. \punkte{9}\\
+		a) \(111_2 \cdot 1011_2\)\quad
+		b) \(1010_2 \cdot 110011_2\)\quad
+		c) \(111_2 \cdot 1101_2\).
+		
+		\item \textbf{Division (schriftlich, Binär).} Ergebnis (Quotient) und Rest angeben; zusätzlich Dezimalwerte. \punkte{9}\\
+		a) \(10010001_2 : 101_2\)\quad
+		b) \(1101100110_2 : 1010_2\)\quad
+		c) \(1111111001_2 : 1110001_2\).
+	\end{aufgaben}
+	
+	\vfill
+	\hrule
+	\small\emph{Bezug: Kapitel 2. Dieses Blatt vertieft die Inhalte zum Umwandeln von Zahlen verschiedener Basen.} % Quelle:
+	% (Quelle aus deinem Anhang) 
+	% Zitierte Basis: Grundlagen-EDV-Uebungsaufgaben.pdf
+	% Die Konvertier- und Rechenaufgaben wurden unverändert bzw. didaktisch leicht angepasst. 
+	% Siehe Anhang/Quell-PDF.
+\end{document}

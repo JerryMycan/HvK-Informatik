@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.1)  9 SEP 2025 19:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.2.1)  9 SEP 2025 19:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**arbeitsblatt_TGdI_Ueb01.tex
-(./arbeitsblatt_TGdI_Ueb01.tex
+**aufgabenblatt-3.0.tex
+(./aufgabenblatt-3.0.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -336,8 +336,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count271
 \l__pdf_internal_box=\box56
 )
-(./arbeitsblatt_TGdI_Ueb01.aux)
-\openout1 = `arbeitsblatt_TGdI_Ueb01.aux'.
+(./aufgabenblatt-3.0.aux)
+\openout1 = `aufgabenblatt-3.0.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
@@ -461,21 +461,6 @@ Overfull \hbox (9.92807pt too wide) in paragraph at lines 72--72
  []
 
 
-Overfull \hbox (11.06122pt too wide) in paragraph at lines 72--72
-[]|\T1/lmr/bx/n/10.95 Klasse/Kurs:| 
- []
-
-
-Overfull \hbox (9.92807pt too wide) in paragraph at lines 72--72
-[]|[]| 
- []
-
-
-Overfull \hbox (9.92807pt too wide) in paragraph at lines 72--72
-[]|[]| 
- []
-
-
 Overfull \hbox (9.92807pt too wide) in paragraph at lines 72--72
 []|[]| 
  []
@@ -515,16 +500,10 @@ Overfull \hbox (1.01021pt too wide) in paragraph at lines 128--128
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/
 texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
-sy.enc} <./hvk-logo.png>]
-Overfull \hbox (1.86053pt too wide) in paragraph at lines 163--164
-[]\T1/lmr/m/it/10 Aufgaben ad-ap-tiert nach: ^^RÜbungs-blatt 1 ^^U Lö-sungs-vor
--schlag^^P, Tech-ni-sche Grund-la-gen der In-for-ma-tik, TU Darm-
- []
-
-[2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}]
-
+sy.enc} <./hvk-logo.png>] [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}
+] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./arbeitsblatt_TGdI_Ueb01.aux)
+(./aufgabenblatt-3.0.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -532,12 +511,12 @@ L3 programming layer <2024-01-22>
  ) 
 Here is how much of TeX's memory you used:
  7640 strings out of 474222
- 148076 string characters out of 5748734
+ 148004 string characters out of 5748734
  1937975 words of memory out of 5000000
  29794 multiletter control sequences out of 15000+600000
  606560 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,11n,107p,10918b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,11n,107p,10912b,540s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/pu
@@ -545,7 +524,7 @@ blic/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/l
 mssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on arbeitsblatt_TGdI_Ueb01.pdf (2 pages, 233251 bytes).
+Output written on aufgabenblatt-3.0.pdf (2 pages, 229259 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream

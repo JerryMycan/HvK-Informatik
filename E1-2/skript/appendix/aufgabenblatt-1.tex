@@ -1,25 +1,23 @@
+% !TeX program = lualatex
 \documentclass[11pt,a4paper]{scrartcl}
 
-% --- Sprache & Zeichensatz ---
+% --- Sprache & Engine ---
 \usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\usepackage{fontspec}
 
 % --- Layout & Hilfspakete ---
-\usepackage{graphicx}
-\usepackage{tabularx}
-\usepackage{array}
-\usepackage{enumitem}
 \usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage{lastpage}
-\usepackage{amssymb}
 \geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
 \setlength{\parindent}{0pt}
-
-% --- Bildersuche ---
-\graphicspath{{.}{./img/}{./images/}{./assets/}}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
 
 % --- Kopf-/Fußzeilen ---
 \pagestyle{fancy}
@@ -30,10 +28,10 @@
 \fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
 
 % --- Variablen ---
-\newcommand{\blatttyp}{Aufgabenblatt 1}
-\newcommand{\thema}{Zahlendarstellungen \& Zweierkomplement}
+\newcommand{\blatttyp}{Arbeitsblatt 1 — Einführung}
+\newcommand{\thema}{Information, Repräsentation, Abstraktion, Bits/Bytes, Textkodierung}
 
-% --- Logo-Datei ---
+% --- Logo-Datei (optional) ---
 \newcommand{\logofile}{hvk-logo.png}
 
 % --- Titelleiste mit Logo + Metadaten ---
@@ -46,8 +44,8 @@
 	\begin{minipage}[t]{0.35\linewidth}
 		\renewcommand{\arraystretch}{1.2}
 		\begin{tabular}{>{\bfseries}p{0.36\linewidth}p{0.58\linewidth}}
-			Fach: & \rule{3.8cm}{0.4pt} \\
-			Klasse/Kurs: & \rule{3.8cm}{0.4pt} \\
+			Fach: & Informatik \\
+			Kurs: & E1 \\
 			Datum: & \rule{3.8cm}{0.4pt} \\
 			Name: & \rule{3.8cm}{0.4pt} \\
 		\end{tabular}
@@ -59,7 +57,6 @@
 \newenvironment{aufgaben}{%
 	\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.6em]
 	}{\end{enumerate}}
-
 \newcommand{\punkte}[1]{\hfill{\small[\textit{#1\,BE}]}}
 
 \newenvironment{hinweise}{%
@@ -72,39 +69,46 @@
 	\sheettitle{\blatttyp}{Thema: \thema}
 	
 	\begin{hinweise}
-		\item Ergebnisse klar kennzeichnen. Rechenschritte nachvollziehbar darstellen.
-		\item Verwende bei Binärzahlen den Index \(_2\), bei Hexzahlen \(_{16}\), bei Dezimalzahlen \(_{10}\).
+		\item Antworte präzise in ganzen Sätzen, wo sinnvoll mit Skizzen/Beispielen.
+		\item Kennzeichne Ergebnisse klar. Rechenschritte und Begründungen angeben.
+		\item Nutze bei Bedarf Quellenangaben (URL, Zugriffstag) für Rechercheaufgaben.
 	\end{hinweise}
 	
 	% ------------------ Präsenzteil ------------------
 	\section*{Präsenzaufgaben}
 	
 	\begin{aufgaben}
-		\item \textbf{Zahlendarstellung I (Binär).} Wandle in die Binärdarstellung um: \\[0.2em]
-		a) \(55_{10}\) \quad b) \(42_{10}\) \quad c) \(127_{10}\) \quad d) \(73951_{10}\).
-		\punkte{8}
 		
-		\item \textbf{Zahlendarstellung II (Hex).} Wandle in die Hexadezimaldarstellung um: \\[0.2em]
-		a) \(224_{10}\) \quad b) \(69_{10}\) \quad c) \(171_{10}\) \quad d) \(57005_{10}\).
-		\punkte{8}
+		\item \textbf{Begriff klären: Information vs. Daten.}\punkte{6}\\
+		Erkläre mit eigenen Worten den Unterschied zwischen \emph{Daten} und \emph{Information}.
+		Gib \textbf{zwei} Beispiele, in denen dieselben Daten je nach Kontext \emph{unterschiedliche} Information bedeuten.
 		
-		\item \textbf{Zahlenbereiche.} Beantworte kurz und begründe:
+		\item \textbf{Repräsentation oder Abstraktion?}\punkte{8}\\
+		Ordne die folgenden Tätigkeiten zu und begründe jeweils kurz (\emph{Repräsentation} = Information $\to$ Daten, \emph{Abstraktion} = Daten $\to$ Information):
 		\begin{enumerate}[label*=\alph*)]
-			\item Größte darstellbare Zahl mit 5~Bit (\emph{vorzeichenlos}).
-			\item Wie viele verschiedene Werte lassen sich mit 32~Bit darstellen?
-			\item Größte darstellbare Zahl mit 5~Bit in 2er-Komplement.
-			\item Kleinste darstellbare Zahl mit 5~Bit in 2er-Komplement.
-			\item In UNIX-Systemen wird die Zeit als Sekunden seit dem 1.\,1.\,1970 gezählt. Bei vorzeichenloser 32-Bit-Speicherung: In welchem Jahr tritt ein Überlaufproblem auf?
+			\item Ein Sensor wandelt Temperatur in eine Zahl in Grad Celsius um.\\
+			\item Ein Bildbetrachter zeigt aus einer PNG-Datei ein Foto an.\\
+			\item Ein MP3-Encoder erzeugt aus einer WAV-Datei eine komprimierte Datei.\\
+			\item Ein Statistiktool erkennt in Messwerten einen Trend.
 		\end{enumerate}
-		\punkte{10}
 		
-		\item \textbf{2er-Komplement (8~Bit).} Gib die 8-Bit-2er-Komplement-Darstellung an: \\[0.2em]
-		a) \(9_{10}\) \quad b) \(-42_{10}\) \quad c) \(127_{10}\) \quad d) \(-128_{10}\).
-		\punkte{8}
+		\item \textbf{Bits, Bytes, Wortbreite.}\punkte{8}\\
+		\begin{enumerate}[label*=\alph*)]
+			\item Warum liest/schreibt die Hardware Daten \emph{gruppenweise}? Nenne zwei Gründe.\\
+			\item Erkläre „Wortbreite“ und gib typische Werte an. Was ändert sich beim Übergang von 32-Bit zu 64-Bit?\\
+			\item Ein System nutzt 64-Bit-Register, aber der Speicher ist \emph{byteweise} adressierbar. Ist das ein Widerspruch? Begründe.
+		\end{enumerate}
 		
-		\item \textbf{BCD.} Stelle die Dezimalzahlen als BCD dar (je Dezimalziffer 4~Bit): \\[0.2em]
-		a) \(9\) \quad b) \(42\) \quad c) \(524\).
-		\punkte{6}
+		\item \textbf{„Pipeline“ vom Phänomen zur Information.}\punkte{8}\\
+		Beschreibe für das Beispiel „Foto mit dem Smartphone“ die Schritte \emph{Messung $\to$ Repräsentation $\to$ Verarbeitung $\to$ Abstraktion} stichpunktartig (Sensor, A/D-Wandlung, Dateiformat, Anzeige/Erkennung \dots).
+		
+		\item \textbf{Textkodierung – ASCII vs. Unicode.}\punkte{10}\\
+		\begin{enumerate}[label*=\alph*)]
+			\item Nenne \textbf{drei} Zeichen, die in ASCII fehlen, und erkläre, warum verschiedene 8-Bit-Codepages (ISO-8859-1, Windows-1252 \dots) zu Problemen führten.\\
+			\item Was unterscheidet \emph{Codepunkt} und \emph{Kodierung}? Erkläre an einem Beispiel (z.\,B.\ Buchstabe „ä“).\\
+			\item Worin liegt der Vorteil von UTF-8 gegenüber einer festen 8-Bit-Kodierung?
+		\end{enumerate}
+		
 	\end{aufgaben}
 	
 	\vspace{0.3em}
@@ -115,51 +119,33 @@
 	\section*{Hausaufgaben}
 	
 	\begin{aufgaben}
-		\item \textbf{Zahlendarstellungen – Tabelle vervollständigen.} Trage die jeweils fehlenden Darstellungen ein.
-		\vspace{0.3em}
 		
-		\renewcommand{\arraystretch}{1.2}
-		\begin{tabularx}{\linewidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
-			\hline
-			\textbf{Dezimal} & \textbf{Binär} & \textbf{Hex} \\ \hline
-			\(12_{10}\)  & \rule{4.5cm}{0.4pt} & \rule{3.0cm}{0.4pt} \\ \hline
-			\(85_{10}\)  & \rule{4.5cm}{0.4pt} & \rule{3.0cm}{0.4pt} \\ \hline
-			\(3529_{10}\)& \rule{4.5cm}{0.4pt} & \rule{3.0cm}{0.4pt} \\ \hline
-		\end{tabularx}
-		\punkte{6}
+		\item \textbf{Recherche: Mojibake in freier Wildbahn.}\punkte{8}\\
+		Finde \textbf{zwei} reale Beispiele (Screenshot, Link oder kurze Beschreibung), in denen Text \emph{falsch} dargestellt wurde (z.\,B.\ „Ã¤“ statt „ä“). Erkläre die Ursache in 2–3 Sätzen (\emph{welche} Kodierung wurde vermutlich geschrieben, \emph{welche} beim Lesen angenommen?).
 		
-		\item \textbf{Addition (vorzeichenlos, Binär).} Addiere und gib die Dezimalwerte der Summanden und des Ergebnisses an. Tritt ein Overflow auf?
+		\item \textbf{UTF-8 zum Anfassen.}\punkte{10}\\
+		Bestimme die UTF-8-Bytefolgen (hexadezimal) für die Zeichen: \texttt{A}, \texttt{ä}, \texttt{€}. Beschreibe jeweils in 1–2 Sätzen, warum die Länge 1, 2 bzw.\ 3 Bytes beträgt.
+		
+		\item \textbf{Datenmenge einschätzen.}\punkte{8}\\
+		Ein Graustufenbild hat 800\,$\times$\,600 Pixel, 8 Bit pro Pixel.\\
 		\begin{enumerate}[label*=\alph*)]
-			\item \(1011_2 + 0001_2\) \quad Overflow? \(\square\) ja \(\square\) nein
-			\item \(10011_2 + 10100_2\) \quad Overflow? \(\square\) ja \(\square\) nein
+			\item Wie groß ist die \emph{unkomprimierte} Datei in Byte/KiB?\\
+			\item Wie groß wäre dasselbe Bild als RGB (24 Bit pro Pixel)?\\
+			\item Warum kann eine PNG-Datei trotzdem deutlich kleiner sein?
 		\end{enumerate}
-		\punkte{8}
 		
-		\item \textbf{Addition (2er-Komplement, 8~Bit).} Addiere die folgenden 8-Bit-2er-Komplement-Zahlen. Gib die Dezimalwerte der Summanden und des Ergebnisses an. Tritt ein Overflow auf?
+		\item \textbf{Transferaufgabe: Abstraktion bewusst wählen.}\punkte{10}\\
+		Du entwickelst eine App, die Schritte zählt und „Aktivitätslevel“ anzeigt.\\
 		\begin{enumerate}[label*=\alph*)]
-			\item \(00101010_2 + 10000000_2\) \quad Overflow? \(\square\) ja \(\square\) nein
-			\item \(01000011_2 + 01000100_2\) \quad Overflow? \(\square\) ja \(\square\) nein
+			\item Welche \emph{Rohdaten} könnten erfasst werden? (mind.\ 3)\\
+			\item Wie würdest du daraus ein \emph{Modell} bauen (welche Features, welche Stufen)?\\
+			\item Wo liegen Risiken falscher Abstraktionen?
 		\end{enumerate}
-		\punkte{10}
 		
-		\item \textbf{Subtraktion (2er-Komplement, 8~Bit).} Wandle zunächst in 8-Bit-2er-Komplement und berechne:
-		\begin{enumerate}[label*=\alph*)]
-			\item \(10 - 63\)\quad Ergebnis mit 8~Bit korrekt darstellbar? \(\square\) ja \(\square\) nein
-			\item \(-50 - 80\)\quad Ergebnis mit 8~Bit korrekt darstellbar? \(\square\) ja \(\square\) nein
-		\end{enumerate}
-		\punkte{8}
-		
-		\item \textbf{Größer oder kleiner?} Welche Zahl ist größer? Begründe durch Umrechnung ins Dezimalsystem (vorzeichenlos).
-		\begin{enumerate}[label*=\alph*)]
-			\item \(1111_2\) \; oder \; \(F_{16}\)
-			\item \(10101_2\) \; oder \; \(AC_{16}\)
-			\item \(10010101_2\) \; oder \; \(8C_{16}\)
-		\end{enumerate}
-		\punkte{6}
 	\end{aufgaben}
 	
 	\vfill
 	\hrule
-	\small\emph{Aufgabenblatt 1}
+	\small\emph{Bezug: Kapitel 1 „Einführung“. Dieses Blatt vertieft die Inhalte zu Information ↔ Daten, Repräsentation/Abstraktion, Bits/Bytes und Textkodierung.}
 	
 \end{document}

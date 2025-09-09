@@ -59,7 +59,7 @@
 \contentsline {section}{\numberline {5.4}Adressierung von Computern}{22}{section.5.4}%
 \contentsline {paragraph}{Alltagsbild.}{22}{section.5.4}%
 \contentsline {chapter}{Anhang}{25}{appendix*.2}%
-\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 0: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{26}{section.Alph0.1}%
-\contentsline {section}{\numberline {.2}\ignorespaces Arbeitsblatt 1: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{28}{section.Alph0.2}%
-\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 1.2: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{30}{section.Alph0.3}%
-\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 3: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{31}{section.Alph0.4}%
+\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{26}{section.Alph0.1}%
+\contentsline {section}{\numberline {.2}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{28}{section.Alph0.2}%
+\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{30}{section.Alph0.3}%
+\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{31}{section.Alph0.4}%
