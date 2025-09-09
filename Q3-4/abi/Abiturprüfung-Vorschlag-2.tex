@@ -1,0 +1,174 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Thema: OOP, Algorithmen, Datenbanken, Formale Sprachen}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\title{\textbf{Simulation einer mündlichen Abiturprüfung -- Informatik}}
+	\author{\textbf{Thema: OOP, Algorithmen, Datenbanken, Formale Sprachen}}
+	\date{\today}
+	\maketitle
+	
+	\section*{Aufgabe 1: Analyse eines Algorithmus}
+	
+	Ein unbekannter Algorithmus zur Berechnung einer speziellen mathematischen Eigenschaft von Zahlen wird bereitgestellt. Der Name der Klasse lautet \texttt{Algorithmus}.
+	
+	\subsection*{Gegebener Java-Code}
+	
+	\begin{verbatim}
+		public class Algorithmus {
+			public static int berechne(int n) {
+				if (n <= 1) {
+					return n;
+				}
+				return berechne(n - 1) + berechne(n - 2);
+			}
+			
+			public static void main(String[] args) {
+				int n = 5;
+				System.out.println("Ergebnis: " + berechne(n));
+			}
+		}
+	\end{verbatim}
+	
+	\subsection*{Teilfragen zur Analyse des Codes}
+	
+	\begin{enumerate}
+		\item Beschreiben Sie die Funktionsweise des Algorithmus. Welche mathematische Eigenschaft berechnet er?		
+		\item Welche Art der Implementierung wurde hier verwendet und warum könnte sie vorteilhaft sein?
+		\item Verdeutlichen Sie die Funktionsweise des Algorithmus anhand eines Beispielaufrufs \texttt{berechne(5)}.
+		\item Wie viele Aufrufe werden insgesamt benötigt, um \texttt{berechne(5)} zu berechnen?
+		\item Bestimmen Sie die Zeitkomplexität des Algorithmus.
+		
+		\item Wie verhält sich der Algorithmus im Vergleich zu einer naiven iterativen Berechnung aller möglichen Werte?
+		
+		\item Wie kann die Laufzeit verbessert werden? Welche alternative Implementierung könnte vorteilhafter sein?
+
+	\end{enumerate}
+	
+	\section*{Aufgabe 2: Datenmodellierung und Normalisierung}
+	
+Eine Schule speichert die Noten der Schüler in einer relationalen Datenbank. Die ursprüngliche Tabellenstruktur ist wie folgt:
+
+\begin{table}[h]
+	\centering
+	\caption{Ursprüngliche nicht normalisierte Tabelle}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		SchülerID & Name & Klasse & Fach & Lehrer & Note \\
+		\hline
+		101 & Max Meier & 10A & Mathematik & Herr Schmidt & 2 \\
+		102 & Lisa Becker & 10A & Deutsch & Frau Müller & 1 \\
+		101 & Max Meier & 10A & Deutsch & Frau Müller & 3 \\
+		103 & Anna Keller & 10B & Englisch & Herr Weber & 2 \\
+		102 & Lisa Becker & 10A & Mathematik & Herr Schmidt & 2 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsection*{Teilaufgaben zur Normalisierung}
+\begin{enumerate}
+	\item Identifizieren Sie Redundanzen in der Tabelle.
+	\item Zerlegen Sie die nicht normalisierte Tabelle und führen Sie eine schrittweise Normalisierung durch bis zur 3. Normalform.
+	\item Welche Vorteile bringt die Normalisierung in diesem Fall?
+\end{enumerate}
+	
+	\section*{Aufgabe 3: Analyse einer formalen Grammatik}
+		Gegeben sei die Grammatik $G$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, X, Y\}$
+		\item Terminale: $\{0, 1\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow 0 X 1 \\
+			X &\rightarrow 0 X 1 \mid 1 Y 0 \\
+			Y &\rightarrow 1 Y 0 \mid \epsilon
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+		Überprüfen Sie, ob die folgenden Wörter zur Sprache \( L(G) \) gehören:
+	\begin{itemize}
+		\item \textbf{Wort 1}: \( 000111000111 \)
+		\item \textbf{Wort 2}: \( 000100011000\)
+	\end{itemize}
+	
+	\subsection*{Teilfragen zur Grammatik}
+	\begin{enumerate}
+		\item Leiten Sie die Binärzahl \texttt{101} mit der Grammatik ab.
+		\item Kann die Grammatik alle möglichen Binärzahlen erzeugen? Falls nicht, wie könnte sie angepasst werden?
+		\item Wie könnte die Grammatik erweitert werden, um nur Binärzahlen mit gerader Länge zu erzeugen?
+	\end{enumerate}
+	
+		\vspace{1cm}
+	
+	\section*{Kolloquium}
+	\subsubsection*{Algorithmen}
+	\begin{enumerate}
+		\item Welche Eigenschaften muss ein Algorithmus haben?
+		\item Warum ist die iterative Lösung oft effizienter als eine rekursive Lösung?
+		\item In welchen Fällen könnte Rekursion einer Iteration vorzuziehen sein?
+		\item Was versteht man unter einem effizienten Algorithmus? Welche Maßstäbe werden zur Effizienzbewertung verwendet?
+		\item Wie analysiert man die Zeitkomplexität eines Algorithmus?
+		\item Warum ist $O(n \ log(n))$ schneller als $O(n^2)$?
+		\item Was ist der Unterschied zwischen exponentiellen $O(2^n)$ und polynomiellen $O(n^k)$ Algorithmen?
+		\item Wie kann man den Speicherverbrauch eines Algorithmus reduzieren?
+		\item Schreiben Sie einen Algorithmus in Pseudo-Code, der zwei Variablen ohne eine zusätzliche Variable tauscht.
+		\item Können Sie eine weitere Möglichkeit das selbe Algorithmus mit Hilfe von booleschen Algebra zu implementieren?	
+		
+		
+	\end{enumerate}
+	\subsubsection*{Datenbanken}
+	\begin{enumerate}
+		\item Warum ist die Normalisierung wichtig für eine relationale Datenbank?
+		\item Warum musste die ursprüngliche Tabelle normalisiert werden? Welche Probleme hätte es gegeben, wenn man sie in nicht normalisierter Form belassen hätte?
+		\item Gibt es in der endgültigen normalisierten Form noch Redundanzen? Falls ja, sind diese gewollt?
+		\item Welche konkreten Redundanzen wurden durch die Normalisierung beseitigt?
+		\item Welche Probleme können in einer nicht normalisierten Datenbank auftreten?
+		\item Gibt es Fälle, in denen man bewusst auf eine vollständige Normalisierung verzichtet? Warum?
+		\item Welche Normalform ist für den praktischen Einsatz am besten geeignet?
+		\item Schreiben Sie eine SQL-Abfrage, um ...
+	\end{enumerate}
+	
+	\subsubsection*{Sprachen und Grammatiken}
+	\begin{enumerate}
+		\item Was versteht man unter einer formalen Sprache?\\
+		\item Was ist ein Alphabet?
+		\item Können Sie ein Beispiel für eine formale Sprache nennen?
+		\item Wie unterscheidet sich eine formale Sprache von einer natürlichen Spra-
+		che?
+		\item Was ist eine Grammatik, und aus welchen Komponenten besteht sie?
+		\item Erklären Sie den Unterschied zwischen Terminal- und Nichtterminal-
+		symbolen.
+		\item Was ist der Unterschied zwischen einer regulären und einer kontextfrei-
+		en Grammatik?
+		\item Was bedeutet eine kontextfreie Grammatik (CFG)? Geben Sie ein
+		Beispiel.
+		\item Stellen Sie einen Vergleich zwischen Regulären und Kontextfreien Gram-
+		matik.
+		\item Sind Programmiersprachen wie beispielsweise Java oder C++ kontext-
+		frei oder regulär.
+		\item Erstellen Sie eine kontextfreie Grammatik der Binärzahlen.
+		
+		Eine kontextfreie Grammatik \( G \) erzeugt Binärzahlen:
+		\begin{itemize}
+			\item Terminale: \( \{0, 1\} \)
+			\item Nichtterminale: \( \{S\} \)
+			\item Startsymbol: \( S \)
+			\item Produktionsregeln:
+			\begin{align*}
+				S &\to 0S \mid 1S \mid 0 \mid 1
+			\end{align*}
+		\end{itemize}
+		
+	\end{enumerate}
+	
+	
+\end{document}

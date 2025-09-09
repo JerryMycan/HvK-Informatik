@@ -1,0 +1,110 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Thema: OOP, Algorithmen, Datenbanken, Formale Sprachen}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\title{\textbf{Simulation einer mündlichen Abiturprüfung -- Informatik}}
+	\author{\textbf{Thema: OOP, Algorithmen, Datenbanken, Formale Sprachen}}
+	\date{\today}
+	\maketitle
+	
+	\section*{Aufgabe 1: Analyse eines Sortieralgorithmus}
+	
+	Ein unbekannter Algorithmus zur Sortierung eines Arrays wird bereitgestellt. Der Name der Klasse lautet \texttt{Sortierung}.
+	
+	\subsection*{Gegebener Java-Code}
+	
+	\begin{verbatim}
+		public class Sortierung {
+			public static void sortiere(int[] arr) {
+				for (int i = 1; i < arr.length; i++) {
+					int key = arr[i];
+					int j = i - 1;
+					while (j >= 0 && arr[j] > key) {
+						arr[j + 1] = arr[j];
+						j = j - 1;
+					}
+					arr[j + 1] = key;
+				}
+			}
+			
+			public static void main(String[] args) {
+				int[] werte = {5, 2, 9, 1, 5, 6};
+				sortiere(werte);
+				for (int zahl : werte) {
+					System.out.print(zahl + " ");
+				}
+			}
+		}
+	\end{verbatim}
+	
+	\subsection*{Teilfragen zur Analyse des Codes}
+	
+	\begin{enumerate}
+		\item Beschreiben Sie die Funktionsweise des Algorithmus. Welche Art von Sortierung wird hier durchgeführt?
+		\item Welche Art der Implementierung wurde hier verwendet und warum könnte sie vorteilhaft sein?
+		\item Verdeutlichen Sie die Funktionsweise des Algorithmus anhand eines Beispielaufrufs mit dem Array \{5, 2, 9, 1, 5, 6\}.
+		\item Wie viele Vergleiche und Verschiebungen sind erforderlich, um das Array vollständig zu sortieren?
+		\item Bestimmen Sie die Zeitkomplexität des Algorithmus.
+		\item Wie verhält sich der Algorithmus im Vergleich zu anderen bekannten Sortieralgorithmen?
+	\end{enumerate}
+	
+	\section*{Aufgabe 2: Normalisierung einer Bestelldatenbank}
+	
+	Ein Online-Shop speichert Bestellungen in einer relationalen Datenbank. Die ursprüngliche Tabellenstruktur ist wie folgt:
+	
+	\begin{table}[h]
+		\centering
+		\caption{Ursprüngliche nicht normalisierte Tabelle}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			BestellID & Kunde & Produkt & Kategorie & Preis & Menge \\
+			\hline
+			1 & Max Meier & Laptop & Elektronik & 1200 & 1 \\
+			2 & Lisa Becker & Kopfhörer & Elektronik & 200 & 1 \\
+			3 & Max Meier & Maus & Zubehör & 50 & 2 \\
+			4 & Julia Schmitt & Schreibtisch & Möbel & 300 & 1 \\
+			5 & Thomas Müller & Monitor & Elektronik & 250 & 1 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\subsection*{Teilaufgaben zur Normalisierung}
+	\begin{enumerate}
+		\item Identifizieren Sie Redundanzen in der Tabelle.
+		\item Zerlegen Sie die Tabelle in mehrere normalisierte Tabellen bis zur 3. Normalform.
+		\item Welche Vorteile bringt die Normalisierung in diesem Fall?
+	\end{enumerate}
+	
+	\section*{Aufgabe 3: Analyse einer formalen Grammatik}
+	
+	Eine kontextfreie Grammatik \( G \) erzeugt gültige Telefonnummern im deutschen Format:
+	\begin{itemize}
+		\item Terminale: \( \{0-9, -, \} \)
+		\item Nichtterminale: \( \{S, V, T\} \)
+		\item Startsymbol: \( S \)
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\to V - T \\
+			V &\to 030 \mid 040 \mid 089 \mid 0221 \mid 069 \\
+			T &\to 1T \mid 2T \mid 3T \mid \dots \mid 9T \mid 1234567
+		\end{align*}
+	\end{itemize}
+	
+	\subsection*{Teilfragen zur Grammatik}
+	\begin{enumerate}
+		\item Leiten Sie die Telefonnummer \texttt{030-1234567} mit der Grammatik ab.
+		\item Welche Einschränkungen hat diese Grammatik? Sind alle gültigen deutschen Telefonnummern darstellbar?
+		\item Wie könnte die Grammatik erweitert werden, um internationale Vorwahlen zu berücksichtigen?
+	\end{enumerate}
+	
+\end{document}

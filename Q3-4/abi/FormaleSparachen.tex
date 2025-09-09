@@ -1,0 +1,136 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{listings}  % Für Code-Listings
+\usepackage{pifont} % Für ✓ und ✗ Symbole
+\usepackage{xcolor}  % Für Syntax-Highlighting
+
+% Symbole für Tabellen
+\newcommand{\cmark}{\ding{51}} % ✓
+\newcommand{\xmark}{\ding{55}} % ✗
+
+% Kopf- und Fußzeile
+\pagestyle{fancy}
+\lhead{Formale Sprachen am Beispiel von Passwörtern}
+\rhead{\today}
+\cfoot{\thepage}
+
+% lstlisting Einstellungen
+\lstset{
+	language=Python,
+	basicstyle=\ttfamily\footnotesize,
+	keywordstyle=\color{blue},
+	commentstyle=\color{gray},
+	stringstyle=\color{red},
+	frame=single,
+	breaklines=true
+}
+
+\begin{document}
+	
+	\title{Formale Sprachen am Beispiel von Passwörtern}
+	\author{}
+	\date{\today}
+	\maketitle
+	
+	\section{Einleitung}
+	Passwörter sind ein ausgezeichnetes Beispiel, um die Konzepte von formalen Sprachen und Grammatiken zu vermitteln. Passwörter folgen klar definierten Regeln (oder einer "Grammatik"), die festlegen, welche Kombinationen von Zeichen zulässig sind.  
+	In diesem Skript wird gezeigt, wie diese Regeln in einer regulären Grammatik dargestellt werden können, wie Schüler Passwörter analysieren können und wie diese Konzepte in der Praxis angewendet werden.
+	
+	\section{Darstellung der Passwortregeln als Grammatik}
+	
+	\subsection{Passwortregeln}
+	Angenommen, ein Passwort muss die folgenden Anforderungen erfüllen:
+	\begin{enumerate}
+		\item Es muss mindestens 8 Zeichen lang sein.
+		\item Es muss mindestens einen Buchstaben enthalten.
+		\item Es muss mindestens eine Zahl enthalten.
+		\item Es muss mindestens ein Sonderzeichen enthalten (z. B. \texttt{!}, \texttt{@}, \texttt{\#}).
+	\end{enumerate}
+	
+	\subsection{Reguläre Grammatik}
+	Diese Regeln können mithilfe einer regulären Grammatik beschrieben werden. Die Grammatik besteht aus folgenden Elementen:
+	
+	\textbf{Nichtterminale:}
+	\begin{itemize}
+		\item \texttt{Passwort} – Startsymbol der Grammatik
+		\item \texttt{Zeichenkette} – Eine Folge von Zeichen
+		\item \texttt{Zeichen} – Ein einzelnes Zeichen (Buchstabe, Zahl oder Sonderzeichen)
+	\end{itemize}
+	
+	\textbf{Terminale:}
+	\begin{itemize}
+		\item Buchstaben: \texttt{a–z}, \texttt{A–Z}
+		\item Zahlen: \texttt{0–9}
+		\item Sonderzeichen: \texttt{!}, \texttt{@}, \texttt{\#}, etc.
+	\end{itemize}
+	
+	\subsection{Grammatikregeln}
+	\begin{verbatim}
+		1. Passwort → Zeichenkette
+		2. Zeichenkette → Zeichen Zeichenkette | ε
+		3. Zeichen → Buchstabe | Zahl | Sonderzeichen
+		4. Buchstabe → a | b | c | ... | z | A | B | C | ... | Z
+		5. Zahl → 0 | 1 | 2 | ... | 9
+		6. Sonderzeichen → ! | @ | # | $ | % | ^ | & | * | ( | ) | ...
+	\end{verbatim}
+	
+	Hierbei steht $\varepsilon$ für die leere Zeichenkette (Ende der Zeichenkette).
+	
+	\subsection{Konkrete Ableitung eines Passworts}
+	Nehmen wir das Passwort \texttt{A1b@2023} und leiten es nach den Regeln ab:
+	
+	\begin{verbatim}
+		Passwort → Zeichenkette
+		Zeichenkette → Zeichen Zeichenkette
+		Zeichen → A (Buchstabe)
+		Zeichenkette → Zeichen Zeichenkette
+		Zeichen → 1 (Zahl)
+		...
+		Zeichen → 3 (Zahl)
+		Zeichenkette → ε (Ende)
+	\end{verbatim}
+	
+	Diese Ableitung zeigt, dass \texttt{A1b@2023} gemäß der Grammatik aufgebaut ist und somit ein gültiges Passwort darstellt.
+	
+	\section{Praxisübung: Passwortanalyse}
+	
+	\subsection{Beispielhafte Passwörter zur Analyse}
+	\begin{center}
+		\begin{tabular}{|c|l|c|}
+			\hline
+			\textbf{Passwort} & \textbf{Analyse} & \textbf{Ergebnis} \\
+			\hline
+			Hallo123! & 8 Zeichen, Buchstaben, Zahl, `!` & \cmark Gültig \\
+			Passwort  & Nur Buchstaben & \xmark Ungültig \\
+			12345678  & Nur Zahlen & \xmark Ungültig \\
+			Abc@2023  & 8 Zeichen, Buchstaben, Zahl, `@` & \cmark Gültig \\
+			Hallo12   & Nur 7 Zeichen & \xmark Ungültig \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\section{Computersysteme und Passwortvalidierung}
+	Computersysteme prüfen diese Regeln automatisiert. Hier ein vereinfachtes Python-Beispiel:
+	
+	\begin{lstlisting}
+		import re
+		
+		def validiere_passwort(passwort):
+		# Regulärer Ausdruck zur Prüfung der Regeln
+		regel = r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+		return bool(re.match(regel, passwort))
+		
+		# Testbeispiele
+		print(validiere_passwort("Hallo123!"))  # True
+		print(validiere_passwort("Passwort"))   # False
+		print(validiere_passwort("12345678"))   # False
+	\end{lstlisting}
+	
+	\section{Fazit}
+	Die Darstellung von Passwortregeln als Grammatik verbindet Theorie und Praxis. Sie zeigt Schülern, wie formale Sprachen ihren Alltag beeinflussen.
+	
+\end{document}

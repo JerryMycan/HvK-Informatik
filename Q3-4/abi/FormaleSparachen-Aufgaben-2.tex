@@ -1,0 +1,116 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+	
+	\title{Fortgeschrittene Übungsaufgaben zu Formale Sprachen}
+	\author{Informatik - Jarek Mycan}
+	\date{\today}
+	\maketitle
+	
+	\section*{Aufgaben zur Ableitung von Wörtern}
+	
+	Gegeben sind die folgenden kontextfreien Grammatiken. Leiten Sie jeweils das angegebene Wort aus dem Startsymbol her, falls möglich.
+	
+	\subsection*{Aufgabe 1}
+	Gegeben sei die Grammatik $G_1$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, A, B, C\}$
+		\item Terminale: $\{a, b, c\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow A B C \\
+			A &\rightarrow a A \mid a \\
+			B &\rightarrow b B \mid b \\
+			C &\rightarrow c C \mid c
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"aaaabbbcccc"} her.
+	
+	\subsection*{Aufgabe 2}
+	Gegeben sei die Grammatik $G_2$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, X, Y\}$
+		\item Terminale: $\{0, 1\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow 0 X 1 \\
+			X &\rightarrow 0 X 1 \mid Y \\
+			Y &\rightarrow 1 Y 0 \mid \epsilon
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"00001111"} her.
+	
+	\subsection*{Aufgabe 3}
+	Gegeben sei die Grammatik $G_3$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, X\}$
+		\item Terminale: $\{a, b\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow a X b \\
+			X &\rightarrow a X a \mid \epsilon
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"aaaaabbbbb"} her.
+	
+	\subsection*{Aufgabe 4}
+	Gegeben sei die Grammatik $G_4$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, A\}$
+		\item Terminale: $\{x, y\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow x A y \mid xy \\
+			A &\rightarrow x A x \mid x
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"xxxxxyyyyy"} her.
+	
+	\subsection*{Aufgabe 5}
+	Gegeben sei die Grammatik $G_5$ mit:
+	\begin{itemize}
+		\item Nichtterminale: $\{S, T\}$
+		\item Terminale: $\{p, q\}$
+		\item Produktionsregeln:
+		\begin{align*}
+			S &\rightarrow p T q \mid pq \\
+			T &\rightarrow p T q \mid p q
+		\end{align*}
+		\item Startsymbol: $S$
+	\end{itemize}
+	Leiten Sie das Wort \textbf{"ppppqqqq"} her.
+	
+	\newpage
+	\section*{Aufgaben zur Grammatik-Erstellung}
+	
+	\subsection*{Aufgabe 6}
+	Erstellen Sie eine Grammatik, die Wörter der Form $a^n b^m c^m d^n$ erzeugt.
+	
+	\subsection*{Aufgabe 7}
+	Erstellen Sie eine Grammatik, die Wörter der Form $0^n 1^m 2^m 3^n$ erzeugt.
+	
+	\subsection*{Aufgabe 8}
+	Erstellen Sie eine Grammatik, die alle Wörter enthält, die aus einer ungeraden Anzahl von $a$ bestehen.
+	
+	\subsection*{Aufgabe 9}
+	Erstellen Sie eine Grammatik, die Wörter erzeugt, die aus beliebig vielen $a$ bestehen, gefolgt von genau doppelt so vielen $b$.
+	
+	\subsection*{Aufgabe 10}
+	Erstellen Sie eine Grammatik, die Wörter der Form $(abc)^n (cba)^n$ erzeugt.
+	
+	\newpage
+	\section*{Lösungen}
+	
+	\subsection*{Lösungen zu den Ableitungsaufgaben}
+	(Ableitungsschritte analog zu den vorherigen Aufgaben, entsprechend ausführlich aufzuführen)
+	
+	\subsection*{Lösungen zu den Grammatik-Erstellungsaufgaben}
+	(Ausführliche Definition der Grammatiken für jede der schwierigen Aufgaben)
+	
+\end{document}
