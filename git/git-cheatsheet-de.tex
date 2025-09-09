@@ -1,0 +1,325 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{listingsutf8}
+\lstset{
+	inputencoding=utf8,
+	basicstyle=\ttfamily\small,
+	columns=fullflexible,
+	keepspaces=true,
+	showstringspaces=false,
+	frame=single,
+	breaklines=true,
+	literate=
+	{Ö}{{\"O}}1 {Ä}{{\"A}}1 {Ü}{{\"U}}1 {ß}{{\ss}}1
+	{ö}{{\"o}}1 {ä}{{\"a}}1 {ü}{{\"u}}1
+}
+\hypersetup{
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=black
+}
+\setlist[itemize]{noitemsep,topsep=2pt}
+\setlist[enumerate]{noitemsep,topsep=2pt}
+\title{Git-Spickzettel: Die wichtigsten Befehle f\"ur den Einstieg}
+\author{}
+\date{\today}
+\begin{document}
+	\maketitle
+	\small
+	\tableofcontents
+	\bigskip
+	
+	\section{Erste Einrichtung (einmalig)}
+	\begin{itemize}
+		\item Benutzeridentit\"at setzen (f\"ur Commits):
+		\begin{lstlisting}[language=bash]
+			git config --global user.name  "Dein Name"
+			git config --global user.email "du@example.com"
+		\end{lstlisting}
+		\item Standard-Branch auf \texttt{main} setzen (empfohlen):
+		\begin{lstlisting}[language=bash]
+			git config --global init.defaultBranch main
+		\end{lstlisting}
+		\item Optional Editor konfigurieren (Beispiel VS Code):
+		\begin{lstlisting}[language=bash]
+			git config --global core.editor "code --wait"
+		\end{lstlisting}
+		\item Aktuelle Konfiguration anzeigen:
+		\begin{lstlisting}[language=bash]
+			git config --list --show-origin
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Repository anlegen oder klonen}
+	\begin{itemize}
+		\item Neues Repo im aktuellen Ordner starten:
+		\begin{lstlisting}[language=bash]
+			git init
+		\end{lstlisting}
+		\item Existierendes Repo klonen:
+		\begin{lstlisting}[language=bash]
+			git clone git@github.com:USER/REPO.git
+			# oder per HTTPS:
+			git clone https://github.com/USER/REPO.git
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Status, Historie \& Unterschiede ansehen}
+	\begin{itemize}
+		\item Kurzstatus:
+		\begin{lstlisting}[language=bash]
+			git status -sb
+		\end{lstlisting}
+		\item Historie kompakt und mit Branch-Graf:
+		\begin{lstlisting}[language=bash]
+			git log --oneline --graph --decorate --all
+		\end{lstlisting}
+		\item Unterschiede (Arbeitsverzeichnis vs. Index):
+		\begin{lstlisting}[language=bash]
+			git diff          # nicht gestagte Änderungen
+			git diff --staged # Unterschiede zu gestagten Änderungen
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Dateien vormerken (\texttt{add}) \& speichern (\texttt{commit})}
+	\begin{itemize}
+		\item Alles (inkl. Löschungen) zum nächsten Commit vormerken:
+		\begin{lstlisting}[language=bash]
+			git add -A    # oder: git add --all
+		\end{lstlisting}
+		\item Einzelne Datei/Ordner stagen:
+		\begin{lstlisting}[language=bash]
+			git add pfad/zur_datei.txt
+			git add ordner/
+		\end{lstlisting}
+		\item Commit erstellen:
+		\begin{lstlisting}[language=bash]
+			git commit -m "Aussagekräftige Commit-Nachricht"
+		\end{lstlisting}
+		\item Letzten Commit bearbeiten (z.B. vergessene Datei oder Message):
+		\begin{lstlisting}[language=bash]
+			git commit --amend
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Dateien verschieben/umbenennen und entfernen}
+	\begin{itemize}
+		\item Verschieben/Umbenennen (tracked Dateien):
+		\begin{lstlisting}[language=bash]
+			git mv alter/pfad/datei.txt neuer/ordner/datei.txt
+		\end{lstlisting}
+		\item Entfernen und im nächsten Commit löschen:
+		\begin{lstlisting}[language=bash]
+			git rm pfad/zur_datei.txt
+		\end{lstlisting}
+		\item Nur aus dem Tracking nehmen (Datei lokal behalten):
+		\begin{lstlisting}[language=bash]
+			git rm --cached pfad/zur_datei.txt
+		\end{lstlisting}
+		\item Nur Groß-/Kleinschreibung ändern (case-insensitive Dateisysteme):
+		\begin{lstlisting}[language=bash]
+			git mv Name.txt __temp__ && git mv __temp__ name.txt
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Branches: erstellen, wechseln, zusammenführen}
+	\begin{itemize}
+		\item Branches anzeigen (mit letztem Commit):
+		\begin{lstlisting}[language=bash]
+			git branch -vv
+		\end{lstlisting}
+		\item Neuen Branch erzeugen und wechseln:
+		\begin{lstlisting}[language=bash]
+			git switch -c feature-x      # modern
+			# (alt) git checkout -b feature-x
+		\end{lstlisting}
+		\item Zwischen Branches wechseln:
+		\begin{lstlisting}[language=bash]
+			git switch main
+			# (alt) git checkout main
+		\end{lstlisting}
+		\item Branch \texttt{feature-x} in \texttt{main} mergen:
+		\begin{lstlisting}[language=bash]
+			# zuerst auf main wechseln und aktualisieren
+			git switch main
+			git pull --rebase origin main
+			# dann mergen
+			git merge feature-x
+		\end{lstlisting}
+		\item Konflikte lösen: betroffene Dateien editieren, testen, dann
+		\begin{lstlisting}[language=bash]
+			git add <konfliktdatei>
+			git commit
+		\end{lstlisting}
+		\item (Optional, fortgeschritten) Rebase statt Merge in Feature-Branch:
+		\begin{lstlisting}[language=bash]
+			git switch feature-x
+			git fetch origin
+			git rebase origin/main
+			# bei Konflikten: Dateien lösen -> git add ... -> git rebase --continue
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Mit Remotes arbeiten: Push/Pull/Fetch}
+	\begin{itemize}
+		\item Remote prüfen/setzen:
+		\begin{lstlisting}[language=bash]
+			git remote -v
+			git remote add origin git@github.com:USER/REPO.git
+			# URL ändern:
+			git remote set-url origin git@github.com:USER/NEUES-REPO.git
+		\end{lstlisting}
+		\item Erster Push (Upstream setzen):
+		\begin{lstlisting}[language=bash]
+			git push -u origin main
+		\end{lstlisting}
+		\item Spätere Pushes:
+		\begin{lstlisting}[language=bash]
+			git push                 # auf den jeweils verknüpften Upstream
+			git push origin feature-x
+		\end{lstlisting}
+		\item Aktuellen Stand holen (ohne zu mergen):
+		\begin{lstlisting}[language=bash]
+			git fetch origin
+		\end{lstlisting}
+		\item Holen und integrieren (rebase empfohlen):
+		\begin{lstlisting}[language=bash]
+			git pull --rebase origin main
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Änderungen verwerfen \& zurückrollen}
+	\begin{itemize}
+		\item \textbf{Nicht gestagte} lokale Änderungen verwerfen:
+		\begin{lstlisting}[language=bash]
+			git restore pfad/datei.txt    # einzelne Datei
+			git restore .                  # alles im Arbeitsverzeichnis
+		\end{lstlisting}
+		\item Datei aus dem Index „entstagen“ (Änderungen behalten):
+		\begin{lstlisting}[language=bash]
+			git restore --staged pfad/datei.txt
+		\end{lstlisting}
+		\item Datei auf Stand von \texttt{HEAD} zurücksetzen:
+		\begin{lstlisting}[language=bash]
+			git restore --source=HEAD -- pfad/datei.txt
+		\end{lstlisting}
+		\item Einzelnen Commit rückgängig machen (Historie bleibt linear):
+		\begin{lstlisting}[language=bash]
+			git revert <commit-hash>
+		\end{lstlisting}
+		\item Auf früheren Stand \textbf{hart} zurücksetzen (Achtung!):
+		\begin{lstlisting}[language=bash]
+			git reset --hard <commit-hash>
+			# 'soft' behält Änderungen gestagt, 'mixed' (Standard) behält sie ungestagt
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Zwischenspeichern mit \texttt{stash}}
+	\begin{itemize}
+		\item Schnell Zwischenspeichern und Arbeitsverzeichnis leeren:
+		\begin{lstlisting}[language=bash]
+			git stash push -m "WIP: kurze Beschreibung"
+			# kurz: git stash
+		\end{lstlisting}
+		\item Liste anzeigen / wieder anwenden:
+		\begin{lstlisting}[language=bash]
+			git stash list
+			git stash apply    # Änderungen bleiben im Stash erhalten
+			git stash pop      # Änderungen anwenden und Stash-Eintrag entfernen
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Versionen markieren: \texttt{tag}}
+	\begin{itemize}
+		\item Leichtgewicht-Tag:
+		\begin{lstlisting}[language=bash]
+			git tag v1.0.0
+		\end{lstlisting}
+		\item Annotiertes Tag (mit Message, Autor, Datum):
+		\begin{lstlisting}[language=bash]
+			git tag -a v1.0.0 -m "Erstes Release"
+		\end{lstlisting}
+		\item Tags pushen:
+		\begin{lstlisting}[language=bash]
+			git push --tags
+			# oder gezielt:
+			git push origin v1.0.0
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{\texttt{.gitignore} Basics}
+	\begin{itemize}
+		\item Typische Einträge in \texttt{.gitignore}:
+		\begin{lstlisting}
+			# Logs und temporäres
+			*.log
+			*.tmp
+			.DS_Store
+			
+			# Abhängigkeiten/Builds
+			node_modules/
+			dist/
+			build/
+			
+			# Geheimnisse
+			.env
+			.env.*
+		\end{lstlisting}
+		\item Prüfen, warum eine Datei ignoriert wird:
+		\begin{lstlisting}[language=bash]
+			git check-ignore -v pfad/datei
+		\end{lstlisting}
+	\end{itemize}
+	
+	\section{Nützliche Aliases (optional)}
+	\begin{lstlisting}[language=bash]
+		git config --global alias.st "status -sb"
+		git config --global alias.co "checkout"
+		git config --global alias.sw "switch"
+		git config --global alias.ci "commit"
+		git config --global alias.br "branch -vv"
+		git config --global alias.lg "log --oneline --graph --decorate --all"
+		git config --global alias.df "diff"
+	\end{lstlisting}
+	
+	\section{Häufige Mini-Workflows}
+	\begin{enumerate}
+		\item \textbf{Dateien in Unterordner verschieben (inkl. Tracken):}
+		\begin{lstlisting}[language=bash]
+			git mv alte_datei.txt neuer_ordner/
+			git add -A
+			git commit -m "Verschiebe Dateien in Unterordner"
+			git push
+		\end{lstlisting}
+		\item \textbf{Neuen Branch erstellen und veröffentlichen:}
+		\begin{lstlisting}[language=bash]
+			git switch -c feature-x
+			git push -u origin feature-x
+		\end{lstlisting}
+		\item \textbf{Merge-Konflikt lösen (Kurzform):}
+		\begin{lstlisting}[language=bash]
+			# Konfliktdateien bearbeiten
+			git add <datei1> <datei2>
+			git commit   # Abschluss-Commit
+		\end{lstlisting}
+		\item \textbf{Aus Versehen committete Datei wieder entfernen, lokal behalten:}
+		\begin{lstlisting}[language=bash]
+			git rm --cached geheim.txt
+			echo "geheim.txt" >> .gitignore
+			git commit -m "geheim.txt aus dem Tracking entfernt"
+			git push
+		\end{lstlisting}
+	\end{enumerate}
+	
+	\bigskip
+	\noindent\textbf{Tipp:} Verwende \texttt{git help <befehl>} oder \texttt{git <befehl> --help} für die eingebaute Hilfe.
+	
+\end{document}

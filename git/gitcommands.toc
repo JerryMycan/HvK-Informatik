@@ -1,0 +1,14 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{\numberline {1}Erste Einrichtung (einmalig)}{1}{section.1}%
+\contentsline {section}{\numberline {2}Repository anlegen oder klonen}{1}{section.2}%
+\contentsline {section}{\numberline {3}Status, Historie \& Unterschiede ansehen}{1}{section.3}%
+\contentsline {section}{\numberline {4}Dateien vormerken (\texttt {add}) \& speichern (\texttt {commit})}{2}{section.4}%
+\contentsline {section}{\numberline {5}Dateien verschieben/umbenennen und entfernen}{2}{section.5}%
+\contentsline {section}{\numberline {6}Branches: erstellen, wechseln, zusammenf\"uhren}{2}{section.6}%
+\contentsline {section}{\numberline {7}Mit Remotes arbeiten: Push/Pull/Fetch}{3}{section.7}%
+\contentsline {section}{\numberline {8}\"Anderungen verwerfen \& zur\"uckrollen}{4}{section.8}%
+\contentsline {section}{\numberline {9}Zwischenspeichern mit \texttt {stash}}{4}{section.9}%
+\contentsline {section}{\numberline {10}Versionen markieren: \texttt {tag}}{4}{section.10}%
+\contentsline {section}{\numberline {11}\texttt {.gitignore} Basics}{5}{section.11}%
+\contentsline {section}{\numberline {12}N\"utzliche Aliases (optional)}{5}{section.12}%
+\contentsline {section}{\numberline {13}H\"aufige Mini-Workflows}{5}{section.13}%
