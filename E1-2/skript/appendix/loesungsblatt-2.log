@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.30)  10 SEP 2025 12:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.1.30)  11 SEP 2025 08:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**arbeitsauftrag_gruppenpuzzle_fixed.tex
-(./arbeitsauftrag_gruppenpuzzle_fixed.tex
+**loesungsblatt-2.tex
+(./loesungsblatt-2.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
@@ -837,8 +837,8 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count322
 \l__pdf_internal_box=\box84
 )
-(./arbeitsauftrag_gruppenpuzzle_fixed.aux)
-\openout1 = `arbeitsauftrag_gruppenpuzzle_fixed.aux'.
+(./loesungsblatt-2.aux)
+\openout1 = `loesungsblatt-2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
 LaTeX Font Info:    ... okay on input line 76.
@@ -993,7 +993,7 @@ dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/sha
 re/texmf/fonts/enc/dvips/lm/lm-ts1.enc} <./hvk-logo.png>] [2]
 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./arbeitsauftrag_gruppenpuzzle_fixed.aux)
+(./loesungsblatt-2.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1001,19 +1001,18 @@ L3 programming layer <2024-01-22>
  ) 
 Here is how much of TeX's memory you used:
  25979 strings out of 474222
- 559056 string characters out of 5748733
+ 558828 string characters out of 5748733
  1936975 words of memory out of 5000000
  47796 multiletter control sequences out of 15000+600000
  602525 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,11n,107p,10929b,518s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,11n,107p,10910b,518s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></
 usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/p
 ublic/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on arbeitsauftrag_gruppenpuzzle_fixed.pdf (2 pages, 188273 bytes
-).
+Output written on loesungsblatt-2.pdf (2 pages, 188273 bytes).
 PDF statistics:
  92 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream
