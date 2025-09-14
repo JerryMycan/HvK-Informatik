@@ -17,6 +17,14 @@ Das heißt, ein Programm ist selbst nur eine Folge von Zahlen (Maschinenbefehlen
 im Hauptspeicher abgelegt und von der CPU geholt werden. Diese \emph{Stored-Program}-Idee macht
 Rechner \emph{flexibel} (beliebige Programme ladbar) und \emph{universell}.
 
+
+
+% (Optionaler Hinweis, falls du ihn setzen möchtest:)
+%\paragraph{Hinweis.} Moderne Prozessoren mildern den Engpass z.\,B. durch schnelle \emph{Caches} in der CPU, 
+%Vorabruf (Prefetch) und parallele Arbeitsschritte (Pipelining). Das Grundproblem — ein gemeinsamer Weg 
+%für Befehle und Daten — bleibt dabei aber die Ursache des Flaschenhalses.
+
+
 \subsection*{Bausteine im von-Neumann-Modell}
 \begin{itemize}
 	\item \textbf{CPU (Prozessor)} mit
@@ -36,6 +44,54 @@ Rechner \emph{flexibel} (beliebige Programme ladbar) und \emph{universell}.
 	\caption{Architektur von Neumann Rechners.}
 	\label{fig:vonNeumannarchitektur}
 \end{figure}
+
+Im Von-Neumann-Rechner steckt die „Denkarbeit“ in der CPU. Sie besteht aus zwei Hauptteilen: dem Rechenwerk (ALU), das z. B. addiert, vergleicht und logisch verknüpft, und dem Steuerwerk, das den Ablauf organisiert. Die CPU arbeitet Befehle nacheinander ab: Sie holt einen Befehl aus dem Speicher (Fetch), versteht ihn (Decode) und führt ihn aus (Execute). Sowohl Befehle als auch die dazugehörigen Daten werden aus demselben Arbeitsspeicher geholt.\\
+Damit CPU, Speicher und Ein-/Ausgabegeräte miteinander sprechen können, gibt es gemeinsame Leitungen, das Bus-System. Über den Adressbus wird gesagt, „wo“ etwas liegt, über den Datenbus „was“ übertragen wird, und der Steuerbus regelt das „wie“ (Lesen/Schreiben, Takt, Signale).\\
+Weil Befehle und Daten denselben Weg benutzen entsteht in dem Prozess der sogenannte Von-Neumann-Flaschenhals. Auf Grund der Tatsache, dass zur gleichen Zeit neue Befehle geholt und Daten gelesen oder geschrieben werden, kommt es zu Staus auf dem Bus: Die CPU könnte weiterrechnen, muss aber warten, bis der Bus wieder frei ist.\\ \\
+Alltagsbild: Stell dir eine Straße mit nur einer Spur vor. Darauf fahren sowohl „Befehls-Autos“ als auch „Daten-Laster“. Wenn viele Daten unterwegs sind, stehen die Befehle im Stau – die CPU wartet.
+
+Kleines Beispiel: Die drei Befehle „LOAD A“, „ADD B“, „STORE A“.
+
+\begin{enumerate}
+	\item LOAD A: Die CPU holt den Befehl, versteht ihn und fordert die Daten an Adresse A an. Während die Daten geladen werden, ist der Bus belegt.
+	\item Die CPU würde gern sofort den nächsten Befehl (ADD B) holen, kann aber nicht, weil der Bus noch mit dem Datentransfer für LOAD beschäftigt ist. Es entsteht ein Wartetakt.
+	\item Sobald die Daten aus A angekommen sind, kann die CPU weiterarbeiten: Sie holt nun den ADD-Befehl, liest die Daten von B und rechnet.
+	\item STORE A schreibt das Ergebnis zurück in den Speicher – wieder wird der Bus belegt.
+\end{enumerate}
+
+In der Praxis musste man feststellen: Die CPU ist oft schneller als der Weg zu ihren Daten. Damit sie weniger warten muss, hat man das klassische Von-Neumann-Modell weiterentwickelt. Man spricht nicht von einer völlig neuen Architektur, sondern eher von „modernen/erweiterten Von-Neumann-Rechnern“. Die wichtigsten Ideen dahinter:
+
+1) Speicherhierarchie und Caches
+Statt immer den (relativ) langsamen Hauptspeicher zu fragen, bekommt die CPU kleine, extrem schnelle Zwischenspeicher direkt neben den Rechenkernen: Caches. Ganz nah (L1) sind sie winzig und sehr schnell, dahinter liegen größere (L2/L3). Häufig gebrauchte Befehle und Daten liegen dann schon „um die Ecke“ – das spart Wartezeit.
+Extra-Trick: Viele CPUs trennen den L1-Cache in I-Cache (Instruktionen) und D-Cache (Daten). So kann die CPU gleichzeitig einen Befehl und Daten holen. Man nennt das oft „Modified Harvard“ auf Cache-Ebene, obwohl Hauptspeicher und Adressraum weiterhin gemeinsam sind.
+
+2) Vorabruf und Vorhersage
+Die CPU versucht zu erraten, was sie als Nächstes braucht:
+
+Prefetch holt Daten/Befehle schon im Voraus.
+
+Sprungvorhersage (Branch Prediction) rät, wie ein „if/else“ weitergeht, und lädt vorsorglich die passenden Befehle.
+Treffen die Vorhersagen, spart man viele Takte; liegen sie daneben, muss man zurückrudern – kostet aber immer noch weniger als ständig zu warten.
+
+3) Fließbandarbeit in der CPU
+Statt einen Befehl komplett zu Ende zu bringen und erst dann den nächsten zu beginnen, zerlegt man Befehle in Stufen (Fetch, Decode, Execute, Writeback). Mehrere Befehle können so gleichzeitig in verschiedenen Stufen sein (Pipelining).
+Leistungsstärker noch: Superskalarität startet mehr als einen Befehl pro Takt, wenn die Hardware-Einheiten frei sind.
+
+4) Keine Zeit verlieren: Out-of-Order
+Wenn ein Befehl gerade warten muss (z. B. auf Daten), nimmt die CPU einen anderen, schon vorbereiteten Befehl vor und rechnet dort weiter. So bleibt das Rechenwerk beschäftigt und die Wartezeiten fallen weniger ins Gewicht.
+
+5) Schnellere und breitere Wege
+Auch die „Straßen“ wurden ausgebaut: breitere Datenpfade, schnellere Speichertechniken und kluge Speichercontroller liefern mehr Bits pro Takt. Zusätzlich können Geräte per DMA (Direct Memory Access) Daten bewegen, ohne die CPU zu blockieren.
+
+6) Mehr parallel: Multi-Core und Vektor-Einheiten
+Statt nur einem Kern arbeiten mehrere Kerne gleichzeitig an verschiedenen Aufgaben. Außerdem können Vektor-/SIMD-Einheiten eine Rechenoperation auf viele Daten zugleich anwenden (z. B. Bild-/Audioverarbeitung).
+
+Wichtig zu wissen:
+All das mildert den Von-Neumann-Flaschenhals, beseitigt ihn aber nicht vollständig. Wenn Daten nicht in den Caches liegen oder Programme sehr sprunghaft arbeiten, muss die CPU weiterhin warten. Moderne Rechner sind also ein Mix aus schlauem Vorrat (Caches), Vorausschau (Prefetch/Prediction), Parallelität (Pipeline, Multi-Core, SIMD) und schnelleren Wegen – damit aus „Warten auf Daten“ so oft wie möglich „Rechnen“ wird.
+
+
+
+
 %\begin{figure}[H]
 %	\centering
 %	\setlength{\fboxsep}{6pt}

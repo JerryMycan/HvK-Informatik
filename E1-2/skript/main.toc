@@ -44,22 +44,22 @@
 \contentsline {chapter}{\numberline {4}Hardwarearchitektur}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Worum geht es?}{17}{section.4.1}%
 \contentsline {section}{\numberline {4.2}John von Neumann und die Grundidee}{17}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Der Befehlszyklus (Fetch–Decode–Execute)}{18}{section.4.3}%
-\contentsline {paragraph}{Mini-Beispiel (gedankliches Maschinenprogramm).}{18}{Item.11}%
-\contentsline {section}{\numberline {4.4}Speicher, Wortbreite und Adressierung}{18}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Warum ist das so erfolgreich?}{19}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Grenzen: der Von-Neumann-Flaschenhals}{19}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Harvard vs.\ von Neumann (und die Praxis heute)}{20}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Grundlagen der Computernetze}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Warum vernetzen wir Computer?}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Client und Server}{21}{section.5.2}%
-\contentsline {paragraph}{Merksatz.}{21}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Datenpakete (allgemein)}{22}{section.5.3}%
-\contentsline {paragraph}{Warum Pakete?}{22}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Adressierung von Computern}{22}{section.5.4}%
-\contentsline {paragraph}{Alltagsbild.}{22}{section.5.4}%
-\contentsline {chapter}{Anhang}{25}{appendix*.2}%
-\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{26}{section.Alph0.1}%
-\contentsline {section}{\numberline {.2}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{28}{section.Alph0.2}%
-\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{30}{section.Alph0.3}%
-\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{31}{section.Alph0.4}%
+\contentsline {section}{\numberline {4.3}Der Befehlszyklus (Fetch–Decode–Execute)}{20}{section.4.3}%
+\contentsline {paragraph}{Mini-Beispiel (gedankliches Maschinenprogramm).}{20}{Item.15}%
+\contentsline {section}{\numberline {4.4}Speicher, Wortbreite und Adressierung}{20}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Warum ist das so erfolgreich?}{20}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Grenzen: der Von-Neumann-Flaschenhals}{21}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Harvard vs.\ von Neumann (und die Praxis heute)}{21}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Grundlagen der Computernetze}{23}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Warum vernetzen wir Computer?}{23}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Client und Server}{23}{section.5.2}%
+\contentsline {paragraph}{Merksatz.}{23}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Datenpakete (allgemein)}{24}{section.5.3}%
+\contentsline {paragraph}{Warum Pakete?}{24}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Adressierung von Computern}{24}{section.5.4}%
+\contentsline {paragraph}{Alltagsbild.}{24}{section.5.4}%
+\contentsline {chapter}{Anhang}{27}{appendix*.2}%
+\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{28}{section.Alph0.1}%
+\contentsline {section}{\numberline {.2}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{30}{section.Alph0.2}%
+\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{32}{section.Alph0.3}%
+\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{33}{section.Alph0.4}%

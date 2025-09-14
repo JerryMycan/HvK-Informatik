@@ -1,26 +1,26 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.12.31)  24 AUG 2025 15:18
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.2.1)  14 SEP 2025 14:16
  restricted system commands enabled.
 **hardwarearchitektur.tex
 (./hardwarearchitektur.tex
-LaTeX2e <2024-11-01> patch level 1
-L3 programming layer <2024-12-09>
-Lua module: luaotfload 2024-02-14 v3.28 Lua based OpenType font support
-Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
-Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
-collection.
-luaotfload | conf : Root cache directory is "/home/jerry/.texlive2024/texmf-var/
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 2.76 ConTeXt Lua libraries -- extended c
+ollection.
+luaotfload | conf : Root cache directory is "/home/jerry/.texlive2023/texmf-var/
 luatex-cache/generic/names".
-luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
-olved path "/usr/local/texlive/2024/texmf-dist/tex/luatex/luaotfload/fontloader-
-2023-12-28.lua".
+luaotfload | init : Loading fontloader "fontloader-2023-08-19.lua" from kpse-res
+olved path "/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader-2023-
+08-19.lua".
 Lua-only attribute luaotfload@noligature = 1
-luaotfload | init : Context OpenType loader version 3.134
+luaotfload | init : Context OpenType loader version 3.133
 Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
 Inserting `luaotfload.node_processor' in `hpack_filter'.
 Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
 Inserting `luaotfload.define_font' in `define_font'.
 Lua-only attribute luaotfload_color_attribute = 2
-luaotfload | conf : Root cache directory is "/home/jerry/.texlive2024/texmf-var/
+luaotfload | conf : Root cache directory is "/home/jerry/.texlive2023/texmf-var/
 luatex-cache/generic/names".
 Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
 Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
@@ -39,11 +39,11 @@ Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
 Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
 Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
-Inserting `tracingstacklevels' in `input_level_string'. (/usr/local/texlive/202
-4/texmf-dist/tex/latex/subfiles/subfiles.cls
+Inserting `tracingstacklevels' in `input_level_string'. (/usr/share/texlive/tex
+mf-dist/tex/latex/subfiles/subfiles.cls
 Document Class: subfiles 2020/11/14 v2.2 Multi-file projects (class)
 Preamble taken from file `../skript/main.tex'
-(/usr/local/texlive/2024/texmf-dist/tex/latex/import/import.sty
+(/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 )
 
@@ -63,12 +63,12 @@ l.45 \input{\preamble@file}
 
 
 Here is how much of LuaTeX's memory you used:
- 77 strings out of 475554
- 100000,552014 words of node,token memory allocated 303 words of node memory still in use:
+ 79 strings out of 476553
+ 100000,1977958 words of node,token memory allocated 303 words of node memory still in use:
    1 hlist, 1 dir, 3 kern, 1 glyph, 1 attribute, 39 glue_spec, 1 attribute_list,
  1 if_stack nodes
    avail lists: 2:9,3:3,4:1
- 23149 multiletter control sequences out of 65536+600000
+ 22177 multiletter control sequences out of 65536+600000
  14 fonts using 591679 bytes
  42i,0n,54p,159b,18s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
