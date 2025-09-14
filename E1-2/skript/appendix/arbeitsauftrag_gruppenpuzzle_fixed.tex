@@ -1,0 +1,144 @@
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Zeichensatz ---
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+
+% --- Layout & Hilfspakete ---
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx}
+\usepackage{amssymb}
+
+\geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\graphicspath{{.}{./img/}{./images/}{./assets/}}
+
+% --- Farben (anpassbar) ---
+\definecolor{accent}{HTML}{4F5FB3}  % Akzentfarbe
+\definecolor{softbg}{HTML}{F4F6FF}  % zartes Hintergrundblau
+\definecolor{softline}{HTML}{D7DCF5}
+
+% --- Kopf-/Fußzeile ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Heinrich-von-Kleist-Schule, Eschborn}
+\fancyfoot[C]{\footnotesize \blatttyp}
+\fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
+
+% --- Variablen ---
+\newcommand{\blatttyp}{Arbeitsauftrag}
+\newcommand{\thema}{Gruppenpuzzle: Mensch \& Computer als informationsverarbeitendes System}
+\newcommand{\logofile}{hvk-logo.png}
+
+% --- Titelleiste mit Logo + Metadaten ---
+\newcommand{\sheettitle}[2]{%
+  \begin{minipage}[t]{0.62\linewidth}
+    \IfFileExists{\logofile}{\includegraphics[height=1.6cm]{\logofile}}{\fbox{\parbox[c][1.6cm][c]{5.5cm}{\centering \small Logo-Datei nicht gefunden}}}\\[0.6em]
+    {\Large\bfseries #1}\\[-0.2em]
+    {\normalsize #2}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.35\linewidth}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{>{\bfseries}p{0.36\linewidth}p{0.58\linewidth}}
+      Fach: & \rule{3.8cm}{0.4pt} \\
+      Klasse/Kurs: & \rule{3.8cm}{0.4pt} \\
+      Datum: & \rule{3.8cm}{0.4pt} \\
+      Name: & \rule{3.8cm}{0.4pt} \\
+    \end{tabular}
+  \end{minipage}
+  \vspace{0.8em}\par\hrule\vspace{1.0em}
+}
+
+% --- hübsche Boxen ---
+\tcbset{
+  colframe=accent,
+  colback=softbg,
+  coltitle=black,
+  boxrule=0.7pt,
+  arc=2mm,
+  left=2mm,right=2mm,top=1.5mm,bottom=1.5mm,
+  title style={font=\bfseries}
+}
+
+\newtcolorbox{infobox}[1]{title=#1}
+\newtcolorbox{teilbox}[1]{title=#1, colback=white, colframe=accent}
+\newtcolorbox{hinweisbox}{colback=softbg, colframe=softline, boxrule=0.5pt}
+
+\begin{document}
+
+\sheettitle{\blatttyp}{Thema: \thema}
+
+\begin{infobox}{Ziel des Arbeitsauftrags}
+Verstehe fachliche Texte sicher, tausche dich als \textbf{Experte} in deiner Stammgruppe aus und gib dein Wissen als \textbf{Lehrer} in einer neuen Gruppe weiter. Zum Schluss erstellt ihr eine \textbf{gemeinsame Präsentation}.
+\end{infobox}
+
+\begin{hinweisbox}
+\textbf{Ablaufform:} Dieser Arbeitsauftrag folgt dem \emph{Gruppenpuzzle (Jigsaw)}.\\
+\textbf{Material:} Textabschnitte, Stifte/Marker (Farben), Papier/Laptop für Notizen, Präsentationsmedium (Folien/Slides/Plakat).\\
+\textbf{Zeitvorschlag:} Teil~1 \(\approx\) 20--25\,min \quad|\quad Teil~2 \(\approx\) 20--25\,min \quad|\quad Präsentation \(\approx\) 10\,min je Gruppe.
+\end{hinweisbox}
+
+% ===================== TEIL 1 =====================
+\begin{teilbox}{Teil 1 \textemdash\ Werde Experte!}
+\begin{enumerate}[label=\roman*)]
+  \item \textbf{Textarbeit:} Lies den dir zugeteilten Text aufmerksam. 
+  \emph{Markiere} besonders wichtige Stellen \textbf{farbig} \;oder\; \emph{unterstreiche} Passagen, die du \textbf{noch nicht} verstanden hast.
+  \item \textbf{Klärung in der Stammgruppe:} Tauscht euch über unklare Stellen aus und \emph{klärt} Verständnisfragen gemeinsam. Nutzt Beispiele aus dem Text.
+  \item \textbf{Notizen für die mündliche Zusammenfassung:} Notiere prägnante Stichpunkte:
+  \begin{itemize}[left=1em]
+    \item zentrale Begriffe / Definitionen
+    \item Kernaussagen, Prozesse, Beispiele
+    \item eine \emph{Mini-Gliederung} für deine Erklärung (1--2\,Minuten)
+  \end{itemize}
+\end{enumerate}
+
+\vspace{0.4em}
+\textbf{Meine Stichpunkte (Platz für Notizen):}\\[0.3em]
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}\vspace{0.8em}
+\rule{\linewidth}{0.4pt}
+\end{teilbox}
+
+% ===================== TEIL 2 =====================
+\begin{teilbox}{Teil 2 \textemdash\ Werde Lehrer!}
+\begin{enumerate}[label=\roman*)]
+  \item \textbf{Gruppenwechsel:} Ordne dich einer neuen Gruppe zu, in der \emph{dein} Text nur von \textbf{dir} vertreten wird (Expertengruppe auflösen, Lehrgruppen bilden).
+  \item \textbf{Experteninput:} Erkläre mit Hilfe deines Textes und deiner Notizen \emph{verständlich und strukturiert}, was du gelernt hast. \\
+  \item \textbf{Gemeinsames Produkt:} Erstellt in eurer Lehrgruppe eine \textbf{Präsentation} zum Thema:\\[2pt]
+  \centerline{\textbf{Mensch und Computer als informationsverarbeitendes System}}\\ \textemdash\ Eigenschaften, Gemeinsamkeiten und Unterschiede.
+\end{enumerate}
+\end{teilbox}
+
+% ===================== ABGABE & KRITERIEN =====================
+\begin{infobox}{Ergebnis \& kurze Kriterien}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{0.28\linewidth}X@{}}
+\textit{Abgabe/Output:} & Gruppenpräsentation (Slides/Plakat) + eure Stichpunkte.\\
+\textit{Kriterien:} & Klarer Aufbau, präzise Begriffe, passende Beispiele, sichtbare Gemeinsamkeiten/Unterschiede, Zeitrahmen eingehalten.\\
+\end{tabularx}
+\end{infobox}
+
+\begin{hinweisbox}
+\textbf{Tipp:} Verwendet Farben/Symbole für Mensch \(\leftrightarrow\) Computer, um Gemeinsamkeiten und Unterschiede \emph{auf einen Blick} sichtbar zu machen.
+\end{hinweisbox}
+
+\vfill
+\hrule
+\small\emph{Hinweis: Diese Seite ist als \blatttyp{} im Gruppenpuzzle einsetzbar. Felder, Farben und Struktur sind frei anpassbar.}
+
+\end{document}
