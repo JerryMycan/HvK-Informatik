@@ -1,0 +1,177 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Engine ---
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+% --- Layout & Hilfspakete ---
+\usepackage{geometry}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+
+% --- Code-Listings (Java) ---
+\usepackage{listings}
+\usepackage{xcolor}
+\lstdefinestyle{java}{
+	language=Java,
+	basicstyle=\ttfamily\small,
+	keywordstyle=\bfseries\color{blue!60!black},
+	commentstyle=\itshape\color{black!55},
+	stringstyle=\color{purple!70!black},
+	numbers=left,
+	numberstyle=\tiny,
+	stepnumber=1,
+	numbersep=6pt,
+	frame=single,
+	breaklines=true,
+	tabsize=2,
+	showstringspaces=false
+}
+\lstset{style=java}
+
+% --- Kopf-/Fußzeilen ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Heinrich-von-Kleist-Schule, Eschborn}
+\fancyfoot[C]{\footnotesize \textbf{Lösungsvorschlag — Arbeitsblatt 2}}
+\fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
+
+% --- Titel ---
+\newcommand{\sheettitle}[2]{%
+	{\Large\bfseries #1}\\[-0.2em]
+	{\normalsize #2}\par\hrule\vspace{1.0em}
+}
+
+\begin{document}
+	
+	\sheettitle{Lösungsvorschlag}{Thema: Objektorientierte Programmierung (Java) – Einführung \& Recherche}
+	
+	\small\emph{Bezug: Aufgabenblatt 2 (AB2-OOP.pdf).}
+	
+	\section*{Aufgabe 1: Was bildet Programmieren ab? Was sind eigentlich Programme? \,[4 BE]}
+	Ein \textbf{Computerprogramm} ist eine \emph{folgerichtige, endliche Folge von Anweisungen}, die ein Computer ausführt, um ein bestimmtes Problem zu lösen. Programme \emph{modellieren reale Abläufe/Daten} in einer formalen Sprache: Eingaben werden verarbeitet (Rechnen, Vergleichen, Entscheiden), Ausgaben werden erzeugt (z.\,B. Text, Grafik, Dateien). Kurz: \emph{Programme sind präzise Rezepte}, die die Maschine ohne Deutungsschritte befolgen kann.
+	
+	\section*{Aufgabe 2: Prozedural vs. Objektorientiert \,[8 BE]}
+	\renewcommand{\arraystretch}{1.25}
+	\begin{tabularx}{\linewidth}{|p{0.47\linewidth}|p{0.47\linewidth}|}
+		\hline
+		\textbf{Prozedurale Programmierung} & \textbf{Objektorientierte Programmierung (OOP)}\\\hline
+		Denkt in \emph{Schritten/Prozeduren/Funktionen}. Daten werden an Funktionen übergeben. & Denkt in \emph{Objekten}: \emph{Daten (Attribute)} + \emph{Verhalten (Methoden)} gehören zusammen.\\\hline
+		Zustand (Daten) und Logik (Funktionen) sind getrennt; globale Daten sind üblich(er). & \textbf{Kapselung}: interne Daten werden geschützt; Zugriff nur über Methoden.\\\hline
+		Gut für lineare Abläufe, kleine bis mittlere Programme. & Gut für komplexe Modelle (z.\,B. GUI, Spiele, Simulationswelten). \textbf{Wiederverwendung} über Klassen/Vererbung/Komposition.\\\hline
+		Beispiele: C, Pascal, prozeduraler Stil in Python. & Beispiele: Java, C\#, Python (OOP-Stil), C++ (multi-paradigm).\\\hline
+	\end{tabularx}
+	
+	\paragraph{Kernaussage:} Prozedural = „\emph{Wie} wird etwas getan?“ (Schrittfolgen). OOP = „\emph{Wer} tut etwas?“ (Objekte mit Verantwortung).
+	
+	\section*{Aufgabe 3: Begriffsklärung \,[16 BE]}
+	Jeweils kurz erklären (1–3 Sätze) + Beispiel.
+	
+	\begin{enumerate}[leftmargin=*,itemsep=0.6em]
+		\item \textbf{Objekt:} \emph{konkretes Exemplar} mit eigenem Zustand und Verhalten.\\
+		\emph{Beispiel:} \texttt{meinRad} mit Gangzahl \(=3\), Geschwindigkeit \(=12\) km/h; Methoden \texttt{schalteGang(…)}.
+		
+		\item \textbf{Klasse:} \emph{Bauplan/Schablone} für Objekte: definiert Attribute und Methoden.\\
+		\emph{Beispiel:} \texttt{class Fahrrad \{ int gaenge; void bremsen() \{...\}\}}.
+		
+		\item \textbf{Attribut (Feld):} \emph{Eigenschaft} eines Objekts (speichert Daten/Zustand).\\
+		\emph{Beispiel:} \texttt{private int gaenge;} oder \texttt{private String farbe;}.
+		
+		\item \textbf{Methode:} \emph{Fähigkeit/Verhalten} eines Objekts (Prozedur/Funktion in der Klasse).\\
+		\emph{Beispiel:} \texttt{public void beschleunigen(double delta) \{...\}}.
+		
+		\item \textbf{Konstruktor:} Spezial-Methode zum \emph{Erzeugen/Initialisieren} eines Objekts (gleichnamig wie Klasse, ohne Rückgabetyp).\\
+		\emph{Beispiel:} \texttt{public Fahrrad(int gaenge, String farbe) \{ this.gaenge=gaenge; this.farbe=farbe; \}}.
+		
+		\item \textbf{Instanz:} \emph{konkretes, erzeugtes Objekt} einer Klasse.\\
+		\emph{Beispiel:} \texttt{Fahrrad meinRad = new Fahrrad(7, "blau");}
+	\end{enumerate}
+	
+	\section*{Aufgabe 4: Von Alltagsobjekt zur Java-Klasse \,[12 BE]}
+	Beispielobjekt: \textbf{Fahrrad}.
+	
+	\subsection*{a) Attribute und Methoden}
+	\textbf{Mögliche Attribute (mind. 4):}
+	\begin{itemize}[leftmargin=*,itemsep=0.2em]
+		\item \texttt{marke: String}, \texttt{gaenge: int}, \texttt{aktuelleGeschwindigkeit: double}, \texttt{lichtAn: boolean}
+	\end{itemize}
+	\textbf{Mögliche Methoden (mind. 4):}
+	\begin{itemize}[leftmargin=*,itemsep=0.2em]
+		\item \texttt{beschleunigen(double delta)}, \texttt{bremsen(double delta)}, \texttt{schalteGang(int neu)}, \texttt{klingeln()}
+	\end{itemize}
+	
+	\subsection*{b) Java-Klasse (Rohentwurf: Felder, Konstruktor, 2–3 Methoden genügen)}
+	\begin{lstlisting}
+		// Klassenname: Fahrrad
+		class Fahrrad {
+			
+			// Felder (Attribute)
+			private String marke;
+			private int gaenge;
+			private double aktuelleGeschwindigkeit; // km/h
+			private boolean lichtAn;
+			
+			// Konstruktor
+			public Fahrrad(String marke, int gaenge) {
+				this.marke = marke;
+				this.gaenge = gaenge;
+				this.aktuelleGeschwindigkeit = 0.0;
+				this.lichtAn = false;
+			}
+			
+			// Methoden (Signaturen + einfache Logik)
+			public void beschleunigen(double delta) {
+				if (delta > 0) {
+					aktuelleGeschwindigkeit += delta;
+				}
+			}
+			
+			public void bremsen(double delta) {
+				if (delta > 0) {
+					aktuelleGeschwindigkeit -= delta;
+					if (aktuelleGeschwindigkeit < 0) {
+						aktuelleGeschwindigkeit = 0;
+					}
+				}
+			}
+			
+			public boolean schalteGang(int neu) {
+				if (neu >= 1 && neu <= gaenge) {
+					// hier könnte man den aktuellen Gang speichern (extra Feld)
+					return true;
+				}
+				return false;
+			}
+			
+			public void klingeln() {
+				System.out.println("Klingeling!");
+			}
+			
+			// (Optional) Getter als Beispiel für Kapselung
+			public double getAktuelleGeschwindigkeit() {
+				return aktuelleGeschwindigkeit;
+			}
+		}
+	\end{lstlisting}
+	
+	\paragraph{Hinweise zur Bewertung (transparent für SuS).}
+	\begin{itemize}[leftmargin=*,itemsep=0.2em]
+		\item \textbf{A1 (4 BE):} korrekte, knappe Definition (\(\approx\) 2–3 Sätze), Zweck/Funktion klar.
+		\item \textbf{A2 (8 BE):} Unterschiede klar benannt (Denkrichtung, Kapselung, Wiederverwendung) + passende Beispiele.
+		\item \textbf{A3 (16 BE):} alle 6 Begriffe sauber erklärt; je ein Beispiel (Java-nah).
+		\item \textbf{A4 (12 BE):} mind. 4 Attribute \& 4 Methoden sinnvoll; Klasse mit Feldern, Konstruktor, 2–3 Methoden korrekt (Syntax/Benennung).
+	\end{itemize}
+	
+	\vfill
+	\hrule
+	\small\emph{Quelle der Aufgabenstellung: AB2-OOP.pdf (Aufgabenblatt 2 – OOP).}
+\end{document}

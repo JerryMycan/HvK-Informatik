@@ -1,0 +1,49 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Engine ---
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+% --- Layout ---
+\usepackage{geometry}
+\geometry{left=22mm,right=22mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+
+% --- Kopf-/Fußzeile ---
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+
+\newcommand{\logofile}{hvk-logo.png}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancyhead[L]{%
+	\IfFileExists{\logofile}{\includegraphics[height=1.2cm]{\logofile}}{\fbox{\parbox[c][1.2cm][c]{4.5cm}{\centering \small Logo fehlt}}}%
+}
+\fancyhead[C]{\small Heinrich-von-Kleist-Schule, Eschborn}
+\fancyhead[R]{\small Hilfstext (Anlage)}
+\fancyfoot[L]{\small \textit{Mensch \& Computer – Grundlagen}}
+\fancyfoot[C]{}
+\fancyfoot[R]{\small Seite \thepage{} von \pageref{LastPage}}
+
+\begin{document}
+	
+	{\Large\bfseries Daten und deren Verarbeitung}\par
+	{\large\bfseries Sprichst Du Daten oder Was?}
+	
+	Daten sind Informationen. Und Information ist alles das was uns irgendeine Bedeutung übermittelt; also zum Beispiel geschriebene oder gesprochene Wörter und Sätze, Zahlen Zeichnungen, Bilder und vieles mehr. Also auch Text und Abbildungen sind Informationen bzw. Daten. Und was geschieht, während Du jetzt diesen Text liest? – Du nimmst Daten auf. Für die Datenaufnahme durch Sehen und Lesen hat Mensch ein spezielles Instrument, nämlich die Augen. Ebenso ist Hören Datenaufnahme, durch die Ohren als Datenaufnahmeinstrumente. Wir können auch die anderen drei unserer fünf Sinne als Funktionen der Datenaufnahme verstehen: Füllen, Schmecken, Riechen. Unsere Instrumente dazu: Haut, Zunge, Nase bzw. die entsprechende Nerven. Was geht beim Sprechen vor sich? – Es werden Daten ausgegeben. Sprechen ist also eine Funktion der Datenausgabe (es klingt zwar etwas komisch, aber auch Gesang ist Datenausgabe; so müssten wir eigentlich Sprechen und Singen unter dem Oberbegriff „Artikulieren“ zusammenfassen). Das entsprechende Datenausgabeinstrument: der Mund – einschließlich Zähne, Kehlkopf und Stimmbändern. Daten geben wir auch aus. wenn wir etwas schreiben oder zeichnen. Im Allgemeinen ist unsere rechte Hand – mit Schreib- oder Zeichenstift – dabei das Datenausgabeinstrument. Wir haben noch weitere Möglichkeiten, uns verständlich zu machen: bekanntlich kann auch Gestikulieren etwas Bestimmtes bedeuten. Gestikulieren ist also ebenfalls Datenausgabe, und zwar durch das Instrumentarium der Hände. Dann haben wir noch das Gesicht als Ausdrucksmöglichkeit, indem wir durch  die Mimik Informationen, also Daten weitergeben.
+	
+	Zwischen der Datenaufnahme und der Datenausgabe liegt die eigentliche Datenverarbeitung. Wo findet die Datenverarbeitung im engeren Sinn bei uns statt? – In Gehirn. Und was ist das nun in der einzelnen, Datenverarbeitung im engeren Sinn? – Veranschaulichen Sie sich das am besten anhand Ihrer gegenwärtigen Situation. Du liest diesen Text über elektronische Datenverarbeitung dabei durchlaufen Sie die drei Stationen: Aufnahme, Verarbeitung und Ausgabe (falls Sie noch mit jemanden darüber reden) der Daten. Sei wissen bereits: das bedeutet zunächst einmal Datenaufnahme. Einen Teil des Inhalts des Textes nehmen Sie in ihr Gedächtnis auf, Sie speichern Daten.
+	
+	\vspace{1.2em}
+	\hrule
+	\smallskip
+	\small\emph{Quelle: „AB-Sprichst-Du-Daten-oder-was“ (Anlagentext).}
+	
+\end{document}
