@@ -44,12 +44,14 @@
 \contentsline {chapter}{\numberline {4}Hardwarearchitektur}{17}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Worum geht es?}{17}{section.4.1}%
 \contentsline {section}{\numberline {4.2}John von Neumann und die Grundidee}{17}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Der Befehlszyklus (Fetch–Decode–Execute)}{20}{section.4.3}%
-\contentsline {paragraph}{Mini-Beispiel (gedankliches Maschinenprogramm).}{20}{Item.15}%
-\contentsline {section}{\numberline {4.4}Speicher, Wortbreite und Adressierung}{20}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Warum ist das so erfolgreich?}{20}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Grenzen: der Von-Neumann-Flaschenhals}{21}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Harvard vs.\ von Neumann (und die Praxis heute)}{21}{section.4.7}%
+\contentsline {section}{\numberline {4.3}Der Befehlszyklus (Fetch–Decode–Execute)}{19}{section.4.3}%
+\contentsline {paragraph}{Mini-Beispiel (gedankliches Maschinenprogramm).}{19}{Item.15}%
+\contentsline {section}{\numberline {4.4}Warum ist das so erfolgreich?}{19}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Grenzen: der Von-Neumann-Flaschenhals}{19}{section.4.5}%
+\contentsline {paragraph}{Kurz gefragt: Was hilft grundsätzlich?}{19}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Harvard vs.\ Von Neumann (und was man heute wirklich baut)}{20}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Erweiterte Von-Neumann-Rechner: die wichtigsten Ideen}{20}{section.4.7}%
+\contentsline {paragraph}{Wichtig zu wissen.}{21}{section.4.7}%
 \contentsline {chapter}{\numberline {5}Grundlagen der Computernetze}{23}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Warum vernetzen wir Computer?}{23}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Client und Server}{23}{section.5.2}%

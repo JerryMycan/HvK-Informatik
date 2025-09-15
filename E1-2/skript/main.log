@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.2.1)  14 SEP 2025 14:35
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.1.30)  15 SEP 2025 09:27
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -106,90 +106,90 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \l@nohyphenation=\language3
 \l@vietnamese=\language4
 \l@hebrew=\language5
-\l@polish=\language6
-\l@greek=\language7
-\l@telugu=\language8
-\l@coptic=\language9
-\l@basque=\language10
-\l@kannada=\language11
-\l@ukenglish=\language12
-\l@dutch=\language13
-\l@romanian=\language14
-\l@hungarian=\language15
-\l@estonian=\language16
-\l@usenglishmax=\language17
-\l@german=\language18
-\l@schoolfinnish=\language19
-\l@welsh=\language20
-\l@french=\language21
-\l@indonesian=\language22
-\l@pali=\language23
-\l@irish=\language24
-\l@interlingua=\language25
-\l@malayalam=\language26
-\l@oriya=\language27
-\l@belarusian=\language28
-\l@afrikaans=\language29
-\l@churchslavonic=\language30
-\l@nynorsk=\language31
-\l@slovak=\language32
-\l@liturgicallatin=\language33
-\l@uppersorbian=\language34
-\l@sanskrit=\language35
-\l@ngerman-x-2023-03-06=\language36
-\l@georgian=\language37
-\l@bengali=\language38
-\l@armenian=\language39
-\l@assamese=\language40
-\l@gujarati=\language41
-\l@catalan=\language42
-\l@galician=\language43
-\l@mongolian=\language44
-\l@spanish=\language45
-\l@lithuanian=\language46
-\l@piedmontese=\language47
-\l@portuguese=\language48
-\l@italian=\language49
-\l@ancientgreek=\language50
-\l@kurmanji=\language51
-\l@tamil=\language52
-\l@arabic=\language53
-\l@german-x-2023-03-06=\language54
-\l@pinyin=\language55
-\l@swissgerman=\language56
-\l@finnish=\language57
-\l@swedish=\language58
-\l@latvian=\language59
-\l@slovenian=\language60
-\l@hindi=\language61
-\l@ethiopic=\language62
-\l@panjabi=\language63
-\l@friulan=\language64
-\l@mongolianlmc=\language65
-\l@ngerman=\language66
-\l@serbianc=\language67
-\l@marathi=\language68
-\l@farsi=\language69
-\l@romansh=\language70
-\l@serbian=\language71
-\l@monogreek=\language72
-\l@icelandic=\language73
-\l@latin=\language74
-\l@esperanto=\language75
-\l@thai=\language76
-\l@classiclatin=\language77
-\l@bulgarian=\language78
-\l@turkmen=\language79
-\l@danish=\language80
-\l@occitan=\language81
-\l@russian=\language82
-\l@ukrainian=\language83
-\l@czech=\language84
-\l@ibycus=\language85
-\l@croatian=\language86
-\l@macedonian=\language87
-\l@turkish=\language88
-\l@bokmal=\language89
+\l@classiclatin=\language6
+\l@romansh=\language7
+\l@slovenian=\language8
+\l@piedmontese=\language9
+\l@marathi=\language10
+\l@greek=\language11
+\l@arabic=\language12
+\l@turkish=\language13
+\l@ethiopic=\language14
+\l@bengali=\language15
+\l@pinyin=\language16
+\l@slovak=\language17
+\l@basque=\language18
+\l@gujarati=\language19
+\l@nynorsk=\language20
+\l@latin=\language21
+\l@schoolfinnish=\language22
+\l@icelandic=\language23
+\l@galician=\language24
+\l@welsh=\language25
+\l@macedonian=\language26
+\l@farsi=\language27
+\l@ngerman=\language28
+\l@usenglishmax=\language29
+\l@spanish=\language30
+\l@churchslavonic=\language31
+\l@finnish=\language32
+\l@telugu=\language33
+\l@latvian=\language34
+\l@swissgerman=\language35
+\l@irish=\language36
+\l@afrikaans=\language37
+\l@hindi=\language38
+\l@portuguese=\language39
+\l@mongolianlmc=\language40
+\l@ngerman-x-2023-03-06=\language41
+\l@pali=\language42
+\l@tamil=\language43
+\l@sanskrit=\language44
+\l@dutch=\language45
+\l@bokmal=\language46
+\l@kannada=\language47
+\l@turkmen=\language48
+\l@friulan=\language49
+\l@bulgarian=\language50
+\l@danish=\language51
+\l@malayalam=\language52
+\l@french=\language53
+\l@uppersorbian=\language54
+\l@catalan=\language55
+\l@serbianc=\language56
+\l@hungarian=\language57
+\l@estonian=\language58
+\l@lithuanian=\language59
+\l@kurmanji=\language60
+\l@monogreek=\language61
+\l@mongolian=\language62
+\l@romanian=\language63
+\l@panjabi=\language64
+\l@thai=\language65
+\l@croatian=\language66
+\l@czech=\language67
+\l@armenian=\language68
+\l@swedish=\language69
+\l@german=\language70
+\l@ukrainian=\language71
+\l@esperanto=\language72
+\l@italian=\language73
+\l@oriya=\language74
+\l@occitan=\language75
+\l@german-x-2023-03-06=\language76
+\l@russian=\language77
+\l@liturgicallatin=\language78
+\l@coptic=\language79
+\l@assamese=\language80
+\l@belarusian=\language81
+\l@polish=\language82
+\l@ukenglish=\language83
+\l@ancientgreek=\language84
+\l@interlingua=\language85
+\l@serbian=\language86
+\l@ibycus=\language87
+\l@georgian=\language88
+\l@indonesian=\language89
 \babelcatcodetablenum=\catcodetable14
 \bbl@pattcodes=\catcodetable15
 )
@@ -1240,13 +1240,13 @@ ne 99.
  [2
 
 ] (./main.toc [3]
-Overfull \hbox (0.50302pt too wide) in paragraph at lines 63--63
+Overfull \hbox (0.50302pt too wide) in paragraph at lines 66--66
  [][] [][]\TU/NotoSerif(0)/m/n/12 Ar-beits-blatt 3.0: Zah-len-dar-stel-lun-gen 
 & Zwei-er-kom-ple-ment (Be-zug: 
  []
 
 
-Overfull \hbox (22.59413pt too wide) in paragraph at lines 65--65
+Overfull \hbox (22.59413pt too wide) in paragraph at lines 68--68
  [][] [][]\TU/NotoSerif(0)/m/n/12 Ar-beits-blatt 4: Hard-ware-ar-chi-tek-tur (Be
 -zug: []Punkt [][] — []Inhaltsverzeichnis[])[] [][]  
  []
@@ -1267,7 +1267,7 @@ Overfull \hbox (1.85794pt too wide) in paragraph at lines 32--37
 
 
 ]
-<figures/info-daten.png, id=304, 583.17876pt x 263.98625pt>
+<figures/info-daten.png, id=309, 583.17876pt x 263.98625pt>
 File: figures/info-daten.png Graphic file (type png)
 <use figures/info-daten.png>
 Package luatex.def Info: figures/info-daten.png  used on input line 66.
@@ -1289,7 +1289,7 @@ LaTeX Font Info:    Font shape `TU/NotoSansSymbols2(0)/m/n' will be
 [4
 Missing character: There is no 😊 (U+1F60A) in font NotoSerif:mode=node;script
 =latn;language=dflt;+tlig;!
-</tmp/lua_fz4f5y>]
+</tmp/lua_Ewzgad>]
 Overfull \hbox (8.54103pt too wide) in paragraph at lines 141--142
 []\TU/NotoSerif(0)/m/n/12 Unicode-Projekt: \TU/NotoSerif(0)/m/it/12 ein \TU/Not
 oSerif(0)/m/n/12 uni-ver-sel-ler Zei-chen-satz; Tren-nung von \TU/NotoSerif(0)/
@@ -1406,7 +1406,7 @@ Overfull \hbox (10.07495pt too wide) in paragraph at lines 116--117
 2 Bei fes-tem Wortbreite-Vergleich funk-tio-niert
  []
 
-<figures/4Bit-2Komplement.png, id=373, 545.03625pt x 517.935pt>
+<figures/4Bit-2Komplement.png, id=378, 545.03625pt x 517.935pt>
 File: figures/4Bit-2Komplement.png Graphic file (type png)
 <use figures/4Bit-2Komplement.png>
 Package luatex.def Info: figures/4Bit-2Komplement.png  used on input line 122.
@@ -1433,7 +1433,7 @@ Overfull \hbox (1.70496pt too wide) in paragraph at lines 8--12
 nd-idee ist die \TU/NotoSerif(0)/b/n/12 von-Neumann-
  []
 
-<figures/vonNeumannarchitektur.png, id=394, 1027.84pt x 507.8975pt>
+<figures/vonNeumannarchitektur.png, id=399, 1027.84pt x 507.8975pt>
 File: figures/vonNeumannarchitektur.png Graphic file (type png)
 <use figures/vonNeumannarchitektur.png>
 Package luatex.def Info: figures/vonNeumannarchitektur.png  used on input line 
@@ -1456,18 +1456,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--52
 warning  (pdf backend): ignoring duplicate destination with the name 'figure.4.1
 '
 <./figures/vonNeumannarchitektur.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 120.
+nput line 91.
+
+Overfull \hbox (5.75204pt too wide) in paragraph at lines 126--127
+[]\TU/NotoSerif(0)/b/n/12 Nä-he-re Vor-rä-te: \TU/NotoSerif(0)/m/it/12 Caches \TU/NotoSerif(0)/m/n/12 (klei-ne, sehr schnel-le Zwi-schen-spei-cher in der CPU). 
+ []
+
+[19]
+Overfull \hbox (2.1792pt too wide) in paragraph at lines 148--148
+|[]\TU/NotoSerif(0)/b/n/17.28 Er-wei-ter-te Von-Neumann-Rechner: die wich-tigs-
+ []
 
 [20]
-Overfull \hbox (1.61407pt too wide) in paragraph at lines 164--169
-\TU/NotoSerif(0)/m/n/12 Die \TU/NotoSerif(0)/b/n/12 Harvard-Architektur \TU/Not
-oSerif(0)/m/n/12 trennt \TU/NotoSerif(0)/m/it/12 Befehls- \TU/NotoSerif(0)/m/n/
-12 und \TU/NotoSerif(0)/m/it/12 Da-ten-spei-cher \TU/NotoSerif(0)/m/n/12 (je ei-
-ge-ner Bus). Vor-
+Overfull \hbox (4.51402pt too wide) in paragraph at lines 181--184
+\TU/NotoSerif(0)/m/n/12 Auf-ga-ben. \TU/NotoSerif(0)/b/n/12 Vektor-/SIMD-Einheit
+en \TU/NotoSerif(0)/m/n/12 wen-den \TU/NotoSerif(0)/m/it/12 ei-ne \TU/NotoSerif
+(0)/m/n/12 Ope-ra-ti-on auf \TU/NotoSerif(0)/m/it/12 vie-le \TU/NotoSerif(0)/m/
+n/12 Da-ten gleich-
  []
 
 ) (./chapters/computernetze.tex [21] [22
@@ -1492,7 +1498,7 @@ se): Kenn-zeich-net \TU/NotoSerif(0)/m/it/12 den Dienst \TU/NotoSerif(0)/m/n/12
 
 
 ]
-<appendix/aufgabenblatt-1.pdf, id=464, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-1.pdf, id=469, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-1.pdf>
 Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 100.
@@ -1501,7 +1507,7 @@ File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-1.pdf>
 Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 100.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-1.pdf, id=467, page=1, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-1.pdf, id=472, page=1, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-1.pdf, page 1>
 Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
@@ -1539,7 +1545,7 @@ File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-1.pdf>
 Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 100.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-1.pdf, id=535, page=2, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-1.pdf, id=540, page=2, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-1.pdf, page 2>
 Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
@@ -1568,7 +1574,7 @@ e 100.
  [29
 
 <./appendix/aufgabenblatt-1.pdf>]
-<appendix/aufgabenblatt-3.0.pdf, id=547, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-3.0.pdf, id=552, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-3.0.pdf>
 Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 106
@@ -1579,7 +1585,7 @@ File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
 Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 106
 .
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-3.0.pdf, id=550, page=1, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-3.0.pdf, id=555, page=1, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-3.0.pdf, page 1>
 Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
@@ -1618,7 +1624,7 @@ File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
 Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 106
 .
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-3.0.pdf, id=609, page=2, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-3.0.pdf, id=614, page=2, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-3.0.pdf, page 2>
 Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
@@ -1648,7 +1654,7 @@ ine 106.
 [31
 
 <./appendix/aufgabenblatt-3.0.pdf>]
-<appendix/aufgabenblatt-3.1.pdf, id=625, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-3.1.pdf, id=630, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-3.1.pdf>
 Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf  used on input line 118
@@ -1659,7 +1665,7 @@ File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
 Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf  used on input line 118
 .
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-3.1.pdf, id=628, page=1, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-3.1.pdf, id=633, page=1, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-3.1.pdf, page 1>
 Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
@@ -1688,7 +1694,7 @@ ine 118.
  [32
 
 <./appendix/aufgabenblatt-3.1.pdf>]
-<appendix/aufgabenblatt-4.pdf, id=688, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-4.pdf, id=693, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 124.
@@ -1697,7 +1703,7 @@ File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 124.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-4.pdf, id=691, page=1, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-4.pdf, id=696, page=1, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf, page 1>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
@@ -1735,7 +1741,7 @@ File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 124.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-4.pdf, id=753, page=2, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-4.pdf, id=758, page=2, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf, page 2>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page2 used on input lin
@@ -1769,20 +1775,29 @@ e 124.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D70F27C6B053E5EB09242DCF79CC70AD;11227.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 2FEB48F7D164DD54EEB2D9FDD5597C17;11620
+(rerunfilecheck)             After:  B1BB702CE781F3466D7214F77EA2B6FA;11371.
 )
 
 Here is how much of LuaTeX's memory you used:
- 30872 strings out of 476553
+ 30874 strings out of 476553
  125039,1977958 words of node,token memory allocated
  668 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 40 attribute, 58 glue_spec
 , 22 attribute_list, 3 write, 3 pdf_action nodes
-   avail lists: 2:1897,3:668,4:134,5:2792,6:116,7:7168,8:44,9:4578,10:21,11:716
- 51512 multiletter control sequences out of 65536+600000
+   avail lists: 2:1935,3:668,4:134,5:2812,6:116,7:6503,8:44,9:4574,10:21,11:650
+ 51513 multiletter control sequences out of 65536+600000
  124 fonts using 112974511 bytes
  84i,17n,118p,885b,1050s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+warning  (pdf backend): unreferenced destination with name 'section.4.8'
 </usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/font
 s/truetype/noto/NotoSansSymbols2-Regular.ttf></usr/share/fonts/opentype/noto/Not
 oSansCJK-Regular.ttc></usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc></u
@@ -1798,10 +1813,10 @@ s/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (38 pages, 775812 bytes).
+Output written on main.pdf (38 pages, 775376 bytes).
 
-PDF statistics: 845 PDF objects out of 1000 (max. 8388607)
- 638 compressed objects within 7 object streams
- 122 named destinations out of 1000 (max. 131072)
- 424 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 850 PDF objects out of 1000 (max. 8388607)
+ 643 compressed objects within 7 object streams
+ 123 named destinations out of 1000 (max. 131072)
+ 432 words of extra memory for PDF output out of 10000 (max. 100000000)
 

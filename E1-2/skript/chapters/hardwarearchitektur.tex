@@ -59,35 +59,6 @@ Kleines Beispiel: Die drei Befehle „LOAD A“, „ADD B“, „STORE A“.
 	\item STORE A schreibt das Ergebnis zurück in den Speicher – wieder wird der Bus belegt.
 \end{enumerate}
 
-In der Praxis musste man feststellen: Die CPU ist oft schneller als der Weg zu ihren Daten. Damit sie weniger warten muss, hat man das klassische Von-Neumann-Modell weiterentwickelt. Man spricht nicht von einer völlig neuen Architektur, sondern eher von „modernen/erweiterten Von-Neumann-Rechnern“. Die wichtigsten Ideen dahinter:
-
-1) Speicherhierarchie und Caches
-Statt immer den (relativ) langsamen Hauptspeicher zu fragen, bekommt die CPU kleine, extrem schnelle Zwischenspeicher direkt neben den Rechenkernen: Caches. Ganz nah (L1) sind sie winzig und sehr schnell, dahinter liegen größere (L2/L3). Häufig gebrauchte Befehle und Daten liegen dann schon „um die Ecke“ – das spart Wartezeit.
-Extra-Trick: Viele CPUs trennen den L1-Cache in I-Cache (Instruktionen) und D-Cache (Daten). So kann die CPU gleichzeitig einen Befehl und Daten holen. Man nennt das oft „Modified Harvard“ auf Cache-Ebene, obwohl Hauptspeicher und Adressraum weiterhin gemeinsam sind.
-
-2) Vorabruf und Vorhersage
-Die CPU versucht zu erraten, was sie als Nächstes braucht:
-
-Prefetch holt Daten/Befehle schon im Voraus.
-
-Sprungvorhersage (Branch Prediction) rät, wie ein „if/else“ weitergeht, und lädt vorsorglich die passenden Befehle.
-Treffen die Vorhersagen, spart man viele Takte; liegen sie daneben, muss man zurückrudern – kostet aber immer noch weniger als ständig zu warten.
-
-3) Fließbandarbeit in der CPU
-Statt einen Befehl komplett zu Ende zu bringen und erst dann den nächsten zu beginnen, zerlegt man Befehle in Stufen (Fetch, Decode, Execute, Writeback). Mehrere Befehle können so gleichzeitig in verschiedenen Stufen sein (Pipelining).
-Leistungsstärker noch: Superskalarität startet mehr als einen Befehl pro Takt, wenn die Hardware-Einheiten frei sind.
-
-4) Keine Zeit verlieren: Out-of-Order
-Wenn ein Befehl gerade warten muss (z. B. auf Daten), nimmt die CPU einen anderen, schon vorbereiteten Befehl vor und rechnet dort weiter. So bleibt das Rechenwerk beschäftigt und die Wartezeiten fallen weniger ins Gewicht.
-
-5) Schnellere und breitere Wege
-Auch die „Straßen“ wurden ausgebaut: breitere Datenpfade, schnellere Speichertechniken und kluge Speichercontroller liefern mehr Bits pro Takt. Zusätzlich können Geräte per DMA (Direct Memory Access) Daten bewegen, ohne die CPU zu blockieren.
-
-6) Mehr parallel: Multi-Core und Vektor-Einheiten
-Statt nur einem Kern arbeiten mehrere Kerne gleichzeitig an verschiedenen Aufgaben. Außerdem können Vektor-/SIMD-Einheiten eine Rechenoperation auf viele Daten zugleich anwenden (z. B. Bild-/Audioverarbeitung).
-
-Wichtig zu wissen:
-All das mildert den Von-Neumann-Flaschenhals, beseitigt ihn aber nicht vollständig. Wenn Daten nicht in den Caches liegen oder Programme sehr sprunghaft arbeiten, muss die CPU weiterhin warten. Moderne Rechner sind also ein Mix aus schlauem Vorrat (Caches), Vorausschau (Prefetch/Prediction), Parallelität (Pipeline, Multi-Core, SIMD) und schnelleren Wegen – damit aus „Warten auf Daten“ so oft wie möglich „Rechnen“ wird.
 
 
 
@@ -125,14 +96,14 @@ Jeder Maschinenbefehl läuft in drei Schritten durch die CPU:
 \end{lstlisting}
 Hier holt die CPU nacheinander die Befehle (Fetch), dekodiert sie (Decode) und führt sie aus (Execute).
 
-\section{Speicher, Wortbreite und Adressierung}
-\begin{itemize}
-	\item \textbf{Wortbreite} (z.\,B.\ 32 Bit, 64 Bit) gibt an, wie viele Bits die CPU in einem Schritt besonders effizient verarbeitet
-	(Register- und ALU-Breite). Sie beeinflusst u.\,a.\ den darstellbaren Adressraum und Zahlenbereich.
-	\item \textbf{Adressbus/Datenbus}: Mit \(n\) Adressleitungen kann man \(2^n\) Speicheradressen ansprechen.
-	\item \textbf{Speicherhierarchie}: Register \(\rightarrow\) Caches (L1/L2/L3) \(\rightarrow\) RAM \(\rightarrow\) SSD/HDD.
-	Je näher an der CPU, desto schneller (aber kleiner/teurer).
-\end{itemize}
+%\section{Speicher, Wortbreite und Adressierung}
+%\begin{itemize}
+%	\item \textbf{Wortbreite} (z.\,B.\ 32 Bit, 64 Bit) gibt an, wie viele Bits die CPU in einem Schritt besonders effizient verarbeitet
+%	(Register- und ALU-Breite). Sie beeinflusst u.\,a.\ den darstellbaren Adressraum und Zahlenbereich.
+%	\item \textbf{Adressbus/Datenbus}: Mit \(n\) Adressleitungen kann man \(2^n\) Speicheradressen ansprechen.
+%	\item \textbf{Speicherhierarchie}: Register \(\rightarrow\) Caches (L1/L2/L3) \(\rightarrow\) RAM \(\rightarrow\) SSD/HDD.
+%	Je näher an der CPU, desto schneller (aber kleiner/teurer).
+%\end{itemize}
 
 \section{Warum ist das so erfolgreich?}
 \begin{itemize}
@@ -141,31 +112,83 @@ Hier holt die CPU nacheinander die Befehle (Fetch), dekodiert sie (Decode) und f
 	\item \textbf{Universalität}: Mit genug Speicher und Zeit kann ein solcher Rechner jede berechenbare Aufgabe lösen (Church–Turing-Idee).
 \end{itemize}
 
-\section{Grenzen: der Von-Neumann-Flaschenhals}
-Weil \emph{Programm} und \emph{Daten} über \emph{denselben} Speicher-/Busweg kommen, konkurrieren sie um Bandbreite.
-Das bremst: Die CPU könnte schneller rechnen, als Daten/Befehle nachgeliefert werden. Was hilft dagegen?
+% Abschnitt für dein Skript (schülergerecht zusammengeführt und gestrafft)
 
+\section{Grenzen: der Von-Neumann-Flaschenhals}
+Im klassischen Von-Neumann-Modell teilen sich \emph{Programmcode} (Befehle) und \emph{Daten}
+denselben Speicher und denselben Bus. Beide benutzen also die gleiche „Datenstraße“.
+Dadurch konkurrieren sie um Bandbreite: Die CPU könnte weiterrechnen, muss aber oft warten,
+bis neue Befehle \emph{oder} Daten geliefert werden. Diesen Engpass nennt man den
+\textbf{Von-Neumann-Flaschenhals}.
+
+\paragraph{Kurz gefragt: Was hilft grundsätzlich?}
 \begin{itemize}
-	\item \textbf{Caches (Zwischenspeicher):} Kleine, sehr schnelle Speicher \emph{in der CPU}, die oft gebrauchte Daten/Befehle bereithalten. % (wie ein Spickzettel direkt am Platz)
-	\item \textbf{Vorabruf (Prefetch):} Die CPU \emph{holt schon vorher}, was sie gleich brauchen wird. % (wie Vorräte rechtzeitig aus dem Keller holen)
-	\item \textbf{Pipelining (Fließband):} Eine Instruktion wird in Schritte zerlegt; mehrere Instruktionen sind gleichzeitig in \emph{verschiedenen} Schritten. % (wie Autos gleichzeitig in Waschen, Trocknen, Polieren)
-	\item \textbf{Superskalar (mehrere Einheiten):} Die CPU kann \emph{mehr als einen} Befehl pro Takt starten. % (wie mehrere Kassen, nicht nur eine)
-	\item \textbf{Mehr Kerne (Multi-Core):} Mehrere Rechenkerne arbeiten \emph{parallel} an unterschiedlichen Aufgaben. % (Teamarbeit statt Einzelkämpfer)
-	\item \textbf{Vektoreinheiten (SIMD):} \emph{Eine} Rechenanweisung auf \emph{viele} Daten gleichzeitig ausführen. % (eine Schablone, viele Teile auf einmal)
-	\item \textbf{Breitere/ schnellere Verbindungen:} Mehr Bits pro Takt (\emph{breiter Bus}) und schnellerer Speicher (z.\,B. DDR, HBM) liefern Daten zügiger. % (mehr Fahrspuren und höhere Geschwindigkeit)
+	\item \textbf{Nähere Vorräte:} \emph{Caches} (kleine, sehr schnelle Zwischenspeicher in der CPU).
+	\item \textbf{Früher holen:} \emph{Prefetch} (Daten/Befehle im Voraus anfordern).
+	\item \textbf{Mehr gleichzeitig:} \emph{Pipeline}, \emph{Superskalarität}, \emph{Multi-Core}, \emph{Vektor/SIMD}.
+	\item \textbf{Breitere/schnellere Wege:} schnellere Speichertechniken, breitere Busse.
 \end{itemize}
 
 \begin{quote}\small
-	\textbf{Merksatz:} Wenn die CPU warten muss, helfen \emph{nähere Vorräte} (Cache), \emph{rechtzeitig holen} (Prefetch), \emph{gleichzeitig arbeiten} (Pipeline/parallel), und \emph{breitere/schnellere Wege} (Bus/Speicher).
+	\textbf{Merksatz:} Wenn die CPU warten muss, helfen \emph{nähere Vorräte}, \emph{rechtzeitig holen},
+	\emph{gleichzeitig arbeiten} und \emph{breitere/schnellere Verbindungen}.
 \end{quote}
 
+\section{Harvard vs.\ Von Neumann (und was man heute wirklich baut)}
+Die \textbf{Harvard-Architektur} trennt \emph{Befehls-} und \emph{Datenspeicher} (je ein eigener Bus).
+Vorteil: Code und Daten können \emph{gleichzeitig} geholt werden – der Engpass an dieser Stelle entfällt.
+Viele Mikrocontroller/DSPs arbeiten so.
 
-\section{Harvard vs.\ von Neumann (und die Praxis heute)}
-Die \textbf{Harvard-Architektur} trennt \emph{Befehls-} und \emph{Datenspeicher} (je eigener Bus).
-Vorteil: Gleichzeitige Zugriffe, kein Flaschenhals an dieser Stelle. Viele \emph{Mikrocontroller/DSPs}
-und auch \emph{moderne CPUs intern} nutzen eine \textbf{modifizierte Harvard-Architektur}:
-z.\,B.\ getrennte \emph{Instruktions-} und \emph{Datencaches}, obwohl der \emph{Hauptspeicher} gemeinsam ist.
-Damit kombiniert man die Programmierfreundlichkeit des von-Neumann-Modells mit Leistungsgewinnen.
+In PCs und Laptops nutzt man meist ein \emph{hybrides} Vorgehen:
+Moderne CPUs bleiben vom Speicherbild her \emph{Von Neumann} (ein gemeinsamer Hauptspeicher),
+verwenden aber direkt an der CPU getrennte \textbf{Instruktions-} und \textbf{Daten-Caches}
+(\emph{Modified Harvard} auf Cache-Ebene). So verbindet man die
+\emph{Programmierfreundlichkeit} des Von-Neumann-Modells mit Leistungsgewinnen durch getrennte, nahe Wege.
+
+\section{Erweiterte Von-Neumann-Rechner: die wichtigsten Ideen}
+In der Praxis ist die CPU oft schneller als der Weg zu den Daten. Deshalb hat man das Grundmodell
+\emph{weiterentwickelt} (keine völlig neue Architektur, sondern Ergänzungen):
+
+\subsection*{1) Speicherhierarchie und Caches}
+Statt immer den vergleichsweise langsamen Hauptspeicher zu fragen, nutzt die CPU kleine,
+extrem schnelle \textbf{Caches} direkt am Kern:
+L1 (sehr klein, sehr schnell), dahinter L2/L3 (größer, etwas langsamer).
+Häufig gebrauchte Befehle und Daten liegen dann „um die Ecke“.
+Viele CPUs trennen den L1 in \textbf{I-Cache} (Instruktionen) und \textbf{D-Cache} (Daten),
+sodass Code \emph{und} Daten parallel kommen.
+
+\subsection*{2) Vorabruf und Vorhersage}
+Die CPU versucht zu erraten, was sie als Nächstes braucht:
+\emph{Prefetch} holt Daten/Befehle im Voraus.
+\emph{Sprungvorhersage} (Branch Prediction) rät den nächsten Programmpfad.
+Treffen die Vorhersagen, spart das viele Takte; liegen sie daneben, wird zurückgerollt.
+
+\subsection*{3) Fließbandarbeit: Pipelining und Superskalarität}
+Befehle werden in Stufen zerlegt (z.\,B.\ Fetch, Decode, Execute, Writeback).
+Mehrere Befehle können gleichzeitig in \emph{verschiedenen} Stufen sein (\textbf{Pipeline}).
+\textbf{Superskalarität} startet sogar \emph{mehr als einen} Befehl pro Takt, wenn Einheiten frei sind.
+
+\subsection*{4) Keine Zeit verlieren: Out-of-Order}
+Muss ein Befehl warten (z.\,B.\ auf Daten), arbeitet die CPU mit einem anderen, unabhängigen
+Befehl weiter. So bleiben Recheneinheiten ausgelastet und Wartezeiten fallen weniger ins Gewicht.
+
+\subsection*{5) Schnellere und breitere Verbindungen}
+„Die Straßen wurden ausgebaut“: breitere Datenpfade, schnellere Speicher (z.\,B.\ moderne DDR-/HBM-Verfahren),
+intelligente Speichercontroller und \emph{DMA} (Direct Memory Access), damit Daten bewegt werden können,
+ohne die CPU zu blockieren.
+
+\subsection*{6) Mehr Parallelität: Multi-Core und Vektor/SIMD}
+Statt nur einem Kern rechnen \textbf{mehrere Kerne} gleichzeitig an verschiedenen Aufgaben.
+\textbf{Vektor-/SIMD-Einheiten} wenden \emph{eine} Operation auf \emph{viele} Daten gleichzeitig an
+(z.\,B.\ bei Bild-/Audioverarbeitung).
+
+\paragraph{Wichtig zu wissen.}
+All diese Maßnahmen \emph{mildern} den Von-Neumann-Flaschenhals deutlich, beseitigen ihn aber nicht ganz.
+Wenn Daten nicht im Cache sind oder Programme sehr sprunghaft arbeiten, muss die CPU weiterhin warten.
+Moderne Rechner sind daher ein Mix aus \emph{schlauem Vorrat} (Caches), \emph{Vorausschau}
+(Prefetch/Prediction), \emph{Parallelität} (Pipeline, Multi-Core, SIMD) und \emph{breiteren/schnelleren Wegen},
+damit aus „Warten auf Daten“ so oft wie möglich „Rechnen“ wird.
+
 
 	
 \end{document}
