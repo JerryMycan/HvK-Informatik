@@ -9,6 +9,9 @@
 \usepackage{listings}              % Quellcode-Umgebung
 \usepackage{xcolor}                % Farben
 \usepackage{hyperref}              % klickbare Links
+% nach \usepackage{hyperref}
+\newcommand{\ZB}{\texorpdfstring{z.\,B.}{z. B.}}
+
 \usepackage{nameref} % für \nameref
 % Makro: zeigt "Kapitel N — Titel"
 \newcommand{\ABBezug}[1]{\autoref{#1} — \nameref{#1}}
@@ -105,6 +108,7 @@
 \subfile{chapters/menschcomputer}
 \subfile{chapters/zahlensysteme}
 \subfile{chapters/hardwarearchitektur}
+\subfile{chapters/mops}
 \subfile{chapters/computernetze}
 
 \appendix

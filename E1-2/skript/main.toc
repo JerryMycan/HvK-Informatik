@@ -52,16 +52,37 @@
 \contentsline {section}{\numberline {4.6}Harvard vs.\ Von Neumann (und was man heute wirklich baut)}{20}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Erweiterte Von-Neumann-Rechner: die wichtigsten Ideen}{20}{section.4.7}%
 \contentsline {paragraph}{Wichtig zu wissen.}{21}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Grundlagen der Computernetze}{23}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Warum vernetzen wir Computer?}{23}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Client und Server}{23}{section.5.2}%
-\contentsline {paragraph}{Merksatz.}{23}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Datenpakete (allgemein)}{24}{section.5.3}%
-\contentsline {paragraph}{Warum Pakete?}{24}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Adressierung von Computern}{24}{section.5.4}%
-\contentsline {paragraph}{Alltagsbild.}{24}{section.5.4}%
-\contentsline {chapter}{Anhang}{27}{appendix*.2}%
-\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{28}{section.Alph0.1}%
-\contentsline {section}{\numberline {.2}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{30}{section.Alph0.2}%
-\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{32}{section.Alph0.3}%
-\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{33}{section.Alph0.4}%
+\contentsline {section}{\numberline {4.8}Vom Quellcode zur Ausführung}{21}{section.4.8}%
+\contentsline {subsection}{\numberline {4.8.1}Compiler-Weg (z.\,B.\ C, C++, Rust)}{21}{subsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.8.2}Interpreter und JIT (z.\,B.\ Python, JavaScript, Java)}{22}{subsection.4.8.2}%
+\contentsline {subsection}{\numberline {4.8.3}Befehlssatz (ISA) und Assembler-Mnemonics}{22}{subsection.4.8.3}%
+\contentsline {subsection}{\numberline {4.8.4}Mini-Beispiel: \texttt {a = b + c}}{22}{subsection.4.8.4}%
+\contentsline {subsection}{\numberline {4.8.5}Warum läuft dasselbe Programm auf Intel \emph {und} AMD?}{23}{subsection.4.8.5}%
+\contentsline {paragraph}{So sichert man Kompatibilität (Praxis):}{23}{subsection.4.8.5}%
+\contentsline {paragraph}{ELF (Executable and Linkable Format) – typisch unter Linux/Unix}{24}{subsection.4.8.5}%
+\contentsline {paragraph}{PE/COFF (Portable Executable / Common Object File Format) – unter Windows}{24}{subsection.4.8.5}%
+\contentsline {paragraph}{Warum das wichtig ist}{24}{subsection.4.8.5}%
+\contentsline {paragraph}{Mini-Skizzen}{24}{subsection.4.8.5}%
+\contentsline {chapter}{\numberline {5}Modellrechner mit Pseudoassembler – MOPS}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Was ist und was macht MOPS?}{25}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Idee in Kürze}{25}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Bezug zum Von-Neumann-Modell}{25}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Technische Eckdaten (als Modell)}{25}{subsection.5.1.3}%
+\contentsline {chapter}{\numberline {6}Grundlagen der Computernetze}{27}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Warum vernetzen wir Computer?}{27}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Client und Server}{27}{section.6.2}%
+\contentsline {paragraph}{Merksatz.}{27}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Datenpakete (allgemein)}{28}{section.6.3}%
+\contentsline {paragraph}{Warum Pakete?}{28}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Adressierung von Computern}{28}{section.6.4}%
+\contentsline {paragraph}{Alltagsbild.}{28}{section.6.4}%
+\contentsline {chapter}{Anhang}{31}{appendix*.2}%
+\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{32}{section.Alph0.1}%
+\contentsline {section}{\numberline {.2}\ignorespaces Lösungsvorschlag 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{34}{section.Alph0.2}%
+\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{36}{section.Alph0.3}%
+\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{38}{section.Alph0.4}%
+\contentsline {section}{\numberline {.5}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{39}{section.Alph0.5}%
+\contentsline {section}{\numberline {.6}\ignorespaces Arbeitsblatt 5: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{41}{section.Alph0.6}%
+\contentsline {section}{\numberline {.7}\ignorespaces Arbeitsblatt 5.1: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{43}{section.Alph0.7}%
+\contentsline {section}{\numberline {.8}\ignorespaces Arbeitsblatt 5.2: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{45}{section.Alph0.8}%
+\contentsline {section}{\numberline {.9}\ignorespaces Arbeitsblatt 5.3: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{47}{section.Alph0.9}%

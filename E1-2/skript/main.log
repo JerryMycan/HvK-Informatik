@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.1.30)  15 SEP 2025 09:27
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.2.1)  19 OCT 2025 12:31
  restricted system commands enabled.
 **main.tex
 (./main.tex
@@ -106,90 +106,90 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \l@nohyphenation=\language3
 \l@vietnamese=\language4
 \l@hebrew=\language5
-\l@classiclatin=\language6
-\l@romansh=\language7
-\l@slovenian=\language8
-\l@piedmontese=\language9
-\l@marathi=\language10
-\l@greek=\language11
-\l@arabic=\language12
-\l@turkish=\language13
-\l@ethiopic=\language14
-\l@bengali=\language15
-\l@pinyin=\language16
-\l@slovak=\language17
-\l@basque=\language18
-\l@gujarati=\language19
-\l@nynorsk=\language20
-\l@latin=\language21
-\l@schoolfinnish=\language22
-\l@icelandic=\language23
-\l@galician=\language24
-\l@welsh=\language25
-\l@macedonian=\language26
-\l@farsi=\language27
-\l@ngerman=\language28
-\l@usenglishmax=\language29
-\l@spanish=\language30
-\l@churchslavonic=\language31
-\l@finnish=\language32
-\l@telugu=\language33
-\l@latvian=\language34
-\l@swissgerman=\language35
-\l@irish=\language36
-\l@afrikaans=\language37
-\l@hindi=\language38
-\l@portuguese=\language39
-\l@mongolianlmc=\language40
-\l@ngerman-x-2023-03-06=\language41
-\l@pali=\language42
-\l@tamil=\language43
-\l@sanskrit=\language44
-\l@dutch=\language45
-\l@bokmal=\language46
-\l@kannada=\language47
-\l@turkmen=\language48
-\l@friulan=\language49
-\l@bulgarian=\language50
-\l@danish=\language51
-\l@malayalam=\language52
-\l@french=\language53
-\l@uppersorbian=\language54
-\l@catalan=\language55
-\l@serbianc=\language56
-\l@hungarian=\language57
-\l@estonian=\language58
-\l@lithuanian=\language59
-\l@kurmanji=\language60
-\l@monogreek=\language61
-\l@mongolian=\language62
-\l@romanian=\language63
-\l@panjabi=\language64
-\l@thai=\language65
-\l@croatian=\language66
-\l@czech=\language67
-\l@armenian=\language68
-\l@swedish=\language69
-\l@german=\language70
-\l@ukrainian=\language71
-\l@esperanto=\language72
-\l@italian=\language73
-\l@oriya=\language74
-\l@occitan=\language75
-\l@german-x-2023-03-06=\language76
-\l@russian=\language77
-\l@liturgicallatin=\language78
-\l@coptic=\language79
-\l@assamese=\language80
-\l@belarusian=\language81
-\l@polish=\language82
-\l@ukenglish=\language83
-\l@ancientgreek=\language84
-\l@interlingua=\language85
-\l@serbian=\language86
-\l@ibycus=\language87
-\l@georgian=\language88
-\l@indonesian=\language89
+\l@polish=\language6
+\l@greek=\language7
+\l@telugu=\language8
+\l@coptic=\language9
+\l@basque=\language10
+\l@kannada=\language11
+\l@ukenglish=\language12
+\l@dutch=\language13
+\l@romanian=\language14
+\l@hungarian=\language15
+\l@estonian=\language16
+\l@usenglishmax=\language17
+\l@german=\language18
+\l@schoolfinnish=\language19
+\l@welsh=\language20
+\l@french=\language21
+\l@indonesian=\language22
+\l@pali=\language23
+\l@irish=\language24
+\l@interlingua=\language25
+\l@malayalam=\language26
+\l@oriya=\language27
+\l@belarusian=\language28
+\l@afrikaans=\language29
+\l@churchslavonic=\language30
+\l@nynorsk=\language31
+\l@slovak=\language32
+\l@liturgicallatin=\language33
+\l@uppersorbian=\language34
+\l@sanskrit=\language35
+\l@ngerman-x-2023-03-06=\language36
+\l@georgian=\language37
+\l@bengali=\language38
+\l@armenian=\language39
+\l@assamese=\language40
+\l@gujarati=\language41
+\l@catalan=\language42
+\l@galician=\language43
+\l@mongolian=\language44
+\l@spanish=\language45
+\l@lithuanian=\language46
+\l@piedmontese=\language47
+\l@portuguese=\language48
+\l@italian=\language49
+\l@ancientgreek=\language50
+\l@kurmanji=\language51
+\l@tamil=\language52
+\l@arabic=\language53
+\l@german-x-2023-03-06=\language54
+\l@pinyin=\language55
+\l@swissgerman=\language56
+\l@finnish=\language57
+\l@swedish=\language58
+\l@latvian=\language59
+\l@slovenian=\language60
+\l@hindi=\language61
+\l@ethiopic=\language62
+\l@panjabi=\language63
+\l@friulan=\language64
+\l@mongolianlmc=\language65
+\l@ngerman=\language66
+\l@serbianc=\language67
+\l@marathi=\language68
+\l@farsi=\language69
+\l@romansh=\language70
+\l@serbian=\language71
+\l@monogreek=\language72
+\l@icelandic=\language73
+\l@latin=\language74
+\l@esperanto=\language75
+\l@thai=\language76
+\l@classiclatin=\language77
+\l@bulgarian=\language78
+\l@turkmen=\language79
+\l@danish=\language80
+\l@occitan=\language81
+\l@russian=\language82
+\l@ukrainian=\language83
+\l@czech=\language84
+\l@ibycus=\language85
+\l@croatian=\language86
+\l@macedonian=\language87
+\l@turkish=\language88
+\l@bokmal=\language89
 \babelcatcodetablenum=\catcodetable14
 \bbl@pattcodes=\catcodetable15
 )
@@ -1054,92 +1054,92 @@ Package fontspec Info: Font family 'NotoColorEmoji(0)' created for font 'Noto
  (./main.aux)
 \openout1 = main.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 9
-1.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
-LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
 
 Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 (fontspec)             this).
 
 \symlegacymaths=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 91.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 91.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 91.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 91.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 91.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 91.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 91.
-LaTeX Font Info:    Redeclaring math accent \check on input line 91.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 91.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 91.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 91.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 91.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 91.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 94.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 94.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 94.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 94.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 94.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 94.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 94.
+LaTeX Font Info:    Redeclaring math accent \check on input line 94.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 94.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 94.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 94.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 94.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 94.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 91.
+(Font)              `operators' in the math version `normal' on input line 94.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/NotoSerif(0)/m/n on input line 91.
+(Font)                  OT1/cmr/m/n --> TU/NotoSerif(0)/m/n on input line 94.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 91.
+(Font)              `operators' in the math version `bold' on input line 94.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/NotoSerif(0)/m/n on input line 91.
+(Font)                  OT1/cmr/bx/n --> TU/NotoSerif(0)/m/n on input line 94.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/NotoSerif(0)/m/n --> TU/NotoSerif(0)/m/n on input li
-ne 91.
+ne 94.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/NotoSerif(0)/m/it on input line 91.
+(Font)                  OT1/cmr/m/it --> TU/NotoSerif(0)/m/it on input line 94.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/NotoSerif(0)/b/n on input line 91.
+(Font)                  OT1/cmr/bx/n --> TU/NotoSerif(0)/b/n on input line 94.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 91.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 94.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 91.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 94.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/NotoSerif(0)/m/n --> TU/NotoSerif(0)/b/n on input li
-ne 91.
+ne 94.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/NotoSerif(0)/b/it on input line 91
+(Font)                  OT1/cmr/bx/it --> TU/NotoSerif(0)/b/it on input line 94
 .
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 91.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 94.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 91.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 94.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1164,7 +1164,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \c@lstlisting=\count344
-Package hyperref Info: Link coloring OFF on input line 91.
+Package hyperref Info: Link coloring OFF on input line 94.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1217,14 +1217,14 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 98.
-
+LaTeX Font Info:    Trying to load font information for U+msa on input line 101
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
-
+LaTeX Font Info:    Trying to load font information for U+msb on input line 101
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1236,19 +1236,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 LaTeX Font Info:    Font shape `TU/NotoSerif(0)/m/sl' in size <12> not availabl
 e
 (Font)              Font shape `TU/NotoSerif(0)/m/it' tried instead on input li
-ne 99.
+ne 102.
  [2
 
 ] (./main.toc [3]
-Overfull \hbox (0.50302pt too wide) in paragraph at lines 66--66
+Overfull \hbox (0.50302pt too wide) in paragraph at lines 82--82
  [][] [][]\TU/NotoSerif(0)/m/n/12 Ar-beits-blatt 3.0: Zah-len-dar-stel-lun-gen 
 & Zwei-er-kom-ple-ment (Be-zug: 
  []
 
 
-Overfull \hbox (22.59413pt too wide) in paragraph at lines 68--68
+Overfull \hbox (0.40608pt too wide) in paragraph at lines 84--84
  [][] [][]\TU/NotoSerif(0)/m/n/12 Ar-beits-blatt 4: Hard-ware-ar-chi-tek-tur (Be
--zug: []Punkt [][] — []Inhaltsverzeichnis[])[] [][]  
+-zug: []Ka-pi-tel 4[][] — []Hard-ware- 
  []
 
 )
@@ -1267,7 +1267,7 @@ Overfull \hbox (1.85794pt too wide) in paragraph at lines 32--37
 
 
 ]
-<figures/info-daten.png, id=309, 583.17876pt x 263.98625pt>
+<figures/info-daten.png, id=405, 583.17876pt x 263.98625pt>
 File: figures/info-daten.png Graphic file (type png)
 <use figures/info-daten.png>
 Package luatex.def Info: figures/info-daten.png  used on input line 66.
@@ -1289,7 +1289,7 @@ LaTeX Font Info:    Font shape `TU/NotoSansSymbols2(0)/m/n' will be
 [4
 Missing character: There is no 😊 (U+1F60A) in font NotoSerif:mode=node;script
 =latn;language=dflt;+tlig;!
-</tmp/lua_Ewzgad>]
+</tmp/lua_tCKaxi>]
 Overfull \hbox (8.54103pt too wide) in paragraph at lines 141--142
 []\TU/NotoSerif(0)/m/n/12 Unicode-Projekt: \TU/NotoSerif(0)/m/it/12 ein \TU/Not
 oSerif(0)/m/n/12 uni-ver-sel-ler Zei-chen-satz; Tren-nung von \TU/NotoSerif(0)/
@@ -1406,7 +1406,7 @@ Overfull \hbox (10.07495pt too wide) in paragraph at lines 116--117
 2 Bei fes-tem Wortbreite-Vergleich funk-tio-niert
  []
 
-<figures/4Bit-2Komplement.png, id=378, 545.03625pt x 517.935pt>
+<figures/4Bit-2Komplement.png, id=473, 545.03625pt x 517.935pt>
 File: figures/4Bit-2Komplement.png Graphic file (type png)
 <use figures/4Bit-2Komplement.png>
 Package luatex.def Info: figures/4Bit-2Komplement.png  used on input line 122.
@@ -1428,27 +1428,27 @@ Overfull \hbox (6.41985pt too wide) in paragraph at lines 175--176
 [15]) (./chapters/hardwarearchitektur.tex [16]
 Kapitel 4.
 
-Overfull \hbox (1.70496pt too wide) in paragraph at lines 8--12
+Overfull \hbox (1.70496pt too wide) in paragraph at lines 12--16
 \TU/NotoSerif(0)/m/n/12 gram-me aus-zu-füh-ren? Die heu-te do-mi-nie-ren-de Gru
 nd-idee ist die \TU/NotoSerif(0)/b/n/12 von-Neumann-
  []
 
-<figures/vonNeumannarchitektur.png, id=399, 1027.84pt x 507.8975pt>
+<figures/vonNeumannarchitektur.png, id=495, 1027.84pt x 507.8975pt>
 File: figures/vonNeumannarchitektur.png Graphic file (type png)
 <use figures/vonNeumannarchitektur.png>
 Package luatex.def Info: figures/vonNeumannarchitektur.png  used on input line 
-43.
+47.
 (luatex.def)             Requested size: 341.43307pt x 168.71492pt.
 [17
 
 ]
-Overfull \hbox (5.69687pt too wide) in paragraph at lines 48--52
+Overfull \hbox (5.69687pt too wide) in paragraph at lines 52--56
 \TU/NotoSerif(0)/m/n/12 chen Zeit neue Be-feh-le ge-holt und Da-ten ge-le-sen od
 er ge-schrie-ben wer-den, kommt
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--56
 
  []
 
@@ -1457,29 +1457,124 @@ warning  (pdf backend): ignoring duplicate destination with the name 'figure.4.1
 '
 <./figures/vonNeumannarchitektur.png>]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 91.
+nput line 95.
 
-Overfull \hbox (5.75204pt too wide) in paragraph at lines 126--127
+Overfull \hbox (5.75204pt too wide) in paragraph at lines 130--131
 []\TU/NotoSerif(0)/b/n/12 Nä-he-re Vor-rä-te: \TU/NotoSerif(0)/m/it/12 Caches \TU/NotoSerif(0)/m/n/12 (klei-ne, sehr schnel-le Zwi-schen-spei-cher in der CPU). 
  []
 
 [19]
-Overfull \hbox (2.1792pt too wide) in paragraph at lines 148--148
+Overfull \hbox (2.1792pt too wide) in paragraph at lines 152--152
 |[]\TU/NotoSerif(0)/b/n/17.28 Er-wei-ter-te Von-Neumann-Rechner: die wich-tigs-
  []
 
 [20]
-Overfull \hbox (4.51402pt too wide) in paragraph at lines 181--184
+Overfull \hbox (4.51402pt too wide) in paragraph at lines 185--188
 \TU/NotoSerif(0)/m/n/12 Auf-ga-ben. \TU/NotoSerif(0)/b/n/12 Vektor-/SIMD-Einheit
 en \TU/NotoSerif(0)/m/n/12 wen-den \TU/NotoSerif(0)/m/it/12 ei-ne \TU/NotoSerif
 (0)/m/n/12 Ope-ra-ti-on auf \TU/NotoSerif(0)/m/it/12 vie-le \TU/NotoSerif(0)/m/
 n/12 Da-ten gleich-
  []
 
-) (./chapters/computernetze.tex [21] [22
 
-]
+Overfull \hbox (1.44777pt too wide) in paragraph at lines 207--209
+\TU/NotoSerif(0)/m/n/12 Hier wird der Quell-text im Vor-aus in \TU/NotoSerif(0)
+/m/it/12 Ma-schi-nen-code \TU/NotoSerif(0)/m/n/12 über-setzt und als Pro-gramm-
+
+ []
+
+
+Overfull \hbox (16.28494pt too wide) in paragraph at lines 213--214
+[]\TU/NotoSerif(0)/b/n/12 Lin-ker \TU/NotoSerif(0)/m/n/12 setzt al-le Tei-le zu-
+sam-men (ei-ge-ne Mo-du-le, Bi-blio-the-ken) $\OMS/cmsy/m/n/12 !$ \TU/NotoSerif
+(0)/b/n/12 Pro-gramm-
+ []
+
+
+Overfull \hbox (0.14384pt too wide) in paragraph at lines 214--215
+[]\TU/NotoSerif(0)/b/n/12 Be-triebs-sys-tem (Loa-der) \TU/NotoSerif(0)/m/n/12 l
+ädt die Pro-gramm-da-tei in den Spei-cher und star-
+ []
+
+[21]
+Overfull \hbox (4.4733pt too wide) in paragraph at lines 233--235
+\TU/NotoSerif(0)/m/it/12 was be-wir-ken \TU/NotoSerif(0)/m/n/12 (z.B. \TU/lmtt/
+m/n/12 x86-64\TU/NotoSerif(0)/m/n/12 , \TU/lmtt/m/n/12 ARM\TU/NotoSerif(0)/m/n/
+12 , \TU/lmtt/m/n/12 RISC-V\TU/NotoSerif(0)/m/n/12 ). Un-ter-schied-li-che ISAs $\OMS/cmsy/m/n/12 )$ \TU/NotoSerif(0)/m/n/12 un-ter-schied-
+ []
+
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 238.
+[22]
+Overfull \hbox (6.10695pt too wide) in paragraph at lines 280--281
+[]\TU/NotoSerif(0)/b/n/12 Ge-mein-sa-me „Ba-sis-stu-fe“ wäh-len: \TU/NotoS
+erif(0)/m/n/12 Com-pi-ler er-zeugt Code für ei-ne \TU/NotoSerif(0)/m/it/12 Mind
+est-
+ []
+
+
+Overfull \hbox (14.8545pt too wide) in paragraph at lines 313--314
+ [] 
+ []
+
+[23]
+Overfull \hbox (11.50201pt too wide) in paragraph at lines 341--343
+[]\TU/NotoSerif(0)/b/n/12 Sec-tion Ta-ble \TU/NotoSerif(0)/m/n/12 mit ty-pi-sche
+n Ab-schnit-ten: \TU/lmtt/m/n/12 .text\TU/NotoSerif(0)/m/n/12 , \TU/lmtt/m/n/12
+ .data\TU/NotoSerif(0)/m/n/12 , \TU/lmtt/m/n/12 .rdata\TU/NotoSerif(0)/m/n/12 , \TU/lmtt/m/n/12 .idata \TU/NotoSerif(0)/m/n/12 (Import-
+ []
+
+
+Overfull \hbox (1.09688pt too wide) in paragraph at lines 349--351
+[]\TU/NotoSerif(0)/m/n/12 Bei-de For-ma-te le-gen \TU/NotoSerif(0)/m/it/12 An-or
+d-nung \TU/NotoSerif(0)/m/n/12 und \TU/NotoSerif(0)/m/it/12 Me-ta-da-ten \TU/No
+toSerif(0)/m/n/12 fest, da-mit der Loa-der weiß,
+ []
+
+
+Overfull \hbox (2.07535pt too wide) in paragraph at lines 366--366
+[] \TU/lmtt/m/n/12 Sections (.text/.data/...)   Optional Header (EntryPoint, Bil
+dbasis, ...)[] 
+ []
+
+
+Overfull \hbox (82.41525pt too wide) in paragraph at lines 366--366
+[] \TU/lmtt/m/n/12 ...                          Section Table (.text, .data, .rd
+ata, .idata, .reloc, ...)[] 
+ []
+
+) (./chapters/mops.tex [24]
 Kapitel 5.
+
+Overfull \hbox (4.02734pt too wide) in paragraph at lines 18--21
+[]\TU/NotoSerif(0)/b/n/12 Pseu-do-as-sem-bler: \TU/NotoSerif(0)/m/n/12 Man schre
+ibt \TU/NotoSerif(0)/m/it/12 mne-mo-ni-sche Be-feh-le \TU/NotoSerif(0)/m/n/12 (z
+.B. \TU/lmtt/m/n/12 LOAD\TU/NotoSerif(0)/m/n/12 , \TU/lmtt/m/n/12 ADD\TU/NotoSe
+rif(0)/m/n/12 , \TU/lmtt/m/n/12 STORE\TU/NotoSerif(0)/m/n/12 ).
+ []
+
+
+Overfull \hbox (5.30084pt too wide) in paragraph at lines 21--23
+[]\TU/NotoSerif(0)/b/n/12 Klei-ne IDE: \TU/NotoSerif(0)/m/n/12 Edi-tor, „As-se
+m-blie-rung“ (Über-prü-fung und Über-set-zung in Pseu-
+ []
+
+
+Overfull \hbox (2.82404pt too wide) in paragraph at lines 26--30
+\TU/NotoSerif(0)/m/n/12 Be-fehl ho-len, ver-ste-hen, aus-füh-ren, Er-geb-nis ab
+-le-gen, zum nächs-ten Be-fehl sprin-
+ []
+
+
+Overfull \hbox (23.96596pt too wide) in paragraph at lines 33--34
+[]\TU/NotoSerif(0)/b/n/12 Kein rea-ler Takt: \TU/NotoSerif(0)/m/n/12 Als Si-mu-l
+a-ti-on hat MOPS kei-ne mess-ba-re MHz/GHz-Frequenz. 
+ []
+
+[25
+
+]) (./chapters/computernetze.tex [26]
+Kapitel 6.
 
 Overfull \hbox (39.2773pt too wide) in paragraph at lines 50--52
 []\TU/NotoSerif(0)/m/n/12 ei-nen \TU/NotoSerif(0)/b/n/12 Kopf \TU/NotoSerif(0)/
@@ -1487,336 +1582,723 @@ m/n/12 (\TU/NotoSerif(0)/m/it/12 Hea-der\TU/NotoSerif(0)/m/n/12 ) mit Steu-er-in
 -for-ma-tio-nen (z.B. Absender-Adresse, Empfänger-
  []
 
-[23]
+[27
+
+]
 Overfull \hbox (0.70297pt too wide) in paragraph at lines 85--88
 []\TU/NotoSerif(0)/b/n/12 Port-num-mer \TU/NotoSerif(0)/m/n/12 (Anwendungs-Adres
 se): Kenn-zeich-net \TU/NotoSerif(0)/m/it/12 den Dienst \TU/NotoSerif(0)/m/n/12
  auf dem Ge-
  []
 
-[24]) (./appendix/anhang.tex [25] [26
+[28]) (./appendix/anhang.tex [29] [30
 
 
 ]
-<appendix/aufgabenblatt-1.pdf, id=469, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-1.pdf, id=603, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-1.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 100.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 100.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-1.pdf, id=472, page=1, 597.50829pt x 845.04709pt>
-File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
-e 100.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
-e 100.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
- [27]
-File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
-e 100.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
-e 100.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
-e 100.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
- [28
-
-<./appendix/aufgabenblatt-1.pdf>]
-File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 100.
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 118.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-1.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 100.
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 118.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-1.pdf, id=540, page=2, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-1.pdf, id=606, page=1, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
-e 100.
+<use appendix/aufgabenblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
-e 100.
+<use appendix/aufgabenblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [31]
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
-e 100.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
-e 100.
+<use appendix/aufgabenblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
 File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-1.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
-e 100.
+<use appendix/aufgabenblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
- [29
-
-<./appendix/aufgabenblatt-1.pdf>]
-<appendix/aufgabenblatt-3.0.pdf, id=552, 597.50829pt x 845.04709pt>
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 106
-.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 106
-.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-3.0.pdf, id=555, page=1, 597.50829pt x 845.04709pt>
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
- [30
-
-<./appendix/aufgabenblatt-3.0.pdf>]
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 106
-.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 106
-.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-3.0.pdf, id=614, page=2, 597.50829pt x 845.04709pt>
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.0.pdf, page 2>
-Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
-ine 106.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-
-[31
-
-<./appendix/aufgabenblatt-3.0.pdf>]
-<appendix/aufgabenblatt-3.1.pdf, id=630, 597.50829pt x 845.04709pt>
-File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.1.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf  used on input line 118
-.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.1.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf  used on input line 118
-.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-3.1.pdf, id=633, page=1, 597.50829pt x 845.04709pt>
-File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
-ine 118.
-(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
-ine 118.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
-ine 118.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
-ine 118.
-(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-3.1.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
-ine 118.
+File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page1 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
  [32
 
-<./appendix/aufgabenblatt-3.1.pdf>]
-<appendix/aufgabenblatt-4.pdf, id=693, 597.50829pt x 845.04709pt>
-File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-4.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 124.
+<./appendix/aufgabenblatt-1.pdf>]
+File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-1.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 118.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-4.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 124.
+File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-1.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf  used on input line 118.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-4.pdf, id=696, page=1, 597.50829pt x 845.04709pt>
-File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-4.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
-e 124.
+<appendix/aufgabenblatt-1.pdf, id=681, page=2, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-4.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
-e 124.
+File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-4.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
-e 124.
+File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-4.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
-e 124.
+File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
+e 118.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
-File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
-<use appendix/aufgabenblatt-4.pdf, page 1>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
-e 124.
+File: appendix/aufgabenblatt-1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-1.pdf , page2 used on input lin
+e 118.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [33
+
+<./appendix/aufgabenblatt-1.pdf>]
+<appendix/loesungsblatt-1.pdf, id=694, 597.50829pt x 845.04709pt>
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf  used on input line 120.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf  used on input line 120.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/loesungsblatt-1.pdf, id=697, page=1, 597.50829pt x 845.04709pt>
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page1 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page1 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page1 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page1 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 1>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page1 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [34
+
+<./appendix/loesungsblatt-1.pdf>]
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf  used on input line 120.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf  used on input line 120.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/loesungsblatt-1.pdf, id=768, page=2, 597.50829pt x 845.04709pt>
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page2 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page2 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page2 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page2 used on input lin
+e 120.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/loesungsblatt-1.pdf Graphic file (type pdf)
+<use appendix/loesungsblatt-1.pdf, page 2>
+Package luatex.def Info: appendix/loesungsblatt-1.pdf , page2 used on input lin
+e 120.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
 
-[33
+[35
+
+<./appendix/loesungsblatt-1.pdf>]
+<appendix/aufgabenblatt-3.0.pdf, id=781, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 126
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 126
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-3.0.pdf, id=784, page=1, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page1 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [36
+
+<./appendix/aufgabenblatt-3.0.pdf>]
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 126
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf  used on input line 126
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-3.0.pdf, id=842, page=2, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.0.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.0.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-3.0.pdf , page2 used on input l
+ine 126.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+
+[37
+
+<./appendix/aufgabenblatt-3.0.pdf>]
+<appendix/aufgabenblatt-3.1.pdf, id=860, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.1.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf  used on input line 138
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.1.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf  used on input line 138
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-3.1.pdf, id=863, page=1, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
+ine 138.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
+ine 138.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
+ine 138.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
+ine 138.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-3.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-3.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-3.1.pdf , page1 used on input l
+ine 138.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [38
+
+<./appendix/aufgabenblatt-3.1.pdf>]
+<appendix/aufgabenblatt-4.pdf, id=923, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-4.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 144.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-4.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 144.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-4.pdf, id=926, page=1, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-4.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
+e 144.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-4.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
+e 144.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-4.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
+e 144.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-4.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
+e 144.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-4.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page1 used on input lin
+e 144.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+
+[39
 
 <./appendix/aufgabenblatt-4.pdf>]
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 124.
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 144.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf>
-Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 124.
+Package luatex.def Info: appendix/aufgabenblatt-4.pdf  used on input line 144.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
-<appendix/aufgabenblatt-4.pdf, id=758, page=2, 597.50829pt x 845.04709pt>
+<appendix/aufgabenblatt-4.pdf, id=987, page=2, 597.50829pt x 845.04709pt>
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf, page 2>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page2 used on input lin
-e 124.
+e 144.
 (luatex.def)             Requested size: 597.50682pt x 845.04503pt.
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf, page 2>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page2 used on input lin
-e 124.
+e 144.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf, page 2>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page2 used on input lin
-e 124.
+e 144.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf, page 2>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page2 used on input lin
-e 124.
+e 144.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
 File: appendix/aufgabenblatt-4.pdf Graphic file (type pdf)
 <use appendix/aufgabenblatt-4.pdf, page 2>
 Package luatex.def Info: appendix/aufgabenblatt-4.pdf , page2 used on input lin
-e 124.
+e 144.
 (luatex.def)             Requested size: 597.53416pt x 845.08371pt.
- [34
+ [40
 
-<./appendix/aufgabenblatt-4.pdf>])
+<./appendix/aufgabenblatt-4.pdf>]
+<appendix/aufgabenblatt-5.pdf, id=992, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf  used on input line 150.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf  used on input line 150.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-5.pdf, id=995, page=1, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page1 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page1 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page1 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page1 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page1 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+
+[41
+
+<./appendix/aufgabenblatt-5.pdf>]
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf  used on input line 150.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf  used on input line 150.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-5.pdf, id=1066, page=2, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page2 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page2 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page2 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page2 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.pdf , page2 used on input lin
+e 150.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [42
+
+<./appendix/aufgabenblatt-5.pdf>]
+<appendix/aufgabenblatt-5.1.pdf, id=1071, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf  used on input line 156
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf  used on input line 156
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-5.1.pdf, id=1074, page=1, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page1 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page1 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page1 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page1 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page1 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+
+[43
+
+<./appendix/aufgabenblatt-5.1.pdf>]
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf  used on input line 156
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf  used on input line 156
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-5.1.pdf, id=1143, page=2, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page2 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page2 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page2 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page2 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.1.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.1.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.1.pdf , page2 used on input l
+ine 156.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [44
+
+<./appendix/aufgabenblatt-5.1.pdf>]
+<appendix/aufgabenblatt-5.2.pdf, id=1148, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf  used on input line 162
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf  used on input line 162
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-5.2.pdf, id=1151, page=1, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page1 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page1 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page1 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page1 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page1 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+
+[45
+
+<./appendix/aufgabenblatt-5.2.pdf>]
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf  used on input line 162
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf  used on input line 162
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-5.2.pdf, id=1225, page=2, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page2 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page2 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page2 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page2 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.2.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.2.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.2.pdf , page2 used on input l
+ine 162.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [46
+
+<./appendix/aufgabenblatt-5.2.pdf>]
+<appendix/aufgabenblatt-5.3.pdf, id=1230, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf  used on input line 168
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf  used on input line 168
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-5.3.pdf, id=1233, page=1, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page1 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page1 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page1 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page1 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 1>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page1 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+
+[47
+
+<./appendix/aufgabenblatt-5.3.pdf>]
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf  used on input line 168
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf  used on input line 168
+.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+<appendix/aufgabenblatt-5.3.pdf, id=1307, page=2, 597.50829pt x 845.04709pt>
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page2 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.50682pt x 845.04503pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page2 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page2 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page2 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+File: appendix/aufgabenblatt-5.3.pdf Graphic file (type pdf)
+<use appendix/aufgabenblatt-5.3.pdf, page 2>
+Package luatex.def Info: appendix/aufgabenblatt-5.3.pdf , page2 used on input l
+ine 168.
+(luatex.def)             Requested size: 597.53416pt x 845.08371pt.
+ [48
+
+<./appendix/aufgabenblatt-5.3.pdf>])
 (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 2FEB48F7D164DD54EEB2D9FDD5597C17;11620
-(rerunfilecheck)             After:  B1BB702CE781F3466D7214F77EA2B6FA;11371.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 11C31D00C219A32AB8F57451CF8262D3;16549.
 )
 
 Here is how much of LuaTeX's memory you used:
- 30874 strings out of 476553
+ 31721 strings out of 476553
  125039,1977958 words of node,token memory allocated
- 668 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 40 attribute, 58 glue_spec
-, 22 attribute_list, 3 write, 3 pdf_action nodes
-   avail lists: 2:1935,3:668,4:134,5:2812,6:116,7:6503,8:44,9:4574,10:21,11:650
- 51513 multiletter control sequences out of 65536+600000
- 124 fonts using 112974511 bytes
+ 788 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 60 attribute, 58 glue_spec
+, 32 attribute_list, 3 write, 13 pdf_action nodes
+   avail lists: 2:1935,3:668,4:134,5:2831,6:134,7:6503,8:44,9:4574,10:21,11:650
+ 51677 multiletter control sequences out of 65536+600000
+ 126 fonts using 113624127 bytes
  84i,17n,118p,885b,1050s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/truetype/google/noto/NotoSerif-BoldItalic.t
+tf></usr/share/texmf/fonts/opentype/public/lm/lmmonolt10-bold.otf></usr/share/te
+xmf/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/fonts/truetype/not
+o/NotoSansSymbols2-Regular.ttf></usr/share/fonts/opentype/noto/NotoSansCJK-Regul
+ar.ttc></usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc></usr/share/fonts
+/truetype/noto/NotoNaskhArabic-Regular.ttf></usr/share/texmf/fonts/opentype/publ
+ic/lm/lmmono12-regular.otf></usr/share/texlive/texmf-dist/fonts/truetype/google/
+noto/NotoSerif-Italic.ttf></usr/share/texlive/texmf-dist/fonts/truetype/google/n
+oto/NotoSerif-Bold.ttf></usr/share/texlive/texmf-dist/fonts/truetype/google/noto
+/NotoSerif-Regular.ttf></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (52 pages, 1288155 bytes).
 
-warning  (pdf backend): unreferenced destination with name 'section.4.8'
-</usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/font
-s/truetype/noto/NotoSansSymbols2-Regular.ttf></usr/share/fonts/opentype/noto/Not
-oSansCJK-Regular.ttc></usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc></u
-sr/share/fonts/truetype/noto/NotoNaskhArabic-Regular.ttf></usr/share/texmf/fonts
-/opentype/public/lm/lmmono12-regular.otf></usr/share/texlive/texmf-dist/fonts/tr
-uetype/google/noto/NotoSerif-Italic.ttf></usr/share/texlive/texmf-dist/fonts/tru
-etype/google/noto/NotoSerif-Bold.ttf></usr/share/texlive/texmf-dist/fonts/truety
-pe/google/noto/NotoSerif-Regular.ttf></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (38 pages, 775376 bytes).
-
-PDF statistics: 850 PDF objects out of 1000 (max. 8388607)
- 643 compressed objects within 7 object streams
- 123 named destinations out of 1000 (max. 131072)
- 432 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1418 PDF objects out of 1440 (max. 8388607)
+ 1021 compressed objects within 11 object streams
+ 167 named destinations out of 1000 (max. 131072)
+ 552 words of extra memory for PDF output out of 10000 (max. 100000000)
 

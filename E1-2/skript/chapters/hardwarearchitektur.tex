@@ -1,8 +1,12 @@
 % !TeX program = lualatex
 \documentclass[../skript/main.tex]{subfiles}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\graphicspath{{\subfix{../figures/}}}
 
-\begin{document}\label{chap:hardwarearchitektur}
+\begin{document}
 \chapter{Hardwarearchitektur}
+\label{chap:hardwarearchitektur}
 
 \section{Worum geht es?}
 Unter \textbf{Hardwarearchitektur} versteht man den grundsätzlichen Aufbau eines Rechners:
@@ -189,6 +193,183 @@ Moderne Rechner sind daher ein Mix aus \emph{schlauem Vorrat} (Caches), \emph{Vo
 (Prefetch/Prediction), \emph{Parallelität} (Pipeline, Multi-Core, SIMD) und \emph{breiteren/schnelleren Wegen},
 damit aus „Warten auf Daten“ so oft wie möglich „Rechnen“ wird.
 
+% --- Subkapitel: Vom Quellcode zur Ausführung ---
+\section{Vom Quellcode zur Ausführung}\label{sec:toolchain}
+
+%\subsection*{Kernaussage}
+Zwischen dem \emph{geschriebenen Code} und der \emph{CPU} stehen \textbf{Übersetzer}.
+Je nach Sprache führt der Weg über \emph{Compiler/Assembler/Linker} oder über
+\emph{Interpreter} bzw.\ \emph{JIT-Compiler}.
+
+% -------------------------------------------------------------
+\subsection{Compiler-Weg (\ZB\ C, C++, Rust)}%
+
+Hier wird der Quelltext im Voraus in \emph{Maschinencode} übersetzt und als Programmdatei gespeichert.
+\begin{enumerate}
+	\item \textbf{Quellcode} (Text, den Menschen lesen) wird an den \textbf{Compiler} übergeben.
+	\item \textbf{Compiler} prüft und übersetzt in \emph{Objektcode} (maschinennahe, binäre Fragmente).
+	\quad\emph{Optional:} Der Compiler kann als Zwischenstufe \textbf{Assembler-Text} erzeugen.
+	\item \textbf{Assembler} (falls Assembler-Text vorhanden) wandelt Mnemonics in \emph{Maschinencode} (Bytes) um.
+	\item \textbf{Linker} setzt alle Teile zusammen (eigene Module, Bibliotheken) \(\rightarrow\) \textbf{Programmdatei}.
+	\item \textbf{Betriebssystem (Loader)} lädt die Programmdatei in den Speicher und startet sie.
+	\item \textbf{CPU} holt die \emph{Bytes} aus dem Speicher und \emph{führt sie aus}.
+\end{enumerate}
+\emph{Wichtig:} Die CPU sieht niemals den Quelltext oder Assembler-\emph{Wörter}; sie verarbeitet nur \textbf{Byte\-muster}.
+
+% -------------------------------------------------------------
+\subsection{Interpreter und JIT (\ZB\ Python, JavaScript, Java)}%
+Bei interpretierten Sprachen wird der Quelltext \emph{zur Laufzeit} gelesen und ausgeführt.
+\begin{itemize}
+	\item \textbf{Interpreter} liest Anweisung für Anweisung und führt sie direkt aus (ohne vorherige Programmdatei in Maschinencode).
+	\item \textbf{Bytecode + VM} (z.\,B.\ Java): Der Quellcode wird in \emph{Bytecode} übersetzt, den eine \emph{virtuelle Maschine} (VM) ausführt.
+	\item \textbf{JIT-Compiler} (\emph{Just-in-Time}): Abschnitte, die oft laufen (\emph{Hotspots}), werden \emph{während der Ausführung} in \emph{Maschinencode} übersetzt und ab dann schneller ausgeführt.
+\end{itemize}
+
+% -------------------------------------------------------------
+\subsection{Befehlssatz (ISA) und Assembler-Mnemonics}
+\begin{itemize}
+	\item \textbf{Assembler-Mnemonics} sind \emph{lesbare Kürzel} wie \texttt{ADD R1, R2}. Das ist nur Text für uns.
+	\item \textbf{Maschinencode} ist die \emph{folgende Bytefolge}, die die CPU tatsächlich decodiert (0/1).
+	\item \textbf{Befehlssatz/ISA} (\emph{Instruction Set Architecture}) legt fest, \emph{welche Byte\-muster was bewirken}
+	(z.\,B.\ \texttt{x86-64}, \texttt{ARM}, \texttt{RISC-V}). Unterschiedliche ISAs \(\Rightarrow\) unterschiedliche Bytes.
+\end{itemize}
+
+% -------------------------------------------------------------
+\subsection{Mini-Beispiel: \texttt{a = b + c}}
+\begin{itemize}
+	\item \textbf{Hochsprache (Java-Ausschnitt):}
+	\begin{verbatim}
+		int a = b + c;
+	\end{verbatim}
+	\item \textbf{Assembler (lesbarer Text, beispielhaft):}
+	\begin{verbatim}
+		LOAD   R1, [b]     ; lade b
+		LOAD   R2, [c]     ; lade c
+		ADD    R3, R1, R2  ; R3 = R1 + R2
+		STORE  [a], R3     ; speichere nach a
+	\end{verbatim}
+	\item \textbf{Maschinencode (schematische Bytes, ISA-abhängig):}
+	\begin{verbatim}
+		0x13 0x02 0x00 ... 0x93 0x03 0x10 ... 0x23 0x00 0x30 ...
+	\end{verbatim}
+\end{itemize}
+
+
+
+\begin{quote}\small
+	\textbf{Merksatz:} \emph{Menschen} schreiben \textbf{Quelltext}. \emph{Übersetzer} (Compiler/Assembler/Linker, Interpreter/JIT)
+	machen daraus \textbf{Maschinencode}. \emph{Nur Bytes} erreichen die CPU.
+\end{quote}
+
+\subsection{Warum läuft dasselbe Programm auf Intel \emph{und} AMD?}\label{sec:isa-kompat}
+Ein Programm (als \emph{fertige} \textbf{Binärdatei}) läuft auf unterschiedlichen CPUs, wenn sich alle Beteiligten auf \textbf{dieselbe Sprache} einigen. In der Informatik heißen diese „Sprachen“:
+
+\begin{description}
+	\item[ISA (Instruction Set Architecture)] legt fest, \emph{welche Bytefolgen welche Befehle bedeuten}. 
+	Moderne PC-Prozessoren von Intel und AMD sprechen heute in der Regel \textbf{x86{-}64} auch \emph{AMD64}, \emph{Intel 64} genannt. 
+	\emph{Gleiche ISA} \(\Rightarrow\) die \textbf{gleichen Bytes} werden auf beiden Prozessoren gleich verstanden.
+	\item[ABI (Application Binary Interface)] ist der \emph{Binärvertrag} mit dem Betriebssystem \textbf{OS (Operating System)}: 
+	\emph{Wie} werden Funktionen aufgerufen (Register, Stack)? 
+	\emph{Wie} sieht das Programmformat aus (\ZB\ ELF unter Linux, PE/COFF unter Windows)? 
+	\emph{Wie} sind Datentypen/Strukturen angeordnet?
+\end{description}
+
+\paragraph{So sichert man Kompatibilität (Praxis):}
+\begin{itemize}
+	\item \textbf{Gleiche ISA als Basis:} Das Programm wird für x86{-}64 gebaut \(\Rightarrow\) läuft auf Intel \emph{und} AMD.
+	\item \textbf{Gemeinsame „Basisstufe“ wählen:} Compiler erzeugt Code für eine \emph{Mindest-ISA} (Baseline).
+	\item \textbf{Feature-Erkennung:} Zur Laufzeit prüft die Software per \texttt{CPUID}, ob ein Befehlssatzzusatz vorhanden ist, 
+	und wählt dann \emph{schnelle Pfade}.
+	\item \textbf{Passendes ABI/OS:} Ein Linux{-}x86{-}64{-}Programm läuft auf Intel/AMD unter Linux, 
+	ein Windows{-}x86{-}64{-}Programm auf Intel/AMD unter Windows. 
+	\emph{Gleiches OS/ABI} ist ebenso wichtig wie die ISA.
+\end{itemize}
+
+\begin{center}
+	\begin{tikzpicture}[
+		>=Latex,
+		font=\small,
+		blk/.style={
+			draw, rounded corners=2pt, fill=black!5,
+			inner sep=2mm, minimum height=8mm, align=center
+		}
+		]
+		% ---- obere Reihe (Breiten relativ zur Zeilenbreite, damit nichts übersteht)
+		\node[blk, text width=.23\linewidth]                          (bin)  {Programm-\\Binärdatei};
+		\node[blk, text width=.30\linewidth, right=10mm of bin]       (abi)  {OS \& ABI\\(z.\,B.\ Linux/ELF)};
+		\node[blk, text width=.18\linewidth, right=10mm of abi]       (isa)  {ISA:\\x86-64};
+		
+		% ---- untere Reihe: zwei CPUs symmetrisch unter der ISA
+		\node[blk, text width=.20\linewidth, below=12mm of isa, xshift=-.11\linewidth] (intel) {CPU\\Intel};
+		\node[blk, text width=.20\linewidth, below=12mm of isa, xshift= +.11\linewidth] (amd)   {CPU\\AMD};
+		
+		% ---- Pfeile + Labels (Labels mit Midway und yshift, damit nichts überlappt)
+		\draw[->] (bin.east) -- node[midway, above=3mm]{lädt / startet} (abi.west);
+		\draw[->] (abi.east) -- node[midway, above=3mm, align=center]{Bytes nach\\Regeln der ISA} (isa.west);
+		
+		% ---- Pfeile nach unten (leicht gekrümmt, klarer Abstand)
+		\draw[->] (isa.south west) .. controls +(-10mm,-7mm) and +(0,7mm) .. (intel.north);
+		\draw[->] (isa.south east) .. controls +( 10mm,-7mm) and +(0,7mm) .. (amd.north);
+	\end{tikzpicture}
+\end{center}
+
+
+\begin{quote}\small
+	\textbf{Merksatz:} \emph{ISA} ist die gemeinsame Befehlssprache der CPU (Herstellerübergreifend). 
+	\emph{ABI/OS} ist der Vertrag mit dem System. 
+	Optionales bleibt optional: Gute Programme erkennen Features und wählen passende Codepfade.
+\end{quote}
+
+\subsubsection*{Programmformate: ELF (Linux) und PE/COFF (Windows)}
+Ein ausführbares Programm ist nicht „nur“ eine Bytefolge, sondern ein \emph{Container} mit
+\textbf{Code}, \textbf{Daten} und \textbf{Metadaten}. Das Betriebssystem liest den Container,
+um das Programm korrekt in den Speicher zu laden. Zwei wichtige Formate:
+
+\paragraph{ELF (Executable and Linkable Format) – typisch unter Linux/Unix}
+\begin{itemize}
+	\item \textbf{Header:} sagt u.\,a.\ „für welche ISA“ (z.\,B.\ x86-64) und wo der \emph{Einsprungpunkt} liegt.
+	\item \textbf{Program Headers / Segmente:} was wird \emph{wohin} in den Speicher gemappt
+	(z.\,B.\ \texttt{.text} = Code, \texttt{.data} = initialisierte Daten, \texttt{.bss} = Null-Initialisierung).
+	\item \textbf{Sections} (für Linker/Debugger): Symbole, Relokationen, dynamische Infos.
+	\item \textbf{Dynamisch gelinkt:} Verweise auf geteilte Bibliotheken \texttt{libXYZ.so}.
+	\item \textbf{Loader:} der Kernel lädt, der dynamische Linker (\texttt{ld-linux.so}) bindet Bibliotheken.
+\end{itemize}
+
+\paragraph{PE/COFF (Portable Executable / Common Object File Format) – unter Windows}
+\begin{itemize}
+	\item \textbf{Header:} enthält „PE“-Signatur, Ziel-Architektur, \emph{Entry Point}, Bildbasis u.\,a.
+	\item \textbf{Section Table} mit typischen Abschnitten: \texttt{.text}, \texttt{.data}, \texttt{.rdata},
+	\texttt{.idata} (Import-Tabelle), \texttt{.edata} (Export), \texttt{.reloc} (Relokationen).
+	\item \textbf{Dynamisch gelinkt:} Verweise auf \texttt{.dll}-Bibliotheken (Imports/Exports).
+	\item \textbf{Loader:} der Windows-Loader mappt die Sections und löst DLL-Importe.
+\end{itemize}
+
+\paragraph{Warum das wichtig ist}
+\begin{itemize}
+	\item Beide Formate legen \emph{Anordnung} und \emph{Metadaten} fest, damit der Loader weiß,
+	was er \emph{wohin} laden und \emph{wie} starten muss.
+	\item Das Format ist Teil des \textbf{ABI/OS}: Ein Linux-\texttt{ELF}-Programm läuft nicht direkt
+	auf Windows (das erwartet \texttt{PE/COFF}) – auch wenn die \textbf{ISA} identisch ist.
+	\item Beide Formate tragen ein Feld „\emph{Maschinentyp}“ (x86-64, ARM …): passt die ISA nicht,
+	kann der Loader die Datei nicht starten.
+\end{itemize}
+
+\paragraph{Mini-Skizzen}
+\begin{verbatim}
+	ELF (Linux)                  PE/COFF (Windows)
+	-------------                -----------------
+	ELF Header                   DOS Stub + PE-Signatur
+	Program Headers (Segmente)   COFF Header
+	Sections (.text/.data/...)   Optional Header (EntryPoint, Bildbasis, ...)
+	...                          Section Table (.text, .data, .rdata, .idata, .reloc, ...)
+	Dynamische Infos (.so)       Import/Export-Tabellen (.dll)
+\end{verbatim}
+
+\begin{quote}\small
+	\textbf{Merksatz:} \textbf{ELF} und \textbf{PE/COFF} sind „Verpackungen“ für Code und Daten.  
+	Der \textbf{Loader} des jeweiligen Betriebssystems versteht \emph{sein} Format und startet das Programm.
+	Gleiche \textbf{ISA} sorgt für CPU-Kompatibilität, passendes \textbf{ABI/OS} für Lade- und Lauf-Kompatibilität.
+\end{quote}
 
 	
 \end{document}

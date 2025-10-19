@@ -1,0 +1,113 @@
+% !TeX program = lualatex
+\documentclass[../skript/main.tex]{subfiles}
+
+\begin{document}\label{chap:hardwarearchitektur}
+\chapter{Hardwarearchitektur}
+
+% --- Subkapitel: Vom Quellcode zur Ausführung ---
+\section{Vom Quellcode zur Ausführung}\label{sec:toolchain}
+
+\subsection*{Kernaussage}
+Zwischen dem \emph{geschriebenen Code} und der \emph{CPU} stehen \textbf{Übersetzer}.
+Je nach Sprache führt der Weg über \emph{Compiler/Assembler/Linker} oder über
+\emph{Interpreter} bzw.\ \emph{JIT-Compiler}.
+
+% -------------------------------------------------------------
+\subsection{Compiler-Weg (z.\,B.\ C, C++, Rust)}
+Hier wird der Quelltext im Voraus in \emph{Maschinencode} übersetzt und als Programmdatei gespeichert.
+\begin{enumerate}
+	\item \textbf{Quellcode} (Text, den Menschen lesen) wird an den \textbf{Compiler} übergeben.
+	\item \textbf{Compiler} prüft und übersetzt in \emph{Objektcode} (maschinennahe, binäre Fragmente).
+	\quad\emph{Optional:} Der Compiler kann als Zwischenstufe \textbf{Assembler-Text} erzeugen.
+	\item \textbf{Assembler} (falls Assembler-Text vorhanden) wandelt Mnemonics in \emph{Maschinencode} (Bytes) um.
+	\item \textbf{Linker} setzt alle Teile zusammen (eigene Module, Bibliotheken) \(\rightarrow\) \textbf{Programmdatei}.
+	\item \textbf{Betriebssystem (Loader)} lädt die Programmdatei in den Speicher und startet sie.
+	\item \textbf{CPU} holt die \emph{Bytes} aus dem Speicher und \emph{führt sie aus}.
+\end{enumerate}
+\emph{Wichtig:} Die CPU sieht niemals den Quelltext oder Assembler-\emph{Wörter}; sie verarbeitet nur \textbf{Byte\-muster}.
+
+% -------------------------------------------------------------
+\subsection{Interpreter und JIT (z.\,B.\ Python, JavaScript, Java)}
+Bei interpretierten Sprachen wird der Quelltext \emph{zur Laufzeit} gelesen und ausgeführt.
+\begin{itemize}
+	\item \textbf{Interpreter} liest Anweisung für Anweisung und führt sie direkt aus (ohne vorherige Programmdatei in Maschinencode).
+	\item \textbf{Bytecode + VM} (z.\,B.\ Java): Der Quellcode wird in \emph{Bytecode} übersetzt, den eine \emph{virtuelle Maschine} (VM) ausführt.
+	\item \textbf{JIT-Compiler} (\emph{Just-in-Time}): Abschnitte, die oft laufen (\emph{Hotspots}), werden \emph{während der Ausführung} in \emph{Maschinencode} übersetzt und ab dann schneller ausgeführt.
+\end{itemize}
+
+% -------------------------------------------------------------
+\subsection{Befehlssatz (ISA) und Assembler-Mnemonics}
+\begin{itemize}
+	\item \textbf{Assembler-Mnemonics} sind \emph{lesbare Kürzel} wie \texttt{ADD R1, R2}. Das ist nur Text für uns.
+	\item \textbf{Maschinencode} ist die \emph{folgende Bytefolge}, die die CPU tatsächlich decodiert (0/1).
+	\item \textbf{Befehlssatz/ISA} (\emph{Instruction Set Architecture}) legt fest, \emph{welche Byte\-muster was bewirken}
+	(z.\,B.\ \texttt{x86-64}, \texttt{ARM}, \texttt{RISC-V}). Unterschiedliche ISAs \(\Rightarrow\) unterschiedliche Bytes.
+\end{itemize}
+
+% -------------------------------------------------------------
+\subsection{Mini-Beispiel: \texttt{a = b + c}}
+\begin{itemize}
+	\item \textbf{Hochsprache (C-Ausschnitt):}
+	\begin{verbatim}
+		int a = b + c;
+	\end{verbatim}
+	\item \textbf{Assembler (lesbarer Text, beispielhaft):}
+	\begin{verbatim}
+		LOAD   R1, [b]     ; lade b
+		LOAD   R2, [c]     ; lade c
+		ADD    R3, R1, R2  ; R3 = R1 + R2
+		STORE  [a], R3     ; speichere nach a
+	\end{verbatim}
+	\item \textbf{Maschinencode (schematische Bytes, ISA-abhängig):}
+	\begin{verbatim}
+		0x13 0x02 0x00 ... 0x93 0x03 0x10 ... 0x23 0x00 0x30 ...
+	\end{verbatim}
+\end{itemize}
+\emph{Merke:} Menschen lesen \emph{Quelltext/Assembler}; \emph{Maschinen} lesen \emph{Bytes}.
+
+% -------------------------------------------------------------
+\subsection{Zusammenfassung: Wege zur Ausführung}
+\begin{itemize}
+	\item \textbf{Compilerweg:} Quelltext \(\rightarrow\) (optional Assembler) \(\rightarrow\) Maschinencode \(\rightarrow\) Linker \(\rightarrow\) Programmdatei \(\rightarrow\) OS lädt \(\rightarrow\) CPU läuft.
+	\item \textbf{Interpreter/JIT:} Quelltext \(\rightarrow\) Interpretation \emph{oder} Bytecode \(\rightarrow\) VM \(\rightarrow\) JIT erzeugt bei Bedarf Maschinencode zur Laufzeit.
+\end{itemize}
+
+% -------------------------------------------------------------
+\subsection{Abbildung: typische Toolchain}
+\begin{figure}[H]
+	\centering
+	% Nimmt die Grafik, falls sie vorhanden ist; sonst ASCII-Fallback
+	\IfFileExists{mops_toolchain.png}{%
+		\includegraphics[width=0.95\linewidth]{mops_toolchain.png}%
+	}{%
+		\begin{minipage}{0.95\linewidth}
+			\begin{verbatim}
+				Hochsprache        Compiler/Assembler      Linker        Programmdatei      OS/Loader          CPU
+				|                       |                 |                |                 |                |
+				+---- Quellcode -------->  Objekt/Code --->+-- Biblios ---->  EXE/ELF  ----->  lädt  ----->  Bytes ausführen
+				
+				Interpreter/JIT-Pfad:
+				Quellcode --> Interpreter / VM (Bytecode) --(Hotspot)--> JIT --> nativer Code --> CPU
+			\end{verbatim}
+		\end{minipage}
+	}
+	\caption{Vom Quelltext zur Ausführung: Compilerweg vs.\ Interpreter/JIT (schematisch).}
+\end{figure}
+
+% -------------------------------------------------------------
+\subsection{Typische Fehlerstellen (wo es haken kann)}
+\begin{itemize}
+	\item \textbf{Beim Übersetzen} (Compiler): Syntaxfehler, fehlende Typen/Funktionen.
+	\item \textbf{Beim Binden} (Linker): „Symbol nicht gefunden“ (fehlt Bibliothek/Modul?).
+	\item \textbf{Beim Starten} (Loader/OS): falsches Format/Plattform.
+	\item \textbf{Zur Laufzeit} (Programm): Division durch 0, falsche Pfade, Logikfehler.
+\end{itemize}
+
+\begin{quote}\small
+	\textbf{Merksatz:} \emph{Menschen} schreiben \textbf{Quelltext}. \emph{Übersetzer} (Compiler/Assembler/Linker, Interpreter/JIT)
+	machen daraus \textbf{Maschinencode}. \emph{Nur Bytes} erreichen die CPU.
+\end{quote}
+
+
+	
+\end{document}

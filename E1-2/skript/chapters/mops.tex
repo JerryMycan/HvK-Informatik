@@ -1,0 +1,43 @@
+% !TeX program = lualatex
+\documentclass[../skript/main.tex]{subfiles}
+
+\begin{document}
+	\chapter{Modellrechner mit Pseudoassembler – MOPS}\label{chap:mops}
+	
+	\section{Was ist und was macht MOPS?}
+	\textbf{MOPS} ist ein \emph{Modellrechner}: Er bildet die Arbeitsweise eines echten Computers
+	in vereinfachter Form nach. Ziel ist, die internen Abläufe \emph{sichtbar} und \emph{verständlich}
+	zu machen und eine \emph{prozessornahe Programmierung} zu üben – ohne den Ballast
+	echter Hardware.
+	
+	\subsection{Idee in Kürze}
+	\begin{itemize}
+		\item \textbf{Simulation statt Hardware:} MOPS läuft als Programm und stellt Register,
+		Hauptspeicher und Steuersignale so dar, dass man den Ablauf Schritt für Schritt
+		verfolgen kann.
+		\item \textbf{Pseudoassembler:} Man schreibt \emph{mnemonische Befehle} (z.\,B.\ \texttt{LOAD}, \texttt{ADD}, \texttt{STORE}).
+		Es wird \emph{kein echter Maschinencode} erzeugt; vielmehr entsteht ein \emph{Pseudocode},
+		den der Modellrechner direkt ausführt.
+		\item \textbf{Kleine IDE:} Editor, „Assemblierung“ (Überprüfung und Übersetzung in Pseudocode)
+		und Ausführung sind in einem Werkzeug gebündelt.
+	\end{itemize}
+	
+	\subsection{Bezug zum Von-Neumann-Modell}
+	MOPS folgt dem klassischen Von-Neumann-Prinzip: \emph{ein} Speicher für Befehle und Daten,
+	eine \textbf{CPU} mit \emph{Steuerwerk} (Ablauf) und \emph{Rechenwerk} (ALU) sowie
+	Eingabe/Ausgabe. Der Ablauf geschieht im bekannten \emph{Fetch–Decode–Execute}-Zyklus:
+	Befehl holen, verstehen, ausführen, Ergebnis ablegen, zum nächsten Befehl springen.
+	
+	\subsection{Technische Eckdaten (als Modell)}
+	\begin{itemize}
+		\item \textbf{Kein realer Takt:} Als Simulation hat MOPS keine messbare MHz/GHz-Frequenz.
+		\item \textbf{Hauptspeicher:} \emph{72 Speicherzellen} (= \emph{144 Byte}). Das ist absichtlich klein,
+		damit sich der komplette Inhalt bequem überblicken lässt.
+		\item \textbf{Zahlenbereich:} Ganzzahlen im \emph{Dezimalsystem} von \(-9999\) bis \(9999\).
+		Auch intern rechnet MOPS dezimal. Das ist didaktisch hilfreich, weil die Werte im
+		Quelltext direkt mit den Registern und Speicherinhalten verglichen werden können
+		(ohne binär/hex umdenken zu müssen).
+	\end{itemize}
+
+	
+\end{document}

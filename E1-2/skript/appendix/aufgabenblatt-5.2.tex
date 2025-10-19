@@ -1,0 +1,148 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Engine ---
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+% --- Layout & Hilfspakete ---
+\usepackage{geometry}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\usepackage{amsmath,amssymb,mathtools}
+
+% --- Kopf-/Fußzeilen ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Heinrich-von-Kleist-Schule, Eschborn}
+\fancyfoot[C]{\footnotesize \blatttyp}
+\fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
+
+% --- Variablen ---
+\newcommand{\blatttyp}{Arbeitsblatt 5.2}
+\newcommand{\thema}{Programmieren mit MOPS — Mittel (Kontrollstrukturen \& Rechnen)}
+\newcommand{\logofile}{hvk-logo.png}
+
+% --- Titelleiste mit Logo + Metadaten ---
+\newcommand{\sheettitle}[2]{%
+  \begin{minipage}[t]{0.62\linewidth}
+    \IfFileExists{\logofile}{\includegraphics[height=1.6cm]{\logofile}}{\fbox{\parbox[c][1.6cm][c]{5.5cm}{\centering \small Logo-Datei nicht gefunden}}}\\[0.6em]
+    {\Large\bfseries #1}\\[-0.2em]
+    {\normalsize #2}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.35\linewidth}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{>{\bfseries}p{0.36\linewidth}p{0.58\linewidth}}
+      Fach: & Informatik \\
+      Kurs: & E1 \\
+      Datum: & \rule{3.8cm}{0.4pt} \\
+      Name(n): & \rule{3.8cm}{0.4pt} \\
+    \end{tabular}
+  \end{minipage}
+  \vspace{0.8em}\par\hrule\vspace{1.0em}
+}
+
+% --- Aufgaben-Umgebung ---
+\newenvironment{aufgaben}{%
+  \begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.6em]
+  }{\end{enumerate}}
+\newcommand{\punkte}[1]{\hfill{\small[\textit{#1\,BE}]}}% BE = Bewertungseinheiten
+
+\newenvironment{hinweise}{%
+  \vspace{0.2em}\textbf{Bearbeitungshinweise}\par
+  \begin{itemize}[leftmargin=*,topsep=0.3em,itemsep=0.2em]
+  }{\end{itemize}\vspace{0.5em}}
+
+\begin{document}
+
+  \sheettitle{\blatttyp}{Thema: \thema}
+
+  \begin{hinweise}
+    \item \textbf{Arbeitsform:} \emph{Gruppenarbeit (2–3 Personen) für die Aufgaben 1–4}; \emph{Einzelarbeit/Hausaufgabe} für die Aufgaben 5–9.
+    \item \textbf{Abgabe:} Gruppen: kurzer Code-Screenshot oder Datei des MOPS-Programms mit 1–2 Stichpunkten zur Idee. Hausaufgaben: bis zur nächsten Stunde.
+    \item \textbf{Testen:} Nutzt die angegebenen Testfälle und ergänzt 1–2 eigene Randfälle.
+    \item \textbf{MOPS-Kurzreferenz:} \texttt{in, out, ld, st, add, sub, mul, div, mod, cmp, jmp, jlt, jeq, jgt, end}. Eine Anweisung je Zeile; Sprungmarken nach dem Befehl definieren.
+  \end{hinweise}
+
+  \section*{Ziel}
+  Ihr übt \textbf{Kontrollstrukturen und arithmetische Verfahren} im \textbf{MOPS}-Befehlssatz (Schleifen, Verzweigungen, Invarianten) und achtet auf korrekte Abbruchbedingungen.
+
+  % ------------------ Präsenzteil / Gruppenauftrag ------------------
+  \section*{Gruppenauftrag}
+
+  \begin{aufgaben}
+
+    \item \textbf{Potenzieren durch wiederholte Multiplikation.}\punkte{10}\\
+    \textbf{I/O:} Lies Basis $a$ und Exponent $b$ (nichtnegativ) und gib $a^b$ aus.\\
+    \textbf{Idee:} Akkumulator mit $1$ starten; solange $i<b$: Akkumulator $\gets$ Akkumulator $\cdot a$.\\
+    \emph{Tests:} $(a,b)=(2,0)\to 1$ \;·\; $(2,5)\to 32$ \;·\; $(5,3)\to 125$.
+
+    \item \textbf{Ganzzahl-Division per wiederholter Subtraktion.}\punkte{10}\\
+    \textbf{I/O:} Lies Dividend $D$ und Divisor $d$ und gib \textbf{Quotient} $q$ und \textbf{Rest} $r$ aus.\\
+    \textbf{Idee:} Solange $D \ge d$: $D\gets D-d$, $q\gets q+1$; am Ende $r=D$. \emph{Sonderfall:} $d=0$~$\Rightarrow$ gib $q=0$, $r=0$ aus.\\
+    \emph{Tests:} $(10,3)\to q=3, r=1$ \;·\; $(7,7)\to q=1, r=0$ \;·\; $(5,0)\to q=0, r=0$.
+
+    \item \textbf{Digitsumme (Quersumme).}\punkte{8}\\
+    \textbf{I/O:} Lies eine \textbf{nichtnegative} Zahl $n$ und gib die Summe ihrer Dezimalziffern aus.\\
+    \textbf{Idee:} Wiederholt $n \bmod 10$ aufsummieren und $n \div 10$ durchführen, bis $n=0$.\\
+    \emph{Tests:} $0\to 0$ \;·\; $7\to 7$ \;·\; $12345\to 15$ \;·\; $1002\to 3$.
+
+    \item \textbf{Ziffernumkehr (Reverse).}\punkte{8}\\
+    \textbf{I/O:} Lies eine \textbf{nichtnegative} Zahl $n$ und gib die umgedrehte Zahl aus.\\
+    \textbf{Idee:} $rev \gets rev\cdot 10 + (n \bmod 10)$; danach $n \gets n \div 10$; Schleife bis $n=0$.\\
+    \emph{Tests:} $123\to 321$ \;·\; $1200\to 21$ \;·\; $0\to 0$.
+
+  \end{aufgaben}
+
+  \vspace{0.3em}
+  \hrule
+  \vspace{0.6em}
+
+  % ------------------ Hausaufgaben / Vertiefung ------------------
+  \section*{Hausaufgaben / Vertiefung}
+
+  \begin{aufgaben}
+
+    \item \textbf{Palindrom (Zahl).}\punkte{8}\\
+    \textbf{I/O:} Lies $n$ und gib \texttt{1} aus, falls $n$ ein Palindrom ist, sonst \texttt{0}.\\
+    \textbf{Idee:} Nutze die Logik aus der \emph{Ziffernumkehr}: bilde $rev$ und vergleiche $rev$ mit $n$.\\
+    \emph{Tests:} $121\to 1$ \;·\; $123\to 0$ \;·\; $0\to 1$.
+
+    \item \textbf{Maximum aus drei Zahlen.}\punkte{8}\\
+    \textbf{I/O:} Lies $a$, $b$, $c$ und gib die \textbf{größte} der drei Zahlen aus.\\
+    \textbf{Idee:} Starte mit $mx\gets a$; vergleiche nacheinander $b$ und $c$ mit $mx$ und aktualisiere.\\
+    \emph{Erweiterung (*):} Gib zusätzlich das \textbf{Minimum} aus.\\
+    \emph{Tests:} $(3,9,7)\to 9$ \;·\; $(5,5,1)\to 5$ \;·\; $(-2,-1,-5)\to -1$.
+
+    \item \textbf{Median von drei.}\punkte{10}\\
+    \textbf{I/O:} Lies $a$, $b$, $c$ und gib die \textbf{mittlere} der drei Zahlen aus.\\
+    \textbf{Idee:} Kaskadierte Vergleiche mit \texttt{jlt}/\texttt{jgt}/\texttt{jeq} (z.\,B. Fälle \,$a\le b\le c$, $a\le c\le b$, \dots).\\
+    \emph{Tests:} $(3,9,7)\to 7$ \;·\; $(5,5,1)\to 5$ \;·\; $(2,8,8)\to 8$.
+
+    \item \textbf{Sortieren von drei Zahlen (aufsteigend).}\punkte{10}\\
+    \textbf{I/O:} Lies $a$, $b$, $c$ und gib sie \textbf{aufsteigend} aus.\\
+    \textbf{Idee:} Tauschlogik (swap) mit Hilfszelle: vergleiche Paare und tausche, bis $a\le b\le c$ gilt.\\
+    \emph{Erweiterung (*):} Sortiere vier Zahlen.\\
+    \emph{Tests:} $(9,3,7)\to 3,7,9$ \;·\; $(5,5,1)\to 1,5,5$.
+
+    \item \textbf{Countdown mit Schrittweite.}\punkte{6}\\
+    \textbf{I/O:} Lies \texttt{start}, \texttt{step} (\texttt{step>0}) und gib \texttt{start, start-step, …} aus, solange der Wert $\ge 0$ ist.\\
+    \textbf{Idee:} Schleife: jeweils \texttt{sub step}, dann prüfen und ausgeben/beenden.\\
+    \emph{Tests:} $(start,step)=(10,3)\to 10,7,4,1$ \;·\; $(5,2)\to 5,3,1$.
+
+  \end{aufgaben}
+
+  \vfill
+  \hrule
+  \small\emph{Arbeitsauftrag „MOPS — Mittel (Kontrollstrukturen \& Rechnen)“.}
+
+\end{document}

@@ -66,11 +66,11 @@
 \@writefile{toc}{\contentsline {paragraph}{Addition/Subtraktion.}{15}{Item.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Überlauf (Overflow) erkennen.}{15}{Item.8}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Vorzeichenverlängerung (Sign Extension).}{15}{Item.8}\protected@file@percent }
-\newlabel{chap:hardwarearchitektur}{{}{16}{\contentsname \@mkboth {\MakeUppercase \contentsname }{\MakeUppercase \contentsname }}{Item.8}{}}
-\newlabel{chap:hardwarearchitektur@cref}{{}{[1][16][]16}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Hardwarearchitektur}{17}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap:hardwarearchitektur}{{4}{17}{Hardwarearchitektur}{chapter.4}{}}
+\newlabel{chap:hardwarearchitektur@cref}{{[chapter][4][]4}{[1][17][]17}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Worum geht es?}{17}{section.4.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}John von Neumann und die Grundidee}{17}{section.4.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Architektur von Neumann Rechners.}}{18}{figure.4.1}\protected@file@percent }
@@ -85,35 +85,74 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.6}Harvard vs.\ Von Neumann (und was man heute wirklich baut)}{20}{section.4.6}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4.7}Erweiterte Von-Neumann-Rechner: die wichtigsten Ideen}{20}{section.4.7}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Wichtig zu wissen.}{21}{section.4.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Grundlagen der Computernetze}{23}{chapter.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.8}Vom Quellcode zur Ausführung}{21}{section.4.8}\protected@file@percent }
+\newlabel{sec:toolchain}{{4.8}{21}{Vom Quellcode zur Ausführung}{section.4.8}{}}
+\newlabel{sec:toolchain@cref}{{[section][8][4]4.8}{[1][21][]21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.1}Compiler-Weg (z.\,B.\ C, C++, Rust)}{21}{subsection.4.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.2}Interpreter und JIT (z.\,B.\ Python, JavaScript, Java)}{22}{subsection.4.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.3}Befehlssatz (ISA) und Assembler-Mnemonics}{22}{subsection.4.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.4}Mini-Beispiel: \texttt  {a = b + c}}{22}{subsection.4.8.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.8.5}Warum läuft dasselbe Programm auf Intel \emph  {und} AMD?}{23}{subsection.4.8.5}\protected@file@percent }
+\newlabel{sec:isa-kompat}{{4.8.5}{23}{Warum läuft dasselbe Programm auf Intel \emph {und} AMD?}{subsection.4.8.5}{}}
+\newlabel{sec:isa-kompat@cref}{{[subsection][5][4,8]4.8.5}{[1][23][]23}}
+\@writefile{toc}{\contentsline {paragraph}{So sichert man Kompatibilität (Praxis):}{23}{subsection.4.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ELF (Executable and Linkable Format) – typisch unter Linux/Unix}{24}{subsection.4.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{PE/COFF (Portable Executable / Common Object File Format) – unter Windows}{24}{subsection.4.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Warum das wichtig ist}{24}{subsection.4.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mini-Skizzen}{24}{subsection.4.8.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Modellrechner mit Pseudoassembler – MOPS}{25}{chapter.5}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:computernetze}{{5}{23}{Grundlagen der Computernetze}{chapter.5}{}}
-\newlabel{chap:computernetze@cref}{{[chapter][5][]5}{[1][23][]23}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Warum vernetzen wir Computer?}{23}{section.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Client und Server}{23}{section.5.2}\protected@file@percent }
-\newlabel{sec:client-server}{{5.2}{23}{Client und Server}{section.5.2}{}}
-\newlabel{sec:client-server@cref}{{[section][2][5]5.2}{[1][23][]23}}
-\@writefile{toc}{\contentsline {paragraph}{Merksatz.}{23}{section.5.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Datenpakete (allgemein)}{24}{section.5.3}\protected@file@percent }
-\newlabel{sec:datenpakete}{{5.3}{24}{Datenpakete (allgemein)}{section.5.3}{}}
-\newlabel{sec:datenpakete@cref}{{[section][3][5]5.3}{[1][23][]24}}
-\@writefile{toc}{\contentsline {paragraph}{Warum Pakete?}{24}{section.5.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.4}Adressierung von Computern}{24}{section.5.4}\protected@file@percent }
-\newlabel{sec:adressierung}{{5.4}{24}{Adressierung von Computern}{section.5.4}{}}
-\newlabel{sec:adressierung@cref}{{[section][4][5]5.4}{[1][24][]24}}
-\@writefile{toc}{\contentsline {paragraph}{Alltagsbild.}{24}{section.5.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Anhang}{27}{appendix*.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{28}{section.Alph0.1}\protected@file@percent }
-\newlabel{ab1}{{.1}{28}{\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{section.Alph0.1}{}}
-\newlabel{ab1@cref}{{[subappendix][1][2147483647,0].1}{[1][28][]28}}
-\@writefile{toc}{\contentsline {section}{\numberline {.2}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{30}{section.Alph0.2}\protected@file@percent }
-\newlabel{ab3.0}{{.2}{30}{\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{section.Alph0.2}{}}
-\newlabel{ab3.0@cref}{{[subappendix][2][2147483647,0].2}{[1][30][]30}}
-\@writefile{toc}{\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{32}{section.Alph0.3}\protected@file@percent }
-\newlabel{ab3.1}{{.3}{32}{\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{section.Alph0.3}{}}
-\newlabel{ab3.1@cref}{{[subappendix][3][2147483647,0].3}{[1][32][]32}}
-\@writefile{toc}{\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{33}{section.Alph0.4}\protected@file@percent }
-\newlabel{ab4}{{.4}{33}{\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{section.Alph0.4}{}}
-\newlabel{ab4@cref}{{[subappendix][4][2147483647,0].4}{[1][33][]33}}
-\gdef \@abspage@last{38}
+\newlabel{chap:mops}{{5}{25}{Modellrechner mit Pseudoassembler – MOPS}{chapter.5}{}}
+\newlabel{chap:mops@cref}{{[chapter][5][]5}{[1][25][]25}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Was ist und was macht MOPS?}{25}{section.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Idee in Kürze}{25}{subsection.5.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Bezug zum Von-Neumann-Modell}{25}{subsection.5.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Technische Eckdaten (als Modell)}{25}{subsection.5.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Grundlagen der Computernetze}{27}{chapter.6}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap:computernetze}{{6}{27}{Grundlagen der Computernetze}{chapter.6}{}}
+\newlabel{chap:computernetze@cref}{{[chapter][6][]6}{[1][27][]27}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Warum vernetzen wir Computer?}{27}{section.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Client und Server}{27}{section.6.2}\protected@file@percent }
+\newlabel{sec:client-server}{{6.2}{27}{Client und Server}{section.6.2}{}}
+\newlabel{sec:client-server@cref}{{[section][2][6]6.2}{[1][27][]27}}
+\@writefile{toc}{\contentsline {paragraph}{Merksatz.}{27}{section.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Datenpakete (allgemein)}{28}{section.6.3}\protected@file@percent }
+\newlabel{sec:datenpakete}{{6.3}{28}{Datenpakete (allgemein)}{section.6.3}{}}
+\newlabel{sec:datenpakete@cref}{{[section][3][6]6.3}{[1][27][]28}}
+\@writefile{toc}{\contentsline {paragraph}{Warum Pakete?}{28}{section.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Adressierung von Computern}{28}{section.6.4}\protected@file@percent }
+\newlabel{sec:adressierung}{{6.4}{28}{Adressierung von Computern}{section.6.4}{}}
+\newlabel{sec:adressierung@cref}{{[section][4][6]6.4}{[1][28][]28}}
+\@writefile{toc}{\contentsline {paragraph}{Alltagsbild.}{28}{section.6.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Anhang}{31}{appendix*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{32}{section.Alph0.1}\protected@file@percent }
+\newlabel{ab1}{{.1}{32}{\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{section.Alph0.1}{}}
+\newlabel{ab1@cref}{{[subappendix][1][2147483647,0].1}{[1][32][]32}}
+\@writefile{toc}{\contentsline {section}{\numberline {.2}\ignorespaces Lösungsvorschlag 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{34}{section.Alph0.2}\protected@file@percent }
+\newlabel{lab1}{{.2}{34}{\ignorespaces Lösungsvorschlag 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{section.Alph0.2}{}}
+\newlabel{lab1@cref}{{[subappendix][2][2147483647,0].2}{[1][34][]34}}
+\@writefile{toc}{\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{36}{section.Alph0.3}\protected@file@percent }
+\newlabel{ab3.0}{{.3}{36}{\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{section.Alph0.3}{}}
+\newlabel{ab3.0@cref}{{[subappendix][3][2147483647,0].3}{[1][36][]36}}
+\@writefile{toc}{\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{38}{section.Alph0.4}\protected@file@percent }
+\newlabel{ab3.1}{{.4}{38}{\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{section.Alph0.4}{}}
+\newlabel{ab3.1@cref}{{[subappendix][4][2147483647,0].4}{[1][38][]38}}
+\@writefile{toc}{\contentsline {section}{\numberline {.5}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{39}{section.Alph0.5}\protected@file@percent }
+\newlabel{ab4}{{.5}{39}{\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{section.Alph0.5}{}}
+\newlabel{ab4@cref}{{[subappendix][5][2147483647,0].5}{[1][39][]39}}
+\@writefile{toc}{\contentsline {section}{\numberline {.6}\ignorespaces Arbeitsblatt 5: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{41}{section.Alph0.6}\protected@file@percent }
+\newlabel{ab5}{{.6}{41}{\ignorespaces Arbeitsblatt 5: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{section.Alph0.6}{}}
+\newlabel{ab5@cref}{{[subappendix][6][2147483647,0].6}{[1][41][]41}}
+\@writefile{toc}{\contentsline {section}{\numberline {.7}\ignorespaces Arbeitsblatt 5.1: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{43}{section.Alph0.7}\protected@file@percent }
+\newlabel{ab5.1}{{.7}{43}{\ignorespaces Arbeitsblatt 5.1: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{section.Alph0.7}{}}
+\newlabel{ab5.1@cref}{{[subappendix][7][2147483647,0].7}{[1][43][]43}}
+\@writefile{toc}{\contentsline {section}{\numberline {.8}\ignorespaces Arbeitsblatt 5.2: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{45}{section.Alph0.8}\protected@file@percent }
+\newlabel{ab5.2}{{.8}{45}{\ignorespaces Arbeitsblatt 5.2: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{section.Alph0.8}{}}
+\newlabel{ab5.2@cref}{{[subappendix][8][2147483647,0].8}{[1][45][]45}}
+\@writefile{toc}{\contentsline {section}{\numberline {.9}\ignorespaces Arbeitsblatt 5.3: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{47}{section.Alph0.9}\protected@file@percent }
+\newlabel{ab5.3}{{.9}{47}{\ignorespaces Arbeitsblatt 5.3: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{section.Alph0.9}{}}
+\newlabel{ab5.3@cref}{{[subappendix][9][2147483647,0].9}{[1][47][]47}}
+\gdef \@abspage@last{52}
