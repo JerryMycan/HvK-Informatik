@@ -1,0 +1,280 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Engine ---
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+% --- Layout & Hilfspakete ---
+\usepackage{geometry}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Kopf-/Fußzeilen ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Heinrich-von-Kleist-Schule, Eschborn}
+\fancyfoot[C]{\footnotesize \blatttyp}
+\fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
+
+% --- Variablen ---
+\newcommand{\blatttyp}{Lösungsblatt 5}
+\newcommand{\thema}{MOPS — Einstieg (Basics): Musterlösungen}
+
+\begin{document}
+
+{\Large\textbf{\blatttyp}}\\[-0.25em]
+{\normalsize Thema: \thema}
+\par\hrule\vspace{0.8em}
+
+\section*{Präsenzaufgaben (Musterlösungen / Erwartungshorizont)}
+
+\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=1.0em]
+
+% ---------- A1 ----------
+\item \textbf{Gerade/ungerade}\quad
+\textbf{Idee:} Zahl $x$ einlesen, $x \bmod 2$ bilden, gegen $0$ vergleichen. Ausgabe hier: \texttt{0} (=gerade) bzw.\ \texttt{1} (=ungerade).
+\begin{itemize}
+  \item \emph{Stolpersteine:} negatives $x$ korrekt behandeln (Modulo in MOPS ist Rest der ganzzahligen Division, funktioniert auch mit negativen Werten sinnvoll).
+\end{itemize}
+
+\textbf{MOPS-Lösungsvorschlag}
+\begin{verbatim}
+in a
+ld a
+mod 2
+cmp 0
+jeq even
+ld 1
+out 1
+jmp #11
+ld 0 :even
+out 0
+end
+\end{verbatim}
+
+\textbf{Tests:} $4 \to 0$ (gerade), $7 \to 1$ (ungerade), $0 \to 0$, $-3 \to 1$.
+
+% ---------- A2 ----------
+\item \textbf{Betrag $|x|$}\quad
+\textbf{Idee:} Falls $x<0$, Vorzeichen drehen ($0-x$), sonst $x$ ausgeben.
+\begin{itemize}
+  \item \emph{Stolpersteine:} kein Overwrite der Eingabe vor dem Vergleich.
+\end{itemize}
+
+\textbf{MOPS-Lösungsvorschlag}
+\begin{verbatim}
+in a
+ld a
+cmp 0
+jlt neg
+out a
+jmp #11
+ld 0 :neg
+sub a
+st b
+out b
+end
+\end{verbatim}
+
+\textbf{Tests:} $5 \to 5$, $-8 \to 8$, $0 \to 0$.
+
+% ---------- A3 ----------
+\item \textbf{Min/Max von zwei Zahlen}\quad
+\textbf{Idee:} $a$ und $b$ vergleichen; hier Ausgabe in der Reihenfolge \emph{min, max}.
+\begin{itemize}
+  \item \emph{Variante:} Bei Gleichheit einmal ausgeben.
+\end{itemize}
+
+\textbf{MOPS-Lösungsvorschlag}
+\begin{verbatim}
+in a
+in b
+ld a
+cmp b
+jlt amin
+jeq eq
+jgt bmin
+
+out a :amin
+out b
+jmp #16
+
+out a :eq
+out a
+jmp #16
+
+out b :bmin
+out a
+end
+\end{verbatim}
+
+\textbf{Tests:} $(3,7) \to 3,7$; $(5,5) \to 5,5$; $(8,2) \to 2,8$.
+
+% ---------- A4 ----------
+\item \textbf{Dreisatz: Preis pro Stück}\quad
+\textbf{Idee:} Gesamtpreis $P$ (z.\,B.\ in Cent) und Anzahl $n$ einlesen; ausgeben: \emph{Stückpreis} $P \div n$. Es wird nur ganzzahlige Teilung durchgeführt. Die Nachkommastellen werden abgeschnitten.
+\begin{itemize}
+  \item \emph{Stolpersteine:} Division durch 0 abfangen; Datentyp als ganze Zahl.
+\end{itemize}
+
+\textbf{MOPS-Lösungsvorschlag}
+\begin{verbatim}
+; a = Gesamtpreis
+; b = Anzahl
+in a        
+in b        
+ld b
+cmp 0
+jeq zero
+ld a
+div b
+st c
+out c
+ld a
+mod b
+st d
+out d
+jmp #20
+ld 0 :zero
+out 0
+out 0
+end
+\end{verbatim}
+
+\textbf{Tests:} $(999,4) \to 249$; $(10,3) \to 3$; $(5,0) \to 0, 0$.
+
+\end{enumerate}
+
+\vspace{0.4em}
+\hrule
+\vspace{0.6em}
+
+\section*{Hausaufgaben (Lösungen / Erwartungshorizont)}
+
+\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=1.0em, start=5]
+
+% ---------- A5 ----------
+\item \textbf{Summierer bis 0 (Sentinel)}\quad
+\textbf{Idee:} Werte nacheinander einlesen; bei $0$ beenden, sonst zu \texttt{sum} addieren.
+\begin{itemize}
+  \item \emph{Stolpersteine:} Summe initialisieren, korrekte Abbruchbedingung.
+\end{itemize}
+
+\textbf{MOPS-Lösungsvorschlag}
+\begin{verbatim}
+ld 0
+st c
+in a :loop
+ld a
+cmp 0
+jeq done
+ld c
+add a
+st c
+jmp loop
+out c :done
+end
+\end{verbatim}
+
+\textbf{Tests:} $1,2,3,0 \to 6$; $5,0 \to 5$; $0 \to 0$.
+
+% ---------- A6 ----------
+\item \textbf{Zähle positiv/negativ/Nullen}\quad
+\textbf{I/O-Variante:} Zuerst die Anzahl $n$ einlesen, dann $n$ Werte; am Ende Zähler ausgeben: \texttt{pos}, \texttt{neg}, \texttt{zero}.
+\begin{itemize}
+  \item \emph{Stolpersteine:} Zählvariable korrekt inkrementieren und vergleichen.
+\end{itemize}
+
+\textbf{MOPS-Lösungsvorschlag}
+\begin{verbatim}
+in c        ; c = n (Anzahl)
+ld 0
+st d        ; d = pos
+st e        ; e = neg
+st f        ; f = zero
+st b        ; b = i (Start 0)
+
+ld b :loop
+cmp c
+jgt done
+
+in a        ; nächster Wert -> a
+ld a
+cmp 0
+jgt pos
+jeq zer
+
+ld e        ; neg++
+add 1
+st e
+jmp inc
+
+ld d :pos   ; pos++
+add 1
+st d
+jmp inc
+
+ld f :zer   ; zero++
+add 1
+st f
+
+ld b :inc   ; i++
+add 1
+st b
+jmp loop
+
+out d :done
+out e
+out f
+end
+\end{verbatim}
+
+\textbf{Tests:} $n=6$; Werte $[2,-1,0,5,-3,0] \to$ \texttt{pos=2, neg=2, zero=2}.
+
+% ---------- A7 ----------
+\item \textbf{Einmaleins-Zeile}\quad
+\textbf{Idee:} Zahl $n$ einlesen; Zähler $i=1..10$; pro Durchlauf $i\cdot n$ ausgeben.
+\begin{itemize}
+  \item \emph{Variante:} Ausgabe in einer Zeile oder zeilenweise; hier zeilenweise.
+\end{itemize}
+
+\textbf{MOPS-Lösungsvorschlag}
+\begin{verbatim}
+in a        ; a = n
+ld 1
+st b        ; b = i
+
+ld b :loop
+cmp 10
+jgt done
+
+ld a
+mul b
+st c
+out c
+
+ld b
+add 1
+st b
+jmp loop
+
+end :done
+\end{verbatim}
+
+\textbf{Tests:} $n=7 \to 7,14,21,\dots,70$ (10 Werte).
+
+\end{enumerate}
+
+\vfill
+\hrule
+\small\emph{Lösungen zu Arbeitsblatt 5 (MOPS — Einstieg).}
+
+\end{document}

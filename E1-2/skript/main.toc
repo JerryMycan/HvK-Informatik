@@ -68,21 +68,14 @@
 \contentsline {subsection}{\numberline {5.1.1}Idee in Kürze}{25}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Bezug zum Von-Neumann-Modell}{25}{subsection.5.1.2}%
 \contentsline {subsection}{\numberline {5.1.3}Technische Eckdaten (als Modell)}{25}{subsection.5.1.3}%
-\contentsline {chapter}{\numberline {6}Grundlagen der Computernetze}{27}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Warum vernetzen wir Computer?}{27}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Client und Server}{27}{section.6.2}%
-\contentsline {paragraph}{Merksatz.}{27}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Datenpakete (allgemein)}{28}{section.6.3}%
-\contentsline {paragraph}{Warum Pakete?}{28}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Adressierung von Computern}{28}{section.6.4}%
-\contentsline {paragraph}{Alltagsbild.}{28}{section.6.4}%
-\contentsline {chapter}{Anhang}{31}{appendix*.2}%
-\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{32}{section.Alph0.1}%
-\contentsline {section}{\numberline {.2}\ignorespaces Lösungsvorschlag 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{34}{section.Alph0.2}%
-\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{36}{section.Alph0.3}%
-\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{38}{section.Alph0.4}%
-\contentsline {section}{\numberline {.5}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{39}{section.Alph0.5}%
-\contentsline {section}{\numberline {.6}\ignorespaces Arbeitsblatt 5: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{41}{section.Alph0.6}%
-\contentsline {section}{\numberline {.7}\ignorespaces Arbeitsblatt 5.1: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{43}{section.Alph0.7}%
-\contentsline {section}{\numberline {.8}\ignorespaces Arbeitsblatt 5.2: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{45}{section.Alph0.8}%
-\contentsline {section}{\numberline {.9}\ignorespaces Arbeitsblatt 5.3: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{47}{section.Alph0.9}%
+\contentsline {chapter}{Anhang}{27}{appendix*.2}%
+\contentsline {section}{\numberline {.1}\ignorespaces Arbeitsblatt 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{28}{section.Alph0.1}%
+\contentsline {section}{\numberline {.2}\ignorespaces Lösungsvorschlag 1: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{30}{section.Alph0.2}%
+\contentsline {section}{\numberline {.3}\ignorespaces Arbeitsblatt 3.0: Zahlendarstellungen \& Zweierkomplement\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{32}{section.Alph0.3}%
+\contentsline {section}{\numberline {.4}\ignorespaces Arbeitsblatt 3.1: Zahlensysteme – Umwandeln \& schriftlich Rechnen\ (Bezug: \autoref {chap:zahlensysteme} — \nameref {chap:zahlensysteme})}{34}{section.Alph0.4}%
+\contentsline {section}{\numberline {.5}\ignorespaces Arbeitsblatt 4: Hardwarearchitektur\ (Bezug: \autoref {chap:hardwarearchitektur} — \nameref {chap:hardwarearchitektur})}{35}{section.Alph0.5}%
+\contentsline {section}{\numberline {.6}\ignorespaces Arbeitsblatt 5: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{37}{section.Alph0.6}%
+\contentsline {section}{\numberline {.7}\ignorespaces Lösungsvorschlag 5: Einführung\ (Bezug: \autoref {chap:einfuehrung} — \nameref {chap:einfuehrung})}{39}{section.Alph0.7}%
+\contentsline {section}{\numberline {.8}\ignorespaces Arbeitsblatt 5.1: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{43}{section.Alph0.8}%
+\contentsline {section}{\numberline {.9}\ignorespaces Arbeitsblatt 5.2: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{45}{section.Alph0.9}%
+\contentsline {section}{\numberline {.10}\ignorespaces Arbeitsblatt 5.3: MOPS\ (Bezug: \autoref {chap:mops} — \nameref {chap:mops})}{47}{section.Alph0.10}%
