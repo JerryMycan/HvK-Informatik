@@ -23,6 +23,9 @@
 \crefname{chapter}{Kapitel}{Kapitel}
 \Crefname{chapter}{Kapitel}{Kapitel}
 \usepackage{enumitem}
+\usepackage{tabularx,array,ragged2e}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X} % X mit schöner RaggedRight-Umbruch
+
 
 
 \usepackage{geometry}              % Seitenränder
@@ -99,6 +102,8 @@
 \date{\today}
 \maketitle
 
+%\subfile{chapters/vorwort}
+
 \tableofcontents
 
 \mainmatter
@@ -109,6 +114,7 @@
 \subfile{chapters/zahlensysteme}
 \subfile{chapters/hardwarearchitektur}
 \subfile{chapters/mops}
+\subfile{chapters/rechnernetze}
 %\subfile{chapters/computernetze}
 
 \appendix

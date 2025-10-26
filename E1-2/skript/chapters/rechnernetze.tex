@@ -1,0 +1,388 @@
+% !TeX program = lualatex
+\documentclass[../skript/main.tex]{subfiles}
+
+\begin{document}
+	\chapter{Rechnernetze}\label{chap:rechnernetze}
+	
+	\section{Netzwerke}
+	
+Ein \textbf{Netzwerk} verbindet Endgeräte (Computer, Smartphones, Server, Sensoren), damit sie
+\emph{Daten austauschen} und \emph{Dienste gemeinsam nutzen} können. Ohne Netzwerke gäbe es
+kein Internet, keine E-Mail und keine vernetzten Anwendungen.
+
+In diesem Kapitel beantworten wir u.\,a. folgende Fragen:
+\begin{itemize}
+	\item Wofür benötigen wir Netzwerke?
+	\item Was ist ein \emph{Protokoll} und welche Aufgaben erfüllt es?
+	\item Wie sind Netzwerke physisch und logisch aufgebaut?
+\end{itemize}
+
+Zur Veranschaulichung nutzen wir die Lernsoftware \textbf{FILIUS}. Damit lassen sich auf
+anschauliche Weise \emph{virtuelle Netzwerke} entwerfen, konfigurieren und testen – ideal, um
+die Konzepte Schritt für Schritt praktisch nachzuvollziehen.
+	
+	\subsection*{Wofür braucht man Netzwerke?}
+	\begin{itemize}
+		\item \textbf{Kommunikation:} Nachrichten, Videokonferenzen, Telefonie (VoIP).
+		\item \textbf{Zusammenarbeit:} Gemeinsame Dokumente, Lernplattformen, Versionsverwaltung.
+		\item \textbf{Ressourcen teilen:} Drucker, Speicher (NAS), Rechenleistung (Server/Cloud).
+		\item \textbf{Zugriff von überall:} Zuhause, in der Schule, unterwegs (WLAN, Mobilfunk, VPN).
+		\item \textbf{Skalierung und Verfügbarkeit:} Dienste für viele Nutzer, Ausfallsicherheit.
+	\end{itemize}
+	
+	\subsection*{Welche Netzwerke gibt es? (Größenordnungen)}
+	Oft unterscheidet man Netzwerke nach ihrer \emph{Ausdehnung}:
+	\begin{description}
+		\item[PAN] \emph{Personal Area Network} (z.\,B. Bluetooth-Verbindungen eines Headsets mit dem Handy).
+		\item[LAN] \emph{Local Area Network}: lokales Netz in einem Raum/Gebäude (Schullabor, Firma, Zuhause).
+		\item[Campus-LAN] mehrere Gebäude (z.\,B. Schul-Campus), oft über Glasfaser verbunden.
+		\item[MAN] \emph{Metropolitan Area Network}: Stadtnetz/Region (z.\,B. städtisches Verwaltungsnetz).
+		\item[WAN] \emph{Wide Area Network}: landesweite/überregionale Netze (Provider-Netze).
+		\item[GAN] \emph{Global Area Network}: weltweite Netze, insbesondere das \textbf{Internet}.
+	\end{description}
+	Dazu kommen \textbf{WLANs} (drahtlose lokale Netze) und \textbf{Mobilfunknetze} (4G/5G), die sich in diese
+	Größenordnungen einfügen.
+	
+	\subsection*{Wie kommen die Daten von A nach B?}
+	Daten werden in \emph{Pakete} verpackt. \textbf{Switches} leiten Pakete innerhalb eines LAN weiter,
+	\textbf{Router} verbinden Netze miteinander (bis hin zum Internet). Für die physische Übertragung
+	gibt es verschiedene \textbf{Medien}:
+	\begin{itemize}
+		\item \textbf{Kupferkabel:} historisch Koax (BNC), heute vor allem \emph{Twisted Pair} mit 8P8C-Stecker
+		(umgangssprachlich „RJ45“).
+		\item \textbf{Glasfaser:} Lichtimpulse über sehr große Distanzen und hohe Datenraten.
+		\item \textbf{Funk:} WLAN, Mobilfunk; zusätzlich \textbf{Satelliten} (GEO/LEO) für spezielle Szenarien.
+	\end{itemize}
+	
+	\paragraph{Zwischen Kontinenten - Seekabel (Glasfaser auf dem Meeresboden):}
+	Der allergrößte Teil des weltweiten Datenverkehrs (weit über 90\,\%) läuft über \emph{Untersee-Glasfaserkabel}. Man kann sie sich als sehr lange, mehrschichtige „Lichtkabel“ vorstellen, die \emph{auf dem Meeresgrund} liegen und nahe der Küsten \emph{eingegraben} werden, damit sie z.\,B.\ nicht von Ankern beschädigt werden.
+	
+	
+	\begin{itemize}
+		\item \textbf{Aufbau (vereinfacht):} Im Inneren liegen mehrere \emph{Lichtfasern} (die eigentlichen Datenkanäle). Darum herum befinden sich Schutzschichten: Gel/Isoliermaterial, ein \emph{Kupferleiter} (für Stromversorgung der Verstärker), Stahlarmierung (gegen Druck und mechanische Belastung) und eine äußere Kunststoffhülle.
+		\item \textbf{„Verstärker“/Repeater:} Etwa alle 50–100\,km sitzt ein druckfester Zylinder im Kabel, der die Lichtsignale \emph{optisch} verstärkt (sogenannte \emph{optische Verstärker}). Sie bekommen ihren Strom über den im Kabel laufenden Gleichstrom, der von den \emph{Landestationen} eingespeist wird.
+		\item \textbf{Landestationen:} Hier kommen die Seekabel an Land. In diesen Gebäuden stehen die Stromversorgungen, die Glasfasertechnik (Multiplexing, Fehlerkorrektur) und die Router, die den Verkehr ins Terrestrik-Netz weiterleiten.
+		\item \textbf{Verlegung:} \emph{Kabellegeschiffe} rollen das Kabel ab; in flachen Küstenbereichen pflügen/roven sie es in den Meeresboden ein. In großen Tiefen liegt es einfach \emph{auf} dem Grund (dort gibt es kaum Gefahren).
+		\item \textbf{Vorteile:} Enorme \emph{Bandbreite} (viele TBit/s pro Kabelsystem), \emph{geringe Laufzeit} (Licht in Glas ist schnell), hohe Stabilität.
+	\end{itemize}
+	
+	\paragraph{Funkübertragung - Satelliten):}
+\begin{center}
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabularx}{\linewidth}{@{}l l Y Y@{}}
+		\hline
+		\textbf{Orbit} & \textbf{Höhe (grobe Ord.)} & \textbf{Typische Nutzung} & \textbf{Besonderheiten} \\
+		\hline
+		LEO (Low Earth Orbit) & \(\sim\) 500--1\,500\,km & Internet, Erdbeobachtung & \emph{kurze Laufzeiten}, viele Satelliten, kleine Abdeckung pro Satellit \\
+		MEO (Medium Earth Orbit) & \(\sim\) 8\,000--20\,000\,km & Navigation (GPS/Galileo), Daten-Backbones & Kompromiss bei Abdeckung/Laufzeit \\
+		GEO (Geostationary Earth Orbit) & \(\sim\) 35\,786\,km & TV, breitflächige Datenversorgung & \emph{steht scheinbar fest} am Himmel; \emph{hohe Laufzeit} \\
+		\hline
+	\end{tabularx}
+\end{center}
+
+	
+	\begin{itemize}
+		\item \textbf{Was heißt „geostationär“ (GEO)?} Ein GEO-Satellit kreist genau über dem Äquator in \(\approx 35{,}786\) km Höhe so, dass er sich \emph{mit der Erdrotation mitdreht}. Für uns am Boden steht er \emph{fest am Himmel}. Ein einziger Satellit deckt ein riesiges Gebiet ab (super für TV), aber: das Signal muss sehr weit fliegen \(\Rightarrow\) \emph{spürbare Laufzeit} (Ping oft 500--700\,ms).
+		\item \textbf{Was ist LEO?} \emph{Niedrigorbit} bedeutet viel geringere Höhe. Dadurch sind die \emph{Laufzeiten kurz} (Ping teils \(< 50\)–\(70\) ms). Aber ein LEO-Satellit „huscht“ über den Himmel, deckt nur eine kleine Fläche ab und ist schnell wieder weg. Deshalb braucht man \emph{Konstellationen} aus vielen Satelliten und ein Netz von \emph{Bodenstationen/Gateways}.
+		\item \textbf{Vorteile/Nachteile:} \emph{LEO} bringt kurze Laufzeiten und flexible Abdeckung, erfordert aber viele Satelliten. \emph{GEO} ist einfach zu empfangen (feste Antenne), hat aber hohe Laufzeiten und ist wetterempfindlicher bei hohen Frequenzen (Regen dämpft das Signal).
+	\end{itemize}
+
+	
+	\subsection{Übertragungsmedien und typische Geschwindigkeiten}
+
+	
+
+	\paragraph{Wie Signale in der Glasfaser wirklich laufen}
+	In Glasfasern werden Lichtwellen übertragen. Bits entstehen nicht als „Lampe an/aus“, sondern durch \textbf{Modulation} (Änderungen von \emph{Helligkeit}, \emph{Phase} oder \emph{Frequenz}). Außerdem kann man mehrere \emph{Wellenlängen} gleichzeitig senden (\emph{WDM/DWDM}). Das kannst du dir wie \textbf{mehrere Farben in ein und derselben Faser} vorstellen: \emph{Jede Farbe ist ein eigener Datenkanal}. Am Start mischt ein \emph{Multiplexer} die Farben zusammen, am Ziel trennt ein \emph{Demultiplexer} sie wieder. Die „Farben“ liegen im Infraroten (typisch um 1310 nm und 1550 nm) und stören sich nicht, weil Sender und Empfänger sehr schmale Filter benutzen und so jeweils \emph{nur ihre eine Farbe} sehen. Ergebnis: Viele unabhängige Datenströme laufen gleichzeitig durch \emph{eine} Faser.
+	
+		
+	\paragraph{Warum ist eine Datenübertragung mit Lichtgeschwindigkeit \(c\) nicht möglich?}
+	Licht ist im \emph{Vakuum} am schnellsten (\(c \approx 3\cdot 10^8\,\text{m/s}\)). In Materialien ist es langsamer:
+	\[
+	v \;=\; \frac{c}{n},
+	\]
+	wobei \(n\) der \emph{Brechungsindex} ist. Für Quarzglas gilt näherungsweise \(n \approx 1{,}5\), also
+	\(v \approx \tfrac{c}{1{,}5} \approx 2\cdot 10^8\,\text{m/s}\) – das sind etwa \(\tfrac{2}{3}\) der Lichtgeschwindigkeit
+	(≈ \(200{,}000\,\text{km/s}\)). Deshalb braucht ein Signal z.\,B.\ über 100\,km Glasfaser mindestens ca.\ 0{,}5\,ms reine Leitungslaufzeit.
+	
+		
+	\paragraph{Anschauliche Latenzbeispiele (nur Leitungslaufzeit).}
+	\begin{itemize}
+		\item 100\,km Glasfaser: \(\approx 0{,}5\,\text{ms}\) (one-way).
+		\item 500\,km (z.\,B.\ Berlin–München): \(\approx 2{,}5\,\text{ms}\).
+		\item 5\,600\,km (z.\,B.\ Westeuropa–US-Ostküste, direkte Strecke): \(\approx 28\,\text{ms}\).
+	\end{itemize}
+	
+	\textit{Was heißt das praktisch?} \textbf{Latenz} ist die Wartezeit, bis am anderen Ende \emph{die allerersten Bits}
+	ankommen (und bei Messungen wie \emph{Ping} wieder zurück).
+	
+	\begin{description}
+		\item[Bandbreite \(\neq\) Latenz:] \textbf{Bandbreite} ist „wie viel pro Sekunde“ (z.\,B.\ 1\,Gb/s). \textbf{Latenz} ist „wie schnell der erste
+		Tropfen ankommt“. Beides wirkt zusammen: Eine Leitung kann sehr breit (schnell viel übertragen) sein,
+		aber einen hohen Startweg (große Latenz) haben.
+	\end{description}
+	
+	\textit{Mini-Rechenbeispiel.} Bei \(1\,\text{Gb/s}\) lassen sich in \(0{,}5\,\text{ms}\) bereits
+	\(0{,}0005\,\text{s} \times 10^9\,\text{bit/s} = 5{\cdot}10^5\,\text{bit} \approx 62{,}5\,\text{kB}\) übertragen.
+	Die \emph{Serialize-Zeit} eines typischen Ethernet-Frames (1\,500\,Byte) ist bei \(1\,\text{Gb/s}\) nur ca.\ \(12\,\mu\text{s}\) – im Vergleich zur
+	reinen Leitungslaufzeit über 100\,km (\(\approx 0{,}5\,\text{ms}\)) sehr klein. In der Praxis kommen zusätzlich
+	Router-/Switch-Verzögerungen und Warteschlangen dazu.
+
+	
+
+	
+\paragraph{Grenzen und Störungen}
+Auch gute Leitungen sind nicht perfekt. Typische „Bremsen“ sind:
+
+\begin{itemize}
+	\item \textbf{Dämpfung:} Das Signal wird auf dem Weg immer schwächer – egal ob in Kupfer oder Glas.
+	\emph{Beispiel:} Wenn du weit weg rufst, hört man dich leiser. Abhilfe: kürzere Strecken, bessere Kabel,
+	Verstärker/Repeater (bei Glas: optische Verstärker).
+	
+	\item \textbf{Störeinflüsse (Kupfer \& Funk):} 
+	Fremde elektrische Felder stören Kupferleitungen (\emph{EMI}); benachbarte Adern können sich gegenseitig „anstecken“
+	(\emph{Übersprechen} bei Twisted Pair). Bei WLAN/Mobilfunk kommen Funkeffekte dazu: \emph{Multipath} (Echos an Wänden),
+	andere Funknetze auf demselben Kanal, dicke Wände oder Regen.
+	\emph{Beispiel:} Im vollen Schulflur ist WLAN oft schlechter als im leeren Raum.
+	
+	\item \textbf{Dispersion (Glasfaser):} Verschiedene Lichtanteile kommen minimal zeitversetzt an – der Lichtpuls „zieht sich in die Länge“.
+	\emph{Folge:} Schnelle Bits werden schwerer unterscheidbar. Abhilfe: Singlemode-Fasern, passendes Wellenlängenfenster,
+	Dispersion-Management.
+	
+	\item \textbf{Latenz \& Jitter:} \emph{Latenz} = Startverzögerung, bis die ersten Bits ankommen; \emph{Jitter} = Schwankungen dieser Verzögerung.
+	\emph{Ursachen:} lange Strecken, viele Zwischenstationen (Router/Switches), Warteschlangen.
+	\emph{Praxis:} Bei Videocalls/Gaming merkt man Jitter als „Haken“ oder Tonversatz.
+	
+	\item \textbf{Satelliten-Spezifika:} 
+	\emph{GEO}-Satelliten stehen scheinbar fest am Himmel, sind aber sehr weit weg \(\Rightarrow\) hohe Latenz (spürbare Verzögerung).
+	Außerdem dämpft starkes Wetter (z.\,B.\ Regen im Ka-Band) das Funksignal.
+	\emph{LEO}-Netze haben viel geringere Latenz, brauchen dafür viele Satelliten und Bodenstationen.
+	
+	\item \textbf{Geteilte Bandbreite:} Nutzen viele Geräte dieselbe Leitung oder dieselbe „Funkwolke“, bekommt jedes nur einen Teil der Zeit.
+	\emph{Bild:} Mehr Autos auf derselben Straße \(\Rightarrow\) es wird langsamer.
+\end{itemize}
+
+\section{Netzwerktopologien}
+Unter einer \textbf{Topologie} versteht man die \emph{Struktur} eines Netzwerks: Wer ist mit wem verbunden und auf welchem Weg fließen die Daten? Das ist wichtig für \emph{Leistung}, \emph{Fehlertoleranz}, \emph{Kosten} und \emph{Wartung}.
+
+Netzwerktopologien können grundsätzlich unter zwei Aspekten betrachtet werden. Physische- und Logische Topologie
+\begin{itemize}
+	\item \textbf{Physische Topologie}: die \emph{reale} Anordnung von Kabeln, Steckern, Funkstrecken und Geräten (z.\,B.\ „alle Geräte sternförmig an einem Switch“).
+	\item \textbf{Logische Topologie}: die \emph{Sicht der Daten} – also wie Pakete geleitet werden, welche Geräte in einer gemeinsamen Broadcast-Domain liegen, welche VLANs bestehen usw. (Ein physischer Stern kann logisch wie mehrere getrennte „Sterne“ wirken, wenn VLANs genutzt werden.)
+\end{itemize}
+
+\paragraph{Typische Grundformen von Netzwertopologien}
+\begin{itemize}
+	\item Bus\\
+	Wird heute überhaupt nicht mehr "gebaut". Man erwähnt diese Form aus rein historischer Entwicklung.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}[>=Latex, x=1cm, y=1cm, font=\small]
+		% Styles
+		\tikzset{
+			host/.style={draw, rounded corners=2pt, fill=black!5,
+				minimum width=18mm, minimum height=8mm, align=center},
+			term/.style={draw, fill=black!10, minimum width=12mm, minimum height=6mm,
+				align=center, font=\scriptsize},
+			tap/.style={line width=.9pt},
+			bus/.style={line width=1.5pt}
+		}
+		
+		% Bus (Koax)
+		\draw[bus] (0,0) -- (12,0) node[midway, below=4pt]{Koaxialkabel (Bus)};
+		
+		% Terminatoren (50 Ohm) an den Enden
+		\node[term, anchor=east] at (0,0) {50\,\(\Omega\)};
+		\node[term, anchor=west] at (12,0) {50\,\(\Omega\)};
+		
+		% T-Abgriffe + Endgeräte
+		\foreach \x/\name in {2/PC 1,4.5/PC 2,7/PC 3,9.5/PC 4}{
+			\draw[tap] (\x,0) -- (\x,0.9);
+			\node[host, anchor=south] at (\x,0.9) {\name};
+		}
+
+	\end{tikzpicture}
+	\caption{Bus-Topologie (historisch: Koax/10BASE2). Alle Geräte teilen sich ein gemeinsames Kabel; die Enden sind terminiert.}
+\end{figure}
+
+	\item Ring\\
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[>=Latex, x=1cm, y=1cm, font=\small]
+			% Styles
+			\tikzset{
+				host/.style={draw, rounded corners=2pt, fill=black!5,
+					minimum width=18mm, minimum height=8mm, align=center},
+				tap/.style={line width=.9pt},
+				ring/.style={line width=1.5pt}
+			}
+			
+			% Ring-Parameter
+			\def\R{2.8}   % Ringradius
+			\def\O{0.9}   % Länge der "Spokes" vom Ring zum Host
+			\def\D{1.4}   % Abstand Host vom Ring
+			
+			% Ring (geschlossenes Medium)
+			\draw[ring] (0,0) circle (\R);
+			% Pfeil für logische Richtung (Token-Ring/FDDI)
+			\draw[->, ring] (55:\R) arc (55:-305:\R);
+			
+			% Hosts gleichmäßig um den Ring
+			\foreach \ang/\name in {90/PC 1, 30/PC 2, -30/PC 3, -90/PC 4, -150/PC 5, 150/PC 6}{
+				\path (\ang:\R) coordinate (p\ang);
+				\draw[tap] (p\ang) -- ++(\ang:\O); % kurzer Anschluss (Spoke)
+				\node[host, anchor=center] at (\ang:\R+\D) {\name};
+			}
+			
+		\end{tikzpicture}
+		\caption{Ring-Topologie. Geräte sind an einen geschlossenen Ring angeschlossen; die Daten laufen im Kreis.}
+	\end{figure}
+	
+	\item Stern\\
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[>=Latex, x=1cm, y=1cm, font=\small]
+			% Styles
+			\tikzset{
+				host/.style={draw, rounded corners=2pt, fill=black!5,
+					minimum width=18mm, minimum height=8mm, align=center},
+				sw/.style={draw, rounded corners=3pt, fill=black!10,
+					minimum width=22mm, minimum height=10mm, align=center},
+				link/.style={line width=1.2pt}
+			}
+			
+			% Zentrales Gerät
+			\node[sw] (sw) at (0,0) {Switch};
+			
+			% Hosts im Kreis
+			\def\R{3}
+			\foreach \ang/\name in {90/PC 1, 35/PC 2, -20/PC 3, -75/PC 4, -140/PC 5, 160/PC 6}{
+				\path (\ang:\R) node[host] (h\ang) {\name};
+				\draw[link] (sw) -- (h\ang);
+			}
+			
+		\end{tikzpicture}
+		\caption{Stern-Topologie: Alle Endgeräte sind mit einem zentralen Switch verbunden (heute Standard im LAN).}
+	\end{figure}
+	
+	\item Vermaschte\\
+	\begin{figure}[H]
+		\centering
+		\begin{tikzpicture}[>=Latex, x=1cm, y=1cm, font=\small]
+			% Styles
+			\tikzset{
+				sw/.style={draw, rounded corners=3pt, fill=black!10,
+					minimum width=20mm, minimum height=9mm, align=center},
+				link/.style={line width=1.2pt}
+			}
+			
+			% Knoten im Hexagon (vermaschte Switch-/Router-Knoten)
+			\def\R{3}
+			\node[sw] (n1) at ( 90:\R) {Knoten A};
+			\node[sw] (n2) at ( 30:\R) {Knoten B};
+			\node[sw] (n3) at (-30:\R) {Knoten C};
+			\node[sw] (n4) at (-90:\R) {Knoten D};
+			\node[sw] (n5) at (-150:\R) {Knoten E};
+			\node[sw] (n6) at ( 150:\R) {Knoten F};
+			
+			% Ring-Verbindungen (Nachbarn)
+			\draw[link] (n1) -- (n2);
+			\draw[link] (n2) -- (n3);
+			\draw[link] (n3) -- (n4);
+			\draw[link] (n4) -- (n5);
+			\draw[link] (n5) -- (n6);
+			\draw[link] (n6) -- (n1);
+			
+			% Zusätzliche Verbindungen (Teil-Vermaschung / Redundanz)
+			\draw[link] (n1) -- (n3);
+			\draw[link] (n2) -- (n4);
+			\draw[link] (n3) -- (n5);
+			\draw[link] (n4) -- (n6);
+			\draw[link] (n5) -- (n1);
+			\draw[link] (n6) -- (n2);
+
+			
+		\end{tikzpicture}
+		\caption{Vermaschte (Mesh) Topologie. Mehrere Verbindungen erhöhen Ausfallsicherheit und verteilen Last.}
+	\end{figure}
+\end{itemize}	
+
+\section{Verbindungsarten in Netzwerken}\label{sec:verbindungsarten}
+\subsection*{Worum geht es?}
+Wenn Computer miteinander kommunizieren, folgen sie bestimmten \emph{Modellen}, die festlegen, \emph{wer} welche Rolle spielt und \emph{wie} Daten fließen. Die zwei wichtigsten sind \textbf{Client–Server} und \textbf{Peer-to-Peer (P2P)}. Daneben unterscheidet man, \emph{wie} eine Nachricht adressiert wird: \textbf{Unicast}, \textbf{Broadcast} und \textbf{Multicast}.
+
+\subsection{Client–Server}
+\textbf{Idee:} Ein \emph{Server} bietet einen Dienst an (z.\,B.\ Webseiten, E-Mail, Dateien). Ein \emph{Client} fragt diesen Dienst an und nutzt ihn.
+\begin{itemize}
+	\item \textbf{Ablauf (vereinfacht):} Client \(\rightarrow\) Anfrage \(\rightarrow\) Server \(\rightarrow\) Antwort \(\rightarrow\) Client.
+	\item \textbf{Typische Beispiele:} Web (HTTP/HTTPS), E-Mail (IMAP/SMTP), Datenbanken, Schul-Cloud.
+	\item \textbf{Vorteile:}
+	\begin{itemize}
+		\item \emph{Zentral} verwaltbar (Updates, Backups, Zugriffsrechte).
+		\item \emph{Sicherheitsregeln} an einer Stelle durchsetzbar (Firewall, Authentifizierung).
+		\item \emph{Skalierbar} durch stärkere Server oder Lastverteilung (Load Balancer, mehrere Server).
+	\end{itemize}
+	\item \textbf{Nachteile:}
+	\begin{itemize}
+		\item \emph{Abhängigkeit} von der Server-Verfügbarkeit (Single Point of Failure ohne Redundanz).
+		\item \emph{Kosten} für Betrieb (Hardware, Strom, Wartung).
+	\end{itemize}
+\end{itemize}
+
+\subsection{Peer-to-Peer (P2P)}
+\textbf{Idee:} \emph{Alle} Teilnehmenden (\emph{Peers}) sind gleichberechtigt: Jeder kann Daten \emph{anfordern} \underline{und} \emph{anbieten}.
+\begin{itemize}
+	\item \textbf{Ablauf (vereinfacht):} Peer \(\leftrightarrow\) Peer (direkter Austausch, oft mit vielen Peers zugleich).
+	\item \textbf{Typische Beispiele:} Dateiverteilung (BitTorrent), lokale Spiele im LAN, einige Messenger/Telefonie (WebRTC), Blockchains.
+	\item \textbf{Vorteile:}
+	\begin{itemize}
+		\item \emph{Dezentral} und \emph{robust}: Fällt ein Peer aus, liefern andere weiter.
+		\item \emph{Lastverteilung}: Viele kleine Beiträge ergeben zusammen hohe Datenraten.
+	\end{itemize}
+	\item \textbf{Nachteile:}
+	\begin{itemize}
+		\item \emph{Auffinden/Koordination} ist schwieriger (Wer hat welche Daten?).
+		\item \emph{Netzgrenzen} (NAT/Firewalls) können direkte Verbindungen erschweren.
+		\item \emph{Sicherheit/Vertrauen}: Inhalte müssen geprüft/verifiziert werden.
+	\end{itemize}
+\end{itemize}
+
+
+\subsection{Übertragungsarten (Adressierung der Nachrichten)}
+\begin{itemize}
+	\item \textbf{Unicast:} eine Quelle \(\rightarrow\) \emph{ein} Ziel (Standard im Internet; z.\,B.\ ein Browser ruft eine Webseite ab).
+	\item \textbf{Broadcast:} eine Quelle \(\rightarrow\) \emph{alle} im lokalen Netz (z.\,B.\ ARP in einem LAN). Funktioniert nur innerhalb eines Broadcast-Bereichs.
+	\item \textbf{Multicast:} eine Quelle \(\rightarrow\) \emph{mehrere} interessierte Empfänger (z.\,B.\ IPTV, Live-Vorlesungen). Spart Bandbreite, weil Daten auf Abzweigungen dupliziert werden.
+\end{itemize}
+
+\section{Protokolle}\label{sec:protokolle}
+\subsection*{Worum geht es?}
+Ein \textbf{Protokoll} ist ein \emph{Regelwerk für die Kommunikation} zwischen Computern: Es legt fest,
+\emph{wie} Nachrichten aussehen, \emph{in welcher Reihenfolge} sie gesendet werden und \emph{wie} auf Fehler
+reagiert wird. Ohne Protokolle wäre Netzwerkverkehr wie ein Gespräch ohne gemeinsame Sprache:
+missverständlich, unzuverlässig, chaotisch.
+
+\paragraph{Was Protokolle festlegen (überblicksartig)}
+\begin{itemize}
+	\item \textbf{Format}: Aufbau einer Nachricht (Felder, Länge, Reihenfolge).
+	\item \textbf{Ablauf}: Wer spricht zuerst? Gibt es Bestätigungen (ACK/NACK)? Wiederholungen bei Fehlern?
+	\item \textbf{Rollen}: z.\,B.\ Client–Server oder gleichberechtigte Peers.
+	\item \textbf{Adressierung \& Portnummern}: An wen geht die Nachricht, an welchen Dienst?
+	\item \textbf{Sicherheit}: Optional Verschlüsselung/Authentifizierung (z.\,B.\ bei HTTPS).
+\end{itemize}
+
+\paragraph{Schichten-Idee (sanfte Vorwegnahme)}
+Protokolle arbeiten oft in \emph{Schichten}: Jede Schicht hat klare Aufgaben und nutzt die Dienste
+darunter. So kann man Teile austauschen, ohne „alles neu zu bauen“. Beispielhaft:
+\emph{IP} kümmert sich um das Zustellen von Paketen, \emph{TCP} um Zuverlässigkeit,
+\emph{HTTP} um Inhalte fürs Web. Details folgen in den nächsten Abschnitten.
+
+\paragraph{Alltagsbezug}
+Ähnlich wie beim Brief: \emph{Umschlag} (Format), \emph{Adresse} (Adressierung),
+\emph{Postweg} (Weiterleitung), \emph{Einschreiben} (Zuverlässigkeit), \emph{Siegel} (Sicherheit).
+Im Netz heißen diese „Regeln“ \emph{Protokolle} (z.\,B.\ DNS, DHCP, HTTP, TLS).
+
+
+	
+\end{document}
