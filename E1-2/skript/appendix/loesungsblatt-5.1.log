@@ -1,7 +1,7 @@
-This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.2.1)  5 NOV 2025 19:09
+This is LuaHBTeX, Version 1.17.0 (TeX Live 2023/Debian)  (format=lualatex 2025.2.1)  5 NOV 2025 19:28
  restricted system commands enabled.
-**loesungsblatt-5.tex
-(./loesungsblatt-5.tex
+**loesungsblatt-5.1.tex
+(./loesungsblatt-5.1.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 Lua module: luaotfload 2023-08-31 3.26 Lua based OpenType font support
@@ -607,8 +607,8 @@ MM)
 Package: lastpagemodern 2023-10-14 v2.0e Refers to last page's name (HMM; JPG)
 \c@lastpagecount=\count302
 ) 
-)) (./loesungsblatt-5.aux)
-\openout1 = loesungsblatt-5.aux
+)) (./loesungsblatt-5.1.aux)
+\openout1 = loesungsblatt-5.1.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
 LaTeX Font Info:    ... okay on input line 31.
@@ -754,10 +754,10 @@ File: luatex.def 2022/09/22 v1.2d Graphics/color driver for luatex
 )) (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 31.
 
-(./loesungsblatt-5.out) (./loesungsblatt-5.out)
+(./loesungsblatt-5.1.out) (./loesungsblatt-5.1.out)
 \@outlinefile=\write3
 
-\openout3 = loesungsblatt-5.out
+\openout3 = loesungsblatt-5.1.out
 Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           Using `bookmark' together with `hyperref' is recommended,
 (scrartcl)           because of handling of possible bookmark level gaps.
@@ -779,38 +779,39 @@ File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./loesungsblatt-5.aux)
+(./loesungsblatt-5.1.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-Package rerunfilecheck Info: File `loesungsblatt-5.out' has not changed.
+Package rerunfilecheck Info: File `loesungsblatt-5.1.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 )
 
 Here is how much of LuaTeX's memory you used:
- 16978 strings out of 476553
+ 16974 strings out of 476553
  100000,1977958 words of node,token memory allocated
  565 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 4 kern, 1 glyph, 12 attribute, 59 glue_spec
 , 8 attribute_list, 1 write nodes
-   avail lists: 1:1,2:880,3:505,4:80,5:323,6:141,7:4677,8:19,9:563,10:4,11:342
- 38679 multiletter control sequences out of 65536+600000
- 40 fonts using 3175479 bytes
- 108i,11n,101p,10909b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texm
-f/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texmf/fonts/opentype
+   avail lists: 1:1,2:829,3:796,4:62,5:286,6:144,7:4110,8:26,9:581,10:4,11:216
+ 38675 multiletter control sequences out of 65536+600000
+ 39 fonts using 3043727 bytes
+ 108i,11n,101p,10911b,647s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share/texm
+f/fonts/opentype/public/lm/lmroman9-regular.otf></usr/share/texmf/fonts/opentype
 /public/lm/lmmono10-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmrom
 an10-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmsans10-bold.otf></usr
 /share/texmf/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf/fo
 nts/opentype/public/lm/lmroman12-bold.otf></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb>
-Output written on loesungsblatt-5.pdf (4 pages, 69443 bytes).
+fonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb>
+Output written on loesungsblatt-5.1.pdf (4 pages, 74413 bytes).
 
-PDF statistics: 103 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+PDF statistics: 107 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  14 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

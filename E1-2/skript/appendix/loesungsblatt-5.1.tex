@@ -1,0 +1,273 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{scrartcl}
+
+% --- Sprache & Engine ---
+\usepackage[ngerman]{babel}
+\usepackage{fontspec}
+
+% --- Layout & Hilfspakete ---
+\usepackage{geometry}
+\geometry{left=20mm,right=20mm,top=22mm,bottom=25mm}
+\setlength{\parindent}{0pt}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Kopf-/Fußzeilen ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\footnotesize Heinrich-von-Kleist-Schule, Eschborn}
+\fancyfoot[C]{\footnotesize \blatttyp}
+\fancyfoot[R]{\footnotesize Seite \thepage{} von \pageref{LastPage}}
+
+% --- Variablen ---
+\newcommand{\blatttyp}{Lösungsvorschlag 5.1}
+\newcommand{\thema}{MOPS — Einstieg (Basics): Lösungen zu Aufgaben 1–7}
+
+\begin{document}
+	
+	{\Large\textbf{\blatttyp}}\\[-0.25em]
+	{\normalsize Thema: \thema}
+	\par\hrule\vspace{0.8em}
+	
+	\section*{Präsenzaufgaben (Musterlösungen / Erwartungshorizont)}
+	
+	\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.9em]
+		
+		% ---------- A1 ----------
+		\item \textbf{Zwei Zahlen addieren}\quad
+		\textbf{Idee:} Zwei Werte einlesen, im Akku addieren, Summe ausgeben.
+		
+		\textbf{MOPS-Lösungsvorschlag}
+		\begin{verbatim}
+			in a
+			in b
+			ld a
+			add b
+			out a
+			end
+		\end{verbatim}
+		
+		\textbf{Tests:} $(7,5)\rightarrow 12$, $(-3,8)\rightarrow 5$, $(0,0)\rightarrow 0$.
+		
+		% ---------- A2 ----------
+		\item \textbf{Zähler mit Schrittweite}\quad
+		\textbf{Idee:} Start \texttt{a} ausgeben, dann wiederholt \texttt{+c} bis \texttt{> b}. Voraussetzung: \texttt{c>0}, \texttt{a\(\leq\)b}.
+		
+		\textbf{MOPS-Lösungsvorschlag}
+		\begin{verbatim}
+			in a
+			in b
+			in c
+			
+			ld a
+			st d
+			out d
+			
+			ld d :loop
+			add c
+			st d
+			ld d
+			cmp b
+			jgt done
+			out d
+			jmp loop
+			
+			end :done
+		\end{verbatim}
+		
+		\textbf{Tests:} $(a{=}2,b{=}12,c{=}3)\rightarrow 2,5,8,11$; $(1,5,2)\rightarrow 1,3,5$.
+		
+		% ---------- A3 ----------
+		\item \textbf{Fibonacci mit freien Startwerten}\quad
+		\textbf{I/O:} \texttt{a}=\(f_0\), \texttt{b}=\(f_1\), \texttt{c}=\(n\). Gib zuerst \(f_0,f_1\), dann \(n-2\) weitere Glieder.
+		
+		\textbf{MOPS-Lösungsvorschlag}
+		\begin{verbatim}
+			in a        ; f0
+			in b        ; f1
+			in c        ; n
+			
+			out a
+			out b
+			
+			ld c
+			sub 2
+			st d        ; rest
+			
+			ld d :chk
+			cmp 0
+			jgt make
+			jmp end
+			
+			ld a :make
+			add b
+			st e
+			out e
+			
+			ld b
+			st a
+			ld e
+			st b
+			
+			ld d
+			sub 1
+			st d
+			jmp chk
+			
+			end
+		\end{verbatim}
+		
+		\textbf{Tests:} $(1,1,7)\rightarrow 1,1,2,3,5,8,13$; $(2,3,6)\rightarrow 2,3,5,8,13,21$.
+		
+		% ---------- A4 ----------
+		\item \textbf{Fakultät $n!$}\quad
+		\textbf{Idee:} Iterativ mit Laufvariable \texttt{b} von \(2\) bis \(n\), Akkumulator \texttt{c} startet bei \(1\).
+		
+		\textbf{MOPS-Lösungsvorschlag}
+		\begin{verbatim}
+			in a        ; n
+			
+			ld 1
+			st c        ; res = 1
+			
+			ld 2
+			st b        ; i = 2
+			
+			ld b :loop
+			cmp a
+			jgt out
+			
+			ld c
+			mul b
+			st c
+			
+			ld b
+			add 1
+			st b
+			jmp loop
+			
+			out c :out
+			end
+		\end{verbatim}
+		
+		\textbf{Tests:} $0\rightarrow 1$, $1\rightarrow 1$, $5\rightarrow 120$.
+		
+	\end{enumerate}
+	
+	\vspace{0.4em}
+	\hrule
+	\vspace{0.6em}
+	
+	\section*{Hausaufgaben (Lösungen / Erwartungshorizont)}
+	
+	\begin{enumerate}[leftmargin=*,label=\textbf{Aufgabe~\arabic*:}, itemsep=0.9em, start=5]
+		
+		% ---------- A5 ----------
+		\item \textbf{Maximum aus drei Zahlen}\quad
+		\textbf{Idee:} \texttt{mx} zunächst \texttt{a}; dann \texttt{b} und \texttt{c} vergleichen und ggf.\ aktualisieren.
+		
+		\textbf{MOPS-Lösungsvorschlag}
+		\begin{verbatim}
+			in a
+			in b
+			in c
+			
+			ld a
+			st d        ; mx
+			
+			ld b
+			cmp d
+			jgt setb
+			jmp checkc
+			
+			ld b :setb
+			st d
+			
+			ld c :checkc
+			cmp d
+			jgt setc
+			jmp print
+			
+			ld c :setc
+			st d
+			
+			out d :print
+			end
+		\end{verbatim}
+		
+		\textbf{Tests:} $(3,9,7)\rightarrow 9$; $(5,5,1)\rightarrow 5$; $(-2,-1,-5)\rightarrow -1$.
+		
+		% ---------- A6 ----------
+		\item \textbf{Quersumme (Digitsumme)}\quad
+		\textbf{Idee:} Wiederholt \texttt{mod 10} addieren, dann \texttt{div 10}; stoppen bei \texttt{a=0}.
+		
+		\textbf{MOPS-Lösungsvorschlag}
+		\begin{verbatim}
+			in a
+			
+			ld 0
+			st b        ; sum = 0
+			
+			ld a :loop
+			cmp 0
+			jeq done
+			
+			mod 10
+			st d        ; digit
+			
+			ld b
+			add d
+			st b
+			
+			ld a
+			div 10
+			st a
+			jmp loop
+			
+			out b :done
+			end
+		\end{verbatim}
+		
+		\textbf{Tests:} $0\rightarrow 0$, $7\rightarrow 7$, $12345\rightarrow 15$, $1002\rightarrow 3$.
+		
+		% ---------- A7 ----------
+		\item \textbf{Größter gemeinsamer Teiler (ggT)}\quad
+		\textbf{Idee:} Euklid: solange \texttt{b\(\neq\)0}: \texttt{c = a mod b; a = b; b = c}.
+		
+		\textbf{MOPS-Lösungsvorschlag}
+		\begin{verbatim}
+			in a
+			in b
+			
+			ld b :loop
+			cmp 0
+			jeq done
+			
+			ld a
+			mod b
+			st c
+			
+			ld b
+			st a
+			ld c
+			st b
+			jmp loop
+			
+			out a :done
+			end
+		\end{verbatim}
+		
+		\textbf{Tests:} $(48,18)\rightarrow 6$, $(21,14)\rightarrow 7$, $(10,0)\rightarrow 10$.
+		
+	\end{enumerate}
+	
+	\vfill
+	\hrule
+	\small\emph{Lösungsvorschlag zu Arbeitsblatt 5 (MOPS — Einstieg).}
+	
+\end{document}
