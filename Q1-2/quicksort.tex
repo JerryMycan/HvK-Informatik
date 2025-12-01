@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+
+% ========== Packages ==========
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{setspace}
+
+\geometry{margin=2.5cm}
+
+% ========== Header ==========
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{
+\includegraphics[height=1.4cm]{hvk-logo.png}\\[-2mm]
+\small Heinrich-von-Kleist-Schule\\
+\small Eschborn
+}
+
+\rhead{\small Informatik -- Sortieralgorithmen}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{38pt}
+\setlength{\headsep}{40pt}
+
+\cfoot{\thepage}
+
+% ========== Dokument ==========
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{Hausarbeit: Quick Sort}}\\[0.5cm]
+{\large Arbeitsauftrag}
+\end{center}
+
+\vspace{1cm}
+
+\section*{Hausarbeitsauftrag}
+
+Erstellt eine \textbf{schriftliche Ausarbeitung} in Zweierteams zum Sortieralgorithmus \textbf{Quick Sort}.  
+Die Hausarbeit bildet die Grundlage für eine \textbf{anschließende Präsentation im Unterricht}.  
+Achtet auf eine klare Struktur, präzise Erklärungen und gut nachvollziehbare Beispiele.
+
+\vspace{0.6cm}
+
+\begin{enumerate}
+
+\item \textbf{Kurzgeschichte / Herkunft}  
+Recherchiert in 2--4 Sätzen, wann Quick Sort entwickelt wurde, wer der Erfinder ist (Hinweis: Tony Hoare, 1959) und warum Quick Sort zu den wichtigsten Algorithmen der Informatik zählt.
+
+\item \textbf{Einsatzgebiete und Möglichkeiten}  
+Beschreibt typische Einsatzzwecke von Quick Sort, z.\,B. das Sortieren großer Datenmengen im Arbeitsspeicher.  
+Geht darauf ein, warum Quick Sort in vielen realen Implementierungen verwendet wird – und warum manche Programmiersprachen dennoch auf hybride Verfahren umsteigen.
+
+\item \textbf{Laufzeit (Time Complexity)}  
+Stellt die Laufzeiten mit Big-O-Notation dar:
+\begin{itemize}
+\item Best Case
+\item Average Case
+\item Worst Case
+\end{itemize}
+Erklärt, wie die Wahl des Pivot-Elements die Laufzeit beeinflusst und warum Quick Sort im Durchschnitt sehr schnell ist.
+
+\item \textbf{Komplexität und Speicher}  
+Erläutert die Space Complexity und beantwortet folgende Fragen:
+\begin{itemize}
+\item Ist Quick Sort \textit{in-place}?
+\item Ist er \textit{stabil}?
+\item Welche Rolle spielt die Rekursion?
+\item Warum ist der Worst Case problematisch, und wie kann man ihn vermeiden?
+\end{itemize}
+
+\item \textbf{Umsetzung in Java}  
+Erstellt eine gut kommentierte Java-Implementierung von Quick Sort (rekursiv).  
+Demonstriert anhand eines Beispiels (z.\,B. 8 Zahlen), wie die Listen in „kleiner als Pivot“ und „größer als Pivot“ aufgeteilt werden, und zeigt die ersten Rekursionsschritte.
+
+\end{enumerate}
+
+\vspace{1cm}
+
+\begin{center}
+\textit{Abgabe: PDF-Version der Hausarbeit + Präsentation im Unterricht.}
+\end{center}
+
+\end{document}

@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+
+% ========== Packages ==========
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{setspace}
+
+\geometry{margin=2.5cm}
+
+% ========== Header ==========
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{
+	\includegraphics[height=1.4cm]{hvk-logo.png}\\[-2mm]
+	\small Heinrich-von-Kleist-Schule\\
+	\small Eschborn
+}
+
+\rhead{\small Informatik -- Sortieralgorithmen}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{38pt}
+\setlength{\headsep}{40pt}
+
+\cfoot{\thepage}
+
+% ========== Dokument ==========
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{Hausarbeit: Merge Sort}}\\[0.5cm]
+		{\large Arbeitsauftrag}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\section*{Hausarbeitsauftrag}
+	
+	Erstellt eine \textbf{schriftliche Ausarbeitung} in Zweierteams zum Sortieralgorithmus \textbf{Merge Sort}.  
+	Die Hausarbeit bildet die Grundlage für eine \textbf{anschließende Präsentation im Unterricht}.  
+	Achtet auf eine klare Struktur, präzise Erklärungen und gut nachvollziehbare Beispiele.
+	
+	\vspace{0.6cm}
+	
+	\begin{enumerate}
+		
+		\item \textbf{Kurzgeschichte / Herkunft}  
+		Recherchiert in 2--4 Sätzen, wann Merge Sort entwickelt wurde, wer der Erfinder ist (Hinweis: John von Neumann, 1945) und warum Merge Sort zu den ersten effizienten rekursiven Algorithmen zählt.
+		
+		\item \textbf{Einsatzgebiete und Möglichkeiten}  
+		Beschreibt typische Anwendungsgebiete von Merge Sort, z.\,B. das Sortieren sehr großer Datenmengen oder das Sortieren von Datenstrukturen, die nur sequentiell zugreifbar sind (z.\,B. Dateien).  
+		Geht darauf ein, warum Merge Sort oft in realen Programmiersprachen implementiert wird (z.\,B. als Teil von Timsort).
+		
+		\item \textbf{Laufzeit (Time Complexity)}  
+		Stellt die Laufzeiten dar:
+		\begin{itemize}
+			\item Best Case
+			\item Average Case
+			\item Worst Case
+		\end{itemize}
+		Erklärt, warum Merge Sort in allen Fällen dieselbe Laufzeit besitzt und wie die \textit{Divide-and-Conquer}-Strategie dazu beiträgt.
+		
+		\item \textbf{Komplexität und Speicher}  
+		Erläutert die Space Complexity und beantwortet folgende Fragen:
+		\begin{itemize}
+			\item Warum benötigt Merge Sort zusätzlichen Speicher?
+			\item Ist der Algorithmus \textit{in-place}?
+			\item Ist er \textit{stabil}?
+			\item Welche Rolle spielt Rekursion?
+		\end{itemize}
+		
+		\item \textbf{Umsetzung in Java}  
+		Erstellt eine gut kommentierte Java-Implementierung des Merge-Sort-Algorithmus.  
+		Führt ein Beispiel durch (z.\,B. eine Liste von 8 Zahlen) und zeigt die ersten Schritte der Zerlegung und des anschließenden Zusammenführens.
+		
+	\end{enumerate}
+	
+	\vspace{1cm}
+	
+	\begin{center}
+		\textit{Abgabe: PDF-Version der Hausarbeit + Präsentation im Unterricht.}
+	\end{center}
+	
+\end{document}

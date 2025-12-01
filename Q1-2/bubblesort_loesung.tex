@@ -1,0 +1,144 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{setspace}
+
+\geometry{margin=2.5cm}
+
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{Hausarbeit: Bubble Sort}}\\[0.5cm]
+		{\large Musterlösung}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\section*{1. Kurzgeschichte / Herkunft}
+	
+	Bubble Sort gehört zu den ältesten dokumentierten Sortierverfahren und wurde bereits Anfang der 1960er-Jahre in grundlegenden Informatik-Lehrbüchern beschrieben. Der Name „Bubble Sort“ entstand aus der anschaulichen Vorstellung, dass größere Werte wie Luftblasen nach oben steigen, wenn benachbarte Elemente schrittweise miteinander verglichen und vertauscht werden. Der Algorithmus wurde nicht von einer einzelnen Person erfunden, sondern etablierte sich schnell als Standardbeispiel für einfaches Sortieren. Trotz seiner Ineffizienz besitzt Bubble Sort bis heute einen hohen pädagogischen Wert im Unterricht.
+	
+	\vspace{0.5cm}
+	
+	\section*{2. Einsatzgebiete und Möglichkeiten}
+	
+	Bubble Sort wird in der professionellen Softwareentwicklung kaum verwendet, da er im Vergleich zu modernen Sortierverfahren wie Merge Sort, Quick Sort oder Heap Sort deutlich langsamer ist. Sein Hauptanwendungsgebiet liegt im didaktischen Bereich: Er eignet sich hervorragend, um grundlegende Algorithmenkonzepte wie Vergleiche, Vertauschen, Schleifendurchläufe und Laufzeitkomplexität zu vermitteln.  
+	
+	In seltenen Fällen kann Bubble Sort sinnvoll sein:
+	\begin{itemize}
+		\item bei nahezu sortierten Listen (Best Case: O(n)),
+		\item in Systemen mit sehr wenig Speicher, da er nur O(1) zusätzlichen Speicher benötigt,
+		\item wenn Einfachheit wichtiger ist als Geschwindigkeit.
+	\end{itemize}
+	
+	Für große Datenmengen ist Bubble Sort ungeeignet, da seine quadratische Laufzeit das Sortieren ineffizient macht.
+	
+	\vspace{0.5cm}
+	
+	\section*{3. Laufzeit (Time Complexity)}
+	
+	Bubble Sort vergleicht wiederholt benachbarte Elemente und vertauscht sie, falls diese in der falschen Reihenfolge stehen. Dieser Prozess wird so lange wiederholt, bis die gesamte Liste sortiert ist.
+	
+	\subsection*{Worst Case: O(n\textsuperscript{2})}
+	Der schlechteste Fall tritt ein, wenn die Liste vollständig rückwärts sortiert ist. Dann muss jedes Element viele Positionen nach oben wandern, was zahlreiche Vergleiche und Vertauschungen erfordert.
+	
+	\subsection*{Average Case: O(n\textsuperscript{2})}
+	Auch bei zufälligen Listen ist Bubble Sort im Mittel quadratisch, da viele Vergleiche notwendig sind und die Liste typischerweise mehrere Durchläufe benötigt.
+	
+	\subsection*{Best Case: O(n)}
+	Wenn die Liste bereits sortiert ist und eine \textit{Swapped}-Optimierung verwendet wird, erkennt der Algorithmus dies nach dem ersten Durchlauf und bricht frühzeitig ab. Dadurch entsteht eine lineare Laufzeit.
+	
+	\subsection*{Warum unterscheiden sich die Fälle?}
+	Im Best Case müssen keine Elemente vertauscht werden, was einen frühen Abbruch erlaubt. Im Average Case und Worst Case dagegen sind viele oder alle Vertauschungen erforderlich, was zu den deutlich höheren Laufzeiten führt.
+	
+	\vspace{0.5cm}
+	
+	\section*{4. Komplexität und Speicher}
+	
+	\subsection*{Space Complexity: O(1)}
+	Bubble Sort arbeitet vollständig \textit{in-place}. Es wird kein zusätzlicher Speicher benötigt, abgesehen von Hilfsvariablen zum Vertauschen.
+	
+	\subsection*{Stabilität}
+	Bubble Sort ist \textbf{stabil}, da Elemente mit gleichem Wert ihre ursprüngliche Reihenfolge beibehalten.
+	
+	\subsection*{In-Place}
+	Bubble Sort ist ein \textbf{in-place}-Algorithmus, da alle Operationen direkt auf dem gegebenen Array ausgeführt werden.
+	
+	\subsection*{Iterativ oder rekursiv?}
+	Bubble Sort wird typischerweise \textbf{iterativ} implementiert. Eine rekursive Version ist theoretisch möglich, jedoch selten sinnvoll.
+	
+	\vspace{0.5cm}
+	
+	\section*{5. Umsetzung in Java}
+	
+	Nachfolgend eine vollständig kommentierte Java-Implementierung des Bubble-Sort-Algorithmus:
+	
+	\begin{verbatim}
+		// Bubble Sort in Java (mit Early-Stopping)
+		
+		public class BubbleSort {
+			
+			public static void bubbleSort(int[] arr) {
+				boolean swapped;
+				
+				// Äußere Schleife: Wiederholte Durchläufe durch das Array
+				for (int i = 0; i < arr.length - 1; i++) {
+					swapped = false;
+					
+					// Innere Schleife: Vergleiche benachbarter Elemente
+					for (int j = 0; j < arr.length - 1 - i; j++) {
+						
+						// Wenn Elemente in falscher Reihenfolge stehen -> tauschen
+						if (arr[j] > arr[j + 1]) {
+							int temp = arr[j];
+							arr[j] = arr[j + 1];
+							arr[j + 1] = temp;
+							swapped = true;
+						}
+					}
+					
+					// Wenn kein Tausch stattgefunden hat, ist die Liste sortiert
+					if (!swapped) break;
+				}
+			}
+			
+			public static void main(String[] args) {
+				int[] array = {5, 1, 4, 2, 8};
+				
+				bubbleSort(array);
+				
+				for (int x : array) {
+					System.out.print(x + " ");
+				}
+			}
+		}
+	\end{verbatim}
+	
+	\vspace{0.5cm}
+	
+	\subsection*{Beispiel: Erste zwei Durchläufe}
+	
+	Ausgangsliste: \texttt{[5, 1, 4, 2, 8]}
+	
+	\subsection*{Durchlauf 1}
+	\begin{itemize}
+		\item 5 > 1 → tauschen → [1, 5, 4, 2, 8]
+		\item 5 > 4 → tauschen → [1, 4, 5, 2, 8]
+		\item 5 > 2 → tauschen → [1, 4, 2, 5, 8]
+		\item 5 < 8 → kein Tausch
+	\end{itemize}
+	Ende von Durchlauf 1: \texttt{[1, 4, 2, 5, 8]}
+	
+	\subsection*{Durchlauf 2}
+	\begin{itemize}
+		\item 1 < 4 → kein Tausch
+		\item 4 > 2 → tauschen → [1, 2, 4, 5, 8]
+		\item 4 < 5 → kein Tausch
+	\end{itemize}
+	Ende von Durchlauf 2: \texttt{[1, 2, 4, 5, 8]}
+	
+	Nach diesen beiden Durchläufen ist die Liste bereits fast vollständig sortiert.
+	
+\end{document}

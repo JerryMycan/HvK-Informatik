@@ -1,0 +1,9 @@
+# LaTeX build files
+*.aux
+*.log
+*.synctex.gz
+*.pdf
+texput.log
+
+# Java build files
+*.class

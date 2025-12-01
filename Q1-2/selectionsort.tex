@@ -1,0 +1,87 @@
+\documentclass[a4paper,12pt]{article}
+
+% ========== Packages ==========
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{setspace}
+
+\geometry{margin=2.5cm}
+
+% ========== Header ==========
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{
+	\includegraphics[height=1.4cm]{hvk-logo.png}\\[-2mm]
+	\small Heinrich-von-Kleist-Schule\\
+	\small Eschborn
+}
+
+\rhead{\small Informatik -- Sortieralgorithmen}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{38pt}
+\setlength{\headsep}{40pt}
+
+\cfoot{\thepage}
+
+% ========== Dokument ==========
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{Hausarbeit: Selection Sort}}\\[0.5cm]
+		{\large Arbeitsauftrag}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\section*{Hausarbeitsauftrag}
+	
+	Erstellt eine \textbf{schriftliche Ausarbeitung} in Zweierteams zum Sortieralgorithmus \textbf{Selection Sort}.  
+	Die Hausarbeit bildet die Grundlage für eine \textbf{anschließende Präsentation im Unterricht}.  
+	Achtet auf eine klare Struktur, fachlich korrekte Darstellung und gut erklärte Beispiele.
+	
+	\vspace{0.6cm}
+	
+	\begin{enumerate}
+		
+		\item \textbf{Kurzgeschichte / Herkunft}  
+		Recherchiert in 2--4 Sätzen, wann Selection Sort erstmals beschrieben wurde, wie der Algorithmus funktioniert und warum er den Namen „Auswahlsortieren“ trägt.
+		
+		\item \textbf{Einsatzgebiete und Möglichkeiten}  
+		Beschreibt, wofür Selection Sort geeignet ist und wofür nicht.  
+		Geht insbesondere darauf ein, weshalb der Algorithmus in der Praxis selten verwendet wird, aber im Unterricht eine wichtige Rolle spielt.
+		
+		\item \textbf{Laufzeit (Time Complexity)}  
+		Stellt die Laufzeiten mithilfe der Big-O-Notation dar:
+		\begin{itemize}
+			\item Best Case
+			\item Average Case
+			\item Worst Case
+		\end{itemize}
+		Erklärt, warum Selection Sort in allen drei Fällen dieselbe Laufzeit besitzt.
+		
+		\item \textbf{Komplexität und Speicher}  
+		Erläutert die Space Complexity und beantwortet folgende Fragen:
+		\begin{itemize}
+			\item Ist der Algorithmus \textit{in-place}?
+			\item Ist er \textit{stabil}?
+			\item Wird er iterativ oder rekursiv umgesetzt?
+		\end{itemize}
+		
+		\item \textbf{Umsetzung in Java}  
+		Programmiert eine klar kommentierte Java-Implementierung von Selection Sort.  
+		Führt ein kleines Beispiel durch (z.\,B. eine Liste von 5 Zahlen) und zeigt die ersten zwei Auswahl- und Tauschschritte detailliert.
+		
+	\end{enumerate}
+	
+	\vspace{1cm}
+	
+	\begin{center}
+		\textit{Abgabe: PDF-Version der Hausarbeit + Präsentation im Unterricht.}
+	\end{center}
+	
+\end{document}

@@ -1,0 +1,95 @@
+\documentclass[a4paper,12pt]{article}
+
+% ========== Packages ==========
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{setspace}
+
+\geometry{margin=2.5cm}
+
+% ========== Header ==========
+\pagestyle{fancy}
+\fancyhf{}
+
+\lhead{
+	\includegraphics[height=1.4cm]{hvk-logo.png}\\[-2mm]
+	\small Heinrich-von-Kleist-Schule\\
+	\small Eschborn
+}
+
+\rhead{\small Informatik -- Sortieralgorithmen}
+
+% Abstand/Positionierung korrigiert
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{38pt}   % verhindert Überlappung
+\setlength{\headsep}{40pt}      % Abstand zum Titel/Text
+
+\cfoot{\thepage}
+
+% ========== Dokument ==========
+\begin{document}
+	
+	\begin{center}
+		{\LARGE \textbf{Arbeitsauftrag (Hausarbeit): Bubble Sort}}\\[0.6cm]
+		{\large Einführung in Sortieralgorithmen}
+	\end{center}
+	
+	\vspace{1cm}
+	
+	\section*{Hausarbeitsauftrag}
+	
+	Erstellt eine \textbf{schriftliche Ausarbeitung} in Zweierteams zum Sortieralgorithmus \textbf{Bubble Sort}.  
+	Diese Hausarbeit bildet die Grundlage für eine \textbf{anschließende Präsentation im Unterricht}.  
+	Achtet auf eine klare Struktur, fachlich korrekte Darstellung und gut erklärte Beispiele.
+	
+	\vspace{0.6cm}
+	
+	\begin{enumerate}
+		
+		%----------------------------------------
+		\item \textbf{Kurzgeschichte / Herkunft}  
+		Recherchiert, wann Bubble Sort erstmals beschrieben wurde, wie er zu seinem Namen kam und warum er in der Informatik-Didaktik eine so zentrale Rolle spielt.  
+		Fasst eure Erkenntnisse in 2--4 Sätzen zusammen.
+		
+		%----------------------------------------
+		\item \textbf{Einsatzgebiete und Möglichkeiten}  
+		Beschreibt, wofür Bubble Sort geeignet ist und weshalb er in der Praxis selten verwendet wird.  
+		Geht darauf ein, warum er im Unterricht trotzdem einen hohen didaktischen Wert besitzt.
+		
+		%----------------------------------------
+		\item \textbf{Laufzeit (Time Complexity)}  
+		Stellt die Laufzeiten mit Big-O-Notation dar:
+		\begin{itemize}
+			\item Best Case
+			\item Average Case
+			\item Worst Case
+		\end{itemize}
+		Erklärt kurz, warum sich die drei Fälle unterscheiden und welche Rolle bereits sortierte Listen spielen.
+		
+		%----------------------------------------
+		\item \textbf{Komplexität und Speicher}  
+		Erläutert die Speicherkomplexität von Bubble Sort (Space Complexity).  
+		Beantwortet zusätzlich folgende Fragen:
+		\begin{itemize}
+			\item Ist der Algorithmus \textit{in-place}?
+			\item Ist er \textit{stabil}?
+			\item Wird er typischerweise iterativ oder rekursiv umgesetzt?
+		\end{itemize}
+		
+		%----------------------------------------
+		\item \textbf{Umsetzung in Java}  
+		Programmiert eine gut kommentierte Java-Implementierung von Bubble Sort.  
+		Nutzt zusätzlich ein kleines Beispiel (z.\,B. eine Liste von 5 Zahlen) und beschreibt die ersten zwei Durchgänge Schritt für Schritt.
+		
+	\end{enumerate}
+	
+	\vspace{1cm}
+	
+	\begin{center}
+		\textit{Abgabe: PDF-Version der Hausarbeit + Präsentation im Unterricht.}
+	\end{center}
+	
+\end{document}
