@@ -1,0 +1,88 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schülerin: Helena Mai}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item Kein gültiger Konstruktor: \texttt{main(int X, int Y)} ist keine Konstruktor-Signatur.
+    \item Attribute falsch benannt: \texttt{X}, \texttt{Y} statt \texttt{x}, \texttt{y} (Konvention).
+    \item move(): erstellt lokale Variablen statt die Koordinaten zu verändern.
+    \item distance(): \texttt{\^} ist kein Potenzoperator in Java.
+    \item mirrorX()/mirrorY(): erzeugen nur lokale Variablen, verändern den Punkt nicht.
+    \item toString(): Ausgabe nicht im geforderten Format "(x, y)".
+    \item Testprogramm unvollständig: keine Methoden demonstriert.
+\end{itemize}
+
+\section*{2. Korrigierte Codebeispiele}
+\begin{lstlisting}[language=Java]
+public Point(int x, int y){
+    this.x = x;
+    this.y = y;
+}
+
+public void move(int dx, int dy){
+    this.x += dx;
+    this.y += dy;
+}
+
+public double distance(Point p){
+    int dx = this.x - p.x;
+    int dy = this.y - p.y;
+    return Math.sqrt(dx*dx + dy*dy);
+}
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 5 \\
+Konstruktoren & 15 & 0 \\
+Getter / Setter & 10 & 8 \\
+move() & 5 & 1 \\
+mirrorX() & 4 & 0 \\
+mirrorY() & 4 & 0 \\
+distance() & 18 & 2 \\
+toString() & 5 & 1 \\
+Testprogramm & 18 & 4 \\
+Dokumentation \& Qualität & 13 & 5 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{26} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Helena zeigt erste Ansätze zur Struktur einer Java-Klasse und wendet Getter und Setter weitgehend korrekt an. 
+Allerdings sind zentrale Methoden wie Konstruktor, move(), distance() und die Spiegelmethoden fehlerhaft oder ohne Wirkung. 
+Das Testprogramm bleibt unvollständig und demonstriert keine der geforderten Funktionen. 
+Mit etwas mehr Übung in grundlegender Java-Syntax und dem Verständnis von Objektzuständen kann Helena deutliche Fortschritte erzielen.
+
+\vfill
+\begin{center}
+    {\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

@@ -1,0 +1,62 @@
+public class Point{
+ //Attribute
+  private int xKoordinate;
+  private int yKoordinate;
+  private int y2 = 3;
+  private int x2 = 3;
+  
+ //Konstruktor 
+  public Point(int xKoordinate, int yKoordinate){
+      this.xKoordinate = xKoordinate;
+      this.yKoordinate = yKoordinate;
+  }
+  
+  //Getter
+  public int getXKoordinate(){
+    return xKoordinate;
+    }
+   public int getYKoordinate(){
+    return yKoordinate;
+    }
+  
+  //Setter
+  public void setXKoordinate(int x) {
+    this.xKoordinate = x;
+  }
+   public void setYKoordinate(int y) {
+    this.yKoordinate = y;
+  }
+  
+   //Methode
+  public void Anzeigen() {
+    System.out.println("(" + xKoordinate +","+ yKoordinate + ")");
+    }
+  
+  public void move(int dx, int dy){
+     System.out.println("x:"xKoordinate + dx + " " + "y:" + dy );
+    }
+  
+  public double distanc(double Pointp){
+      System.out.println(Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));      
+    }
+  
+  public void mirrorX(int x, int y){
+      if (x = 0) {
+                    System.out.println("Kann nicht gespiegelt werden");
+      }
+      else {
+      System.out.println("Deine Stelle liegt nun bei:" + x * (-1) + y * 0 );
+    }
+       }
+  public void mirrorY(int y, int x){
+      if (y = 0) {
+                    System.out.println("Kann nicht gespiegelt werden");
+      }
+      else {
+      System.out.println("Deine Stelle liegt nun bei:" + y * (-1) + x * 0 );
+    }
+       }
+  public String toString(){
+      System.out.println("("+ xKoordinate+","+yKoordinate+")");
+      }
+  }

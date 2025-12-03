@@ -1,0 +1,88 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schüler: Niklas Patsakas}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item Syntaxfehler in allen Getter/Setter-Methoden (\texttt{get X()}, \texttt{set X()} etc.).
+    \item Konstruktor syntaktisch falsch: \texttt{Point(double X, double Y, )}.
+    \item Variablenbezeichnungen mit Leerzeichen und Sonderzeichen (\texttt{X-Wert}) unzulässig.
+    \item move(): leer, verändert Koordinaten nicht.
+    \item mirrorX()/mirrorY(): keine Änderung von Objektvariablen, fehlerhafte Operatoren.
+    \item distanceX()/distanceY(): keine Rückgabe, nutzlose Logik.
+    \item toString(): komplett ungültig, falsche Signatur, falscher Rückgabetyp, Syntaxfehler.
+    \item Testprogramm: nutzt ungültige Syntax (\texttt{X-Wert}), berechnet keine Punkte.
+\end{itemize}
+
+\section*{2. Korrigierte Beispiel-Fragmente}
+\begin{lstlisting}[language=Java]
+public Point(double x, double y){
+    this.x = x;
+    this.y = y;
+}
+
+public void move(double dx, double dy){
+    this.x += dx;
+    this.y += dy;
+}
+
+@Override
+public String toString(){
+    return "(" + x + ", " + y + ")";
+}
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 2 \\
+Konstruktoren & 15 & 0 \\
+Getter / Setter & 10 & 0 \\
+move() & 5 & 0 \\
+mirrorX() & 4 & 0 \\
+mirrorY() & 4 & 0 \\
+distance() & 18 & 0 \\
+toString() & 5 & 0 \\
+Testprogramm & 18 & 1 \\
+Dokumentation \& Qualität & 13 & 3 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{6} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Niklas zeigt Bemühungen, Elemente einer Point-Klasse zu schreiben, jedoch ist der gesamte Code syntaktisch und strukturell 
+nicht funktionsfähig. Weder Methoden noch Konstruktoren sind gültig implementiert. Eine Wiederholung der Java-Grundsyntax, 
+Variablenregeln und Methodenstrukturen ist notwendig, um künftig funktionsfähige Klassen zu erstellen.
+
+\vfill
+\begin{center}
+{\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

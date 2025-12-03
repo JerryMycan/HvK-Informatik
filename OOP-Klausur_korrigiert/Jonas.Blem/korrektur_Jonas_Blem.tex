@@ -1,0 +1,86 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schüler: Jonas Blem}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item Konstruktor syntaktisch defekt: \texttt{point(int X, int Y, )}.
+    \item Konstruktor überschreibt Werte sofort wieder mit 0.
+    \item Getter ohne \texttt{return}, zudem falsche Syntax.
+    \item move(): aktualisiert X/Y nicht, nur lokale Variablen.
+    \item distance(): nutzt \texttt{\^}, kein Potenzoperator in Java.
+    \item distance(): \texttt{math.sqrt} statt \texttt{Math.sqrt}; keine Rückgabe.
+    \item Spiegelmethoden erzeugen nur lokale Variablen, ändern nichts.
+    \item toString(): reine Zeichenkette ohne \texttt{return}; nutzt undefinierte Variablen.
+    \item Testprogramm: Konstruktor \texttt{point()} existiert nicht.
+\end{itemize}
+
+\section*{2. Korrigierte Codebeispiele}
+\begin{lstlisting}[language=Java]
+public point(int x, int y){
+    this.x = x;
+    this.y = y;
+}
+
+public int getX(){ return this.x; }
+
+public void move(int dx, int dy){
+    this.x += dx;
+    this.y += dy;
+}
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 3 \\
+Konstruktoren & 15 & 0 \\
+Getter / Setter & 10 & 1 \\
+move() & 5 & 0 \\
+mirrorX() & 4 & 0 \\
+mirrorY() & 4 & 0 \\
+distance() & 18 & 0 \\
+toString() & 5 & 0 \\
+Testprogramm & 18 & 4 \\
+Dokumentation \& Qualität & 13 & 3 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{11} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Jonas zeigt Bemühungen, eine vollständige Klasse zu schreiben, jedoch sind zentrale Teile wie Konstruktor, Getter, distance(), 
+move() und toString() syntaktisch oder fachlich so fehlerhaft, dass kaum Funktionalität entsteht. Das Testprogramm nutzt einen 
+nicht existierenden Konstruktor und kann daher nicht korrekt testen. Mit solider Wiederholung der Java-Grundsyntax und 
+Übungsaufgaben zur Klassenstruktur kann Jonas deutliche Fortschritte erzielen.
+
+\vfill
+\begin{center}
+    {\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

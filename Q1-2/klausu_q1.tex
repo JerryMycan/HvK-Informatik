@@ -1,0 +1,192 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{parskip}
+\geometry{margin=2.5cm}
+
+\usepackage{tabularx}
+\setlength{\headheight}{40pt}
+\setlength{\headsep}{20pt}
+
+
+
+% Kopfzeile definieren
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\includegraphics[height=1.6cm]{hvk-logo.png}}
+\rhead{
+	\begin{tabular}{r}
+		\textbf{Informatik Q1 – Grundkurs}\\
+		J. Mycan
+	\end{tabular}
+}
+\cfoot{\thepage}
+
+\begin{document}
+	
+	\vspace*{0.5cm}
+	
+	\begin{center}
+		{\Large \textbf{Klausur – Objektorientierte Programmierung in Java}}\\[0.3cm]
+		{\large 19. Nov. 2025 , Arbeitszeit: 90 Minuten}
+	\end{center}
+	
+	\vspace{0.5cm}
+	
+	\section*{Aufgabe: Implementierung der Klasse \texttt{Point}}
+	
+	Im Unterricht haben Sie bereits verschiedene Klassen wie \texttt{Bruch} und \texttt{GiroKonto} implementiert.  
+	In dieser Klausur sollen Sie eine weitere Klasse entwickeln: \textbf{\texttt{Point}}.
+	
+	Ein \texttt{Point} beschreibt einen Punkt in einem zweidimensionalen Koordinatensystem.  
+	Implementieren Sie die Klasse vollständig gemäß der folgenden Spezifikation:
+	
+	\vspace{0.5cm}
+	
+	\subsection*{1. Attribute (private)}
+	\begin{itemize}
+		\item \texttt{int x} – x-Koordinate
+		\item \texttt{int y} – y-Koordinate
+	\end{itemize}
+	
+	\subsection*{2. Konstruktoren}
+	\begin{itemize}
+		\item Ein Konstruktor, der beide Koordinaten als Parameter übernimmt.
+		\item Ein Standardkonstruktor, der den Punkt auf \texttt{(0, 0)} setzt.
+	\end{itemize}
+	
+	\subsection*{3. Getter- und Setter-Methoden}
+	\begin{itemize}
+		\item \texttt{getX()}, \texttt{getY()}
+		\item \texttt{setX(int x)}, \texttt{setY(int y)}
+	\end{itemize}
+	
+\subsection*{4. Weitere Methoden}
+\begin{itemize}
+	\item \texttt{public void move(int dx, int dy)}  
+	Verschiebt den Punkt um die angegebenen Werte.
+	
+	\item \texttt{public double distance(Point p)}  
+	Berechnet die Distanz zu einem anderen Punkt \texttt{p}:
+	\[
+	\sqrt{(x - p.x)^2 + (y - p.y)^2}
+	\]
+	
+	\item \texttt{public void mirrorX()}  
+	Spiegelt den Punkt an der \textbf{x-Achse}.  
+	(\texttt{y}-Wert wird negiert.)
+	
+	\item \texttt{public void mirrorY()}  
+	Spiegelt den Punkt an der \textbf{y-Achse}.  
+	(\texttt{x}-Wert wird negiert.)
+	
+	\item \texttt{public String toString()}  
+	Gibt den Punkt im Format \texttt{"(x, y)"} zurück.
+\end{itemize}
+
+\subsection*{5. Testprogramm}
+Schreiben Sie eine Klasse \texttt{PointTest} mit \texttt{main}-Methode, die:
+\begin{itemize}
+	\item zwei Punkte erzeugt,
+	\item beide Punkte ausgibt,
+	\item einen Punkt verschiebt,
+	\item die Distanz zwischen beiden Punkten berechnet und ausgibt,
+	\item die Spiegelungen mit \texttt{mirrorX()} und \texttt{mirrorY()} demonstriert.
+\end{itemize}
+
+	
+	\subsection*{6. Dokumentation und Codequalität}
+	Achten Sie bei der gesamten Implementierung auf:
+	\begin{itemize}
+		\item sinnvolle Bezeichner (Variablen‐, Methoden‐ und Klassennamen),
+		\item eine klare Klassenstruktur,
+		\item JavaDoc-Kommentare für:
+		\begin{itemize}
+			\item die Klasse \texttt{Point},
+			\item alle Konstruktoren,
+			\item alle Methoden,
+		\end{itemize}
+		\item aussagekräftige Inline-Kommentare an sinnvollen Stellen,
+		\item korrekte Sichtbarkeiten (Kapselung: Attribute \texttt{private}),
+		\item übersichtliche Formatierung (Einrückungen, Zeilenumbrüche).
+	\end{itemize}
+	
+	\subsection*{7. Bonus-/Zusatzaufgabe (optional, Empfehlung: 5 Punkte)}
+	Erweitern Sie die Klasse \texttt{Point} um die Methode:
+	\begin{itemize}
+		\item \texttt{public boolean equals(Point p)}
+		Prüft, ob zwei Punkte gleiche Koordinaten besitzen.
+	\end{itemize}
+	Geben Sie \texttt{true} zurück, wenn beide Punkte identisch sind, sonst \texttt{false}
+	
+\section*{Bewertungsschema (100 BE)}
+
+\begin{tabularx}{\textwidth}{l X r}
+	\textbf{1. Attribute} & private, richtige Datentypen & 8 BE \\[0.15cm]
+	
+	\textbf{2. Konstruktoren} & Standardkonstruktor + 2-Parameter-Konstruktor & 15 BE \\[0.15cm]
+	
+	\textbf{3. Getter \& Setter} & alle Getter und Setter korrekt umgesetzt & 10 BE \\[0.15cm]
+	
+	\textbf{4. move()} & korrekte Verschiebung des Punktes & 5 BE \\[0.15cm]
+	
+	\textbf{5. mirrorX()} & Spiegelung an der x-Achse (y wird negiert) & 4 BE \\[0.15cm]
+	
+	\textbf{6. mirrorY()} & Spiegelung an der y-Achse (x wird negiert) & 4 BE \\[0.15cm]
+	
+	\textbf{7. distance()} & korrekte Formel, Datentyp double, richtige Berechnung & 18 BE \\[0.15cm]
+	
+	\textbf{8. toString()} & Ausgabe im Format „(x, y)“ & 5 BE \\[0.15cm]
+	
+	\textbf{9. Testprogramm} & Objekte erzeugen, ausgeben, verschieben, Distanz \& Spiegelungen demonstrieren & 18 BE \\[0.15cm]
+	
+	\textbf{10. Dokumentation \& Codequalität} & JavaDoc, Kommentare, Struktur, Einrückung, sinnvolle Namen & 13 BE \\[0.25cm]
+\end{tabularx}
+
+\vspace{0.4cm}
+
+\textit{Optional:} Bonusaufgabe \texttt{equals()} (5 BE zusätzlich)
+
+% -------------------------------------------------------------
+
+\section*{Auswertung}
+
+\begin{center}
+	\renewcommand{\arraystretch}{1.4} % bessere Zeilenhöhe
+	\setlength{\tabcolsep}{10pt}      % angenehme Spaltenabstände
+	
+	\begin{tabular}{|p{8cm}|c|c|}
+		\hline
+		\textbf{Aufgabe} & \textbf{max. BE} & \textbf{erreicht} \\ \hline
+		1. Attribute & 8 & \\ \hline
+		2. Konstruktoren & 15 & \\ \hline
+		3. Getter \& Setter & 10 & \\ \hline
+		4. move() & 5 & \\ \hline
+		5. mirrorX() & 4 & \\ \hline
+		6. mirrorY() & 4 & \\ \hline
+		7. distance() & 18 & \\ \hline
+		8. toString() & 5 & \\ \hline
+		9. Testprogramm & 18 & \\ \hline
+		10. Dokumentation \& Codequalität & 13 & \\ \hline
+		\textbf{Gesamt} & \textbf{100} & \\ \hline
+	\end{tabular}
+\end{center}
+
+\vspace{1.2cm}
+
+\textbf{Note:} \rule{3cm}{0.4pt}
+
+
+	
+	
+	
+	\vfill
+	\begin{center}
+		\textit{Viel Erfolg!}
+	\end{center}
+	
+\end{document}

@@ -1,0 +1,81 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schüler: Mohamed Tanouti}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item Attribute korrekt, aber zusätzliche Variablen \texttt{x2}, \texttt{y2} ohne Zweck.
+    \item move(): Syntaxfehler \texttt{"x:"xKoordinate}; ändert Koordinaten nicht.
+    \item distanc(): falsche Parameter, undefinierte Variablen \texttt{x}, \texttt{y}, Syntaxfehler.
+    \item mirrorX()/mirrorY(): nutzen \texttt{=} statt \texttt{==}; ändern Koordinaten nicht.
+    \item toString(): nutzt \texttt{System.out.println} statt \texttt{return}.
+    \item Testprogramm unvollständig.
+\end{itemize}
+
+\section*{2. Korrigierte Codebeispiele}
+\begin{lstlisting}[language=Java]
+public void move(int dx, int dy){
+    this.xKoordinate += dx;
+    this.yKoordinate += dy;
+}
+
+public double distance(Point p){
+    int dx = this.xKoordinate - p.xKoordinate;
+    int dy = this.yKoordinate - p.yKoordinate;
+    return Math.sqrt(dx*dx + dy*dy);
+}
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 6 \\
+Konstruktoren & 15 & 10 \\
+Getter / Setter & 10 & 8 \\
+move() & 5 & 0 \\
+mirrorX() & 4 & 0 \\
+mirrorY() & 4 & 0 \\
+distance() & 18 & 0 \\
+toString() & 5 & 0 \\
+Testprogramm & 18 & 0 \\
+Dokumentation \& Qualität & 13 & 4 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{28} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Mohamed zeigt eine grundlegende Struktur und korrekte Getter/Setter, jedoch sind zentrale Methoden wie move(), distance(), 
+mirrorX(), mirrorY() und toString() unvollständig oder ungültig. Das Testprogramm bricht früh ab und kann die Klasse nicht 
+demonstrieren. Mehr Übung in Syntax und Methodenausführung wird hier schnell Fortschritte bringen.
+
+\vfill
+\begin{center}
+    {\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

@@ -1,0 +1,85 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schüler: Denys Kosmin}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item Attribute nicht private (Kapselungsverstoß).
+    \item Setter ohne Parameter: \texttt{setX()}, \texttt{setY()} fehlerhaft.
+    \item \texttt{move()} fehlerhaft: nutzt \texttt{dx.x} und \texttt{dy.y}, existiert nicht.
+    \item \texttt{distance()}: falsche Parameter, keine Rückgabe, falsche Formel.
+    \item Spiegelmethoden fehlen komplett.
+    \item Standardkonstruktor fehlt.
+    \item \texttt{toString()} gibt nur \texttt{"(x,y)"} zurück, keine Werte.
+    \item Testprogramm sehr unvollständig: keine Ausgabe von Distanz, keine Spiegelungen.
+\end{itemize}
+
+\section*{2. Korrigierte Codebeispiele}
+\begin{lstlisting}[language=Java]
+public void move(int dx, int dy) {
+    this.x += dx;
+    this.y += dy;
+}
+
+public double distance(Point p) {
+    int dx = this.x - p.x;
+    int dy = this.y - p.y;
+    return Math.sqrt(dx*dx + dy*dy);
+}
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 2 \\
+Konstruktoren & 15 & 6 \\
+Getter / Setter & 10 & 2 \\
+move() & 5 & 0 \\
+mirrorX() & 4 & 0 \\
+mirrorY() & 4 & 0 \\
+distance() & 18 & 2 \\
+toString() & 5 & 1 \\
+Testprogramm & 18 & 4 \\
+Dokumentation \& Qualität & 13 & 2 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{19} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Denys zeigt Ansätze zur Implementierung zentraler Methoden, jedoch sind viele wesentliche Anforderungen nicht erfüllt. 
+Mehrere Methoden sind unvollständig oder syntaktisch fehlerhaft, und wichtige Funktionen wie Spiegelungen oder korrektes 
+Berechnen der Distanz fehlen. Die Grundstruktur ist vorhanden, aber es fehlt deutlich an technischer Genauigkeit und Umsetzung 
+der Klausurvorgaben. Mit mehr Übung in Java-Syntax und methodischer Struktur kann Denys hier deutliche Fortschritte machen.
+
+\vfill
+\begin{center}
+    {\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

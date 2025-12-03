@@ -1,0 +1,78 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schüler: Timothy Jan Fajardo}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item distance(): falsche Formel — verwendet \texttt{dx*dy*dy} statt \texttt{dx*dx + dy*dy}.
+    \item mirrorX(): korrekt, aber Testausgabe fehlerhaft (gibt \texttt{p2} statt \texttt{p1} aus).
+    \item equals()-Methode fehlt.
+    \item Methoden ansonsten vollständig und funktionsfähig.
+    \item Testprogramm sauber, aber kleiner Ausgabefehler bei mirrorX().
+\end{itemize}
+
+\section*{2. Korrigierte Codebeispiele}
+\begin{lstlisting}[language=Java]
+public double distance(Point p){
+    int dx = this.x - p.x;
+    int dy = this.y - p.y;
+    return Math.sqrt(dx*dx + dy*dy);
+}
+
+// Fehler im Testprogramm:
+System.out.println("p1 nach mirrorX(): " + p1);
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 8 \\
+Konstruktoren & 15 & 15 \\
+Getter / Setter & 10 & 10 \\
+move() & 5 & 5 \\
+mirrorX() & 4 & 4 \\
+mirrorY() & 4 & 4 \\
+distance() & 18 & 12 \\
+toString() & 5 & 5 \\
+Testprogramm & 18 & 15 \\
+Dokumentation \& Qualität & 13 & 10 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{88} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Timothy zeigt eine sehr solide und gut strukturierte Lösung. 
+Alle Grundfunktionen sind korrekt implementiert, lediglich die Distance-Methode enthält einen kleinen inhaltlichen Fehler,  
+und im Testprogramm wird einmal der falsche Punkt ausgegeben. Insgesamt eine starke Leistung.
+
+\vfill
+\begin{center}
+{\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

@@ -1,0 +1,71 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\geometry{margin=2cm}
+\usepackage{hyperref}
+
+\begin{document}
+
+\section*{Korrekturhinweise und Gutachten zur Klausur (Objektorientierte Programmierung in Java)}
+
+\subsection*{1. Identifizierte Fehler im Code}
+
+\subsubsection*{Fehler in \texttt{Point.java}}
+\begin{itemize}
+    \item \textbf{Fehlerhafte Setter:} Variablen \texttt{neueX} und \texttt{neueY} sind nicht definiert. Korrekt wäre:
+\begin{verbatim}
+this.x = x;
+this.y = y;
+\end{verbatim}
+
+    \item \textbf{distance()-Methode ohne Rückgabewert:}
+\begin{verbatim}
+return Math.sqrt((x - p.x) * (x - p.x) + (y - p.y) * (y - p.y));
+\end{verbatim}
+
+    \item \textbf{toString()-Methode fehlerhaft:} gibt aus, aber liefert keinen String zurück. Korrekt:
+\begin{verbatim}
+@Override
+public String toString() {
+    return "(" + x + ", " + y + ")";
+}
+\end{verbatim}
+
+    \item \textbf{Standardkonstruktor fehlt:}
+\begin{verbatim}
+public Point() {
+    this.x = 0;
+    this.y = 0;
+}
+\end{verbatim}
+
+    \item \textbf{Keine JavaDoc-Kommentare vorhanden.}
+\end{itemize}
+
+\subsection*{2. Bewertungstabelle}
+
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 8 \\
+Konstruktoren & 15 & 8 \\
+Getter / Setter & 10 & 4 \\
+move() & 5 & 5 \\
+mirrorX() & 4 & 4 \\
+mirrorY() & 4 & 4 \\
+distance() & 18 & 6 \\
+toString() & 5 & 0 \\
+Testprogramm & 18 & 12 \\
+Dokumentation \& Qualität & 13 & 4 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{55} \\
+\end{tabular}
+
+\subsection*{3. Kurz-Gutachten}
+
+Der Schüler zeigt ein gutes Grundverständnis für Klassenaufbau, Konstruktoren und einfache Methoden. Positive Aspekte sind die korrekte Implementierung von move(), mirrorX() und mirrorY(). Allerdings fehlen wichtige technische Details, wie ein funktionierender Standardkonstruktor, korrekte Setter und eine gültige toString()-Methode. Die distance()-Methode ist zwar formal richtig aufgebaut, liefert jedoch keinen Rückgabewert.
+
+Mit etwas mehr Aufmerksamkeit für Syntax, Rückgabewerte und JavaDoc-Kommentare wird der Schüler in zukünftigen Aufgaben deutlich stabilere Ergebnisse erzielen.
+
+\end{document}

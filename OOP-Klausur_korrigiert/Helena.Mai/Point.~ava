@@ -1,0 +1,56 @@
+public class Point {
+
+  //Attribute
+  private int X;
+  private int Y;
+  
+  //Konstruktoren
+  public void main(int X, int Y){
+    this.X = X;
+    this.Y = Y;
+    return;
+    }
+  
+  //Getter
+  public int getX(){
+    return X;
+    }
+  
+  public int getY(){
+    return Y;
+    }
+  
+  //Setter
+  public void setX(int X){
+    this.X = X;
+    }
+  
+  public void setY(int Y){
+    this.Y = Y;
+  }
+  
+  //Methoden 
+  public void move(int dX, int dY){
+    int x = X + dX;
+    int y = Y + dY;    
+  }
+  
+  public double distance (Point p){
+    double distance = Math.sqrt((X-p.X)^(2)+(Y-p.Y)^(2));
+    return distance;
+    } 
+  
+  public void mirrorX(){
+    int mirrorX = -1 * Y;
+    }
+  
+  public void mirrorY(){
+    int mirrorY = -1 * X; 
+    }
+  
+  //ToString
+  public String toString(){
+    return X + ", " + Y;
+    }
+  
+}

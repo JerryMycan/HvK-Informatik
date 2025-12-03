@@ -1,0 +1,78 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schüler: Julian Cordella}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item Getter/Setter ohne Rückgabewert bzw. leer.
+    \item move(), distance(), mirrorX(), mirrorY(), toString() komplett leer.
+    \item equals(): syntaktisch ungültig, nutzt \texttt{int x == int y} und gibt nichts zurück.
+    \item Distance(): syntaktisch ungültig, verschachtelte Statements, undefinierte Variablen.
+    \item Testprogramm: \texttt{new Point;} ungültig, Konstruktor falsch aufgerufen.
+    \item Kein Standardkonstruktor.
+\end{itemize}
+
+\section*{2. Korrigierte Codebeispiele}
+\begin{lstlisting}[language=Java]
+public int getX(){ return this.x; }
+public void move(int dx,int dy){ this.x+=dx; this.y+=dy; }
+public double distance(Point p){
+    int dx=this.x-p.x; int dy=this.y-p.y;
+    return Math.sqrt(dx*dx+dy*dy);
+}
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 8 \\
+Konstruktoren & 15 & 5 \\
+Getter / Setter & 10 & 1 \\
+move() & 5 & 0 \\
+mirrorX() & 4 & 0 \\
+mirrorY() & 4 & 0 \\
+distance() & 18 & 0 \\
+toString() & 5 & 0 \\
+Testprogramm & 18 & 2 \\
+Dokumentation \& Qualität & 13 & 4 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{20} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Julian zeigt eine erkennbare Grundstruktur der Klasse, jedoch bleiben nahezu alle Methoden leer 
+oder syntaktisch fehlerhaft. Das Testprogramm kann dadurch keine Funktion demonstrieren. 
+Mit einer Wiederholung der Java-Grundsyntax und gezielten Übungen zur Klassenimplementierung 
+kann Julian deutliche Fortschritte erzielen.
+
+\vfill
+\begin{center}
+    {\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

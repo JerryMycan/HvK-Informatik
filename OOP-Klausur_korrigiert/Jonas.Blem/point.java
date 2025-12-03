@@ -1,0 +1,92 @@
+import java.lang.Math;
+public class point{
+    
+  // Hier werden die Attribute definiert
+  private int X;
+  private int Y;
+  
+   
+  //Hier ist der Konstruktor und die Attribute werden als Parameter definiert 
+  point(int X, int Y, ) {
+    
+    this.X = X;
+    this.Y = Y;
+    this.Y = 0;
+    this.X = 0;
+    
+  }
+  
+  //Hier definiert er die Variablen d und p
+  int d = 10;
+  int p = 15;
+
+  //Getter 
+  public int getX(){
+    
+    getX = X;
+    
+  }
+  
+  public int getY(){
+    
+    getY = Y;
+    
+  }
+  
+  //Setter
+  public void setX(int X ) {
+    
+    this.X = X;
+    
+  }
+  
+  public void setY(int Y) {
+    
+    this.Y = Y;
+    
+  }
+  
+  //Anfang der Methoden
+  public void move() {
+    
+    int Xd = X + d;
+    int Yd = Y + d;
+    
+  }
+  
+  public double distance(){
+    
+    double Abstand = math.sqrt((X - p * X)^2 + (Y - p * Y)^2);
+    
+  }
+  
+  public void mirrorx(){
+    
+    int spiegelX = Y - 2*Y;
+    
+  } 
+  
+  
+  public void mirrory() {
+    
+    int spiegelY = X - 2*X;
+    
+  }
+  //Ende der Methoden       
+  
+  //Hier ist was Ausgegeben wird 
+  
+  
+  public String toString() {
+    
+    
+    "Die X Koordinate ist: " + X + "\nDie Y Koordinate ist:" + Y + "\nDie Verschobenen Koordinaten sind: \nX:" + Xd + "\nY: " + Yd + 
+    "\nDie distanz ist: " + Abstand + "\nDie gespigelten Punkte sind: " + spiegelX + " " + spiegelY;
+    
+    }
+      
+    
+    
+    
+    
+  }

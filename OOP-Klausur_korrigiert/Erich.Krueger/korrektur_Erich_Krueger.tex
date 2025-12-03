@@ -1,0 +1,80 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schüler: Erich Krueger}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item Konstruktoren korrekt.
+    \item Getter/Setter korrekt.
+    \item move(), distance(), mirrorX(), mirrorY(), toString() korrekt.
+    \item equals() korrekt.
+    \item Testprogramm vollständig und funktional.
+    \item Sehr gute Struktur, sinnvolle Kommentare.
+\end{itemize}
+
+\section*{2. Positive Codebeispiele}
+\begin{lstlisting}[language=Java]
+public double distance(Point p){
+    return Math.sqrt(Math.pow((x-p.x), 2) + Math.pow((y-p.y), 2));
+}
+
+@Override
+public String toString(){
+    return "(" + x + ", " + y + ")";
+}
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 8 \\
+Konstruktoren & 15 & 15 \\
+Getter / Setter & 10 & 10 \\
+move() & 5 & 5 \\
+mirrorX() & 4 & 4 \\
+mirrorY() & 4 & 4 \\
+distance() & 18 & 18 \\
+toString() & 5 & 5 \\
+Testprogramm & 18 & 18 \\
+Dokumentation \& Qualität & 13 & 13 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{100} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Erich zeigt eine vollständig korrekte, sehr sauber strukturierte und logisch aufgebaute Lösung. 
+Die Implementierung erfüllt alle Anforderungen exakt, das Testprogramm ist vollständig, strukturiert und gut dokumentiert. 
+Eine hervorragende Klausurleistung.
+
+\vfill
+\begin{center}
+    {\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

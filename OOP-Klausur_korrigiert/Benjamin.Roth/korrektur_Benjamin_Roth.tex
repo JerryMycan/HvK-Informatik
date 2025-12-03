@@ -1,0 +1,90 @@
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{codegray}{RGB}{245,245,245}
+\lstset{
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\bfseries}{\thesubsection}{0.5em}{}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Korrekturbericht zur Informatik-Klausur}}\\[0.3cm]
+    {\large Objektorientierte Programmierung in Java}\\[0.8cm]
+\end{center}
+
+\section*{Schüler: Benjamin Roth}
+
+\section*{1. Identifizierte Fehler im Code}
+\begin{itemize}
+    \item Getter fehlerhaft: \texttt{return = x;} führt zu Syntaxfehler.
+    \item \texttt{toString()} ungültig: Ausdruck \texttt{x,y} nicht erlaubt.
+    \item \texttt{distance()} ohne Rückgabewert.
+    \item \texttt{equals()} leer.
+    \item Klassenname nicht nach Konvention: \texttt{point} statt \texttt{Point}.
+    \item Kein Testprogramm vorhanden.
+    \item mirrorX / mirrorY vertauscht.
+\end{itemize}
+
+\section*{2. Korrigierte Code-Beispiele}
+\begin{lstlisting}[language=Java]
+// Beispielhafte Korrektur
+public int getX() {
+    return this.x;
+}
+
+@Override
+public String toString() {
+    return "(" + x + ", " + y + ")";
+}
+
+public double distance(Point p) {
+    int dx = this.x - p.x;
+    int dy = this.y - p.y;
+    return Math.sqrt(dx*dx + dy*dy);
+}
+\end{lstlisting}
+
+\section*{3. Bewertungstabelle}
+
+\begin{tabular}{l|c|c}
+\textbf{Aufgabe} & \textbf{Max. Punkte} & \textbf{Erreicht} \\
+\hline
+Attribute & 8 & 8 \\
+Konstruktoren & 15 & 12 \\
+Getter / Setter & 10 & 2 \\
+move() & 5 & 5 \\
+mirrorX() & 4 & 1 \\
+mirrorY() & 4 & 1 \\
+distance() & 18 & 4 \\
+toString() & 5 & 0 \\
+Testprogramm & 18 & 0 \\
+Dokumentation \& Qualität & 13 & 3 \\
+\hline
+\textbf{Gesamt} & \textbf{100} & \textbf{36} \\
+\end{tabular}
+
+\section*{4. Kurz-Gutachten}
+Benjamin zeigt gutes Verständnis für Grundstruktur und Konstruktoren, doch mehrere syntaktische Fehler sowie fehlende Rückgabewerte verhindern korrekte Funktionsweise wichtiger Methoden. Das Testprogramm fehlt vollständig. Mit sauberer Syntax und vollständigen Methoden kann Benjamin deutlich bessere Ergebnisse erzielen.
+
+\vfill
+\begin{center}
+    {\footnotesize Automatisch generierter Bericht.}
+\end{center}
+
+\end{document}

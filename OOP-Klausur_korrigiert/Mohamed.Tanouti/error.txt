@@ -1,0 +1,51 @@
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:36: Fehler: ')' oder ',' erwartet
+     System.out.println("x:"xKoordinate + dx + " " + "y:" + dy );
+                            ^
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:36: Fehler: Keine Anweisung
+     System.out.println("x:"xKoordinate + dx + " " + "y:" + dy );
+                                                            ^
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:36: Fehler: ';' erwartet
+     System.out.println("x:"xKoordinate + dx + " " + "y:" + dy );
+                                                              ^
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:40: Fehler: ')' oder ',' erwartet
+      System.out.println(Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));      
+                                                               ^
+PointTest.java:13: Fehler: Methode mirrorX in Klasse Point kann nicht auf die angegebenen Typen angewendet werden.
+    punkt1.mirrorX();
+          ^
+  Erforderlich: int,int
+  Ermittelt:    keine Argumente
+  Grund: Liste der tatsächlichen Argumente hat eine andere Länge als die der formalen Argumente
+PointTest.java:14: Fehler: Methode mirrorY in Klasse Point kann nicht auf die angegebenen Typen angewendet werden.
+    punkt1.mirrorY();
+          ^
+  Erforderlich: int,int
+  Ermittelt:    keine Argumente
+  Grund: Liste der tatsächlichen Argumente hat eine andere Länge als die der formalen Argumente
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:40: Fehler: Symbol nicht gefunden
+      System.out.println(Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));      
+                                    ^
+  Symbol: Variable x
+  Ort: Klasse Point
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:40: Fehler: Symbol nicht gefunden
+      System.out.println(Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));      
+                                           ^
+  Symbol: Variable x
+  Ort: Klasse Point
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:40: Fehler: Symbol nicht gefunden
+      System.out.println(Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));      
+                                                  ^
+  Symbol: Variable y
+  Ort: Klasse Point
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:40: Fehler: Symbol nicht gefunden
+      System.out.println(Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2));      
+                                                         ^
+  Symbol: Variable y
+  Ort: Klasse Point
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:44: Fehler: Inkompatible Typen: int kann nicht in boolean konvertiert werden
+      if (xKoordinate = 0) {
+                      ^
+\\S192001\Mohamed.Tanouti$\Data\Objektorientierte Programmierung in Java\Point.java:52: Fehler: Inkompatible Typen: int kann nicht in boolean konvertiert werden
+      if (yKoordinate = 0) {
+                      ^
+12 Fehler
